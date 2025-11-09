@@ -49,3 +49,6 @@ venv/
 .venv/
 env/
 .env/
+
+# Transfer staging area (for manual review)
+_TRANSFER_STAGING/
