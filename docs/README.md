@@ -24,6 +24,13 @@ The `personas/` directory contains character profiles for the LuminAI system:
 - [LUMINAI-API-SETUP-GUIDE.md](LUMINAI-API-SETUP-GUIDE.md) — API integration guide
 - [LUMINAI-VISUAL-WORKFLOW.md](LUMINAI-VISUAL-WORKFLOW.md) — System flow visualization
 
+### Technical Architecture
+The `technical/` directory contains system architecture and agent design documents:
+
+- [AGENT_OVERVIEW.md](technical/AGENT_OVERVIEW.md) — Multi-agent architecture overview
+- [AGENT_AIRTH.md](technical/AGENT_AIRTH.md) — AIRTH Research Guard: falsifiability enforcer
+- [agent-data-integration.md](technical/agent-data-integration.md) — Data pipelines and knowledge graphs
+
 ### Research & Thesis
 The `thesis/` directory contains academic papers and research documents:
 
