@@ -1,0 +1,40 @@
+# Build artifacts and dependencies
+node_modules/
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Environment and secrets
+.env
+.env.local
+.secrets.env
+*.key
+*.pem
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.log
+
+# Documentation builds
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# OS files
+Thumbs.db
+desktop.ini
