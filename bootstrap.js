@@ -8,9 +8,8 @@ require('dotenv').config();
 
 const HarmonyNode = require('./lib/harmony');
 const ResonanceEngine = require('./modules/resonance-engine');
-// Import other modules as they're created:
-// const CodexHub = require('./modules/codex-hub');
-// const ArcadiaPortal = require('./modules/arcadia-portal');
+const CodexHub = require('./modules/codex-hub');
+const ArcadiaPortal = require('./modules/arcadia-portal');
 // const LuminesceMonitor = require('./modules/luminescence-monitor');
 
 /**
@@ -26,27 +25,21 @@ async function bootstrap() {
       routeTimeout: 30000,
     });
 
-    // 2. Create modules
-    const resonance = new ResonanceEngine({
-      defaultProvider: process.env.OPENAI_API_KEY ? 'openai' : 'anthropic',
-    });
-
-    // Future modules (as they're implemented):
-    // const codex = new CodexHub({ database_url: process.env.DATABASE_URL });
-    // const arcadia = new ArcadiaPortal({ token: process.env.GITHUB_TOKEN });
+    // 2. Create module instances
+    const resonance = new ResonanceEngine();
+    const codex = new CodexHub();
+    const arcadia = new ArcadiaPortal();
     // const luminescence = new LuminesceMonitor();
 
     // 3. Set up dependencies
     // Example: CodexHub depends on Resonance working first
-    // codex.dependencies = [resonance];
+    codex.dependencies = [resonance];
 
     // 4. Register modules with Harmony
     harmony.registerModule(resonance);
-    // harmony.registerModule(codex);
-    // harmony.registerModule(arcadia);
-    // harmony.registerModule(luminescence);
-
-    // 5. Initialize the system
+    harmony.registerModule(codex);
+    harmony.registerModule(arcadia);
+    // harmony.registerModule(luminescence);    // 5. Initialize the system
     await harmony.initialize();
 
     // 6. Get system status
