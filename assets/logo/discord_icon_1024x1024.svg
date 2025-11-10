@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#2C3E50"/>
+  
+  <!-- Concentric circles (resonance effect) -->
+  <circle cx="512" cy="512" r="400" fill="none" stroke="#F39C12" stroke-width="20"/>
+  <circle cx="512" cy="512" r="300" fill="none" stroke="#F39C12" stroke-width="20"/>
+  <circle cx="512" cy="512" r="200" fill="none" stroke="#F39C12" stroke-width="20"/>
+  
+  <!-- Wave patterns (resonance) -->
+  <path d="M 150 512 Q 300 450 450 512 T 750 512 T 1050 512" 
+        fill="none" stroke="#3498DB" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 150 512 Q 300 574 450 512 T 750 512 T 1050 512" 
+        fill="none" stroke="#3498DB" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Center arc (C for Codex) -->
+  <path d="M 400 300 A 224 224 0 0 1 400 724" 
+        fill="none" stroke="#F39C12" stroke-width="50" stroke-linecap="round"/>
+  
+  <!-- AI symbol at bottom -->
+  <g transform="translate(512, 800)">
+    <polygon points="0,-80 40,40 -40,40" fill="#9B59B6" stroke="#FFFFFF" stroke-width="4"/>
+    <circle cx="0" cy="-80" r="8" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Glow effect -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
