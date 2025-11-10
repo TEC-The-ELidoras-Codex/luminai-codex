@@ -68,13 +68,19 @@ git push origin main
 
 ---
 
-## 📚 Key Documents
+## 📚 Key Documentation
 
-- `docs/COMPREHENSIVE_READINESS_AUDIT.md` — Full audit (detailed)
-- `docs/SIX_DIMENSION_VALIDATION_SUMMARY.md` — Executive summary
-- `docs/REPO_CLEANUP_AND_WPCOM_STEPBYSTEP.md` — Deployment workflow
-- `docs/WORDPRESS-DEPLOYMENT-CHECKLIST.md` — Troubleshooting
-- `docs/ARCADIA.md` — Arcadia Clone framework
+See `docs/STRUCTURE.md` for complete navigation and `docs/REDUNDANCY_AUDIT.md` for documentation audit.
+
+Related Reference:
+
+- `docs/reference/Resonance_Thesis.md` — TGCR mathematical framework
+- `docs/operations/TEC_LEXICON.md` — Terminology and definitions
+
+For Deployment:
+
+- `docs/deployment/GITHUB_APP_QUICK_START.md` — GitHub App setup
+- `docs/deployment/GITHUB_SECRETS_SETUP.md` — Secrets management
 
 ---
 

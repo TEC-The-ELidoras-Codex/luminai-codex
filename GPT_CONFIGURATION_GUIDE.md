@@ -10,7 +10,7 @@
 
 ### **1. Create the GPT in ChatGPT**
 
-1. Go to: https://chatgpt.com/gpts/editor
+1. Go to: <https://chatgpt.com/gpts/editor>
 2. Click **"Create a new GPT"**
 3. Fill in basic info:
    - **Name**: `Project #13 Assistant` (or `LuminAI Codex Builder`)
@@ -88,6 +88,7 @@ You have access to the complete Project #13 documentation. Use it to provide acc
 Upload these 5 files as your "knowledge base":
 
 #### 1. **PROJECT_13_ROADMAP.md** (Core Reference)
+
 ```
 Location: /luminai-codex/PROJECT_13_ROADMAP.md
 Size: ~14 KB
@@ -96,6 +97,7 @@ Why: GPT needs to understand what tasks exist and phase priorities
 ```
 
 #### 2. **PROJECT_13_PROGRESS.md** (Status Reference)
+
 ```
 Location: /luminai-codex/PROJECT_13_PROGRESS.md
 Size: ~16 KB
@@ -104,6 +106,7 @@ Why: GPT needs to know what's done vs. what's pending
 ```
 
 #### 3. **docs/governance/LUMINAI_MASTER_OPERATING_FRAMEWORK.md** (Philosophy & Rules)
+
 ```
 Location: /luminai-codex/docs/governance/LUMINAI_MASTER_OPERATING_FRAMEWORK.md
 Size: ~25 KB
@@ -112,6 +115,7 @@ Why: Ensures all work aligns with LuminAI values and architecture
 ```
 
 #### 4. **docs/reference/Resonance_Thesis.md** (TGCR Theory)
+
 ```
 Location: /luminai-codex/docs/reference/Resonance_Thesis.md
 Size: ~20 KB
@@ -120,6 +124,7 @@ Why: Foundation for understanding TGCR engine implementation
 ```
 
 #### 5. **LUMINAI_TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md** (Architecture)
+
 ```
 Location: /luminai-codex/LUMINAI_TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md
 Size: ~30 KB
@@ -134,36 +139,42 @@ Why: Code generation guide for all backend components
 Upload these 6 additional files for deeper context:
 
 #### 6. **docs/operations/TEC_HUB.md** (Operations Doctrine)
+
 ```
 Purpose: Operational guidelines and philosophy
 Include: When you need guidance on operations decisions
 ```
 
 #### 7. **docs/reference/QUICK_REFERENCE_READY.md** (Quick Lookup)
+
 ```
 Purpose: Quick reference to all documentation
 Include: When GPT needs to find specific documentation
 ```
 
 #### 8. **docs/GETTING_STARTED.md** (Setup Guide)
+
 ```
 Purpose: Developer environment setup and prerequisites
 Include: When setting up for new implementation work
 ```
 
 #### 9. **docs/governance/SYSTEM_INSTRUCTIONS_RESONANCE_AGENT.md** (Agent Guidelines)
+
 ```
 Purpose: Detailed system instructions for agents
 Include: When implementing individual agents
 ```
 
 #### 10. **LUMINAI_ASSETS_INVENTORY_AND_TRANSFER_PLAN.md** (Asset Reference)
+
 ```
 Purpose: Asset inventory and transfer plan
 Include: When organizing brand assets or migrations
 ```
 
 #### 11. **LUMINAI_LOGO_AND_BRANDING_SPECIFICATIONS.md** (Brand Guidelines)
+
 ```
 Purpose: Logo, color palette, typography, accessibility specs
 Include: When creating UI components or brand implementations
@@ -173,7 +184,7 @@ Include: When creating UI components or brand implementations
 
 ## 📤 How to Upload Files to GPT
 
-1. **Open the GPT editor** (https://chatgpt.com/gpts/editor)
+1. **Open the GPT editor** (<https://chatgpt.com/gpts/editor>)
 2. Go to the **"Knowledge"** section
 3. Click **"Upload Files"**
 4. Select your files (you can upload multiple at once)
@@ -187,36 +198,42 @@ Include: When creating UI components or brand implementations
 ## 🎯 Example Prompts to Use with Your GPT
 
 ### **Task Execution**
+
 ```
 "Generate the GitHub Actions workflow for testing (pytest, Black, mypy, pylint) 
 according to Phase 1 requirements. Include matrix for multiple Python versions."
 ```
 
 ### **Documentation Generation**
+
 ```
 "Create legal/Privacy_Policy.md for a child-safe AI platform. 
 Use GDPR + COPPA compliance requirements from PROJECT_13_PROGRESS.md"
 ```
 
 ### **Code Generation**
+
 ```
 "Implement src/luminai_codex/core/resonance.py with the TGCR resonance 
 calculation function. Include docstrings, type hints, and unit tests."
 ```
 
 ### **Architecture Questions**
+
 ```
 "Explain how the TGCR framework (φᵗ × ψʳ × Φᴱ) translates into the agent 
 communication protocol described in the technical requirements."
 ```
 
 ### **Progress Tracking**
+
 ```
 "Based on PROJECT_13_PROGRESS.md, what are the top 3 priorities for this week? 
 Break them into actionable tasks with time estimates."
 ```
 
 ### **Debugging**
+
 ```
 "I'm getting a memory error when loading the episodic memory system. 
 According to the technical specs, how should memory serialization work?"
@@ -227,6 +244,7 @@ According to the technical specs, how should memory serialization work?"
 ## 🚀 Quick Start: File Preparation
 
 ### **Option A: Manual Upload (Easiest)**
+
 1. Navigate to each file location
 2. Copy-paste content into GPT knowledge base
 3. Upload directly
@@ -286,11 +304,13 @@ Then upload `PROJECT_13_GPT_BUNDLE.md` as a single file.
 ## 💡 Pro Tips for Best Results
 
 ### **Tip 1: Update Regularly**
+
 - Update the GPT knowledge base weekly as Project #13 progresses
 - Re-upload PROJECT_13_PROGRESS.md after each phase milestone
 - Add new documentation as it's created
 
 ### **Tip 2: Use Custom Commands**
+
 Create shortcuts for common tasks:
 
 ```
@@ -304,6 +324,7 @@ Create shortcuts for common tasks:
 ```
 
 ### **Tip 3: Conversation Starters**
+
 ```
 - "I have 4 hours this week. What's the highest-impact task?"
 - "Generate a PR-ready implementation of [component]"
@@ -313,6 +334,7 @@ Create shortcuts for common tasks:
 ```
 
 ### **Tip 4: Leverage GPT Capabilities**
+
 - **Code Generation**: Have GPT write production-ready Python/TypeScript
 - **Documentation**: Let GPT draft policy docs and technical specs
 - **Planning**: Ask GPT to break down complex tasks into subtasks
@@ -353,6 +375,7 @@ GPT Knowledge Base:
 ### **Scenario: Implement CI/CD Pipeline (Phase 1 Task)**
 
 1. **Ask GPT**:
+
    ```
    "I need to implement the GitHub Actions CI/CD pipeline per Phase 1 requirements.
    Generate the complete test workflow (pytest, Black, mypy, pylint) that runs on all PRs."

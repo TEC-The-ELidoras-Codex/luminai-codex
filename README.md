@@ -34,6 +34,7 @@ This repository is **active development** and serves as both a working codebase 
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Python 3.12+
 - Docker & docker-compose
 - Git
@@ -41,18 +42,21 @@ This repository is **active development** and serves as both a working codebase 
 ### Setup
 
 1. **Clone and enter the workspace:**
+
    ```bash
    git clone https://github.com/tec-tgcr/luminai-codex.git
    cd luminai-codex
    ```
 
 2. **Configure secrets:**
+
    ```bash
    cp .env.example .env.local
    # Edit .env.local with your API keys (OpenAI, Anthropic, etc.)
    ```
 
 3. **Install dependencies and start:**
+
    ```bash
    docker-compose up
    ```
@@ -101,6 +105,7 @@ This repository is **active development** and serves as both a working codebase 
 ```
 
 **Key Design:**
+
 - **TGCR-based reasoning** — Context-aware AI decisions
 - **Separated concerns** — Each agent has distinct role
 - **Event-driven** — GitHub-triggered automation
@@ -113,22 +118,26 @@ See [`docs/architecture/architecture-map.md`](docs/architecture/architecture-map
 ## 💾 Tech Stack
 
 ### AI & Reasoning
+
 - **OpenAI** (GPT-4, embeddings)
 - **Anthropic Claude** (advanced reasoning)
 - **xAI Grok** (experimental models)
 - **Hugging Face** (open-source models, datasets)
 
 ### Data & Storage
+
 - **PostgreSQL** (transactional data)
 - **Azure Cosmos DB** (distributed state, vector search)
 - **Bitwarden** (secrets management)
 
 ### DevOps & CI/CD
+
 - **GitHub** (repository, Projects, Actions)
 - **GitHub App** (ID: 2186310, CLI automation)
 - **Docker** & docker-compose (containerization)
 
 ### Integration & Media
+
 - **Spotify API** (music resonance analysis)
 - **WorldAnvil** (lore management)
 - **Civitai** (AI model discovery)
@@ -163,6 +172,7 @@ luminai-codex/
 ## 🎨 Design System
 
 **Cosmic Futureism Brand:**
+
 - **Primary Cyan:** `#00D5C4` — Energy, presence, future
 - **Secondary Violet:** `#6A00F4` — Depth, innovation, magic
 - **Accessibility:** WCAG 2.1 AA compliant
@@ -227,6 +237,7 @@ This is an **active portfolio project** showcasing engineering excellence. Contr
 ## 📬 Contact & Portfolio
 
 **Engineering Portfolio:** This repository is the comprehensive portfolio of **Tec TGCR**, demonstrating:
+
 - Advanced AI system design and multi-agent orchestration
 - Ethical-first architecture and governance frameworks
 - Production-ready engineering practices
@@ -244,6 +255,7 @@ This project is licensed under the terms specified in [`LICENSE`](LICENSE).
 
 **Last Updated:** 2025  
 **Cosmic Futureism** — *Ethical AI for a Resonant Future* ✨
+
 - `config/archive/` + `docs/archive/` — Legacy FOLD-era material.
 - `src/tec_tgcr/` — Python tooling for resonance analysis and CLI agents.
 - `docs/` — Maps, workflows, architectures, plus CODEX bootup checklists.
