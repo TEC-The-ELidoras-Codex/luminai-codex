@@ -35,11 +35,10 @@ cp .env.example .env.local
 
 | Secret | Where to Get It | Purpose |
 |--------|-----------------|---------|
-| `OPENAI_API_KEY` | https://platform.openai.com/api-keys | GPT models |
-| `ANTHROPIC_API_KEY` | https://console.anthropic.com | Claude models |
-| `PROJECTS_TOKEN` | https://github.com/settings/tokens?type=beta | GitHub Project automation |
-| `NOTION_TOKEN` | https://www.notion.so/my-integrations | Notion API access |
-| `SPOTIFY_CLIENT_*` | https://developer.spotify.com/dashboard | Music platform integration |
+| `OPENAI_API_KEY` | <https://platform.openai.com/api-keys> | GPT models |
+| `ANTHROPIC_API_KEY` | <https://console.anthropic.com> | Claude models |
+| `PROJECTS_TOKEN` | <https://github.com/settings/tokens?type=beta> | GitHub Project automation |
+| `SPOTIFY_CLIENT_*` | <https://developer.spotify.com/dashboard> | Music platform integration |
 
 **Never commit `.env.local`** — it's in `.gitignore`.
 
@@ -76,9 +75,10 @@ python -m src.interfaces.cli
 
 ## GitHub Project Board
 
-Track work at: https://github.com/orgs/TEC-The-ELidoras-Codex/projects/6
+Track work at: <https://github.com/orgs/TEC-The-ELidoras-Codex/projects/6>
 
 **Columns:**
+
 - **Backlog** — Ideas not yet prioritized
 - **Ready** — Groomed, ready to start
 - **In Progress** — Currently being developed
@@ -96,7 +96,7 @@ Track work at: https://github.com/orgs/TEC-The-ELidoras-Codex/projects/6
 
 ## Troubleshooting
 
-**Token expired?** Rotate `PROJECTS_TOKEN` at https://github.com/settings/tokens
+**Token expired?** Rotate `PROJECTS_TOKEN` at <https://github.com/settings/tokens>
 
 **Secrets not loading?** Check that `.env.local` is in the root and not in `.gitignore` exceptions.
 
