@@ -2,7 +2,7 @@
 
 **GitHub App**: TEC Resonance Automation  
 **App ID**: 2186310  
-**Link**: https://github.com/apps/tec-resonance-automation  
+**Link**: <https://github.com/apps/tec-resonance-automation>  
 **Status**: Active & Ready for Configuration
 
 ---
@@ -110,6 +110,7 @@ https://localhost:3000/webhooks/github
 ### **Step 5: Configure Permissions**
 
 **Repository Permissions** (already selected ✅):
+
 - ✅ Actions (read/write) - Workflows & artifacts
 - ✅ Administration (read) - Repo settings
 - ✅ Checks (read/write) - Code checks
@@ -122,6 +123,7 @@ https://localhost:3000/webhooks/github
 - ✅ Workflows (read/write) - GitHub Actions
 
 **Organization Permissions** (Update):
+
 - ✅ Administration (read) - Org settings
 - ✅ Members (read) - Team access
 - ✅ Webhooks (read/write) - Org webhooks
@@ -190,6 +192,7 @@ BWS_ACCESS_TOKEN              = <your-bitwarden-token>
 ```
 
 **How to set GitHub Secrets**:
+
 ```bash
 # Using GitHub CLI
 gh secret set GITHUB_APP_CLIENT_SECRET -b "your-secret-value"
@@ -420,6 +423,7 @@ curl -H "Authorization: Bearer YOUR_TOKEN" \
 ## 🎯 Next Steps
 
 ### **Phase 1: This Week**
+
 - [ ] Generate new client secret
 - [ ] Generate new private key
 - [ ] Generate webhook secret
@@ -427,6 +431,7 @@ curl -H "Authorization: Bearer YOUR_TOKEN" \
 - [ ] Add to GitHub Secrets
 
 ### **Phase 2: Next Week**
+
 - [ ] Implement webhook receiver endpoint
 - [ ] Add signature validation
 - [ ] Test webhook deliveries
@@ -434,6 +439,7 @@ curl -H "Authorization: Bearer YOUR_TOKEN" \
 - [ ] Document deployment process
 
 ### **Phase 3: Production**
+
 - [ ] Deploy to production environment
 - [ ] Enable IP allowlisting
 - [ ] Set up CI/CD pipeline
@@ -444,11 +450,11 @@ curl -H "Authorization: Bearer YOUR_TOKEN" \
 
 ## 📞 Quick Links
 
-- **GitHub App Settings**: https://github.com/organizations/TEC-The-ELidoras-Codex/settings/apps/tec-resonance-automation
-- **Generate Personal Token**: https://github.com/settings/tokens?type=beta
-- **Webhook Documentation**: https://docs.github.com/en/developers/webhooks-and-events/webhooks
-- **GitHub App API**: https://docs.github.com/en/rest/apps
-- **Installation ID Info**: https://docs.github.com/en/rest/apps/installations
+- **GitHub App Settings**: <https://github.com/organizations/TEC-The-ELidoras-Codex/settings/apps/tec-resonance-automation>
+- **Generate Personal Token**: <https://github.com/settings/tokens?type=beta>
+- **Webhook Documentation**: <https://docs.github.com/en/developers/webhooks-and-events/webhooks>
+- **GitHub App API**: <https://docs.github.com/en/rest/apps>
+- **Installation ID Info**: <https://docs.github.com/en/rest/apps/installations>
 
 ---
 

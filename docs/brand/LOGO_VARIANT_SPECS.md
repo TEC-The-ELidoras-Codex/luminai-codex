@@ -13,17 +13,20 @@
 **Composition**: Infinity symbol + 3 orbs + "LUMINAI CODEX" wordmark + optional tagline
 
 **Use Cases**:
+
 - Website header and hero sections
 - Kickstarter campaign banner
 - Marketing materials
 - Official documentation
 - Print collateral (posters, brochures)
 
-**Dimensions**: 
+**Dimensions**:
+
 - Horizontal aspect ratio: 3:1 to 4:1
 - Minimum width: 200px (web), 100mm (print)
 
 **Color Modes**:
+
 - Full gradient (Cyan → Violet with Gold accents)
 - Single-color gradient on white
 - Full color on dark backgrounds
@@ -37,6 +40,7 @@
 **Composition**: Infinity symbol + 3 orbs only (no text)
 
 **Use Cases**:
+
 - Mobile app icon (iOS, Android)
 - Website favicon
 - Social media profile pictures
@@ -45,17 +49,20 @@
 - Emblem patches (brand clothing)
 
 **Dimensions**:
+
 - Square format: 512×512 px minimum (digital), 1024×1024 px ideal (4K)
 - Circular crop variant: Radius ≥ 256px
 - Favicon: 16×16 px, 32×32 px, 64×64 px
 
 **Color Modes**:
+
 - Full gradient with glow
 - Solid color (primary: Cyan)
 - Monochrome (accessible)
 - Inverse (gold on dark)
 
 **Background**:
+
 - Transparent (PNG RGBA)
 - Dark (Cosmic Navy #0F0F23)
 - Black (#000000)
@@ -67,11 +74,13 @@
 **Composition**: Symbol + orbs (centered, top) / Text (centered, bottom)
 
 **Layout**:
+
 - Symbol positioned 40% down from top
 - "LUMINAI CODEX" text 70% down
 - Optional tagline at 85%
 
 **Use Cases**:
+
 - Mobile app screens
 - Vertical banners and posters
 - Social media stories
@@ -80,10 +89,12 @@
 - Print bookmarks
 
 **Dimensions**:
+
 - Vertical aspect ratio: 1:1.5 to 1:2
 - Minimum width: 150px (mobile web)
 
 **Typography Adjustments**:
+
 - Font size slightly reduced vs. horizontal
 - Letter spacing maintained at 0.025em
 - Line height: 1.4–1.6 between text layers
@@ -95,6 +106,7 @@
 **Composition**: All variants (full, icon, stacked) in black/white
 
 **Use Cases**:
+
 - Accessibility compliance (WCAG 2.1 AA minimum)
 - Print applications (single-color offset)
 - Fax/scan compatibility
@@ -103,14 +115,17 @@
 - Official seals and certifications
 
 **Black Version**:
+
 - Black (#000000) symbol + text on white/light backgrounds
 - Minimum contrast ratio: 4.5:1 (WCAG AA), 7:1 (WCAG AAA)
 
 **White Version**:
+
 - White (#FFFFFF) symbol + text on black/dark backgrounds
 - Same contrast ratios apply
 
 **Alternative Grayscale**:
+
 - 50% gray (#808080) for mid-tone backgrounds
 - Maintain stroke weight for readability
 
@@ -166,18 +181,21 @@
 ## 🎬 File Format Specifications
 
 ### **Vector Formats (Scalable)**
+
 - **Adobe Illustrator** (.ai) — Master source
 - **SVG** (.svg) — Web-optimized, responsive
 - **PDF** (.pdf) — Print distribution
 - **EPS** (.eps) — Legacy support, print
 
 ### **Raster Formats (Fixed Resolution)**
+
 - **PNG** (.png) — Transparency support, web/mobile
 - **JPEG** (.jpg) — Web, social (no transparency)
 - **TIFF** (.tiff) — Print, archival (lossless)
 - **WebP** (.webp) — Modern web, smaller file size
 
 ### **3D Formats**
+
 - **Blender** (.blend) — Source project
 - **glTF/glB** (.glb, .gltf) — Web 3D, optimized
 - **FBX** (.fbx) — Game engines, animation software
@@ -189,24 +207,28 @@
 ## 🎯 Application Examples
 
 ### **Website Header**
+
 - Format: Full logo horizontal
 - Size: 300–600 px wide
 - Color: Full gradient or single-color
 - File: SVG (responsive)
 
 ### **Mobile App Icon**
+
 - Format: Icon only (symbol + orbs)
 - Size: 512×512 px (rounded corners for app stores)
 - Color: Full gradient with subtle glow
 - File: PNG RGBA
 
 ### **Kickstarter Hero**
+
 - Format: Full logo + tagline
 - Size: 1920×1080 px (16:9)
 - Color: Full gradient with cosmic background
 - File: PNG or JPEG
 
 ### **Documentation Watermark**
+
 - Format: Icon or text variant
 - Size: 80–150 px (bottom-right or corner)
 - Color: Monochrome or light gradient (low contrast)
@@ -214,6 +236,7 @@
 - File: PNG with transparency
 
 ### **Print Collateral**
+
 - Format: Full logo horizontal or vertical
 - Size: 50–100 mm
 - Color: CMYK separations
@@ -221,6 +244,7 @@
 - File: PDF or high-res TIFF
 
 ### **Social Media**
+
 - **Profile Picture**: Icon variant, 400×400 px
 - **Cover Photo**: Full logo, 1200×400 px (timeline)
 - **Instagram Story**: Vertical, 1080×1920 px

@@ -9,6 +9,7 @@
 ## 📋 Overview
 
 This guide consolidates all environment variables needed for:
+
 - ✅ Local development (`.env.local`)
 - ✅ GitHub Actions CI/CD (GitHub Secrets)
 - ✅ GitHub App automation (TEC Resonance Automation)
@@ -20,12 +21,14 @@ This guide consolidates all environment variables needed for:
 ## 🚀 Quick Start
 
 ### **1. Create `.env.local` File**
+
 ```bash
 cp .env.local.example .env.local
 # Edit with YOUR actual values (never commit!)
 ```
 
 ### **2. Install Bitwarden CLI (Optional but Recommended)**
+
 ```bash
 npm install -g @bitwarden/cli
 # OR
@@ -33,6 +36,7 @@ brew install bitwarden-cli
 ```
 
 ### **3. Authenticate with Bitwarden**
+
 ```bash
 bw login your-email@example.com
 export BW_SESSION=$(bw unlock --raw)
@@ -81,10 +85,12 @@ GITHUB_APP_INSTALLATION_ID=<get-from-webhook>          # Auto-populated on first
 ```
 
 **How to get these**:
+
 1. Go to: `https://github.com/organizations/TEC-The-ELidoras-Codex/settings/apps/tec-resonance-automation`
 2. **Client Secret**: Click "Generate new client secret"
 3. **Private Key**: Click "Generate a new private key" (download `.pem` file)
 4. **Installation ID**: Check first webhook payload or run:
+
    ```bash
    curl -H "Authorization: Bearer YOUR_PAT" \
      https://api.github.com/app/installations
@@ -106,6 +112,7 @@ GITHUB_TOKEN_ROTATION_INTERVAL_DAYS=90
 ```
 
 **How to get these**:
+
 1. Personal Access Tokens: `https://github.com/settings/tokens?type=beta`
 2. Click "Generate new token"
 3. **Scopes needed**:
@@ -134,6 +141,7 @@ PROTECTED_BRANCHES=main,production,develop
 ```
 
 **How to get**:
+
 ```bash
 # Get org ID and repo ID
 curl -H "Authorization: token YOUR_GITHUB_TOKEN" \
@@ -163,11 +171,13 @@ BW_COLLECTION_IDS=brand,infrastructure,secrets
 ```
 
 **How to set up**:
+
 1. Create Machine Account (Bitwarden Admin):
    - Settings → Organizations → Members → Add Machine Account
 2. Generate credentials and download `.bw` config
 3. Create vault collection for LuminAI Codex secrets
 4. Store in `.env.local`:
+
    ```bash
    export BW_CLIENTID="your-client-id"
    export BW_CLIENTSECRET="your-secret"
@@ -189,6 +199,7 @@ BW_CLIENTSECRET=<your-machine-account-secret>
 ```
 
 **Recommended secrets to store in Bitwarden**:
+
 - All API keys (OpenAI, Anthropic, xAI, etc.)
 - Database passwords
 - OAuth tokens
@@ -230,9 +241,10 @@ LOCAL_LLM_MODEL=mistral:latest
 ```
 
 **How to get**:
-- **OpenAI**: https://platform.openai.com/api-keys
-- **Anthropic**: https://console.anthropic.com/keys
-- **XAI**: https://console.x.ai/keys
+
+- **OpenAI**: <https://platform.openai.com/api-keys>
+- **Anthropic**: <https://console.anthropic.com/keys>
+- **XAI**: <https://console.x.ai/keys>
 
 ---
 
@@ -345,6 +357,7 @@ BWS_SERVER_URL=https://api.bitwarden.com               # Default Bitwarden Cloud
 ```
 
 **Common Bitwarden CLI commands**:
+
 ```bash
 # Login and unlock
 bw login your-email@example.com
@@ -579,6 +592,7 @@ git commit -m "🔐 Rotate secrets (non-sensitive tracking)"
 ## 🆘 Troubleshooting
 
 ### **Issue: "Invalid GitHub App credentials"**
+
 ```bash
 # Check if private key is properly formatted
 cat your-private-key.pem | head -3
@@ -590,6 +604,7 @@ curl -H "Authorization: token YOUR_GITHUB_TOKEN" \
 ```
 
 ### **Issue: "Bitwarden session expired"**
+
 ```bash
 # Re-authenticate and get new session
 export BW_SESSION=$(bw unlock --raw)
@@ -599,6 +614,7 @@ bw login --apikey
 ```
 
 ### **Issue: "API rate limit exceeded"**
+
 ```bash
 # Check current rate limit
 curl -H "Authorization: token YOUR_GITHUB_TOKEN" \
@@ -611,12 +627,12 @@ curl -H "Authorization: token YOUR_GITHUB_TOKEN" \
 
 ## 📚 References
 
-- **GitHub Apps**: https://docs.github.com/en/developers/apps
-- **Personal Access Tokens**: https://github.com/settings/tokens
-- **Bitwarden CLI**: https://bitwarden.com/help/cli/
-- **OpenAI API**: https://platform.openai.com/docs
-- **Anthropic API**: https://docs.anthropic.com
-- **XAI API**: https://docs.x.ai
+- **GitHub Apps**: <https://docs.github.com/en/developers/apps>
+- **Personal Access Tokens**: <https://github.com/settings/tokens>
+- **Bitwarden CLI**: <https://bitwarden.com/help/cli/>
+- **OpenAI API**: <https://platform.openai.com/docs>
+- **Anthropic API**: <https://docs.anthropic.com>
+- **XAI API**: <https://docs.x.ai>
 
 ---
 

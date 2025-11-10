@@ -39,6 +39,7 @@
 ## 🚀 Quick Start by Role
 
 ### **👨‍💼 Manager / Stakeholder**
+
 1. Start: [PRODUCTION_STATUS.md](./docs/brand/PRODUCTION_STATUS.md) (5 min) - See what's done
 2. Then: [BRAND_DECK_SUMMARY.md](./docs/brand/BRAND_DECK_SUMMARY.md) (5 min) - Understand workflow
 3. Finally: [IT_TECHNICAL_UPDATES.md](./docs/brand/IT_TECHNICAL_UPDATES.md) sections 1-3 (5 min) - See deployment plan
@@ -48,6 +49,7 @@
 ---
 
 ### **🎨 Designer**
+
 1. Start: [LOGO_FINAL_BRIEF.md](./docs/brand/LOGO_FINAL_BRIEF.md) (2 min) - Get specs
 2. Reference: [LOGO_VARIANT_SPECS.md](./docs/brand/LOGO_VARIANT_SPECS.md) (8 min) - All details
 3. Deep dive: [3D_CREATION_PROMPT.md](./docs/brand/3D_CREATION_PROMPT.md) - If creating 3D
@@ -57,6 +59,7 @@
 ---
 
 ### **🎮 3D Artist**
+
 1. Start: [3D_CREATION_PROMPT.md](./docs/brand/3D_CREATION_PROMPT.md) (7 min) - Complete production guide
 2. Reference: [LOGO_VARIANT_SPECS.md](./docs/brand/LOGO_VARIANT_SPECS.md) section "Scale Guide" (3 min)
 3. Blender node graph is in section 2 of 3D_CREATION_PROMPT - copy/paste ready!
@@ -66,6 +69,7 @@
 ---
 
 ### **👨‍💻 Developer (Frontend/Full-stack)**
+
 1. Start: [ENV_LOCAL_SETUP.md](./docs/ENV_LOCAL_SETUP.md) (10 min) - Configure your environment
 2. Reference: [ENVIRONMENT_SETUP.md](./docs/ENVIRONMENT_SETUP.md) (15 min) - All available variables
 3. Setup: [GITHUB_APP_SETUP.md](./docs/GITHUB_APP_SETUP.md) (10 min) - GitHub App integration
@@ -75,6 +79,7 @@
 ---
 
 ### **🔧 DevOps / Infrastructure**
+
 1. Start: [IT_TECHNICAL_UPDATES.md](./docs/brand/IT_TECHNICAL_UPDATES.md) (12 min) - Full infrastructure plan
 2. Setup: [GITHUB_APP_SETUP.md](./docs/GITHUB_APP_SETUP.md) (10 min) - App configuration
 3. Reference: [ENVIRONMENT_SETUP.md](./docs/ENVIRONMENT_SETUP.md) (15 min) - All variables
@@ -89,12 +94,14 @@
 ### **BRAND DOCUMENTS** (Design & Production)
 
 **LOGO_FINAL_BRIEF.md**
+
 - Core logo symbol (infinity ∞ + 3 orbs)
 - Color palette (Cyan, Violet, Gold)
 - Typography standards
 - 4 variants overview
 
 **3D_CREATION_PROMPT.md**
+
 - Complete 3D production guide
 - Blender material node graph (copy-paste ready!)
 - Render settings (4K, 1000+ samples)
@@ -102,6 +109,7 @@
 - Export formats & optimization
 
 **LOGO_VARIANT_SPECS.md**
+
 - Full Logo (marketing, primary use)
 - Icon Only (apps, social, 512×512px)
 - Stacked Vertical (mobile, bookmarks)
@@ -111,18 +119,21 @@
 - Quality checklist
 
 **BRAND_DECK_SUMMARY.md**
+
 - 5-phase workflow
 - Role-based navigation
 - Document interconnections
 - Next actions by timeline
 
 **PRODUCTION_STATUS.md**
+
 - Executive summary
 - Document portfolio
 - 4 variants status
 - 5-phase timeline
 
 **INDEX.md**
+
 - Master navigation
 - Quick access by read time
 - Logo system overview
@@ -133,6 +144,7 @@
 ### **INFRASTRUCTURE DOCUMENTS** (IT & Configuration)
 
 **IT_TECHNICAL_UPDATES.md** (10 Updates)
+
 1. Git LFS for brand assets
 2. Web deployment strategy
 3. Brand asset API
@@ -145,6 +157,7 @@
 10. International & accessibility
 
 **ENVIRONMENT_SETUP.md** (12 Categories)
+
 1. Core application
 2. GitHub App (TEC Resonance Automation)
 3. GitHub tokens (PAT, projects, org)
@@ -159,6 +172,7 @@
 12. WordPress.com
 
 **GITHUB_APP_SETUP.md** (Complete Guide)
+
 - App details (ID 2186310, Client ID, etc.)
 - Setup decision matrix
 - Step-by-step first-time setup
@@ -170,6 +184,7 @@
 - Implementation roadmap
 
 **ENV_LOCAL_SETUP.md** (Configuration Checklist)
+
 - What's already configured
 - What needs to be added
 - Step-by-step for each missing variable
@@ -277,17 +292,20 @@ Day 3:
 ## 📚 Key Links
 
 ### **GitHub Settings**
+
 - [GitHub App Dashboard](https://github.com/organizations/TEC-The-ELidoras-Codex/settings/apps/tec-resonance-automation)
 - [Generate Personal Token](https://github.com/settings/tokens?type=beta)
 - [Organization Secrets](https://github.com/organizations/TEC-The-ELidoras-Codex/settings/secrets/actions)
 
 ### **Tools & Services**
+
 - [Bitwarden CLI Docs](https://bitwarden.com/help/cli/)
 - [OpenAI API Keys](https://platform.openai.com/api-keys)
 - [Anthropic Console](https://console.anthropic.com/keys)
 - [XAI Console](https://console.x.ai/keys)
 
 ### **Documentation**
+
 - [GitHub Apps Docs](https://docs.github.com/en/developers/apps)
 - [GitHub Webhooks](https://docs.github.com/en/developers/webhooks-and-events/webhooks)
 - [GitHub REST API](https://docs.github.com/en/rest)
