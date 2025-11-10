@@ -33,16 +33,19 @@ Angelo Michael Hurley
 ## Quick Application Instructions
 
 **For Tech Jobs** (GitHub, SaaS, Analytics, Marketing Ops):
+
 - Use tech-focused resume + tech cover letter
 - Emphasize: GitHub, AI literacy, project management, data skills
 - Mention: LuminAI Codex project as technical portfolio piece
 
 **For General Jobs** (Dollar General, Crosbys, Retail):
+
 - Use general resume + general cover letter  
 - Emphasize: Customer service, reliability, team leadership
 - Mention: Independent project work shows initiative and creativity
 
 **Quick Customization**:
+
 1. Replace [Position] and [Company] in cover letter
 2. Replace [relevant skill] with job posting keywords
 3. Attach appropriate resume version

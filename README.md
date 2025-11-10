@@ -1,12 +1,37 @@
-# LuminAI Codex - Ethical AI Infrastructure Platform
+# The LuminAI Codex
 
-**Ethical AI infrastructure for families - Building tomorrow's technology with human values at the core.**
+**Ethical AI infrastructure for families — blending narrative, symbolic computation, and responsible AI.**
 
-> "Resonance remembers. The CODEX is how we track what it's trying to say."
+---
+
+## 🚀 THE PORTFOLIO
+
+This is not a research project. This is **proof of capability**:
+
+- **[4 Master Planning Documents](.)** — Complete technical, strategic, brand, and regulatory roadmaps for a modular AI PC platform
+- **[TGCR Mathematical Framework](docs/reference/Resonance_Thesis.md)** — Original theory connecting consciousness, meaning, and AI architecture
+- **[Comprehensive Brand Identity](LUMINAI_LOGO_AND_BRANDING_SPECIFICATIONS.md)** — Cosmic Futureism visual system with complete specifications
+- **[Production-Ready Architecture](LUMINAI_TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md)** — Multi-agent AI system, quantum-safe security, COPPA/GDPR compliance
+- **[Systematic Migration Strategy](LUMINAI_SYSTEMATIC_MIGRATION_STRATEGY.md)** — 4-week implementation timeline with specific milestones
+- **[187+ Asset Transfer Package](_TRANSFER_STAGING/)** — Complete source material, research, infrastructure specifications
+- **[Full Test Suite](tests/)** — Unit, integration, performance testing framework
+- **[Deployment Automation](scripts/)** — Docker, CI/CD, secrets management, environment setup
+
+**What this demonstrates:**
+
+- ✅ Strategic thinking at scale (35-year product lifecycle)
+- ✅ Regulatory compliance expertise (child safety is non-negotiable)
+- ✅ Complete technical architecture design
+- ✅ Brand development and visual identity systems
+- ✅ Project management and systematic execution
+- ✅ Ethical AI frameworks prioritizing transparency
+- ✅ Ability to bridge technical depth with human values
+
+---
 
 ## What Is LuminAI Codex?
 
-The LuminAI Codex is the ethical AI platform built on The Elidoras CODEX foundation — a living research stack for TGCR (**Temporal Attention (φᵗ)**, **Structural Cadence (ψʳ)**, and **Contextual Potential (Φᴱ)**). This repository blends narrative, symbolic computation, and responsible AI into a public companion platform that prioritizes family safety over surveillance capitalism.
+The LuminAI Codex is an ethical AI platform built on The Elidoras CODEX foundation — a living research stack for TGCR (**Temporal Attention (φᵗ)**, **Structural Cadence (ψʳ)**, and **Contextual Potential (Φᴱ)**). This repository blends narrative, symbolic computation, and responsible AI into a public companion platform that prioritizes family safety over surveillance capitalism.
 
 ### Core TGCR Framework
 

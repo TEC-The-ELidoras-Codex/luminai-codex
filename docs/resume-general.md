@@ -1,12 +1,14 @@
 # Angelo Michael Hurley
+
 **General Resume**
 
 ---
 
 ## Contact Information
+
 **Location**: West Seneca, NY  
 **Phone**: (315) 320-3173  
-**Email**: KaznakAlpha@ElidorasCodex.com
+**Email**: <KaznakAlpha@ElidorasCodex.com>
 
 ---
 
@@ -19,6 +21,7 @@ Dependable and adaptable professional with experience in customer service, sales
 ## Experience
 
 ### Sales Associate
+
 **7-Eleven, West Seneca, NY** | 2023–2025
 
 - Managed nightly operations, inventory, and cash reconciliation
@@ -26,6 +29,7 @@ Dependable and adaptable professional with experience in customer service, sales
 - Recognized for reliability and problem-solving
 
 ### Sales Lead / Customer Solutions Specialist
+
 **Best Buy, Buffalo, NY** | 2019–2022
 
 - Led sales initiatives and coached new associates on customer experience standards
@@ -33,6 +37,7 @@ Dependable and adaptable professional with experience in customer service, sales
 - Achieved consistent top-tier sales in electronics and services
 
 ### Retail Sales & Customer Support
+
 **Various Locations, Buffalo & Syracuse, NY** | 2017–2019
 
 - Delivered consistent sales results through customer rapport and product knowledge
@@ -40,6 +45,7 @@ Dependable and adaptable professional with experience in customer service, sales
 - Balanced multiple customer interactions with empathy and efficiency
 
 ### Independent Consultant / Developer
+
 **TEC – The Elidoras Codex Project** | 2022–Present
 
 - Designed creative frameworks for AI-human collaboration
