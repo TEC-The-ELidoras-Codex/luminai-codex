@@ -16,6 +16,7 @@ YES: "Resonance Engine whispers to Cosmos Store through the Echo Chamber"
 ```
 
 **Core Principles**:
+
 - ✨ Every component has personality
 - 🧩 Fully modular (swap/upgrade without breaking)
 - 🎯 Cute names that still convey function
@@ -27,9 +28,11 @@ YES: "Resonance Engine whispers to Cosmos Store through the Echo Chamber"
 ## 🧠 Core Modules (The Brain)
 
 ### **1. Resonance Engine** 💫
+
 **What it does**: AI conversation & reasoning  
 **Technical**: LLM orchestration layer  
 **Components**:
+
 - Thought Generator (OpenAI/GPT-4)
 - Claude Companion (Anthropic)
 - Grok Explorer (xAI)
@@ -47,9 +50,11 @@ Module: ResonanceEngine
 ---
 
 ### **2. Codex Hub** 📚
+
 **What it does**: Knowledge storage & retrieval  
 **Technical**: Vector DB + Graph DB + document storage  
 **Components**:
+
 - Memory Vault (Redis/Cache)
 - Cosmos Store (PostgreSQL)
 - Ledger Keeper (Audit logs)
@@ -67,9 +72,11 @@ Module: CodexHub
 ---
 
 ### **3. Arcadia Portal** 🌐
+
 **What it does**: External service integration  
 **Technical**: API gateway & webhooks  
 **Components**:
+
 - Discord Gateway
 - GitHub Relay
 - Notion Link
@@ -89,9 +96,11 @@ Module: ArcadiaPortal
 ---
 
 ### **4. Harmony Node** 🎵
+
 **What it does**: Event routing & distribution  
 **Technical**: Event bus, message broker, webhooks  
 **Components**:
+
 - Event Router (message queue)
 - Status Broadcaster (real-time updates)
 - Webhook Receiver (inbound events)
@@ -109,9 +118,11 @@ Module: HarmonyNode
 ---
 
 ### **5. Luminescence Monitor** 🔍
+
 **What it does**: Observability & health  
 **Technical**: Metrics, logging, tracing  
 **Components**:
+
 - Performance Watcher (metrics)
 - Event Logger (audit trail)
 - Health Dashboard (status)
@@ -236,24 +247,28 @@ ResonanceEngine.resume();  // Resume with backlog
 ## 🚀 Implementation Phases
 
 ### **Phase 1: Foundation** (Week 1-2)
+
 - [ ] Define module interfaces
 - [ ] Create Echo Protocol
 - [ ] Build base Module class
 - [ ] Implement Harmony Node (event bus)
 
 ### **Phase 2: Core Modules** (Week 3-4)
+
 - [ ] Resonance Engine
 - [ ] Codex Hub (memory layer)
 - [ ] Arcadia Portal (basic integrations)
 - [ ] Luminescence Monitor
 
 ### **Phase 3: Cute UI** (Week 5-6)
+
 - [ ] Module dashboard (status visualization)
 - [ ] Connection diagram (interactive)
 - [ ] Module marketplace (discover/add services)
 - [ ] Health indicators (cute animations)
 
 ### **Phase 4: Advanced Features** (Week 7+)
+
 - [ ] Module chaining (compose workflows)
 - [ ] Auto-scaling (spawn instances)
 - [ ] Backup/restore (module snapshots)
@@ -321,6 +336,7 @@ module.exports = CuteModule;
 ## 🔐 No Infringement - Original Design
 
 This framework is **100% original**, inspired by:
+
 - **Microservices patterns** (industry standard)
 - **Event-driven architecture** (established practice)
 - **Modular design principles** (universal)

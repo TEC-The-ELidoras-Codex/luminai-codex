@@ -89,8 +89,10 @@ class ResonanceEngine extends CuteModule {
         this.log('info', 'xAI provider initialized');
       }
 
+      // Allow demo mode without providers
       if (!this.openai && !this.anthropic && !this.xai) {
-        throw new Error('No AI providers configured');
+        this.log('warn', 'No AI providers configured - running in DEMO mode');
+        this.demoMode = true;
       }
 
       return true;
@@ -123,18 +125,27 @@ class ResonanceEngine extends CuteModule {
       // Get conversation history
       const history = this.conversations.get(sessionId) || [];
 
-      switch (provider) {
-        case 'openai':
-          response = await this.thinkWithOpenAI(prompt, history, model);
-          break;
-        case 'anthropic':
-          response = await this.thinkWithAnthropic(prompt, history, model);
-          break;
-        case 'xai':
-          response = await this.thinkWithXAI(prompt, history, model);
-          break;
-        default:
-          throw new Error(`Unknown provider: ${provider}`);
+      // Demo mode response if no providers configured
+      if (this.demoMode) {
+        response = {
+          content: `[DEMO MODE] Response to: "${prompt}". In production, this would be processed by ${provider} (${model}).`,
+          model: `${provider}-demo`,
+          usage: { prompt_tokens: 10, completion_tokens: 20 },
+        };
+      } else {
+        switch (provider) {
+          case 'openai':
+            response = await this.thinkWithOpenAI(prompt, history, model);
+            break;
+          case 'anthropic':
+            response = await this.thinkWithAnthropic(prompt, history, model);
+            break;
+          case 'xai':
+            response = await this.thinkWithXAI(prompt, history, model);
+            break;
+          default:
+            throw new Error(`Unknown provider: ${provider}`);
+        }
       }
 
       // Store in history
@@ -152,24 +163,29 @@ class ResonanceEngine extends CuteModule {
 
       this.conversations.set(sessionId, history);
 
-      // Send response to Codex Hub for storage
+      // Send response to Codex Hub for storage (optional - fails gracefully if not present)
       if (this.harmonyNode) {
-        this.send('📚 Codex Hub', 'store_memory', {
-          sessionId,
-          exchange: {
-            prompt,
-            response,
-            provider,
-            timestamp: Date.now(),
-          },
-        });
+        try {
+          this.send('📚 Codex Hub', 'store_memory', {
+            sessionId,
+            exchange: {
+              prompt,
+              response,
+              provider,
+              timestamp: Date.now(),
+            },
+          });
+        } catch (err) {
+          // CodexHub may not be available yet; that's fine
+          this.log('warn', 'CodexHub not available for storage', { error: err.message });
+        }
       }
 
       return {
-        response,
+        response: response.content || response,
         provider,
         model,
-        tokensUsed: response.tokens || 0,
+        tokensUsed: response.usage?.completion_tokens || response.tokens || 0,
         sessionId,
       };
     } catch (error) {

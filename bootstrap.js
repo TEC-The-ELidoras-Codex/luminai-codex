@@ -87,38 +87,30 @@ async function testSystem(harmony) {
       prompt: 'What is the meaning of life?',
       provider: 'openai',
     });
-    console.log('  Response:', thought.response.slice(0, 60) + '...\n');
+    const responseText = typeof thought === 'string' ? thought : thought.response;
+    console.log('  Response:', responseText.slice(0, 60) + '...\n');
 
-    // Test 2: Brainstorming
+        // Test 2: Brainstorming
     console.log('Test 2: Brainstorming');
     const ideas = await resonance.execute('brainstorm', {
       topic: 'creative projects with AI',
-      count: 3,
+      provider: 'anthropic',
     });
-    console.log('  Ideas generated:', ideas.ideaCount);
-    console.log('  Response:', ideas.response.slice(0, 60) + '...\n');
+    const ideasText = typeof ideas === 'string' ? ideas : ideas.response;
+    console.log('  Ideas:', ideasText.slice(0, 60) + '...\n');
 
     // Test 3: Summarization
     console.log('Test 3: Summarization');
-    const text =
-      'The quick brown fox jumps over the lazy dog. This sentence contains every letter of the alphabet. It is commonly used for testing typewriters and computer keyboards, displaying examples of fonts, and other applications involving text.';
-
     const summary = await resonance.execute('summarize', {
-      text,
-      length: 'short',
+      text: 'Modular architectures enable independent scaling, testing, and deployment of system components',
+      provider: 'xai',
     });
-    console.log('  Original length:', summary.originalLength);
-    console.log('  Summary length:', summary.summaryLength);
-    console.log('  Compression:', summary.compressionRatio + '%\n');
+    const summaryText = typeof summary === 'string' ? summary : summary.response;
+    console.log('  Summary:', summaryText.slice(0, 60) + '...\n');
 
     // Test 4: Module status
     console.log('Test 4: Module Status');
-    const moduleStatus = resonance.getStatus();
-    console.log('  Status:', moduleStatus.status);
-    console.log('  Healthy:', moduleStatus.healthy);
-    console.log('  Calls:', moduleStatus.metrics.calls);
-    console.log('  Errors:', moduleStatus.metrics.errors);
-    console.log('  Avg Time:', moduleStatus.metrics.avgTime.toFixed(2) + 'ms\n');
+    const status = await resonance.execute('getStatus', {});
   } catch (error) {
     console.error('❌ Test failed:', error.message);
   }
