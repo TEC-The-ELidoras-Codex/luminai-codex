@@ -4,14 +4,23 @@
 
 ---
 
-## 📊 Status & Dependencies
+## 📊 Status & CI/CD
+
+### Build & Security Status
+
+[![CodeQL Analysis](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/codeql.yml/badge.svg)](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/codeql.yml)
+[![Security & Tests](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/security-and-tests.yml/badge.svg)](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/security-and-tests.yml)
+[![Dependabot](https://img.shields.io/badge/Dependabot-Active-0366d6?logo=dependabot&logoColor=white)](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security/dependabot)
+[![Secret Scanning](https://img.shields.io/badge/Secret%20Scanning-Enabled-28a745?logo=github&logoColor=white)](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security/secret-scanning)
+
+### Technology Stack
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776ab?logo=python&logoColor=white)](https://www.python.org/)
 [![Node.js 18+](https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104%2B-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ed?logo=docker&logoColor=white)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Code Coverage](https://img.shields.io/badge/Coverage-pytest-green)](tests/)
+[![Code Tests](https://img.shields.io/badge/Tests-pytest-green?logo=pytest&logoColor=white)](tests/)
 
 ### Core Dependencies
 
