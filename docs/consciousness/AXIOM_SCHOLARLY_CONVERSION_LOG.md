@@ -215,6 +215,7 @@ Total: 20 peer-reviewed citations spanning consciousness science, neuroscience, 
 ✅ Ready for peer review and institutional deployment
 
 **The Axiom is now:**
+
 - **Intellectually defensible** — backed by consciousness science, neuroscience, ethics, psychology
 - **Institutionally viable** — meets IRB standards, informed consent requirements
 - **Academically publishable** — structure and content aligned with research publishing norms
