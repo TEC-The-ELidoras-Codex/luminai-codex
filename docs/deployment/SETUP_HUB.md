@@ -74,8 +74,6 @@ deployment/
 
 ## 🚀 Quick Start by Role
 
-
-
 ### **👨‍💼 Manager / Stakeholder**
 
 **Question**: What's the current deployment status?
