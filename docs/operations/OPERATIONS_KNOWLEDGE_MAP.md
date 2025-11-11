@@ -249,7 +249,7 @@ Start → TEC_HUB.md (Agent Instructions)
 | **New Developer** | TEC_HUB.md | TEC_LEXICON.md → Resonance_Thesis.md |
 | **Agent Developer** | TEC_LEXICON.md (patterns) | SYSTEM_INSTRUCTIONS_RESONANCE_AGENT.md |
 | **Framework Researcher** | Resonance_Thesis.md | TEC_LEXICON.md (definitions) |
-| **Project Manager** | LUMINAI_MASTER_OPERATING_FRAMEWORK.md | PROJECT_13_ROADMAP.md |
+| **Project Manager** | LUMINAI_MASTER_OPERATING_FRAMEWORK.md | docs/operations/PROJECT_13_ROADMAP.md |
 
 ### **By Temporal Sequence**
 
@@ -352,8 +352,8 @@ Start → TEC_HUB.md (Agent Instructions)
 This is one Knowledge Map in the documentation system:
 
 - `docs/STRUCTURE.md` — Overall documentation hierarchy
-- `PROJECT_13_ROADMAP.md` — Implementation roadmap
-- `PROJECT_13_PROGRESS.md` — Current progress tracking
+- `docs/operations/PROJECT_13_ROADMAP.md` — Implementation roadmap
+- `docs/operations/PROJECT_13_PROGRESS.md` — Current progress tracking
 - (Future) `docs/governance/GOVERNANCE_KNOWLEDGE_MAP.md`
 - (Future) `docs/reference/REFERENCE_KNOWLEDGE_MAP.md`
 - (Future) `docs/deployment/DEPLOYMENT_KNOWLEDGE_MAP.md`

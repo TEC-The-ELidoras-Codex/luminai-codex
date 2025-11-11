@@ -3,7 +3,8 @@
 ## ⚡ Fastest Way: Pixlr (Browser-Based)
 
 ### Step 1: Open Pixlr
-Go to: **https://pixlr.com/editor**
+
+Go to: **<https://pixlr.com/editor>**
 
 ### Step 2: Create Icon (1024×1024)
 
@@ -71,7 +72,8 @@ Go to: **https://pixlr.com/editor**
 ## Alternative: Canva (Even Easier)
 
 ### Icon (1024×1024)
-1. Go to: **https://www.canva.com/create/custom-size**
+
+1. Go to: **<https://www.canva.com/create/custom-size>**
 2. Enter: `1024` × `1024`
 3. Click **Create**
 4. **Upload** your logo image
@@ -79,6 +81,7 @@ Go to: **https://pixlr.com/editor**
 6. **Download** as PNG
 
 ### Banner (680×240)
+
 1. Create custom size: `680` × `240`
 2. Upload logo, position left
 3. Add text "LUMINAI CODEX" on right (optional)
@@ -115,4 +118,3 @@ Once you have both PNG files:
 **Time to complete: 5-10 minutes**
 
 Need help? All tools above have built-in tutorials in their UI.
-

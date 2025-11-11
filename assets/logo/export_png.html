@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Cosmic Infinity Glyph to PNG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #0a0a0c 0%, #1a1a1e 100%);
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 10px;
+            border: 2px solid #6A00F4;
+        }
+        h1 {
+            margin-top: 0;
+            color: #00D5C4;
+        }
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #F2C340 0%, #00D5C4 50%, #6A00F4 100%);
+            color: #000;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        #preview {
+            margin-top: 30px;
+            max-width: 500px;
+            background: #020203;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #F2C340;
+        }
+        #svgContainer {
+            width: 100%;
+            height: auto;
+            border: 1px solid #00D5C4;
+            border-radius: 5px;
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #F2C340;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧬 Cosmic Infinity Glyph PNG Exporter</h1>
+        <p>Export the SVG to PNG for Discord and web use</p>
+        
+        <div>
+            <button onclick="exportPNG(1024)">Export 1024×1024 PNG (Discord Icon)</button>
+            <button onclick="exportPNG(512)">Export 512×512 PNG (Thumbnail)</button>
+            <button onclick="exportPNG(2048)">Export 2048×2048 PNG (Print)</button>
+        </div>
+        
+        <div id="preview">
+            <p>Loading SVG...</p>
+            <div id="svgContainer"></div>
+        </div>
+        
+        <div class="info">
+            <p>📌 Tip: Right-click the downloaded image to verify before uploading to Discord</p>
+            <p>✨ The image will download as <code>cosmic_infinity_glyph_[SIZE].png</code></p>
+        </div>
+    </div>
+
+    <script>
+        // Load and display SVG
+        fetch('cosmic_infinity_glyph.svg')
+            .then(response => response.text())
+            .then(svgContent => {
+                document.getElementById('svgContainer').innerHTML = svgContent;
+                // Style the loaded SVG
+                const svg = document.querySelector('#svgContainer svg');
+                if (svg) {
+                    svg.style.width = '100%';
+                    svg.style.height = 'auto';
+                }
+            })
+            .catch(err => {
+                document.getElementById('svgContainer').innerHTML = '<p style="color: #F2C340;">⚠️ Could not load SVG. Make sure cosmic_infinity_glyph.svg is in the same directory.</p>';
+            });
+
+        function exportPNG(size) {
+            const svgElement = document.querySelector('#svgContainer svg');
+            if (!svgElement) {
+                alert('SVG not loaded yet. Please wait and try again.');
+                return;
+            }
+
+            // Create a canvas
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+
+            // Create an image from SVG
+            const svgString = new XMLSerializer().serializeToString(svgElement);
+            const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+
+            const img = new Image();
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, size, size);
+                
+                // Download the canvas as PNG
+                canvas.toBlob(function(pngBlob) {
+                    const downloadUrl = URL.createObjectURL(pngBlob);
+                    const link = document.createElement('a');
+                    link.href = downloadUrl;
+                    link.download = `cosmic_infinity_glyph_${size}x${size}.png`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(downloadUrl);
+                }, 'image/png');
+            };
+            img.onerror = function() {
+                alert('Failed to export. There may be CORS issues. Try using an online SVG to PNG converter instead.');
+            };
+            img.src = url;
+        }
+    </script>
+</body>
+</html>

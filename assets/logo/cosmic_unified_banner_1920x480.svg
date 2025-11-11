@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  COSMIC UNIFIED BANNER – LuminAI Codex
+  1920×480 combining marketplace header with infinity glyph resonance
+  
+  Left side: 2 interlocking rings (70° rotation, geometric)
+  Center: Infinity symbol hint
+  Right side: Marketplace tessellation & accent
+  
+  Philosophy: ∞ × Geometry = Cosmic Reality
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="480" viewBox="0 0 1920 480" role="img" aria-label="Cosmic Unified Banner - LuminAI Codex">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="cosmicBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0C"/>
+      <stop offset="35%" stop-color="#0B1E3B"/>
+      <stop offset="70%" stop-color="#1A0A2E"/>
+      <stop offset="100%" stop-color="#16003B"/>
+    </linearGradient>
+
+    <linearGradient id="infinityGrad" x1="25%" y1="25%" x2="75%" y2="75%">
+      <stop offset="0%" stop-color="#F2C340"/>
+      <stop offset="25%" stop-color="#00D5C4"/>
+      <stop offset="50%" stop-color="#6A00F4"/>
+      <stop offset="75%" stop-color="#00D5C4"/>
+      <stop offset="100%" stop-color="#F2C340"/>
+    </linearGradient>
+
+    <linearGradient id="spiralGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2C340" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#F2C340" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#F2C340" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <radialGradient id="glowLeft" cx="0.1" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#00D5C4" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00D5C4" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Patterns -->
+    <pattern id="honeycombLarge" width="100" height="86.602540" patternUnits="userSpaceOnUse">
+      <g stroke="#F2C340" stroke-opacity="0.24" fill="none" stroke-width="1.5">
+        <path d="M 20,0 L 40,10 L 40,20 L 20,30 L 0,20 L 0,10 Z"/>
+      </g>
+    </pattern>
+
+    <pattern id="honeycombMedium" width="60" height="51.961" patternUnits="userSpaceOnUse" patternTransform="translate(30,25.98)">
+      <g stroke="#00D5C4" stroke-opacity="0.16" fill="none" stroke-width="1">
+        <path d="M 12,0 L 24,6 L 24,12 L 12,18 L 0,12 L 0,6 Z"/>
+      </g>
+    </pattern>
+
+    <pattern id="hexagonFine" width="40" height="34.641" patternUnits="userSpaceOnUse">
+      <g stroke="#6A00F4" stroke-opacity="0.12" fill="none" stroke-width="0.8">
+        <path d="M 10,0 L 20,5 L 20,10 L 10,15 L 0,10 L 0,5 Z"/>
+      </g>
+    </pattern>
+
+    <!-- Filters -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="13" result="noise"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.06"/>
+      </feComponentTransfer>
+      <feBlend mode="overlay" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="1920" height="480" fill="url(#cosmicBg)"/>
+  <rect width="1920" height="480" fill="url(#glowLeft)"/>
+  <rect width="1920" height="480" fill="#000000" opacity="0.2"/>
+
+  <!-- Tessellation layers -->
+  <rect width="1920" height="480" fill="url(#honeycombLarge)" opacity="0.4"/>
+  <rect width="1920" height="480" fill="url(#honeycombMedium)" opacity="0.25"/>
+  <rect width="1920" height="480" fill="url(#hexagonFine)" opacity="0.15"/>
+
+  <!-- Accent lines (geometric grid) -->
+  <g stroke="#F2C340" stroke-width="1.5" opacity="0.12">
+    <line x1="0" y1="60" x2="1920" y2="60"/>
+    <line x1="0" y1="180" x2="1920" y2="180"/>
+    <line x1="0" y1="300" x2="1920" y2="300"/>
+    <line x1="0" y1="420" x2="1920" y2="420"/>
+  </g>
+
+  <!-- ================================================================ -->
+  <!-- LEFT SIDE: 2 INTERLOCKING RINGS (70° rotation, tight geometric) -->
+  <!-- ================================================================ -->
+  <g transform="translate(200, 280) rotate(70)" opacity="0.35" filter="url(#glow)">
+    <!-- Left interlocking ring (cyan) -->
+    <circle cx="-35" cy="0" r="60" fill="none" stroke="#00D5C4" stroke-width="3"/>
+    <!-- Right interlocking ring (gold) -->
+    <circle cx="35" cy="0" r="60" fill="none" stroke="#F2C340" stroke-width="3"/>
+  </g>
+
+  <!-- ================================================================ -->
+  <!-- CENTER: INFINITY SYMBOL (resonance hint, 70° rotation)          -->
+  <!-- ================================================================ -->
+  <g transform="translate(960, 240) rotate(70)" opacity="0.12" filter="url(#glow)">
+    <!-- Top-left lobe -->
+    <path
+      d="M -120,-60 C -160,-60 -200,-30 -200,30 C -200,110 -160,150 -120,150 C -80,150 -40,110 -40,30 C -40,-30 -80,-60 -120,-60"
+      fill="none"
+      stroke="url(#infinityGrad)"
+      stroke-width="24"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Bottom-right lobe -->
+    <path
+      d="M 40,-60 C 0,-60 -40,-30 -40,30 C -40,110 0,150 40,150 C 80,150 120,110 120,30 C 120,-30 80,-60 40,-60"
+      fill="none"
+      stroke="url(#infinityGrad)"
+      stroke-width="24"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+
+  <!-- ================================================================ -->
+  <!-- RIGHT SIDE: RESONANCE PULSES (accent geometry)                  -->
+  <!-- ================================================================ -->
+  <g fill="none" opacity="0.15">
+    <circle cx="1700" cy="240" r="120" stroke="#00D5C4" stroke-width="1.5"/>
+    <circle cx="1700" cy="240" r="180" stroke="#F2C340" stroke-width="1.5"/>
+    <circle cx="1700" cy="240" r="240" stroke="#6A00F4" stroke-width="1"/>
+  </g>
+
+  <!-- ================================================================ -->
+  <!-- MATHEMATICAL ANNOTATIONS & BRANDING                             -->
+  <!-- ================================================================ -->
+  <g font-family="'Monaco', 'Courier New', monospace" font-size="11" fill="#F2C340" opacity="0.15" letter-spacing="1">
+    <text x="30" y="35">φ = 1.618...</text>
+    <text x="1820" y="460" text-anchor="end">∞ × Geometry</text>
+  </g>
+
+  <!-- Texture overlay -->
+  <rect width="1920" height="480" fill="none" filter="url(#grain)" opacity="0.8"/>
+</svg>

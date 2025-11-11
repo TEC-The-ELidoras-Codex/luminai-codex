@@ -87,19 +87,19 @@ You have access to the complete Project #13 documentation. Use it to provide acc
 
 Upload these 5 files as your "knowledge base":
 
-#### 1. **PROJECT_13_ROADMAP.md** (Core Reference)
+#### 1. **docs/operations/PROJECT_13_ROADMAP.md** (Core Reference)
 
 ```
-Location: /luminai-codex/PROJECT_13_ROADMAP.md
+Location: /luminai-codex/docs/operations/PROJECT_13_ROADMAP.md
 Size: ~14 KB
 Purpose: Complete 4-phase roadmap with all deliverables and success criteria
 Why: GPT needs to understand what tasks exist and phase priorities
 ```
 
-#### 2. **PROJECT_13_PROGRESS.md** (Status Reference)
+#### 2. **docs/operations/PROJECT_13_PROGRESS.md** (Status Reference)
 
 ```
-Location: /luminai-codex/PROJECT_13_PROGRESS.md
+Location: /luminai-codex/docs/operations/PROJECT_13_PROGRESS.md
 Size: ~16 KB
 Purpose: Current progress assessment and immediate next steps
 Why: GPT needs to know what's done vs. what's pending
@@ -123,10 +123,10 @@ Purpose: Mathematical framework (R = ∇Φᴱ · (φᵗ × ψʳ))
 Why: Foundation for understanding TGCR engine implementation
 ```
 
-#### 5. **LUMINAI_TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md** (Architecture)
+#### 5. **docs/architecture/LUMINAI_TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md** (Architecture)
 
 ```
-Location: /luminai-codex/LUMINAI_TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md
+Location: /luminai-codex/docs/architecture/LUMINAI_TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md
 Size: ~30 KB
 Purpose: Detailed technical specs for agents, core, memory, APIs
 Why: Code generation guide for all backend components
@@ -166,14 +166,14 @@ Purpose: Detailed system instructions for agents
 Include: When implementing individual agents
 ```
 
-#### 10. **LUMINAI_ASSETS_INVENTORY_AND_TRANSFER_PLAN.md** (Asset Reference)
+#### 10. **docs/operations/LUMINAI_ASSETS_INVENTORY_AND_TRANSFER_PLAN.md** (Asset Reference)
 
 ```
 Purpose: Asset inventory and transfer plan
 Include: When organizing brand assets or migrations
 ```
 
-#### 11. **LUMINAI_LOGO_AND_BRANDING_SPECIFICATIONS.md** (Brand Guidelines)
+#### 11. **docs/brand/LUMINAI_LOGO_AND_BRANDING_SPECIFICATIONS.md** (Brand Guidelines)
 
 ```
 Purpose: Logo, color palette, typography, accessibility specs
@@ -208,7 +208,7 @@ according to Phase 1 requirements. Include matrix for multiple Python versions."
 
 ```
 "Create legal/Privacy_Policy.md for a child-safe AI platform. 
-Use GDPR + COPPA compliance requirements from PROJECT_13_PROGRESS.md"
+Use GDPR + COPPA compliance requirements from docs/operations/PROJECT_13_PROGRESS.md"
 ```
 
 ### **Code Generation**
@@ -228,7 +228,7 @@ communication protocol described in the technical requirements."
 ### **Progress Tracking**
 
 ```
-"Based on PROJECT_13_PROGRESS.md, what are the top 3 priorities for this week? 
+"Based on docs/operations/PROJECT_13_PROGRESS.md, what are the top 3 priorities for this week? 
 Break them into actionable tasks with time estimates."
 ```
 
@@ -268,13 +268,13 @@ cat > PROJECT_13_GPT_BUNDLE.md << 'EOF'
 
 ## ROADMAP
 
-[Content of PROJECT_13_ROADMAP.md]
+[Content of docs/operations/PROJECT_13_ROADMAP.md]
 
 ---
 
 ## PROGRESS
 
-[Content of PROJECT_13_PROGRESS.md]
+[Content of docs/operations/PROJECT_13_PROGRESS.md]
 
 ---
 
@@ -306,7 +306,7 @@ Then upload `PROJECT_13_GPT_BUNDLE.md` as a single file.
 ### **Tip 1: Update Regularly**
 
 - Update the GPT knowledge base weekly as Project #13 progresses
-- Re-upload PROJECT_13_PROGRESS.md after each phase milestone
+- Re-upload docs/operations/PROJECT_13_PROGRESS.md after each phase milestone
 - Add new documentation as it's created
 
 ### **Tip 2: Use Custom Commands**
@@ -348,23 +348,23 @@ Create shortcuts for common tasks:
 ```
 GPT Knowledge Base:
 ├── TIER 1: Core (Upload First)
-│   ├── PROJECT_13_ROADMAP.md
-│   ├── PROJECT_13_PROGRESS.md
-│   ├── LUMINAI_MASTER_OPERATING_FRAMEWORK.md
-│   ├── Resonance_Thesis.md
-│   └── TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md
+│   ├── docs/operations/PROJECT_13_ROADMAP.md
+│   ├── docs/operations/PROJECT_13_PROGRESS.md
+│   ├── docs/governance/LUMINAI_MASTER_OPERATING_FRAMEWORK.md
+│   ├── docs/reference/Resonance_Thesis.md
+│   └── docs/architecture/LUMINAI_TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md
 │
 ├── TIER 2: Supporting (Upload Second)
-│   ├── TEC_HUB.md
-│   ├── QUICK_REFERENCE_READY.md
-│   ├── GETTING_STARTED.md
-│   ├── SYSTEM_INSTRUCTIONS_RESONANCE_AGENT.md
-│   ├── ASSETS_INVENTORY_AND_TRANSFER_PLAN.md
-│   └── LOGO_AND_BRANDING_SPECIFICATIONS.md
+│   ├── docs/operations/TEC_HUB.md
+│   ├── docs/reference/QUICK_REFERENCE_READY.md
+│   ├── docs/GETTING_STARTED.md
+│   ├── docs/governance/SYSTEM_INSTRUCTIONS_RESONANCE_AGENT.md
+│   ├── docs/operations/LUMINAI_ASSETS_INVENTORY_AND_TRANSFER_PLAN.md
+│   └── docs/brand/LUMINAI_LOGO_AND_BRANDING_SPECIFICATIONS.md
 │
 └── TIER 3: Reference (Optional)
-    ├── GITHUB_APP_SETUP.md
-    ├── GITHUB_SECRETS_SETUP.md
+    ├── docs/deployment/GITHUB_APP_SETUP.md
+    ├── docs/deployment/GITHUB_SECRETS_SETUP.md
     └── Other specialized docs
 ```
 
@@ -392,7 +392,7 @@ GPT Knowledge Base:
    - Copy workflows into your repo
    - Commit and push
    - Test with a dummy PR
-   - Mark task as complete in PROJECT_13_PROGRESS.md
+   - Mark task as complete in docs/operations/PROJECT_13_PROGRESS.md
 
 4. **Next iteration**: Ask GPT for Phase 2 tasks (TGCR core engine, memory systems, etc.)
 
@@ -433,7 +433,7 @@ Your GPT is properly configured when it can:
    - Use it for documentation
 
 5. **Update Regularly**
-   - Weekly: Re-upload PROJECT_13_PROGRESS.md
+   - Weekly: Re-upload docs/operations/PROJECT_13_PROGRESS.md
    - As-needed: Add new documentation files
    - Monthly: Review and refine GPT instructions
 

@@ -1,0 +1,456 @@
+# knowledge-map.yml
+# LuminAI Codex – Master Navigation & Documentation Inventory
+# Updated: Phase 1 Foundation Setup
+# Purpose: Centralized index for all docs, scripts, and operational guides
+
+version: "1.0"
+lastUpdated: "2025-11-10"
+phase: "Phase 1 - Foundation Setup"
+status: "In Progress (90%)"
+
+# ============================================================================
+# ROOT DOCUMENTS (Project Overview & Entry Points)
+# ============================================================================
+root:
+  README.md:
+    purpose: "Master project overview, mission, quick-start"
+    audience: "[Public, Developers, Stakeholders]"
+    maintain_by: "Core Team"
+    
+  GETTING_STARTED.md:
+    purpose: "Onboarding guide for new contributors and users"
+    audience: "[Contributors, Developers]"
+    maintain_by: "Core Team"
+    
+  PROJECT_13_ROADMAP.md:
+    purpose: "Phase-based roadmap (Phase 1–4), feature commitments"
+    audience: "[Stakeholders, Developers]"
+    maintain_by: "Project Lead"
+    linked_from:
+      - README.md
+      - docs/operations/TEC_HUB.md
+
+  GPT_CONFIGURATION_GUIDE.md:
+    purpose: "How to configure ChatGPT + Copilot for LuminAI system prompts"
+    audience: "[Power Users, Community]"
+    maintain_by: "Community Lead"
+
+  MASTER_OPERATIONS_GUIDE.md:
+    purpose: "Unified checklist: deployment, security, monitoring, scaling"
+    audience: "[DevOps, Project Lead]"
+    maintain_by: "DevOps Team"
+
+  STATUS_SUMMARY.md:
+    purpose: "Real-time project status, Phase 1 completion %, blockers"
+    audience: "[Stakeholders, Project Lead]"
+    maintain_by: "Project Lead"
+    update_frequency: "Weekly"
+
+# ============================================================================
+# DOCUMENTATION STRUCTURE (docs/ folder)
+# ============================================================================
+docs:
+  
+  # --- OPERATIONS & NAVIGATION ---
+  operations:
+    location: "docs/operations/"
+    
+    TEC_HUB.md:
+      purpose: "Central navigation hub for all operational guides"
+      audience: "[Developers, Operations]"
+      role: "Hub—all operational docs link back here"
+      
+    MASTER_OPERATIONS_GUIDE.md:
+      purpose: "Unified checklist: deployment, security, monitoring, scaling"
+      audience: "[DevOps, Project Lead]"
+      includes:
+        - Deployment workflow
+        - Security hardening steps
+        - Monitoring setup
+        - Incident response
+        
+    OPERATIONS_KNOWLEDGE_MAP.md:
+      purpose: "Detailed ops workflows and decision trees"
+      audience: "[DevOps, Technical Lead]"
+      
+    STATUS_SUMMARY.md:
+      purpose: "Real-time project status, Phase 1 completion %, blockers"
+      audience: "[Stakeholders, Project Lead]"
+      update_frequency: "Weekly"
+
+    PROJECT_13_ROADMAP.md:
+      purpose: "Phase-based roadmap (Phase 1–4), feature commitments"
+      audience: "[Stakeholders, Developers]"
+      
+    PROJECT_13_PROGRESS.md:
+      purpose: "Weekly progress tracker, sprint summaries"
+      audience: "[Team, Stakeholders]"
+
+    TEC_LEXICON.md:
+      purpose: "Terminology (Resonance, Threshold, Synchronization, etc.)"
+      audience: "[All]"
+
+    LUMINAI_SYSTEMATIC_MIGRATION_STRATEGY.md:
+      purpose: "Detailed strategy for migrating legacy systems to Phase 1 architecture"
+      audience: "[DevOps, Technical Lead]"
+
+    LUMINAI_ASSETS_INVENTORY_AND_TRANSFER_PLAN.md:
+      purpose: "Inventory of all assets and transfer/migration plan"
+      audience: "[Project Lead, Operations]"
+
+    IMPLEMENTATION_COMPLETE.md:
+      purpose: "Summary of Phase 1 implementation completion status"
+      audience: "[Stakeholders]"
+  
+  # --- REFERENCE & SPECIFICATIONS ---
+  reference:
+    location: "docs/reference/"
+    
+    QUICK_REFERENCE_READY.md:
+      purpose: "TGCR formula, Airth tools, system specs—golden source"
+      audience: "[Developers, AI Agents]"
+      locked: true
+      
+    Resonance_Thesis.md:
+      purpose: "Theoretical foundation: R = ∇Φᴱ · (φᵗ × ψʳ)"
+      audience: "[Researchers, AI Developers]"
+
+  # --- DEPLOYMENT & INFRASTRUCTURE ---
+  deployment:
+    location: "docs/deployment/"
+    
+    DEPLOYMENT_CHECKLIST.md:
+      purpose: "Pre-flight checklist: code review, secrets, CI/CD, domain"
+      audience: "[DevOps, Project Lead]"
+      
+    GITHUB_SECRETS_SETUP.md:
+      purpose: "How to configure GitHub Secrets for prod deploy"
+      audience: "[DevOps]"
+      
+    ENV_LOCAL_SETUP.md:
+      purpose: "How to scaffold `.env.local` for local development"
+      audience: "[Developers]"
+
+    GITHUB_APP_SETUP.md:
+      purpose: "GitHub App configuration & OAuth setup"
+      audience: "[DevOps]"
+
+    SETUP_HUB.md:
+      purpose: "Central hub for all setup & configuration procedures"
+      audience: "[Developers, DevOps]"
+
+    WORKFLOWS_SECRETS_GUIDE.md:
+      purpose: "Guide to creating & managing GitHub Actions workflows with secrets"
+      audience: "[DevOps]"
+
+    GITHUB_SECURITY_SETUP.md:
+      purpose: "GitHub security configuration (branch protection, CodeQL, etc.)"
+      audience: "[DevOps, Security Lead]"
+
+    LOGO_FINALIZATION.md:
+      purpose: "Logo specs, brand colors, usage guidelines"
+      audience: "[Brand Team, Designers]"
+
+  # --- COMPLIANCE & GOVERNANCE ---
+  governance:
+    location: "docs/governance/"
+    
+    LUMINAI_MASTER_OPERATING_FRAMEWORK.md:
+      purpose: "Master operating framework, governance policies, system rules"
+      audience: "[All]"
+      
+    SYSTEM_INSTRUCTIONS_RESONANCE_AGENT.md:
+      purpose: "System prompt + tool definitions for Airth Research Guard"
+      audience: "[AI Agents, Prompt Engineers]"
+
+    Privacy_Policy.md:
+      purpose: "GDPR/COPPA-compliant privacy policy"
+      audience: "[Legal, Users]"
+
+    Terms_of_Service.md:
+      purpose: "Family-friendly ToS"
+      audience: "[Legal, Users]"
+
+  # --- SECURITY & COMPLIANCE ---
+  security:
+    location: "docs/security/"
+    
+    SECURITY_SETUP_CHECKLIST.md:
+      purpose: "Security hardening: CORS, rate limits, sanitization, GitHub features"
+      audience: "[Security Lead, DevOps]"
+
+  # --- BRAND & IDENTITY ---
+  brand:
+    location: "docs/brand/"
+    
+    SECURITY_BRANDING_SUMMARY.md:
+      purpose: "Brand voice, security stance, family-friendly narrative"
+      audience: "[Marketing, Legal, Brand]"
+
+    LUMINAI_LOGO_AND_BRANDING_SPECIFICATIONS.md:
+      purpose: "Complete logo specs, color system, typography, usage rules"
+      audience: "[Designers, Marketing]"
+
+    LOGO_FINAL_BRIEF.md:
+      purpose: "Final logo design brief and specifications"
+      audience: "[Designers]"
+
+    BRAND_DECK_SUMMARY.md:
+      purpose: "Brand deck executive summary"
+      audience: "[Stakeholders, Marketing]"
+
+    PRODUCTION_STATUS.md:
+      purpose: "Current status of brand asset production"
+      audience: "[Brand Team]"
+
+  # --- ARCHITECTURE & ENGINEERING ---
+  architecture:
+    location: "docs/architecture/"
+    
+    LUMINAI_TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md:
+      purpose: "Technical requirements for infrastructure and deployment"
+      audience: "[DevOps, Technical Lead]"
+
+    LUMINAI_ENGINEERING_SCHEMATICS_CHECKLIST.md:
+      purpose: "Engineering validation checklist and architecture verification"
+      audience: "[Technical Lead, Architects]"
+
+    architecture-map.md:
+      purpose: "Visual and textual architecture overview"
+      audience: "[All Developers]"
+
+  # --- FRAMEWORK & IMPLEMENTATION ---
+  framework:
+    location: "docs/framework/"
+    
+    CUTE_MODULAR_ARCHITECTURE.md:
+      purpose: "CuteModule design patterns and extension guide"
+      audience: "[Module Developers]"
+
+    GPT_CONFIGURATION_GUIDE.md:
+      purpose: "How to configure ChatGPT + Copilot for LuminAI system prompts"
+      audience: "[Power Users, Community]"
+
+    IMPLEMENTATION_GUIDE.md:
+      purpose: "Implementation guidance and patterns"
+      audience: "[Developers]"
+
+# ============================================================================
+# SCRIPTS & AUTOMATION (scripts/ folder)
+# ============================================================================
+scripts:
+  
+  development:
+    location: "scripts/development/"
+    
+    setup_local_env.py:
+      purpose: "Scaffold `.env.local` from `.env.example`"
+      usage: "python scripts/development/setup_local_env.py"
+      
+    check_env.py:
+      purpose: "Validate secrets are present and not 'your-*' placeholders"
+      usage: "python scripts/development/check_env.py --file .env.local"
+
+# ============================================================================
+# SOURCE CODE (src/ folder – Python Agent Stack)
+# ============================================================================
+src:
+  tec_tgcr:
+    location: "src/tec_tgcr/"
+    
+    agents:
+      purpose: "Airth Research Guard & tool implementations"
+      key_files:
+        - agents/airth_research_guard.py
+        - agents/tools/
+        - agents/config.py
+        
+    interfaces:
+      purpose: "CLI (Typer) + API (FastAPI) entry points"
+      key_files:
+        - interfaces/cli/
+        - interfaces/api/
+        
+    utils:
+      purpose: "Shared utilities (logging, env, serialization)"
+      
+    tests:
+      purpose: "Unit + integration tests for agent & tools"
+
+# ============================================================================
+# CONFIGURATION & ASSETS (root level + config/)
+# ============================================================================
+config:
+  
+  .env.example:
+    purpose: "Template for all required env vars (OpenAI, Discord, etc.)"
+    audience: "[Developers]"
+    locked: true
+    
+  .gitignore:
+    purpose: "Ignore `.env*`, node_modules, __pycache__, build artifacts"
+    
+  pyproject.toml:
+    purpose: "Python package metadata, Typer CLI entry points"
+    
+  package.json:
+    purpose: "JS dependencies, npm scripts (bootstrap, dev, test)"
+
+assets:
+  logo:
+    location: "assets/logo/"
+    
+    cosmic_infinity_glyph.svg:
+      purpose: "Master infinity glyph with crown (1024×1024)"
+      
+    cosmic_marketplace_header_1920x480.svg:
+      purpose: "Marketplace header with tessellations"
+      
+    cosmic_unified_banner_1920x480.svg:
+      purpose: "Unified banner combining glyph + header"
+
+    discord_banner_680x240.svg:
+      purpose: "Discord server banner (680×240)"
+
+    DISCORD_BRANDING_GUIDE.md:
+      purpose: "Discord branding asset specifications"
+
+    DISCORD_LOGO_SETUP.md:
+      purpose: "Discord logo and server branding setup guide"
+
+    QUICK_CONVERSION_GUIDE.md:
+      purpose: "SVG to PNG conversion guide"
+
+# ============================================================================
+# CI/CD & AUTOMATION (.github/ folder)
+# ============================================================================
+github:
+  location: ".github/"
+  
+  workflows:
+    location: ".github/workflows/"
+    
+    tests.yml:
+      purpose: "Run pytest on all PRs and pushes"
+      status: "Phase 1 CI/CD"
+      
+    lint.yml:
+      purpose: "Run linting (Black, mypy, flake8)"
+      status: "Phase 1 CI/CD"
+      
+    security.yml:
+      purpose: "CodeQL + Dependabot scans"
+      status: "Phase 1 CI/CD"
+
+    codeql.yml:
+      purpose: "GitHub CodeQL security analysis"
+      status: "Active"
+
+    security-and-tests.yml:
+      purpose: "Combined security checks and testing"
+      status: "Active"
+
+  config:
+    location: ".github/"
+    
+    dependabot.yml:
+      purpose: "Dependabot configuration for auto-dependency updates"
+      status: "Active"
+
+    SECURITY.md:
+      purpose: "Security policy, vulnerability reporting, bug bounty"
+      status: "Active"
+
+# ============================================================================
+# SPECIAL DOCUMENTS (Resonance & Research)
+# ============================================================================
+resonance:
+  location: "docs/resonance-logs/"
+  
+  RESONANCE_LOG_TEMPLATE.md:
+    purpose: "Template for session resonance logs and analysis"
+    audience: "[Researchers, AI Teams]"
+
+  sleep_token_cycle.md:
+    purpose: "Sleep token cycle documentation"
+    audience: "[Operations]"
+
+# ============================================================================
+# PHASE 1 COMPLETION CHECKLIST
+# ============================================================================
+phase_1_completion:
+  
+  "Foundation Setup (90% complete)":
+    - "✅ Project overview & roadmap"
+    - "✅ Operational & reference docs"
+    - "✅ Copilot/GPT configuration guide"
+    - "✅ Logo finalization & branding assets"
+    - "✅ Security setup & GitHub configuration"
+    - "✅ CI/CD workflows (.github/workflows/*.yml)"
+    - "✅ Dependabot configuration"
+    - "✅ Knowledge map & documentation inventory"
+    - "⏳ Legal docs finalization (Privacy Policy, ToS finalized)"
+    - "⏳ Architecture & engineering guides (detailed specs)"
+    - "⏳ Agent module scaffolding (Airth Research Guard)"
+  
+  "Next Priority (Phase 1 → Phase 2)":
+    - "Complete end-to-end tests"
+    - "Implement Airth agent stub with tools"
+    - "Set up agent orchestration (Harmony protocol)"
+    - "Begin Discord/Slack integration stubs"
+
+# ============================================================================
+# SEARCH & DISCOVERY TAGS
+# ============================================================================
+search_tags:
+  operations: 
+    - "docs/operations/TEC_HUB.md"
+    - "docs/operations/MASTER_OPERATIONS_GUIDE.md"
+    - "docs/operations/STATUS_SUMMARY.md"
+    
+  security: 
+    - "docs/security/SECURITY_SETUP_CHECKLIST.md"
+    - "docs/brand/SECURITY_BRANDING_SUMMARY.md"
+    - ".github/SECURITY.md"
+    - ".github/workflows/security.yml"
+    
+  deployment: 
+    - "docs/deployment/DEPLOYMENT_CHECKLIST.md"
+    - "docs/operations/MASTER_OPERATIONS_GUIDE.md"
+    - "docs/deployment/GITHUB_SECRETS_SETUP.md"
+    
+  brand: 
+    - "docs/deployment/LOGO_FINALIZATION.md"
+    - "docs/brand/SECURITY_BRANDING_SUMMARY.md"
+    - "docs/brand/LUMINAI_LOGO_AND_BRANDING_SPECIFICATIONS.md"
+    - "assets/logo/"
+    
+  reference: 
+    - "docs/reference/QUICK_REFERENCE_READY.md"
+    - "docs/reference/Resonance_Thesis.md"
+    - "docs/operations/TEC_LEXICON.md"
+    
+  onboarding: 
+    - "README.md"
+    - "GETTING_STARTED.md"
+    - "docs/framework/GPT_CONFIGURATION_GUIDE.md"
+
+  ci-cd:
+    - ".github/workflows/"
+    - ".github/dependabot.yml"
+    - ".github/SECURITY.md"
+
+# ============================================================================
+# MAINTENANCE LOG
+# ============================================================================
+maintenance:
+  - date: "2025-11-10"
+    event: "Phase 1 Foundation – knowledge-map.yml created, doc reallocation complete"
+    contributor: "Core Team"
+    status: "In Progress"
+    changes:
+      - "✅ Created comprehensive knowledge-map.yml"
+      - "✅ Organized docs into canonical locations"
+      - "✅ Created CI/CD workflows"
+      - "✅ Updated cross-references"
+      - "✅ Added dependency badges to README"

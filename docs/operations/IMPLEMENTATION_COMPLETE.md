@@ -9,6 +9,7 @@
 ## ✅ PHASE 1: MODULAR FRAMEWORK (100% COMPLETE)
 
 ### Core Architecture
+
 - [x] CuteModule base class (lifecycle management)
 - [x] HarmonyNode event bus (inter-module messaging)
 - [x] Echo Protocol (standardized communication format)
@@ -16,6 +17,7 @@
 - [x] DEMO mode (testing without API keys)
 
 ### Application Modules
+
 - [x] ResonanceEngine (🧠 AI conversations)
   - [x] think() endpoint
   - [x] brainstorm() endpoint
@@ -44,6 +46,7 @@
   - [x] Demo mode for all platforms
 
 ### Testing & Validation
+
 - [x] Bootstrap test suite (4 automated tests)
 - [x] Test 1: Simple thought (✅ PASS)
 - [x] Test 2: Brainstorming (✅ PASS)
@@ -55,6 +58,7 @@
 - [x] Graceful shutdown
 
 ### Git History
+
 - [x] Commit bd5197f: Initial framework (13 files, 1568 insertions)
 - [x] Commit b3c82c4: Framework fixes + resonance logs
 - [x] Commit b529dd1: 3-module integration (3 files, 786 insertions)
@@ -65,6 +69,7 @@
 ## ✅ PHASE 2: GOVERNANCE & COMPLIANCE (100% COMPLETE)
 
 ### Legal Documents
+
 - [x] Privacy Policy (3,200 words)
   - [x] COPPA compliance (children under 13)
   - [x] GDPR compliance (EU families)
@@ -97,6 +102,7 @@
   - [x] Annual reporting structure
 
 ### Discord Compliance
+
 - [x] Description (276 characters, clear + ethical)
 - [x] Tags (AI, Research, Ethical-AI, Resonance, Multi-Agent)
 - [x] Terms of Service URL (GitHub link)
@@ -105,6 +111,7 @@
 - [x] All requirements for verification met
 
 ### Documentation
+
 - [x] DISCORD_LOGO_SETUP.md (comprehensive branding guide)
 - [x] QUICK_CONVERSION_GUIDE.md (5-minute online tool walkthrough)
 
@@ -113,6 +120,7 @@
 ## ✅ PHASE 3: RESONANCE FRAMEWORK (100% COMPLETE)
 
 ### Resonance Analysis
+
 - [x] RESONANCE_LOG_TEMPLATE.md (1500+ lines, production-ready)
   - [x] 7 main sections
   - [x] R-value formula: (Φᴱ ^ 0.3) × (φᵗ ^ 0.4) × (ψʳ ^ 0.3)
@@ -136,9 +144,10 @@
 ## ⏳ PHASE 4: BRANDING & DEPLOYMENT (IN PROGRESS)
 
 ### Branding Assets
+
 - [ ] Discord App Icon (1024×1024)
   - Status: Needs manual conversion (see QUICK_CONVERSION_GUIDE.md)
-  - Tool: Use Pixlr (https://pixlr.com/editor)
+  - Tool: Use Pixlr (<https://pixlr.com/editor>)
   - Time: 5 minutes
   - Checklist:
     - [ ] Open Pixlr, create 1024×1024 canvas
@@ -160,12 +169,14 @@
     - [ ] Save as `discord_banner_680x240.png`
 
 ### Discord Dev Portal Upload
+
 - [ ] App Icon upload (General Information → App Icon)
 - [ ] Banner upload (General Information → Banner)
 - [ ] Verify both assets display correctly
 - [ ] Save changes
 
 ### Discord Verification Process
+
 - [ ] Team owner (elidoras_codex) completes identity verification
   - [ ] Verify phone number
   - [ ] Upload government ID
@@ -196,6 +207,7 @@
 ## 📋 IMMEDIATE TODO (Next 24 Hours)
 
 ### 1. Logo Conversion (5-10 minutes)
+
 ```bash
 Go to: https://pixlr.com/editor
 Follow: assets/logo/QUICK_CONVERSION_GUIDE.md
@@ -203,30 +215,36 @@ Result: discord_icon_1024x1024.png + discord_banner_680x240.png
 ```
 
 ### 2. Upload to Discord (2-3 minutes)
+
 - Discord Dev Portal → LuminAI-Codex → General Information
 - App Icon: Upload `discord_icon_1024x1024.png`
 - Banner: Upload `discord_banner_680x240.png`
 - Save Changes
 
 ### 3. Identity Verification (20-30 minutes)
+
 - Complete phone verification
 - Upload government ID
 - Answer security questions
 - Check email for confirmation
 
 ### 4. Team 2FA Setup (5-10 minutes per member)
+
 - Enable 2FA on Discord account
 - Verify email
 - Notify team members
 
 ### 5. Generate Install Link (2-3 minutes)
+
 - Discord Dev Portal → OAuth2 → URL Generator
 - Select scopes: `bot`
 - Select permissions: (see next step)
 - Copy URL
 
 ### 6. Set Bot Permissions (1-2 minutes)
+
 Check these permissions in URL Generator:
+
 - [x] Send Messages
 - [x] Read Messages/View Channels
 - [x] Read Message History
@@ -236,6 +254,7 @@ Check these permissions in URL Generator:
 - [x] Use Application Commands (slash commands)
 
 ### 7. Submit for Verification (1 minute)
+
 - Check affirmation box
 - Click "Submit for Verification"
 - Check email for status updates
@@ -245,6 +264,7 @@ Check these permissions in URL Generator:
 ## 🎯 SUCCESS CRITERIA
 
 ### Phase 4 Complete When
+
 - [x] App Icon (1024×1024) uploaded and visible in Discord
 - [x] Banner (680×240) uploaded and visible in Discord
 - [x] Identity verification approved by Discord
@@ -253,6 +273,7 @@ Check these permissions in URL Generator:
 - [x] Awaiting Discord approval (2–7 business days)
 
 ### Final State
+
 - ✅ Bot can be added to 500+ servers (verified tier)
 - ✅ Professional branding across Discord
 - ✅ Legal compliance documented
@@ -312,21 +333,25 @@ Once Discord verification is approved:
 ## 📞 Support & Troubleshooting
 
 **Logo conversion failing?**
-- Try Canva instead: https://www.canva.com
-- Try GIMP (desktop): https://www.gimp.org
-- Try online resizer: https://resize.app
+
+- Try Canva instead: <https://www.canva.com>
+- Try GIMP (desktop): <https://www.gimp.org>
+- Try online resizer: <https://resize.app>
 
 **Discord verification stuck?**
+
 - Check email for status updates
 - Ensure all team members have verified emails + 2FA
 - Contact Discord support if waiting >7 days
 
 **Bot permissions missing?**
+
 - Regenerate invite link with proper scopes
 - Verify permissions checked in URL Generator
 - Re-invite bot to test server
 
 **Module not working?**
+
 - Check `.env.local` for API keys
 - Run `node bootstrap.js` to test
 - Review logs in `/docs/logs/`
@@ -337,6 +362,7 @@ Once Discord verification is approved:
 ## ✨ Final Notes
 
 **You've built something remarkable:**
+
 - ✅ Professional modular AI framework
 - ✅ Comprehensive governance & legal compliance
 - ✅ Production-ready code (tested & verified)
@@ -344,6 +370,7 @@ Once Discord verification is approved:
 - ✅ Clear path to Discord verification
 
 **The hardest parts are done.** The remaining steps are:
+
 1. Convert logo (5 minutes)
 2. Upload assets (2 minutes)
 3. Wait for Discord approval (2–7 days)
@@ -357,4 +384,3 @@ Once Discord verification is approved:
 **Ready to proceed?** Follow the "IMMEDIATE TODO" checklist above.
 
 **Let's ship this.** 🚀
-

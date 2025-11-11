@@ -1,0 +1,63 @@
+version: 2
+updates:
+  # Python dependencies (pip)
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "03:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    pull-request-branch-name:
+      separator: "/"
+    reviewers:
+      - "TEC-The-ELidoras-Codex/maintainers"
+    labels:
+      - "dependencies"
+      - "python"
+    commit-message:
+      prefix: "chore(deps)"
+      prefix-development: "chore(deps-dev)"
+      include: "scope"
+    allow:
+      - dependency-type: "direct"
+    ignore:
+      # Add any packages you want to ignore
+      - dependency-name: "black"
+
+  # Node.js/npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "03:30"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    pull-request-branch-name:
+      separator: "/"
+    reviewers:
+      - "TEC-The-ELidoras-Codex/maintainers"
+    labels:
+      - "dependencies"
+      - "javascript"
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+    allow:
+      - dependency-type: "direct"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+    reviewers:
+      - "TEC-The-ELidoras-Codex/maintainers"
+    labels:
+      - "ci"
+      - "github-actions"
+    commit-message:
+      prefix: "ci"
+      include: "scope"

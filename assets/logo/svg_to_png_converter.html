@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG to PNG Converter - Cosmic Infinity Glyph</title>
+    <style>
+        body {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: linear-gradient(135deg, #0D0D11 0%, #1A1A1E 100%);
+            color: #F2C340;
+            padding: 40px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(26, 26, 30, 0.8);
+            border: 2px solid #00D5C4;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #00D5C4;
+            margin-top: 0;
+        }
+        .preview {
+            background: #000000;
+            border: 1px solid #6A00F4;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+            max-height: 400px;
+            overflow: auto;
+        }
+        button {
+            background: linear-gradient(135deg, #F2C340 0%, #00D5C4 100%);
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: inherit;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        .size-group {
+            margin: 15px 0;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .status.success {
+            background: #00D5C4;
+            color: #000;
+        }
+        .status.error {
+            background: #FF6B6B;
+            color: #FFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌌 Cosmic Infinity Glyph</h1>
+        <p>SVG to PNG Converter</p>
+        
+        <div class="preview" id="preview"></div>
+        
+        <div class="size-group">
+            <h3>Export Sizes:</h3>
+            <button onclick="exportPNG(1024, '1024×1024 (Discord Icon)')">1024×1024</button>
+            <button onclick="exportPNG(512, '512×512 (Thumbnail)')">512×512</button>
+            <button onclick="exportPNG(2048, '2048×2048 (Print)')">2048×2048</button>
+        </div>
+        
+        <div id="status"></div>
+    </div>
+
+    <script>
+        // Load and display SVG
+        async function loadSVG() {
+            try {
+                const response = await fetch('cosmic_infinity_glyph.svg');
+                const svgText = await response.text();
+                document.getElementById('preview').innerHTML = svgText;
+            } catch (e) {
+                document.getElementById('preview').innerHTML = '<p style="color: #FF6B6B;">Failed to load SVG</p>';
+            }
+        }
+
+        function exportPNG(size, label) {
+            const status = document.getElementById('status');
+            status.innerHTML = '⏳ Exporting...';
+            status.className = '';
+
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+
+            // Get SVG element
+            const svgElement = document.querySelector('svg');
+            if (!svgElement) {
+                status.innerHTML = '❌ SVG not loaded';
+                status.className = 'status error';
+                return;
+            }
+
+            // Create image from SVG
+            const svgData = new XMLSerializer().serializeToString(svgElement);
+            const svgBlob = new Blob([svgData], { type: 'image/svg+xml' });
+            const svgUrl = URL.createObjectURL(svgBlob);
+
+            const img = new Image();
+            img.onload = function() {
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(0, 0, size, size);
+                ctx.drawImage(img, 0, 0, size, size);
+                
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = `cosmic_infinity_glyph_${size}x${size}.png`;
+                    link.click();
+                    URL.revokeObjectURL(url);
+                    
+                    status.innerHTML = `✅ Exported: ${label}`;
+                    status.className = 'status success';
+                });
+            };
+
+            img.onerror = function() {
+                status.innerHTML = '❌ Failed to render SVG';
+                status.className = 'status error';
+            };
+
+            img.src = svgUrl;
+        }
+
+        // Load SVG on page load
+        loadSVG();
+    </script>
+</body>
+</html>

@@ -356,7 +356,7 @@ All documentation is in place. The security policy is live. The branding guide i
 | **Set up secrets** | WORKFLOWS_SECRETS_GUIDE.md | `docs/deployment/` |
 | **Local dev setup** | ENV_LOCAL_SETUP.md | `docs/` |
 | **AI Agent details** | copilot-instructions.md | `.github/` |
-| **Full status** | STATUS_SUMMARY.md | Root |
+| **Full status** | docs/operations/STATUS_SUMMARY.md | Root |
 
 ---
 

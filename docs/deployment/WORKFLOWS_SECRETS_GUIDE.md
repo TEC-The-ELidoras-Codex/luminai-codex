@@ -22,6 +22,7 @@
 ## 🎯 Overview
 
 LuminAI Codex uses GitHub Actions for:
+
 - **Testing**: Automated test runs on PR + push
 - **Security**: CodeQL scanning, secret scanning, Dependabot checks
 - **Deployment**: Discord verification, container builds, environment setup
@@ -43,6 +44,7 @@ LuminAI Codex uses GitHub Actions for:
 ### **Required Secrets for LuminAI Codex**
 
 #### **AI Service Credentials** 🧠
+
 ```
 OPENAI_API_KEY = sk-proj-... (from OpenAI dashboard)
 OPENAI_ORG_ID = org-... (optional, for org-level usage)
@@ -53,6 +55,7 @@ XAI_API_KEY = xai-... (from xAI dashboard)
 ```
 
 #### **Discord Bot** 🤖
+
 ```
 DISCORD_BOT_TOKEN = bot's token (from Discord Developer Portal)
 DISCORD_CLIENT_ID = app ID (from Discord Developer Portal)
@@ -60,6 +63,7 @@ DISCORD_CLIENT_SECRET = secret (from Discord Developer Portal)
 ```
 
 #### **GitHub Integration** 🐙
+
 ```
 GITHUB_APP_ID = 2186310 (from GitHub App settings)
 GITHUB_APP_CLIENT_ID = Iv23li... (from GitHub App settings)
@@ -70,6 +74,7 @@ GITHUB_APP_INSTALLATION_ID = auto-populated after app install
 ```
 
 #### **External Integrations** 🌐
+
 ```
 NOTION_API_KEY = ntn_... (from Notion dashboard)
 SLACK_BOT_TOKEN = xoxb-... (from Slack workspace)
@@ -79,6 +84,7 @@ WORLDANVIL_API_KEY = ... (from WorldAnvil dashboard)
 ```
 
 #### **Security & Database** 🔒
+
 ```
 SESSION_SECRET = generate: openssl rand -base64 32
 JWT_SECRET = generate: openssl rand -base64 32
@@ -87,6 +93,7 @@ POSTGRES_PASSWORD = your-database-password
 ```
 
 #### **Deployment & Infrastructure** 🚀
+
 ```
 DOCKER_USERNAME = your Docker Hub username
 DOCKER_PASSWORD = your Docker Hub token
@@ -470,6 +477,7 @@ For sensitive workflows (deployments), enable environment reviews:
 ### **Rotation Procedure**
 
 1. **Generate new secret**:
+
    ```bash
    # For secrets like SESSION_SECRET:
    openssl rand -base64 32
@@ -501,7 +509,7 @@ If a secret is **leaked or compromised**:
 2. **Immediately** revoke on external service (if needed)
 3. **Check logs** for unauthorized access
 4. **Audit** any resources created with old secret
-5. **Alert** security team: security@luminai-codex.dev
+5. **Alert** security team: <security@luminai-codex.dev>
 6. **Document** incident per `.github/SECURITY.md`
 
 ---
@@ -509,6 +517,7 @@ If a secret is **leaked or compromised**:
 ## ✅ Best Practices
 
 ### **DO** ✅
+
 - ✅ Use GitHub Secrets for all credentials
 - ✅ Rotate secrets quarterly
 - ✅ Use pinned action versions (e.g., `@v4.1.1`)
@@ -520,6 +529,7 @@ If a secret is **leaked or compromised**:
 - ✅ Enable branch protection rules
 
 ### **DON'T** ❌
+
 - ❌ Hard-code secrets in code (`.env`, config files)
 - ❌ Commit `.env` or `.env.local` to Git
 - ❌ Echo secrets to logs: `echo $MY_SECRET` ❌
@@ -543,16 +553,16 @@ If a secret is **leaked or compromised**:
 - [ ] Production environment has approval rules
 - [ ] Secret rotation schedule documented
 - [ ] Incident response procedure known
-- [ ] Security contact known: security@luminai-codex.dev
+- [ ] Security contact known: <security@luminai-codex.dev>
 
 ---
 
 ## 🔗 Resources
 
-- **GitHub Secrets Docs**: https://docs.github.com/en/actions/security-guides/encrypted-secrets
-- **GitHub Actions**: https://docs.github.com/en/actions
-- **Dependabot**: https://docs.github.com/en/code-security/dependabot
-- **CodeQL**: https://codeql.github.com/docs/
+- **GitHub Secrets Docs**: <https://docs.github.com/en/actions/security-guides/encrypted-secrets>
+- **GitHub Actions**: <https://docs.github.com/en/actions>
+- **Dependabot**: <https://docs.github.com/en/code-security/dependabot>
+- **CodeQL**: <https://codeql.github.com/docs/>
 - **Security Policy**: `.github/SECURITY.md`
 - **Local Setup**: `docs/ENV_LOCAL_SETUP.md`
 
@@ -564,9 +574,8 @@ Questions about workflows or secrets?
 
 1. Check: `docs/deployment/GITHUB_SECRETS_SETUP.md`
 2. Check: `.github/copilot-instructions.md`
-3. Email: security@luminai-codex.dev
+3. Email: <security@luminai-codex.dev>
 
 ---
 
 **Status**: Ready to implement workflows. Next step: Create `.github/workflows/` directory and add recommended workflow files.
-

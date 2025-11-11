@@ -25,7 +25,8 @@ Status: ✅ Enabled
 ```
 
 **Next Steps**:
-- Review alerts weekly: https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security/dependabot
+
+- Review alerts weekly: <https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security/dependabot>
 - Create `.github/dependabot.yml` (see WORKFLOWS_SECRETS_GUIDE.md)
 - Enable auto-merge for minor updates (optional)
 
@@ -42,6 +43,7 @@ Status: ✅ Enabled
 ```
 
 **Next Steps**:
+
 - Review Dependabot PRs before merge
 - Set schedule in `.github/dependabot.yml`
 - Configure auto-merge rules
@@ -59,11 +61,13 @@ Status: ❌ Disabled (ENABLE THIS)
 ```
 
 **To Enable**:
+
 1. Click: `Settings → Code Security & Analysis → Secret Scanning`
 2. Toggle: `Enable secret scanning`
 3. That's it! GitHub scans on every push
 
 **Benefits**:
+
 - Detects OpenAI keys, Discord tokens, GitHub secrets, etc.
 - Sends alerts immediately
 - Allows you to rotate compromised secrets
@@ -81,6 +85,7 @@ Status: ❌ Disabled (OPTIONAL - RECOMMENDED)
 ```
 
 **To Enable**:
+
 1. Click: `Settings → Code Security & Analysis → Push Protection`
 2. Toggle: `Enable push protection for users`
 3. Now: Prevents accidental secret pushes (blocks commit)
@@ -100,6 +105,7 @@ Status: ❌ Needs setup (ENABLE THIS)
 ```
 
 **To Enable (CodeQL)**:
+
 1. Go to: `Settings → Code Security & Analysis → Code Scanning`
 2. Click: `Set up CodeQL`
 3. Choose: Default setup (easier) or Advanced setup
@@ -107,6 +113,7 @@ Status: ❌ Needs setup (ENABLE THIS)
 5. Commit and enable
 
 **What it Scans**:
+
 - SQL Injection vulnerabilities
 - XSS (Cross-Site Scripting)
 - Path traversal bugs
@@ -142,12 +149,14 @@ Status: ❌ Disabled (ENABLE THIS)
 ```
 
 **To Enable**:
+
 1. Go to: `Settings → Code Security & Analysis → Private Vulnerability Reporting`
 2. Toggle: `Enable private vulnerability reporting`
 3. Now: GitHub security researchers can submit private reports
 4. You receive reports at: `security@luminai-codex.dev`
 
 **Benefits**:
+
 - Responsible disclosure
 - Coordinated release
 - GitHub researcher incentives
@@ -193,7 +202,7 @@ Run through GitHub UI and enable:
 
 ### **Step 1: Enable Secret Scanning** (1 minute)
 
-1. Go to: https://github.com/TEC-The-ELidoras-Codex/luminai-codex/settings/security_analysis
+1. Go to: <https://github.com/TEC-The-ELidoras-Codex/luminai-codex/settings/security_analysis>
 2. Scroll to: "Secret scanning"
 3. Click: "Enable"
 4. ✅ Done
@@ -248,41 +257,46 @@ Run through GitHub UI and enable:
 
 | Setting | URL |
 |---------|-----|
-| **Security Dashboard** | https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security |
-| **Dependabot Alerts** | https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security/dependabot |
-| **Security Advisories** | https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security/advisories |
-| **Code Scanning Alerts** | https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security/code-scanning |
-| **Settings Page** | https://github.com/TEC-The-ELidoras-Codex/luminai-codex/settings/security_analysis |
+| **Security Dashboard** | <https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security> |
+| **Dependabot Alerts** | <https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security/dependabot> |
+| **Security Advisories** | <https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security/advisories> |
+| **Code Scanning Alerts** | <https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security/code-scanning> |
+| **Settings Page** | <https://github.com/TEC-The-ELidoras-Codex/luminai-codex/settings/security_analysis> |
 
 ---
 
 ## 🎯 What Each Setting Does
 
 ### **Secret Scanning** 🔐
+
 **Looks for**: API keys, tokens, credentials  
 **Triggers**: When you try to push  
 **Action**: GitHub notifies you, suggests rotation  
 **Example**: If you accidentally commit `OPENAI_API_KEY=sk-...`, GitHub warns you
 
 ### **Push Protection** 🛑
+
 **Looks for**: Patterns matching secrets  
 **Triggers**: When you try to push  
 **Action**: Blocks commit, tells you why  
 **Example**: Prevents pushing a file with `password=...`
 
 ### **Code Scanning (CodeQL)** 🛡️
+
 **Looks for**: Security bugs in code  
 **Triggers**: On every PR + scheduled weekly  
 **Action**: Reports vulnerabilities in PR review  
 **Example**: Detects SQL injection, XSS, unvalidated input
 
 ### **Dependabot Alerts** ⚠️
+
 **Looks for**: Vulnerable packages in dependencies  
 **Triggers**: When package advisory is published  
 **Action**: Creates PR to update to safe version  
 **Example**: "npm package X has RCE vulnerability, update to v1.2.3"
 
 ### **Private Vulnerability Reporting** 🔒
+
 **Looks for**: Reports from security researchers  
 **Triggers**: When a researcher finds a bug  
 **Action**: Creates private security advisory  
@@ -295,6 +309,7 @@ Run through GitHub UI and enable:
 Already created: `.github/SECURITY.md` (4,200 lines)
 
 Contains:
+
 - Vulnerability reporting procedures
 - Response timeline
 - Bug bounty program details
@@ -306,6 +321,7 @@ Contains:
 ## 🎯 Next Steps
 
 1. **Enable security settings** (5 min)
+
    ```
    ☐ Secret Scanning
    ☐ Push Protection  
@@ -356,4 +372,3 @@ After enabling all settings, you'll have:
 **Ready? Go enable those settings!** 🚀
 
 Then come back and set up the workflows using `docs/deployment/WORKFLOWS_SECRETS_GUIDE.md`
-

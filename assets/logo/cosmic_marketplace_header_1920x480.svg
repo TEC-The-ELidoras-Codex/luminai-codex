@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  COSMIC GEOMETRIC MARKETPLACE HEADER
+  1920×480 with tessellated golden spiral lattice
+  
+  Concept: Dodecahedrons + honeycombs + golden spirals
+  Style: Carbon fiber cosmic, NOT corrugated steel
+  Math: φ (1.618...) drives all proportions
+  Philosophy: Geometry = Language of Reality
+  
+  Layers:
+  1. Carbon fiber gradient base
+  2. Distant hexagon lattice (blurred circles)
+  3. Golden spiral tessellation (φ-driven)
+  4. Foreground honeycomb pattern
+  5. Accent glows + grain
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="480" viewBox="0 0 1920 480" role="img" aria-label="Cosmic Geometric Marketplace Header">
+  <defs>
+    <!-- ================================================================ -->
+    <!-- GRADIENTS                                                        -->
+    <!-- ================================================================ -->
+
+    <!-- Carbon Fiber Cosmic Background (no corrugated steel!) -->
+    <linearGradient id="cosmicBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0C"/>
+      <stop offset="35%" stop-color="#0B1E3B"/>
+      <stop offset="70%" stop-color="#1A0A2E"/>
+      <stop offset="100%" stop-color="#16003B"/>
+    </linearGradient>
+
+    <!-- Golden Spiral Gradient -->
+    <linearGradient id="spiralGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2C340" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#F2C340" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#F2C340" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Cyan Accent Gradient -->
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D5C4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#00D5C4" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Purple Accent Gradient -->
+    <linearGradient id="purpleAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6A00F4" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#6A00F4" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <!-- Radial glows (volumetric depth) -->
+    <radialGradient id="glowLeft" cx="0.1" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#00D5C4" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00D5C4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowRight" cx="0.9" cy="0.3" r="0.7">
+      <stop offset="0%" stop-color="#F2C340" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#F2C340" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowCenter" cx="0.5" cy="0.5" r="0.8">
+      <stop offset="0%" stop-color="#6A00F4" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#6A00F4" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- ================================================================ -->
+    <!-- PATTERNS (Tessellations)                                        -->
+    <!-- ================================================================ -->
+
+    <!-- Pattern 1: Large Honeycomb (distant, hexagons blur into circles) -->
+    <pattern id="honeycombLarge" width="100" height="86.602540" patternUnits="userSpaceOnUse" patternTransform="translate(0,0)">
+      <g stroke="#F2C340" stroke-opacity="0.24" fill="none" stroke-width="1.5">
+        <!-- Flat-top hexagon: side length s=20 → width=40, height=34.641 -->
+        <path d="M 20,0 L 40,10 L 40,20 L 20,30 L 0,20 L 0,10 Z"/>
+      </g>
+    </pattern>
+
+    <!-- Pattern 2: Medium Honeycomb (mid-distance, cyan) -->
+    <pattern id="honeycombMedium" width="60" height="51.961" patternUnits="userSpaceOnUse" patternTransform="translate(30,25.98)">
+      <g stroke="#00D5C4" stroke-opacity="0.16" fill="none" stroke-width="1">
+        <path d="M 12,0 L 24,6 L 24,12 L 12,18 L 0,12 L 0,6 Z"/>
+      </g>
+    </pattern>
+
+    <!-- Pattern 3: Fine Hexagon Lattice (near, purple fine lines) -->
+    <pattern id="hexagonFine" width="40" height="34.641" patternUnits="userSpaceOnUse" patternTransform="translate(0,0)">
+      <g stroke="#6A00F4" stroke-opacity="0.12" fill="none" stroke-width="0.8">
+        <path d="M 10,0 L 20,5 L 20,10 L 10,15 L 0,10 L 0,5 Z"/>
+      </g>
+    </pattern>
+
+    <!-- Pattern 4: Golden Spiral Tessellation (Fibonacci sequence φ-driven) -->
+    <!-- This is a stylized pattern suggesting recursive φ-based growth -->
+    <pattern id="goldenSpiral" width="200" height="200" patternUnits="userSpaceOnUse" patternTransform="translate(0,0)">
+      <g fill="none" stroke="#F2C340" stroke-opacity="0.30" stroke-width="1.5">
+        <!-- Outer spiral (φ expansion) -->
+        <path d="M 100,50 Q 50,50 50,100 Q 50,150 100,150 Q 150,150 150,100 Q 150,75 125,75 Q 100,75 100,90"/>
+        <!-- Inner spirals (recursive) -->
+        <path d="M 100,100 Q 85,100 85,115 Q 85,130 100,130 Q 115,130 115,115"/>
+        <path d="M 100,110 Q 95,110 95,115 Q 95,120 100,120 Q 105,120 105,115"/>
+      </g>
+    </pattern>
+
+    <!-- ================================================================ -->
+    <!-- FILTERS                                                         -->
+    <!-- ================================================================ -->
+
+    <!-- Glow effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle grain/noise (carbon fiber texture) -->
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="13" result="noise"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.06"/>
+      </feComponentTransfer>
+      <feBlend mode="overlay" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <!-- ================================================================ -->
+  <!-- BACKGROUND LAYERS                                               -->
+  <!-- ================================================================ -->
+
+  <!-- Base gradient (cosmic) -->
+  <rect width="1920" height="480" fill="url(#cosmicBg)"/>
+
+  <!-- Volumetric glows -->
+  <rect width="1920" height="480" fill="url(#glowLeft)"/>
+  <rect width="1920" height="480" fill="url(#glowRight)"/>
+  <rect width="1920" height="480" fill="url(#glowCenter)"/>
+
+  <!-- Deep overlay (increase depth perception) -->
+  <rect width="1920" height="480" fill="#000000" opacity="0.2"/>
+
+  <!-- ================================================================ -->
+  <!-- TESSELLATION LAYERS (back to front)                             -->
+  <!-- ================================================================ -->
+
+  <!-- Layer 1: Large honeycombs (distant, blurred like circles) -->
+  <rect width="1920" height="480" fill="url(#honeycombLarge)" opacity="0.4"/>
+
+  <!-- Layer 2: Golden spiral tessellation (φ-driven recursive growth) -->
+  <rect width="1920" height="480" fill="url(#goldenSpiral)" opacity="0.3"/>
+
+  <!-- Layer 3: Medium honeycombs (cyan, mid-distance) -->
+  <rect width="1920" height="480" fill="url(#honeycombMedium)" opacity="0.25"/>
+
+  <!-- Layer 4: Fine hexagon lattice (purple, near-field) -->
+  <rect width="1920" height="480" fill="url(#hexagonFine)" opacity="0.15"/>
+
+  <!-- ================================================================ -->
+  <!-- ACCENT LINES (Suggesting geometry, not corrugated steel)         -->
+  <!-- ================================================================ -->
+
+  <!-- Horizontal φ-spaced lines -->
+  <g stroke="#F2C340" stroke-width="1.5" opacity="0.12">
+    <line x1="0" y1="60" x2="1920" y2="60"/>
+    <line x1="0" y1="180" x2="1920" y2="180"/>
+    <line x1="0" y1="300" x2="1920" y2="300"/>
+    <line x1="0" y1="420" x2="1920" y2="420"/>
+  </g>
+
+  <!-- Vertical accent lines (creating dodecahedron suggestion) -->
+  <g stroke="#00D5C4" stroke-width="1" opacity="0.08">
+    <line x1="240" y1="0" x2="240" y2="480"/>
+    <line x1="480" y1="0" x2="480" y2="480"/>
+    <line x1="720" y1="0" x2="720" y2="480"/>
+    <line x1="960" y1="0" x2="960" y2="480"/>
+    <line x1="1200" y1="0" x2="1200" y2="480"/>
+    <line x1="1440" y1="0" x2="1440" y2="480"/>
+    <line x1="1680" y1="0" x2="1680" y2="480"/>
+  </g>
+
+  <!-- Diagonal lines (suggesting infinity, tessellation flow) -->
+  <g stroke="#6A00F4" stroke-width="1" opacity="0.06">
+    <line x1="0" y1="0" x2="1920" y2="480"/>
+    <line x1="1920" y1="0" x2="0" y2="480"/>
+    <line x1="480" y1="0" x2="1920" y2="240"/>
+    <line x1="0" y1="240" x2="1440" y2="480"/>
+  </g>
+
+  <!-- ================================================================ -->
+  <!-- CENTER ACCENT GLYPH (Subtle infinity hint)                      -->
+  <!-- ================================================================ -->
+
+  <!-- Infinity hint (very subtle, center-left) -->
+  <g transform="translate(400, 240)" opacity="0.08" filter="url(#glow)">
+    <path
+      d="M -80,-30 C -120,-30 -150,0 -150,40 C -150,80 -120,110 -80,110 C -40,110 -10,80 -10,40 C -10,0 -40,-30 -80,-30"
+      fill="none"
+      stroke="#F2C340"
+      stroke-width="8"
+      stroke-linecap="round"
+    />
+    <path
+      d="M 10,-30 C -30,-30 -60,0 -60,40 C -60,80 -30,110 10,110 C 50,110 80,80 80,40 C 80,0 50,-30 10,-30"
+      fill="none"
+      stroke="#F2C340"
+      stroke-width="8"
+      stroke-linecap="round"
+    />
+  </g>
+
+  <!-- Accent circles (suggest orbits, motion) -->
+  <g fill="none" stroke="#00D5C4" stroke-width="1.5" opacity="0.1">
+    <circle cx="1620" cy="360" r="80"/>
+  </g>
+
+  <!-- LEFT CORNER RING (Original 2 interlocking rings, 70° rotation, moved down & right) -->
+  <g transform="translate(200, 280) rotate(70)" opacity="0.35" filter="url(#glow)">
+    <!-- Left interlocking ring -->
+    <circle cx="-35" cy="0" r="60" fill="none" stroke="#00D5C4" stroke-width="3"/>
+    <!-- Right interlocking ring -->
+    <circle cx="35" cy="0" r="60" fill="none" stroke="#F2C340" stroke-width="3"/>
+  </g>
+
+  <!-- ================================================================ -->
+  <!-- TEXT AREA PLACEHOLDER (right side, for branding)                -->
+  <!-- ================================================================ -->
+  <!-- (Optional: can add text here later) -->
+  <!-- 
+  <g font-family="'Segoe UI', system-ui, Roboto, Arial" transform="translate(1200, 240)">
+    <text x="0" y="0" font-size="32" fill="#EAF2FF" opacity="0.8" font-weight="bold">LUMINAI CODEX</text>
+    <text x="0" y="30" font-size="14" fill="#00D5C4" opacity="0.6">Cosmic AI Assistant</text>
+  </g>
+  -->
+
+  <!-- ================================================================ -->
+  <!-- MATHEMATICAL NOTATION (subtle, corners)                         -->
+  <!-- ================================================================ -->
+  <g font-family="'Monaco', 'Courier New', monospace" font-size="11" fill="#F2C340" opacity="0.15" letter-spacing="1">
+    <text x="30" y="35">φ = 1.618...</text>
+    <text x="1820" y="460" text-anchor="end">∞ Tessellation</text>
+  </g>
+
+  <!-- ================================================================ -->
+  <!-- TEXTURE OVERLAY (Carbon fiber grain)                            -->
+  <!-- ================================================================ -->
+  <rect width="1920" height="480" fill="none" filter="url(#grain)" opacity="0.8"/>
+</svg>

@@ -4,6 +4,44 @@
 
 ---
 
+## 📊 Status & Dependencies
+
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776ab?logo=python&logoColor=white)](https://www.python.org/)
+[![Node.js 18+](https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104%2B-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ed?logo=docker&logoColor=white)](https://www.docker.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Code Coverage](https://img.shields.io/badge/Coverage-pytest-green)](tests/)
+
+### Core Dependencies
+
+| Technology | Purpose | Version |
+|---|---|---|
+| **Python** | Agent & CLI runtime | 3.10+ |
+| **FastAPI** | REST API framework | 0.104+ |
+| **Pydantic** | Data validation | 2.6+ |
+| **Typer** | CLI framework | 0.12+ |
+| **Uvicorn** | ASGI server | 0.24+ |
+| **PyYAML** | Config management | 6.0+ |
+| **python-dotenv** | Environment variables | 1.0+ |
+| **Rich** | Terminal UI | 13.7+ |
+| **httpx** | Async HTTP client | 0.27+ |
+| **pytest** | Testing framework | 8.0+ |
+| **Node.js/dotenv** | Runtime environment | 18+/17.2+ |
+
+### External Services
+
+- **OpenAI API** — GPT models for reasoning & generation
+- **Anthropic Claude** — Alternative reasoning engine
+- **xAI Grok** — Extended context processing
+- **Azure Cosmos DB** — Vector & contextual storage
+- **GitHub App** — CI/CD automation & webhooks
+- **Discord** — Multi-channel AI assistant
+- **Slack** — Enterprise messaging integration
+- **Notion** — Knowledge base & documentation
+
+---
+
 ## Overview
 
 **LuminAI Codex** is a portfolio and engineering framework demonstrating:
@@ -62,7 +100,7 @@ This repository is **active development** and serves as both a working codebase 
    ```
 
 4. **Read the full setup guide:**
-   → See [`docs/GETTING_STARTED.md`](docs/GETTING_STARTED.md)
+   → See [`GETTING_STARTED.md`](GETTING_STARTED.md)
 
 ---
 
@@ -72,14 +110,18 @@ This repository is **active development** and serves as both a working codebase 
 
 | Document | Purpose |
 |---|---|
-| **[docs/STRUCTURE.md](docs/STRUCTURE.md)** | Navigation hub — start here |
-| **[docs/GETTING_STARTED.md](docs/GETTING_STARTED.md)** | Developer onboarding & setup |
+| **[knowledge-map.yml](knowledge-map.yml)** | Master navigation index (YAML-queryable) |
+| **[docs/STRUCTURE.md](docs/STRUCTURE.md)** | Navigation hub & documentation map |
+| **[GETTING_STARTED.md](GETTING_STARTED.md)** | Developer onboarding & setup |
 | **[docs/operations/TEC_HUB.md](docs/operations/TEC_HUB.md)** | Operations doctrine & philosophy |
+| **[docs/operations/MASTER_OPERATIONS_GUIDE.md](docs/operations/MASTER_OPERATIONS_GUIDE.md)** | Unified deployment & security checklist |
+| **[docs/reference/QUICK_REFERENCE_READY.md](docs/reference/QUICK_REFERENCE_READY.md)** | Airth tools, TGCR specs, golden source |
 | **[docs/reference/Resonance_Thesis.md](docs/reference/Resonance_Thesis.md)** | TGCR mathematical framework |
 | **[docs/governance/LUMINAI_MASTER_OPERATING_FRAMEWORK.md](docs/governance/LUMINAI_MASTER_OPERATING_FRAMEWORK.md)** | System governance & rules |
 | **[docs/deployment/GITHUB_APP_SETUP.md](docs/deployment/GITHUB_APP_SETUP.md)** | GitHub App configuration |
+| **[docs/security/SECURITY_SETUP_CHECKLIST.md](docs/security/SECURITY_SETUP_CHECKLIST.md)** | Security hardening guide |
 
-👉 **For all docs:** See [`docs/STRUCTURE.md`](docs/STRUCTURE.md)
+👉 **For all docs:** Start with [`knowledge-map.yml`](knowledge-map.yml) or [`docs/STRUCTURE.md`](docs/STRUCTURE.md)
 
 ---
 
@@ -256,20 +298,24 @@ This project is licensed under the terms specified in [`LICENSE`](LICENSE).
 **Last Updated:** 2025  
 **Cosmic Futureism** — *Ethical AI for a Resonant Future* ✨
 
-- `config/archive/` + `docs/archive/` — Legacy FOLD-era material.
-- `src/tec_tgcr/` — Python tooling for resonance analysis and CLI agents.
-- `docs/` — Maps, workflows, architectures, plus CODEX bootup checklists.
+---
 
-Use the repository as a field kit: the cards describe the theory, `research/` holds the data, and `config/` + `docs/` give you interfaces for putting it into practice.
+### Field Kit Reference
+
+- `config/archive/` + `docs/archive/` — Legacy FOLD-era material
+- `src/tec_tgcr/` — Python tooling for resonance analysis and CLI agents
+- `docs/` — Maps, workflows, architectures, governance, and operational guides
+- `knowledge-map.yml` — Master YAML index for all documentation and resources
+
+Use the repository as a comprehensive engineering portfolio. The `knowledge-map.yml` provides queryable access to all resources.
 
 ---
 
-## Contributions & Next Steps
+### Contributions & Next Steps
 
-- Before submitting changes, state the resonance impact of your work (φᵗ/ψʳ/Φᴱ).
-- Keep documentation CODEX-first; archive rather than delete historical context.
-- When adding new endpoints or automations, extend `config/gpt-actions-research.json` and document auth in `config/`.
-- Share notable GPT refinements as pull-request context so the knowledge loop stays alive.
+- Before submitting changes, state the resonance impact of your work (φᵗ/ψʳ/Φᴱ)
+- Keep documentation CODEX-first; archive rather than delete historical context
+- When adding new endpoints or automations, update `knowledge-map.yml` and documentation
+- Share notable improvements and refinements as pull-request context
 
 The CODEX is a living instrument. Tune it, cite it, and let it keep remembering.
->>>>>>> 5f842ab (docs: Enhanced README and migration tooling)

@@ -371,8 +371,8 @@ This is an **active development project**. We're tracking all work through GitHu
 
 - **Architecture**: See `docs/framework/MASTER_OPERATING_FRAMEWORK.md`
 - **Theory**: See `docs/framework/Resonance_Thesis.md`
-- **Technical Details**: See `LUMINAI_TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md`
-- **Assets**: See `LUMINAI_ASSETS_INVENTORY_AND_TRANSFER_PLAN.md`
+- **Technical Details**: See `docs/architecture/LUMINAI_TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md`
+- **Assets**: See `docs/operations/LUMINAI_ASSETS_INVENTORY_AND_TRANSFER_PLAN.md`
 
 ---
 

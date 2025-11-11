@@ -29,9 +29,9 @@
 
 | Document | Location | Purpose |
 |----------|----------|---------|
-| **Status Summary** | `STATUS_SUMMARY.md` | 95% complete, next steps |
-| **Implementation Checklist** | `IMPLEMENTATION_COMPLETE.md` | All phases documented |
-| **Security & Branding Summary** | `SECURITY_BRANDING_SUMMARY.md` | Today's work (this commit) |
+| **Status Summary** | `docs/operations/STATUS_SUMMARY.md` | 95% complete, next steps |
+| **Implementation Checklist** | `docs/operations/IMPLEMENTATION_COMPLETE.md` | All phases documented |
+| **Security & Branding Summary** | `docs/brand/SECURITY_BRANDING_SUMMARY.md` | Today's work (this commit) |
 
 ### **🛠️ LOCAL DEVELOPMENT**
 
@@ -55,6 +55,7 @@
 ## 🚀 QUICK START: What to Do Now
 
 ### **Option 1: FINISH BRANDING** (15–20 minutes)
+
 **Best if**: You want Discord ready today
 
 ```
@@ -71,6 +72,7 @@
 ---
 
 ### **Option 2: ENABLE SECURITY FEATURES** (5–10 minutes)
+
 **Best if**: You want GitHub hardened today
 
 ```
@@ -89,6 +91,7 @@
 ---
 
 ### **Option 3: SET UP WORKFLOWS** (1–2 hours)
+
 **Best if**: You want CI/CD pipeline running
 
 ```
@@ -110,6 +113,7 @@
 ### **Security Framework** 🔒 (4,200 lines)
 
 **`.github/SECURITY.md`** — Enterprise security policy
+
 - Vulnerability reporting (3 channels)
 - Response timeline (Critical: 4h → 72h)
 - Bug bounty program ($5K–$250K)
@@ -118,6 +122,7 @@
 - Supported versions + EOL dates
 
 **`docs/deployment/GITHUB_SECURITY_SETUP.md`** — GitHub UI guide
+
 - Which settings to enable (4 settings)
 - Step-by-step enable instructions
 - Direct links to each setting
@@ -125,6 +130,7 @@
 - 5-minute quick setup
 
 **`docs/deployment/WORKFLOWS_SECRETS_GUIDE.md`** — GitHub Actions guide
+
 - GitHub Secrets setup (all variables)
 - 5 recommended workflow templates
 - Dependabot configuration example
@@ -134,6 +140,7 @@
 ### **Branding Documentation** 🎨 (800 lines)
 
 **`docs/deployment/LOGO_FINALIZATION.md`** — Complete branding checklist
+
 - 5-minute quick start
 - Design specifications (icon + banner)
 - Discord upload checklist
@@ -142,7 +149,8 @@
 
 ### **Summary & Navigation** 📋 (500 lines)
 
-**`SECURITY_BRANDING_SUMMARY.md`** — Today's work summary
+**`docs/brand/SECURITY_BRANDING_SUMMARY.md`** — Today's work summary
+
 - What was completed
 - Security policy overview
 - Branding finalization details
@@ -152,6 +160,7 @@
 ### **Updated Files** ✏️
 
 **`.github/copilot-instructions.md`** — Added Security section
+
 - Vulnerability reporting procedures
 - Secret rotation guidance
 - GitHub Secrets best practices
@@ -162,6 +171,7 @@
 ## ✅ COMPLETION STATUS
 
 ### **Security Framework** 🔒
+
 - ✅ Policy created (4,200 lines)
 - ✅ Vulnerability reporting procedures documented
 - ✅ Bug bounty program designed ($5K–$250K)
@@ -172,6 +182,7 @@
 - ✅ Secret rotation procedure documented
 
 ### **Branding** 🎨
+
 - ✅ Logo style documented (crown + infinity + TEC)
 - ✅ Conversion guide created (Pixlr 5-min walkthrough)
 - ✅ Design specifications documented
@@ -180,6 +191,7 @@
 - ✅ Verification steps documented
 
 ### **Documentation** 📋
+
 - ✅ Comprehensive navigation guide (this file)
 - ✅ Status summaries created
 - ✅ Quick start guides provided
@@ -191,6 +203,7 @@
 ## 🎯 IMMEDIATE PRIORITIES (Next 24 hours)
 
 ### **MUST DO** 🔴 (Blocks verification)
+
 1. ✅ Convert logo → `discord_icon_1024x1024.png`
 2. ✅ Convert logo → `discord_banner_680x240.png`
 3. ✅ Upload to Discord Dev Portal
@@ -200,6 +213,7 @@
 **Blocker**: None (all guides ready)
 
 ### **SHOULD DO** 🟡 (Improves security)
+
 1. ✅ Enable GitHub secret scanning
 2. ✅ Enable GitHub push protection
 3. ✅ Enable GitHub code scanning
@@ -209,6 +223,7 @@
 **Blocker**: None (all guides ready)
 
 ### **NICE TO DO** 🟢 (Rounds out CI/CD)
+
 1. ✅ Create GitHub Actions workflows
 2. ✅ Add GitHub Secrets
 3. ✅ Configure Dependabot auto-merge
@@ -222,6 +237,7 @@
 ## 📱 WHAT'S NEXT (After This)
 
 ### **Phase 1: Discord Verification** (Next 1–2 days)
+
 ```
 1. Upload logo + banner ✅ (from branding)
 2. Complete identity verification (20–30 min)
@@ -231,6 +247,7 @@
 ```
 
 ### **Phase 2: GitHub Security** (Next week)
+
 ```
 1. Enable GitHub security settings (5 min)
 2. Create workflow files (1–2 hours)
@@ -240,6 +257,7 @@
 ```
 
 ### **Phase 3: Deployment** (After verification)
+
 ```
 1. Configure production environment
 2. Set up Docker builds
@@ -249,6 +267,7 @@
 ```
 
 ### **Phase 4: Scaling** (Post-launch)
+
 ```
 1. Add LuminesceMonitor module (observability)
 2. Build web dashboard
@@ -309,6 +328,7 @@ Before Discord upload, verify:
 ## 🏆 WHAT YOU NOW HAVE
 
 ### **Enterprise-Ready Security** 🔒
+
 ✅ Vulnerability reporting (3 channels)  
 ✅ Bug bounty program ($5K–$250K)  
 ✅ Response SLA (4h–30d based on severity)  
@@ -318,6 +338,7 @@ Before Discord upload, verify:
 ✅ Rotation procedures documented  
 
 ### **Professional Branding** 🎨
+
 ✅ Logo style documented  
 ✅ Conversion guide (5 min)  
 ✅ Design specifications  
@@ -325,6 +346,7 @@ Before Discord upload, verify:
 ✅ Troubleshooting guide  
 
 ### **Production CI/CD** ⚙️
+
 ✅ Workflow templates (5 ready)  
 ✅ GitHub Secrets documented  
 ✅ Secret rotation procedure  
@@ -336,6 +358,7 @@ Before Discord upload, verify:
 ## 🎉 FINAL SUMMARY
 
 **You have**:
+
 - ✅ 3-module framework (working)
 - ✅ Governance docs (GDPR/COPPA/CCPA compliant)
 - ✅ Resonance framework (template + example)
@@ -345,6 +368,7 @@ Before Discord upload, verify:
 - ✅ Complete documentation
 
 **You're ready for**:
+
 - ✅ Logo conversion (today)
 - ✅ Discord upload (today)
 - ✅ Discord verification (next 1–2 days)
@@ -358,15 +382,17 @@ Before Discord upload, verify:
 **Pick one**:
 
 ### 1️⃣ **Convert Logo Now** (15 min)
+
 → `docs/deployment/LOGO_FINALIZATION.md`
 
 ### 2️⃣ **Enable Security Now** (5 min)
+
 → `docs/deployment/GITHUB_SECURITY_SETUP.md`
 
 ### 3️⃣ **Read Security Policy** (20 min)
+
 → `.github/SECURITY.md`
 
 ---
 
 **Everything is ready. Your move.** 🎯
-
