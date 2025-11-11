@@ -1,3 +1,9 @@
+# ⚠️ DEPRECATED — See SECRETS_DEPLOYMENT_GUIDE.md
+
+> This file is deprecated. **Use [SECRETS_DEPLOYMENT_GUIDE.md](./SECRETS_DEPLOYMENT_GUIDE.md)** instead — it's the canonical reference combining all secrets, tokens, and deployment info.
+
+---
+
 # GitHub Secrets & Authentication Setup Guide
 
 > Why you don't need a PAT for everyday work, and when you do need GitHub Secrets.

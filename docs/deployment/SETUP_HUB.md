@@ -1,12 +1,39 @@
-# 🎯 LuminAI Codex - Complete Setup & Configuration Hub
+# 🎯 LuminAI Codex - Deployment Setup Hub
 
-**Status**: Infrastructure & Configuration Documentation Complete  
-**Last Updated**: November 10, 2025  
-**Purpose**: Master index for all setup, configuration, and deployment guides
+**Status**: Deployment documentation reorganized and consolidated  
+**Last Updated**: November 11, 2025  
+**Purpose**: Master navigation hub for deployment, configuration, and setup guides
 
 ---
 
-## 📖 Documentation Map
+## 🗂️ Documentation Structure
+
+This folder contains **deployment, configuration, and setup documentation** organized by purpose:
+
+```
+deployment/
+├── INDEX.md                 # 👈 Main hub (comprehensive overview)
+├── SETUP_HUB.md             # This file (role-based navigation)
+├── guides/                  # Step-by-step implementation guides
+│   ├── README.md
+│   ├── ENV_LOCAL_SETUP.md
+│   ├── GITHUB_APP_SETUP.md
+│   ├── GITHUB_APP_QUICK_START.md
+│   ├── GITHUB_WEBHOOK_SETUP.md
+│   └── WORKFLOWS_SECRETS_GUIDE.md
+├── reference/               # Complete reference documentation
+│   ├── README.md
+│   ├── ENVIRONMENT_SETUP.md
+│   ├── SECRETS_DEPLOYMENT_GUIDE.md
+│   └── SECRETS_AND_TOKENS_EXPLAINED.md
+└── checklists/              # Pre-deployment verification tasks
+    ├── README.md
+    └── DEPLOYMENT_CHECKLIST.md
+```
+
+---
+
+## � Quick Start by Role
 
 ### **Brand & Design System** (Completed ✅)
 
@@ -23,333 +50,318 @@
 
 ---
 
+### **🔐 Secrets & Deployment** (Completed ✅)
+
+| Document | Purpose | Read Time | For Whom |
+|----------|---------|-----------|----------|
+| **[SECRETS_DEPLOYMENT_GUIDE.md](./SECRETS_DEPLOYMENT_GUIDE.md)** | 🎯 **CANONICAL**: All secrets, tokens, API keys — where they go & why | 15 min | All developers, DevOps, automation |
+| **[GITHUB_APP_SETUP.md](./GITHUB_APP_SETUP.md)** | TEC Resonance Automation app setup & security | 10 min | DevOps, automation engineers |
+| **[GITHUB_WEBHOOK_SETUP.md](./GITHUB_WEBHOOK_SETUP.md)** | Webhook configuration for GitHub App events | 10 min | DevOps, backend engineers |
+| **[ENVIRONMENT_SETUP.md](./ENVIRONMENT_SETUP.md)** | Complete reference for all 12 categories of env vars | 15 min | All developers, DevOps |
+| **[ENV_LOCAL_SETUP.md](./ENV_LOCAL_SETUP.md)** | Step-by-step .env.local configuration checklist | 10 min | Developers, DevOps |
+
+**Status**: ✅ **SECRETS & DEPLOYMENT COMPLETE** (5 docs, 80+ KB)
+
+---
+
 ### **IT & Infrastructure** (Completed ✅)
 
 | Document | Purpose | Read Time | For Whom |
 |----------|---------|-----------|----------|
 | **[IT_TECHNICAL_UPDATES.md](./docs/brand/IT_TECHNICAL_UPDATES.md)** | 10 areas: CDN, API, analytics, deployment, licensing | 12 min | DevOps, backend engineers |
-| **[ENVIRONMENT_SETUP.md](./docs/ENVIRONMENT_SETUP.md)** | Complete reference for all 12 categories of env vars | 15 min | All developers, DevOps |
-| **[GITHUB_APP_SETUP.md](./docs/GITHUB_APP_SETUP.md)** | TEC Resonance Automation app setup & security | 10 min | DevOps, automation engineers |
-| **[ENV_LOCAL_SETUP.md](./docs/ENV_LOCAL_SETUP.md)** | Step-by-step .env.local configuration checklist | 10 min | Developers, DevOps |
-
-**Status**: ✅ **INFRASTRUCTURE COMPLETE** (4 docs, 50+ KB)
 
 ---
 
 ## 🚀 Quick Start by Role
 
+
+
 ### **👨‍💼 Manager / Stakeholder**
 
-1. Start: [PRODUCTION_STATUS.md](./docs/brand/PRODUCTION_STATUS.md) (5 min) - See what's done
-2. Then: [BRAND_DECK_SUMMARY.md](./docs/brand/BRAND_DECK_SUMMARY.md) (5 min) - Understand workflow
-3. Finally: [IT_TECHNICAL_UPDATES.md](./docs/brand/IT_TECHNICAL_UPDATES.md) sections 1-3 (5 min) - See deployment plan
+**Question**: What's the current deployment status?
 
-**Total**: 15 minutes to full understanding ✅
+**Answer**: See `docs/STRUCTURE.md` and `docs/operations/TEC_HUB.md`
 
----
-
-### **🎨 Designer**
-
-1. Start: [LOGO_FINAL_BRIEF.md](./docs/brand/LOGO_FINAL_BRIEF.md) (2 min) - Get specs
-2. Reference: [LOGO_VARIANT_SPECS.md](./docs/brand/LOGO_VARIANT_SPECS.md) (8 min) - All details
-3. Deep dive: [3D_CREATION_PROMPT.md](./docs/brand/3D_CREATION_PROMPT.md) - If creating 3D
-
-**Total**: 10 minutes to start designing ✅
+**Time**: 5 min
 
 ---
 
-### **🎮 3D Artist**
+### **👨‍💻 Developer** (First Time Setup)
 
-1. Start: [3D_CREATION_PROMPT.md](./docs/brand/3D_CREATION_PROMPT.md) (7 min) - Complete production guide
-2. Reference: [LOGO_VARIANT_SPECS.md](./docs/brand/LOGO_VARIANT_SPECS.md) section "Scale Guide" (3 min)
-3. Blender node graph is in section 2 of 3D_CREATION_PROMPT - copy/paste ready!
+**Goal**: Set up local development environment
 
-**Total**: 10 minutes to start modeling ✅
+1. **[guides/ENV_LOCAL_SETUP.md](./guides/ENV_LOCAL_SETUP.md)** (10 min)
+   - Configure `.env.local` file
+   - Add all required environment variables
+   - Test local connections
 
----
+2. **[reference/ENVIRONMENT_SETUP.md](./reference/ENVIRONMENT_SETUP.md)** (reference as needed)
+   - Lookup any missing variables
+   - Understand variable categories
+   - Find defaults and documentation
 
-### **👨‍💻 Developer (Frontend/Full-stack)**
+3. **Before pushing**: [checklists/DEPLOYMENT_CHECKLIST.md](./checklists/DEPLOYMENT_CHECKLIST.md)
+   - Verify local tests pass
+   - Check no hardcoded secrets
 
-1. Start: [ENV_LOCAL_SETUP.md](./docs/ENV_LOCAL_SETUP.md) (10 min) - Configure your environment
-2. Reference: [ENVIRONMENT_SETUP.md](./docs/ENVIRONMENT_SETUP.md) (15 min) - All available variables
-3. Setup: [GITHUB_APP_SETUP.md](./docs/GITHUB_APP_SETUP.md) (10 min) - GitHub App integration
-
-**Total**: 35 minutes to full setup ✅
-
----
-
-### **🔧 DevOps / Infrastructure**
-
-1. Start: [IT_TECHNICAL_UPDATES.md](./docs/brand/IT_TECHNICAL_UPDATES.md) (12 min) - Full infrastructure plan
-2. Setup: [GITHUB_APP_SETUP.md](./docs/GITHUB_APP_SETUP.md) (10 min) - App configuration
-3. Reference: [ENVIRONMENT_SETUP.md](./docs/ENVIRONMENT_SETUP.md) (15 min) - All variables
-4. Local: [ENV_LOCAL_SETUP.md](./docs/ENV_LOCAL_SETUP.md) (10 min) - Testing locally
-
-**Total**: 47 minutes to full implementation ✅
+**Total Time**: ~30 minutes
 
 ---
 
-## 📋 What Each Document Covers
+### **� DevOps / Infrastructure Engineer**
 
-### **BRAND DOCUMENTS** (Design & Production)
+**Goal**: Set up GitHub App, CI/CD workflows, and production deployment
 
-**LOGO_FINAL_BRIEF.md**
+#### **Phase 1: GitHub App Setup** (20 min)
 
-- Core logo symbol (infinity ∞ + 3 orbs)
-- Color palette (Cyan, Violet, Gold)
-- Typography standards
-- 4 variants overview
+1. **[guides/GITHUB_APP_SETUP.md](./guides/GITHUB_APP_SETUP.md)** (10 min)
+   - Create/configure GitHub App (TEC Resonance Automation)
+   - Set permissions and event subscriptions
+   - Generate credentials
 
-**3D_CREATION_PROMPT.md**
+2. **[guides/GITHUB_WEBHOOK_SETUP.md](./guides/GITHUB_WEBHOOK_SETUP.md)** (10 min)
+   - Configure webhook endpoints
+   - Set up event routing
+   - Test webhook delivery
 
-- Complete 3D production guide
-- Blender material node graph (copy-paste ready!)
-- Render settings (4K, 1000+ samples)
-- Lighting setup & material properties
-- Export formats & optimization
+#### **Phase 2: CI/CD Workflows** (15 min)
 
-**LOGO_VARIANT_SPECS.md**
+1. **[guides/WORKFLOWS_SECRETS_GUIDE.md](./guides/WORKFLOWS_SECRETS_GUIDE.md)** (15 min)
+   - Add GitHub Secrets
+   - Configure GitHub Actions workflows
+   - Set up Dependabot
 
-- Full Logo (marketing, primary use)
-- Icon Only (apps, social, 512×512px)
-- Stacked Vertical (mobile, bookmarks)
-- Monochrome B/W (accessibility, print)
-- Sizing guide (digital, print, 3D)
-- File formats (vector, raster, 3D)
-- Quality checklist
+#### **Phase 3: Reference & Troubleshooting** (as needed)
 
-**BRAND_DECK_SUMMARY.md**
+- **[reference/ENVIRONMENT_SETUP.md](./reference/ENVIRONMENT_SETUP.md)**
+  - All environment variables reference
+  - Variable categories and defaults
 
-- 5-phase workflow
-- Role-based navigation
-- Document interconnections
-- Next actions by timeline
+- **[reference/SECRETS_DEPLOYMENT_GUIDE.md](./reference/SECRETS_DEPLOYMENT_GUIDE.md)**
+  - Canonical secrets reference
+  - Secret rotation procedures
+  - Emergency recovery steps
 
-**PRODUCTION_STATUS.md**
+- **[reference/SECRETS_AND_TOKENS_EXPLAINED.md](./reference/SECRETS_AND_TOKENS_EXPLAINED.md)**
+  - Conceptual overview of secret types
+  - GitHub Secrets vs Bitwarden vs .env.local
+  - When to use each approach
 
-- Executive summary
-- Document portfolio
-- 4 variants status
-- 5-phase timeline
+#### **Phase 4: Pre-Deployment Verification** (30 min)
 
-**INDEX.md**
+1. **[checklists/DEPLOYMENT_CHECKLIST.md](./checklists/DEPLOYMENT_CHECKLIST.md)**
+   - Final security checks
+   - Environment verification
+   - Integration testing
 
-- Master navigation
-- Quick access by read time
-- Logo system overview
-- Success criteria
+**Total Time**: ~1 hour for initial setup, then reference as needed
 
 ---
 
-### **INFRASTRUCTURE DOCUMENTS** (IT & Configuration)
+### **🔐 Security Officer**
 
-**IT_TECHNICAL_UPDATES.md** (10 Updates)
+**Goal**: Understand and verify secret management, access controls, security posture
 
-1. Git LFS for brand assets
-2. Web deployment strategy
-3. Brand asset API
-4. CDN & caching
-5. Analytics & monitoring
-6. Version control strategy
-7. Deployment checklist
-8. Licensing & rights
-9. Mobile & app integration
-10. International & accessibility
+1. **[reference/SECRETS_AND_TOKENS_EXPLAINED.md](./reference/SECRETS_AND_TOKENS_EXPLAINED.md)** (10 min)
+   - Secret types: GitHub Secrets, Bitwarden, .env.local
+   - Storage mechanisms
+   - Access controls
 
-**ENVIRONMENT_SETUP.md** (12 Categories)
+2. **[reference/SECRETS_DEPLOYMENT_GUIDE.md](./reference/SECRETS_DEPLOYMENT_GUIDE.md)** (15 min)
+   - Secret initialization procedures
+   - Rotation schedule
+   - Emergency procedures
+   - Audit logging
 
-1. Core application
-2. GitHub App (TEC Resonance Automation)
-3. GitHub tokens (PAT, projects, org)
-4. Bitwarden secrets (CLI, BWS)
-5. AI/ML services (OpenAI, Anthropic, XAI)
-6. TEC services (Arcadia, HUB)
-7. Stable Diffusion/image generation
-8. Database & storage
-9. Third-party APIs
-10. CI/CD & deployment
-11. Security & compliance
-12. WordPress.com
+3. **[checklists/DEPLOYMENT_CHECKLIST.md](./checklists/DEPLOYMENT_CHECKLIST.md)** → Security section (10 min)
+   - Pre-deployment security checks
+   - Dependency scanning
+   - Access verification
 
-**GITHUB_APP_SETUP.md** (Complete Guide)
-
-- App details (ID 2186310, Client ID, etc.)
-- Setup decision matrix
-- Step-by-step first-time setup
-- Environment variables
-- Security best practices
-- Testing procedures
-- Troubleshooting guide
-- Monitoring & logging
-- Implementation roadmap
-
-**ENV_LOCAL_SETUP.md** (Configuration Checklist)
-
-- What's already configured
-- What needs to be added
-- Step-by-step for each missing variable
-- Complete template
-- Configuration checklist
-- Secret rotation schedule
-- Testing procedures
-- Next steps
+**Total Time**: ~35 minutes
 
 ---
 
-## ✅ Implementation Status
+## 📚 Full Documentation Map
 
-### **Phase 1: Documentation** (✅ COMPLETE)
+### **[INDEX.md](./INDEX.md)** — Comprehensive Overview
 
-- [x] Brand system documented (6 docs)
-- [x] Infrastructure planned (4 docs)
-- [x] GitHub App specs defined
-- [x] Environment variables documented
-- [x] Security best practices defined
-- [x] All docs committed to git
+- Complete organization map
+- Step-by-step workflow diagram
+- Related documentation links
+- Principles and best practices
 
-**Completion**: 100%
+**Read this first for complete context**
 
 ---
 
-### **Phase 2: Local Setup** (🔄 IN PROGRESS)
+### **[guides/](./guides/README.md)** — Step-by-Step Implementation
 
-- [ ] Generate GitHub App credentials (30 min)
-- [ ] Create Bitwarden machine account (15 min)
-- [ ] Update .env.local file (20 min)
-- [ ] Test all API connections (30 min)
-- [ ] Verify GitHub App webhook (15 min)
+For developers and DevOps engineers who need to **do something**:
 
-**Estimated Time**: 1.5 hours
-
----
-
-### **Phase 3: CI/CD Setup** (⏳ PENDING)
-
-- [ ] Add GitHub Secrets (all variables)
-- [ ] Configure GitHub Actions workflows
-- [ ] Set up CDN (CloudFront/Cloudflare)
-- [ ] Deploy brand asset API
-- [ ] Set up monitoring & alerts
-- [ ] Test end-to-end pipeline
-
-**Estimated Time**: 4 hours
+| Document | Purpose | Duration | For Whom |
+|----------|---------|----------|----------|
+| `ENV_LOCAL_SETUP.md` | Configure `.env.local` for local development | 10 min | All developers |
+| `GITHUB_APP_SETUP.md` | Set up TEC Resonance Automation GitHub App | 10 min | DevOps, automation engineers |
+| `GITHUB_APP_QUICK_START.md` | 10-minute checklist for GitHub App | 5 min | Developers (quickstart) |
+| `GITHUB_WEBHOOK_SETUP.md` | Configure webhooks and GitHub App events | 10 min | DevOps, backend engineers |
+| `WORKFLOWS_SECRETS_GUIDE.md` | Set up GitHub Actions and manage secrets | 15 min | DevOps, platform engineers |
 
 ---
 
-### **Phase 4: Production** (⏳ PENDING)
+### **[reference/](./reference/README.md)** — Complete Reference
 
-- [ ] Rotate all credentials
-- [ ] Enable IP allowlisting
-- [ ] Deploy to production
-- [ ] Test from multiple regions
-- [ ] Monitor for errors
-- [ ] Document procedures
+For developers and DevOps who need **information and context**:
 
-**Estimated Time**: 2 hours
+| Document | Purpose | Duration | For Whom |
+|----------|---------|----------|----------|
+| `ENVIRONMENT_SETUP.md` | All 12+ environment variable categories | 15 min | All developers, DevOps |
+| `SECRETS_DEPLOYMENT_GUIDE.md` | **CANONICAL** secrets reference with rotation | 15 min | All developers, DevOps, security |
+| `SECRETS_AND_TOKENS_EXPLAINED.md` | Conceptual: secret types and storage | 10 min | Developers, security-focused |
 
 ---
 
-## 🎯 Next Immediate Actions
+### **[checklists/](./checklists/README.md)** — Verification Tasks
 
-### **This Week** (Week 1)
+For QA, DevOps, and release managers:
+
+| Document | Purpose | Duration | When to Use |
+|----------|---------|----------|-------------|
+| `DEPLOYMENT_CHECKLIST.md` | Pre-deployment verification (30-item checklist) | 30 min | Before every release |
+
+---
+
+## 🔑 Key Principles
+
+These principles apply to all deployment and configuration work:
+
+1. ✅ **Never commit `.env.local`**
+   - It's in `.gitignore` and contains secrets
+   - Always use GitHub Secrets for CI/CD
+
+2. ✅ **Use GitHub Secrets for CI/CD**
+   - Encrypted per repository
+   - Scoped to workflows and accessible via `${{ secrets.NAME }}`
+   - Audit-logged by GitHub
+
+3. ✅ **Use Bitwarden for team secrets**
+   - Shared, encrypted storage
+   - Auditable access and changes
+   - Team-managed permissions
+
+4. ✅ **Test locally before deploying**
+   - Use Cosmos DB Emulator for database work
+   - Verify environment variables locally
+   - Run test suite completely
+
+5. ✅ **Rotate secrets regularly**
+   - Follow rotation schedule in SECRETS_DEPLOYMENT_GUIDE.md
+   - Document all rotations
+   - Test access after rotation
+
+6. ✅ **Run DEPLOYMENT_CHECKLIST before every release**
+   - Verify all security checks pass
+   - Confirm dependencies are up-to-date
+   - Test all integrations
+
+---
+
+## 📋 Standard Deployment Workflow
 
 ```
-Day 1:
-  [ ] Read GITHUB_APP_SETUP.md (10 min)
-  [ ] Read ENV_LOCAL_SETUP.md (10 min)
-  [ ] Generate GitHub App Client Secret (5 min)
-  [ ] Generate GitHub App Private Key (5 min)
-
-Day 2:
-  [ ] Create Bitwarden machine account (15 min)
-  [ ] Generate webhook secret (5 min)
-  [ ] Generate session & JWT secrets (5 min)
-  [ ] Update .env.local (15 min)
-
-Day 3:
-  [ ] Test Bitwarden connection (15 min)
-  [ ] Test GitHub App credentials (15 min)
-  [ ] Test all API keys (30 min)
-  [ ] Add to GitHub Secrets (10 min)
+1. Local Development
+   ↓
+   [guides/ENV_LOCAL_SETUP.md]
+   ↓
+2. Code Changes Complete
+   ↓
+   [checklists/DEPLOYMENT_CHECKLIST.md] → Verify readiness
+   ↓
+3. Infrastructure Setup (if new)
+   ↓
+   [guides/GITHUB_APP_SETUP.md]
+   [guides/WORKFLOWS_SECRETS_GUIDE.md]
+   ↓
+4. Pre-Deployment
+   ↓
+   [checklists/DEPLOYMENT_CHECKLIST.md] → Final verification
+   ↓
+5. ✅ Deploy
 ```
 
-**Total**: ~2.5 hours to get fully configured locally
+---
+
+## � Related Documentation
+
+- 📖 **Full Map**: `docs/STRUCTURE.md`
+- 🛠️ **Operations**: `docs/operations/TEC_HUB.md`
+- 🏗️ **Architecture**: `docs/reference/QUICK_REFERENCE_READY.md`
+- 🔐 **Security Policy**: `.github/SECURITY.md`
+- 🐳 **Docker**: Root `docker-compose.yml`
 
 ---
 
-## 📞 Contact & Ownership
+## ❓ Common Questions
 
-| Area | Owner | Contact |
-|------|-------|---------|
-| **Brand/Design** | @Elidorascodex | Brand team lead |
-| **GitHub App** | Infrastructure | DevOps/Infrastructure |
-| **Secrets** | @Elidorascodex | Security team |
-| **Deployment** | DevOps | DevOps lead |
-| **Overall** | @Elidorascodex | Project manager |
+### **"I just joined the team. Where do I start?"**
 
----
+→ Go to [guides/ENV_LOCAL_SETUP.md](./guides/ENV_LOCAL_SETUP.md)
 
-## 📚 Key Links
+### **"What environment variables do I need?"**
 
-### **GitHub Settings**
+→ Go to [reference/ENVIRONMENT_SETUP.md](./reference/ENVIRONMENT_SETUP.md)
 
-- [GitHub App Dashboard](https://github.com/organizations/TEC-The-ELidoras-Codex/settings/apps/tec-resonance-automation)
-- [Generate Personal Token](https://github.com/settings/tokens?type=beta)
-- [Organization Secrets](https://github.com/organizations/TEC-The-ELidoras-Codex/settings/secrets/actions)
+### **"How do I set up GitHub App?"**
 
-### **Tools & Services**
+→ Go to [guides/GITHUB_APP_SETUP.md](./guides/GITHUB_APP_SETUP.md)
 
-- [Bitwarden CLI Docs](https://bitwarden.com/help/cli/)
-- [OpenAI API Keys](https://platform.openai.com/api-keys)
-- [Anthropic Console](https://console.anthropic.com/keys)
-- [XAI Console](https://console.x.ai/keys)
+### **"Where do secrets go?"**
 
-### **Documentation**
+→ Go to [reference/SECRETS_DEPLOYMENT_GUIDE.md](./reference/SECRETS_DEPLOYMENT_GUIDE.md)
 
-- [GitHub Apps Docs](https://docs.github.com/en/developers/apps)
-- [GitHub Webhooks](https://docs.github.com/en/developers/webhooks-and-events/webhooks)
-- [GitHub REST API](https://docs.github.com/en/rest)
+### **"Is this ready for production?"**
+
+→ Go to [checklists/DEPLOYMENT_CHECKLIST.md](./checklists/DEPLOYMENT_CHECKLIST.md)
+
+### **"How do I rotate secrets?"**
+
+→ Go to [reference/SECRETS_DEPLOYMENT_GUIDE.md](./reference/SECRETS_DEPLOYMENT_GUIDE.md) → Secret Rotation
 
 ---
 
-## 🎉 Summary
+## 📊 Documentation Status
 
-### **What's Been Completed**
-
-✅ **Brand System**: 6 comprehensive documents covering design, 3D production, variants, workflow  
-✅ **Infrastructure**: 4 detailed guides for GitHub App, environment setup, and deployment  
-✅ **Security**: Best practices, rotation schedules, access control  
-✅ **Documentation**: Master index with role-based navigation
-
-### **What's Ready to Do**
-
-🚀 **This Week**: Configure .env.local (2.5 hours)  
-🚀 **Next Week**: Set up CI/CD pipeline (4 hours)  
-🚀 **Week 3**: Production deployment (2 hours)
-
-### **Total Time to Production**
-
-📅 **8-9 hours** of implementation work  
-📅 **2-3 weeks** of elapsed time (allowing for reviews & tests)
+| Component | Status | Last Updated |
+|-----------|--------|---------------|
+| Environment Setup | ✅ Complete | Nov 11, 2025 |
+| GitHub App Setup | ✅ Complete | Nov 11, 2025 |
+| Secrets Management | ✅ Complete | Nov 11, 2025 |
+| CI/CD Workflows | ✅ Complete | Nov 11, 2025 |
+| Pre-Deployment Checklist | ✅ Complete | Nov 11, 2025 |
+| Organization & Navigation | ✅ Complete | Nov 11, 2025 |
 
 ---
 
-**Status**: 🟢 **READY FOR TEAM IMPLEMENTATION**
+## 🎯 Summary
 
-**Next**: Start with ENV_LOCAL_SETUP.md → GITHUB_APP_SETUP.md → IT_TECHNICAL_UPDATES.md
+### **Documentation is organized by purpose:**
 
-**Owner**: @Elidorascodex (Infrastructure & Brand Teams)
+- **[INDEX.md](./INDEX.md)** — Start here for complete overview
+- **[guides/](./guides/README.md)** — "How do I do this?" (step-by-step)
+- **[reference/](./reference/README.md)** — "What are all the options?" (comprehensive)
+- **[checklists/](./checklists/README.md)** — "Am I ready?" (verification)
 
-**Last Updated**: November 10, 2025
+### **Choose your path based on role:**
+
+- **Developer** → Start with [guides/ENV_LOCAL_SETUP.md](./guides/ENV_LOCAL_SETUP.md)
+- **DevOps** → Start with [guides/GITHUB_APP_SETUP.md](./guides/GITHUB_APP_SETUP.md)
+- **Security** → Start with [reference/SECRETS_DEPLOYMENT_GUIDE.md](./reference/SECRETS_DEPLOYMENT_GUIDE.md)
+- **Manager** → Start with `docs/STRUCTURE.md`
 
 ---
 
-### 🚀 Begin Setup Now
+**Status**: 🟢 **COMPLETE AND ORGANIZED**
 
-1. **Read**: [ENV_LOCAL_SETUP.md](./docs/ENV_LOCAL_SETUP.md) (10 min)
-2. **Generate**: GitHub App credentials (15 min)
-3. **Configure**: .env.local file (15 min)
-4. **Test**: All connections (30 min)
-5. **Deploy**: To GitHub Secrets (15 min)
+**Next Step**: Choose your role above and start with the recommended document.
 
-**Total**: ~1.5 hours to full local setup ✅
+**Last Updated**: November 11, 2025

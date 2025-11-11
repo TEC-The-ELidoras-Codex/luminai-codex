@@ -35,7 +35,7 @@ XAI_API_KEY=<REDACTED_XAI_API_KEY>
 
 # ✅ GitHub Projects (CONFIGURED)
 PROJECTS_TOKEN=ghp_...your-token...
-PROJECT_NUMBER=6
+PROJECT_NUMBER=13
 
 # ✅ Other Services (CONFIGURED)
 SPOTIFY_CLIENT_ID=your-client-id

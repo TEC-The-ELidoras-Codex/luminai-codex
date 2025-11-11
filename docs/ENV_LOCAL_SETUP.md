@@ -14,6 +14,7 @@ XAI_API_KEY=<REDACTED_XAI_API_KEY>
 ```
 
 See `docs/deployment/ENV_LOCAL_SETUP.md` for deployment-focused guidance.
+
 # ✅ .env.local Configuration Checklist
 
 **Purpose**: Complete guide for setting up local development environment  
