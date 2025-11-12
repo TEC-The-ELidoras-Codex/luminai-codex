@@ -18,7 +18,7 @@ loguru==0.7.3
 PyGithub==2.1.1
 
 # Security (for HMAC signature verification)
-cryptography==41.0.7
+cryptography==46.0.3
 
 # JWT & Authentication
 pyjwt==2.8.1
