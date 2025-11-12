@@ -1,0 +1,59 @@
+# Dockerfile.jupyter - 🦥 SLOTH MODE for LuminAI Development
+FROM jupyter/scipy-notebook:latest
+
+USER root
+
+# Install system dependencies for AI development
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    wget \
+    vim \
+    htop \
+    tree \
+    jq \
+    && rm -rf /var/lib/apt/lists/*
+
+USER jovyan
+
+# Install Python packages for LuminAI development
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+# Install additional AI/ML packages
+# Note: torch and sentence-transformers excluded from docker build
+# (download time 10+ minutes); install locally with pip if needed
+RUN pip install --no-cache-dir \
+    chromadb \
+    accelerate \
+    datasets \
+    evaluate \
+    peft \
+    trl \
+    unsloth \
+    ollama \
+    langchain \
+    langchain-community \
+    langchain-chroma \
+    gradio \
+    streamlit \
+    plotly \
+    seaborn \
+    matplotlib \
+    ipywidgets \
+    jupyter-ai
+
+# Install Jupyter extensions
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
+
+# Create directories
+RUN mkdir -p /home/jovyan/notebooks /home/jovyan/models /home/jovyan/data
+
+# Set working directory
+WORKDIR /workspace
+
+# Expose Jupyter port
+EXPOSE 8888
+
+# Start Jupyter Lab with custom config
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token=luminai_sloth_mode", "--NotebookApp.password=''"]
