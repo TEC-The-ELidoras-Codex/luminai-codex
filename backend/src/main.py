@@ -13,6 +13,7 @@ import json
 import os
 from dotenv import load_dotenv
 import logging
+from routes import multi_llm
 
 load_dotenv()
 
@@ -237,6 +238,13 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=['*'],
     allow_headers=['*'],
+)
+
+# Include routers
+app.include_router(
+    multi_llm.router,
+    prefix='/api',
+    tags=['multi-llm']
 )
 
 
