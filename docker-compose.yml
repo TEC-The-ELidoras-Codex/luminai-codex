@@ -1,5 +1,7 @@
 version: '3.8'
+
 services:
+  # Development environment
   dev:
     build: .
     image: tec-tgcr-dev:latest
@@ -8,3 +10,88 @@ services:
     stdin_open: true
     tty: true
     command: bash
+    profiles:
+      - dev-only
+
+  # Backend FastAPI server (Resonance Platform)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - BACKEND_PORT=8000
+      - DATABASE_URL=postgresql://luminai:luminai@postgres:5432/luminai
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app/backend
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - luminai-network
+
+  # Frontend Next.js server (Resonance Platform)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app/frontend
+      - /app/frontend/.next
+    command: npm run dev
+    networks:
+      - luminai-network
+
+  # PostgreSQL database
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=luminai
+      - POSTGRES_PASSWORD=luminai
+      - POSTGRES_DB=luminai
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U luminai"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - luminai-network
+
+  # Redis cache
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - luminai-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  luminai-network:
+    name: luminai-network
