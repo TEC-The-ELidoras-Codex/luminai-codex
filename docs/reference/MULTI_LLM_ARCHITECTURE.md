@@ -273,6 +273,7 @@ ChatPage (Layout)
 ### POST /api/multi-llm/response
 
 **Request:**
+
 ```json
 {
   "persona": "claude" | "openai" | "xai",
@@ -289,6 +290,7 @@ ChatPage (Layout)
 ```
 
 **Response:**
+
 ```json
 {
   "response": "string",
@@ -301,6 +303,7 @@ ChatPage (Layout)
 ### GET /api/multi-llm/personas
 
 **Response:**
+
 ```json
 {
   "claude": {
@@ -386,22 +389,26 @@ R = (agreement × coherence × insight_depth) / 3
 ## Error Handling
 
 ### Missing API Keys
+
 - Backend checks `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `XAI_API_KEY`
 - Returns demo response if key missing
 - Logs warning but continues
 
 ### API Rate Limits
+
 - Implement exponential backoff
 - Queue requests if rate limited
 - Show user "API limit reached" message
 
 ### Network Timeouts
+
 - Default timeout: 30 seconds
 - Show "Still thinking..." after 10 seconds
 - Allow cancel operation
 - Retry with exponential backoff
 
 ### Invalid Requests
+
 - Validate schema on backend
 - Return 400 Bad Request
 - Log issue for debugging

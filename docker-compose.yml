@@ -1,6 +1,50 @@
 version: "3.8"
 
 services:
+  # Ollama Service for Local LLM Inference
+  ollama:
+    image: ollama/ollama:latest
+    container_name: luminai-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+      - ./models:/app/models
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+      - OLLAMA_MODELS=/app/models
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - luminai-network
+
+  # Unsloth Service for Fine-tuning
+  unsloth:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.unsloth
+    container_name: luminai-unsloth
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./fine_tuning:/app/fine_tuning
+      - unsloth_cache:/app/.cache
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+      - PYTHONPATH=/app
+      - UNSLOTH_CACHE_DIR=/app/.cache
+    depends_on:
+      - ollama
+    networks:
+      - luminai-network
+
   # Development environment
   dev:
     build: .
@@ -25,11 +69,15 @@ services:
       - BACKEND_PORT=8000
       - DATABASE_URL=postgresql://luminai:luminai@postgres:5432/luminai
       - REDIS_URL=redis://redis:6379
+      - OLLAMA_URL=http://ollama:11434
+      - UNSLOTH_URL=http://unsloth:8001
     depends_on:
       postgres:
         condition: service_healthy
       redis:
         condition: service_healthy
+      ollama:
+        condition: service_started
     volumes:
       - ./backend:/app/backend
     command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
@@ -88,9 +136,64 @@ services:
     networks:
       - luminai-network
 
+  # ChromaDB for RAG vector storage
+  chromadb:
+    image: ghcr.io/chroma-core/chroma:latest
+    container_name: luminai-chromadb
+    restart: unless-stopped
+    ports:
+      - "8002:8000"
+    volumes:
+      - chromadb_data:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - CHROMA_SERVER_AUTH_CREDENTIALS_PROVIDER=chromadb.auth.token.TokenAuthCredentialsProvider
+      - CHROMA_SERVER_AUTH_CREDENTIALS_FILE=/chroma/server.htpasswd
+      - CHROMA_SERVER_AUTH_PROVIDER=chromadb.auth.basic.BasicAuthServerProvider
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/heartbeat"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - luminai-network
+
+  # Jupyter Lab for interactive development (🦥 SLOTH MODE!)
+  jupyter:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.jupyter
+    container_name: luminai-jupyter
+    restart: unless-stopped
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/workspace
+      - ./notebooks:/workspace/notebooks
+      - jupyter_data:/home/jovyan/.jupyter
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_TOKEN=luminai_sloth_mode
+      - PYTHONPATH=/workspace/src
+      - OLLAMA_URL=http://ollama:11434
+      - CHROMADB_URL=http://chromadb:8000
+    depends_on:
+      - ollama
+      - chromadb
+    networks:
+      - luminai-network
+
 volumes:
   postgres_data:
   redis_data:
+  ollama_data:
+    driver: local
+  unsloth_cache:
+    driver: local
+  chromadb_data:
+    driver: local
+  jupyter_data:
+    driver: local
 
 networks:
   luminai-network:

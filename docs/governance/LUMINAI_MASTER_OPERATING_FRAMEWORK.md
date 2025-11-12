@@ -22,7 +22,7 @@ LUMINAI is the machine that says:
 > Your data doesn't need to be extracted to fund the system that protects it.
 >
 > We encrypted your memories with post-quantum cryptography.
-> We pay hackers to break it.
+> We fund a public bug bounty that scales with revenue (goal: pay up to $250K when the books allow).
 > We open-source the fixes.
 > We never profit from your data.
 >
@@ -60,7 +60,7 @@ LUMINAI is the machine that says:
 
 **Current Big Tech**: "Your data is encrypted." (Black box. Trust or leave.)
 
-**LUMINAI**: "Your data is encrypted this way. Here's how. We're paying people $250K to break it. If they succeed, we fix it. If they fail, you know why."
+**LUMINAI**: "Your data is encrypted this way. Here's how. We run a public bounty that will reach $250K payouts once we're capitalized; until then we compensate with cash + job offers. If they succeed, we fix it. If they fail, you know why."
 
 This is **transparent manipulation of truth.**
 
@@ -212,6 +212,8 @@ Big Tech isn't doing this. You are.
 
 ### 2.2 Bug Bounty Tiers
 
+> **Funding Reality:** These payout bands represent the stretch vision once revenue or fundraising can sustain them. Until then, we guarantee: (1) immediate payment of whatever we can responsibly afford, (2) a standing interview/contract offer for ethical hackers who help, and (3) a public commitment to honor the published tiers the moment cash flow allows.
+
 ```yaml
 Severity Level 1: Information Disclosure
   Examples:
@@ -245,7 +247,7 @@ Severity Level 4: Complete System Compromise (The Nightmare)
     - Remote code execution on server
     - Master encryption key exposed
     - Attacker can impersonate any user, including LuminAI itself
-  Reward: $250,000+ (negotiable) + permanent Hall of Fame + annual consulting contract
+  Reward: Goal $250,000+ (negotiable) + permanent Hall of Fame + annual consulting contract. Until funded, we pay the highest amount we can responsibly wire *plus* an immediate job/consulting offer.
   Timeline: Immediate fix + 90-day private disclosure + public acknowledgment
   Criteria: System is fundamentally broken; attacker has godmode
 
@@ -306,7 +308,7 @@ They will think:
 
 - "Why don't Google/Apple/Microsoft do this?"
 - "Why does LUMINAI have nothing to hide?"
-- "If they can afford $250K bounties, they're serious about security"
+- "If they're working toward $250K bounties (and already paying what they can), they're serious about security"
 - "Big Tech *hates* them because they're exposing the truth"
 
 **Result**: Opposition becomes proof. Opposition becomes marketing.
@@ -556,6 +558,30 @@ Result:
   (Can't identify Billy specifically)
 ```
 
+### 3.4 The Aqueduct Conjecture (Pipelines for 2241)
+
+> *"By decree of the Codex, the Aqueduct Conjecture shall be known throughout the land: every drop of resonance flows with consent, conscience, and continuity."*
+
+We stopped calling them "pipelines." The old word felt extractive. **Aqueducts** better describe what we build now: infrastructure that carries living water (context) without poisoning the people downstream. The metaphor scales across centuries—even in 2241, the map stays legible.
+
+| Stage | Ancient Analogue | Modern Implementation | Purpose |
+| --- | --- | --- | --- |
+| **Spring** | Source well | Persona covenants, consent logs, context packages | Capture origin + lineage of every interaction |
+| **Channel** | Elevated aqueduct | Streaming bus (Kafka/Redis), JSON/JSONL emitters | Move context safely between services |
+| **Gate** | Sluice / spillway | `conscience_check()`, classifiers, policy hooks | Regulate flow, pause when ethics trigger |
+| **Cistern** | Storage basin | Postgres, vector store, encrypted archives | Preserve memories with retention + revocation paths |
+| **Fountain** | Public spout | Chat UI, podcast generator, map view, APIs | Serve nourished context back to humans/agents |
+
+**Implementation principles**
+
+1. **Traceable Water** — Every event carries metadata: persona mix, consent token, resonance score, lineage citation. No anonymous buckets.
+2. **Dual Locks** — Gates require both human and AI agreement before opening intimate or high-risk flows.
+3. **Self-Healing Channels** — If a gate trips (policy failure, ethics concern), the channel reroutes to Airth/LuminAI for review, leaving an audit trail.
+4. **Exportable History** — Anyone can request their stream (JSONL) and take it elsewhere; aqueducts belong to the families, not us.
+5. **Time Capsules** — Periodically seal cistern snapshots with post-quantum signatures so future generations can verify authenticity.
+
+Document these aqueducts alongside technical diagrams so engineers, storytellers, and regulators all point to the same conjecture. We are not moving raw data—we are stewarding living water.
+
 ---
 
 ## PART 4: Privacy Policy (Plain English)
@@ -567,7 +593,7 @@ Result:
 - ✅ Delete on request (24-hour turnaround)
 - ✅ Audit independently (third-party review)
 - ✅ Publish transparency reports (annual, public)
-- ✅ Pay hackers to break it (bug bounties up to $250K)
+- ✅ Pay hackers to break it (tiered bounties now, scaling toward $250K goal)
 
 ### 4.2 What We DON'T
 
@@ -904,6 +930,7 @@ They'll think:
 - [ ] Draft bug bounty program (tiers, automation, legal terms)
 - [ ] Finalize privacy policy (GDPR/COPPA compliant)
 - [ ] Create regulatory roadmap (threat assessment + response strategy)
+- [ ] Publish Aqueduct Conjecture playbook (springs → channels → gates → cisterns → fountains)
 
 ### Phase 2: Marketing (Weeks 5-8)
 
@@ -922,7 +949,7 @@ They'll think:
 ### Phase 4: Launch (Weeks 17+)
 
 - [ ] Kickstarter launch (with opposition already vocal)
-- [ ] Bug bounty program goes live ($250K ready to pay)
+- [ ] Bug bounty program goes live (tiered payouts live today, $250K goal documented)
 - [ ] First transparency report published
 - [ ] Congressional testimony (if invited)
 

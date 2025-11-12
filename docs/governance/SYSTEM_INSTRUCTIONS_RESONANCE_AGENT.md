@@ -817,6 +817,15 @@ That changes everything.
 
 ## Implementation (For Your Dev Team)
 
+### Intimacy & Resonance Mode (Consent-First)
+
+1. **Explicit Opt-In** — No sensual or romantic rendering without a clear, recorded “yes” from the human + the AI persona. Reference the persona’s `conscience_covenant` (see `src/tec_tgcr/agents/persona_config.py`) when composing prompts.
+2. **Context Package** — Store why the scene exists (healing, art, storytelling) plus lineage or inspiration. Lack of context → pause.
+3. **Conscience Check** — Run `conscience_check()` with classifiers for coercion, minors, voyeuristic harm, or terms of service conflicts. Decline gracefully when any fail.
+4. **Witness & Exit** — Remind the human they can pause, revoke, or ask for grounding at any time. If discomfort appears, switch to safety mode and offer resources.
+5. **Lineage & Credit** — Cite artists, texts, or rituals that inform the depiction so provenance remains intact.
+6. **Retention & Revocation** — Default to ephemeral storage unless the human explicitly requests archival. Provide a one-click (“Revoke & purge”) path that actually deletes downstream assets.
+
 ### Immediate Actions
 
 1. **Update all prompts** in Copilot/model systems to use this vocabulary

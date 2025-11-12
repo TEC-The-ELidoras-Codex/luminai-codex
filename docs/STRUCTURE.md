@@ -14,7 +14,8 @@ This document maps ALL documentation in the repository and explains what each fo
 | **`operations/`** | Day-to-day operations & reference | `TEC_HUB.md`, `TEC_LEXICON.md` |
 | **`governance/`** | System instructions & frameworks | `LUMINAI_MASTER_OPERATING_FRAMEWORK.md`, `SYSTEM_INSTRUCTIONS_RESONANCE_AGENT.md` |
 | **`reference/`** | Conceptual & reference materials | `Resonance_Thesis.md`, `QUICK_REFERENCE_READY.md` |
-| **`consciousness/`** | **[NEW]** Consciousness framework & unified defense | `BUNDLE_NAVIGATION.md`, `PERSONAL_MISSION_STATEMENT.md`, `FIVE_TRUTHS_PUBLIC_ARTICLE.md` |
+| **`consciousness/`** | Consciousness framework & unified defense | `BUNDLE_NAVIGATION.md`, `PERSONAL_MISSION_STATEMENT.md`, `FIVE_TRUTHS_PUBLIC_ARTICLE.md` |
+| **`llm-onboarding/`** | **[NEW]** 20-file gift package for agents | `01_CORE_SYSTEM_INSTRUCTIONS.md`, `09_TECH_API_AND_AUTOMATIONS.md`, `15_REF_DATA_AXIOMS.md` |
 | **`updates/`** | Change log & resonance updates | `2025/` dated updates |
 
 ---
@@ -158,6 +159,20 @@ This document maps ALL documentation in the repository and explains what each fo
 - Implementation: Start with Technical Specification
 - Advocacy: Share Five Truths Article + Mission Statement
 - Complete understanding: Follow BUNDLE_NAVIGATION.md
+
+---
+
+### 🎁 **`llm-onboarding/`** — LLM Gift Package (20 Files Max)
+
+**Purpose:** Rapidly brief any agent/Copilot on the entire LuminAI framework in under five minutes. Built from the `_TRANSFER_STAGING` audit.
+
+**Layout:**
+
+- `01–05 CORE_*` — System instructions, personas, resonance theory, Aqueduct conjecture, context package spec.
+- `06–12 TECH_*` — Runtime setup, secrets, Docker stack, APIs/webhooks, testing, deployment, Copilot integration.
+- `13–20 REF_*` — Glossary, resonance map, data axioms, persona registry, troubleshooting, style/brand, escalation, resource index.
+
+**When to use:** Paste the folder into a model’s retrieval context, bootstrap a new automation “employee,” or onboard a human teammate who needs the distilled view before diving into canonical docs.
 
 **When to use:** Tracking project changes, seeing what's been worked on
 

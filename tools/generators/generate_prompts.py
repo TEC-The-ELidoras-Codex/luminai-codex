@@ -13,7 +13,8 @@ sys.path.insert(0, str(project_root / "src"))
 
 # Import the prompt generator
 sys.path.append("ai-workflow")
-exec(open("ai-workflow/prompt_templates.py").read())
+with open("ai-workflow/prompt_templates.py") as template_file:
+    exec(template_file.read())
 
 
 def generate_sample_prompts():

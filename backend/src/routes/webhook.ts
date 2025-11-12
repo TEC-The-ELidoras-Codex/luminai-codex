@@ -1,11 +1,38 @@
 import express, { Request, Response } from 'express';
 import crypto from 'crypto';
 import { updateGitHubPages, notifyWebsiteUpdate } from '../integrations/github-pages';
+import { sanitizeLogInput, validateGitHubRef, createSafeWebhookLog } from '../security';
 
 const router = express.Router();
 
 // GitHub webhook secret (set in environment)
 const GITHUB_WEBHOOK_SECRET = process.env.GITHUB_WEBHOOK_SECRET || 'development-secret';
+
+// ============================================================================
+// RATE LIMITING FOR WEBHOOK ENDPOINT
+// ============================================================================
+
+// Simple in-memory rate limiter: track requests per IP
+const webhookRateLimiter = new Map<string, { count: number; resetTime: number }>();
+
+function checkRateLimit(clientIp: string, maxRequests: number = 10, windowMs: number = 60000): boolean {
+  const now = Date.now();
+  const record = webhookRateLimiter.get(clientIp);
+
+  if (!record || now > record.resetTime) {
+    // Reset window or create new record
+    webhookRateLimiter.set(clientIp, { count: 1, resetTime: now + windowMs });
+    return true;
+  }
+
+  if (record.count >= maxRequests) {
+    console.warn(`⚠️ Rate limit exceeded for IP: ${sanitizeLogInput(clientIp)}`);
+    return false;
+  }
+
+  record.count++;
+  return true;
+}
 
 /**
  * Verify GitHub webhook signature
@@ -49,6 +76,19 @@ function verifyGitHubSignature(req: Request): boolean {
  */
 router.post('/github', async (req: Request, res: Response) => {
   try {
+    // Get client IP for rate limiting
+    const clientIp = (req.headers['x-forwarded-for'] as string)?.split(',')[0] || 
+                     req.socket.remoteAddress || 
+                     'unknown';
+
+    // Check rate limit (10 requests per minute)
+    if (!checkRateLimit(clientIp, 10, 60000)) {
+      return res.status(429).json({ 
+        error: 'Too Many Requests',
+        message: 'Webhook rate limit exceeded. Maximum 10 requests per minute.' 
+      });
+    }
+
     // Verify webhook signature
     if (!verifyGitHubSignature(req)) {
       console.error('❌ Invalid GitHub webhook signature');
@@ -58,15 +98,21 @@ router.post('/github', async (req: Request, res: Response) => {
     const event = req.headers['x-github-event'] as string;
     const { repository, ref, pusher, commits } = req.body;
 
-    console.log(`\n🔔 GitHub Webhook Event: ${event}`);
-    console.log(`📦 Repository: ${repository?.full_name}`);
-    console.log(`🌿 Branch: ${ref}`);
-    console.log(`👤 Pusher: ${pusher?.name}`);
+    // Sanitize all webhook data before logging
+    const safeEvent = sanitizeLogInput(event);
+    const safeRepoName = sanitizeLogInput(repository?.full_name);
+    const safeBranch = sanitizeLogInput(ref);
+    const safePusher = sanitizeLogInput(pusher?.name);
+
+    console.log(`\n🔔 GitHub Webhook Event: ${safeEvent}`);
+    console.log(`📦 Repository: ${safeRepoName}`);
+    console.log(`🌿 Branch: ${safeBranch}`);
+    console.log(`👤 Pusher: ${safePusher}`);
     console.log(`📝 Commits: ${commits?.length || 0}`);
 
-    // Only process pushes to main branch
-    if (ref !== 'refs/heads/main') {
-      console.log(`⏭️ Skipping webhook (not main branch: ${ref})`);
+    // Only process pushes to main branch (validate ref format first)
+    if (!validateGitHubRef(ref) || ref !== 'refs/heads/main') {
+      console.log(`⏭️ Skipping webhook (not main branch: ${safeBranch}`);
       return res.json({ status: 'skipped', reason: 'not-main-branch' });
     }
 
@@ -114,7 +160,7 @@ async function handlePushEvent(payload: any, res: Response) {
   Array.from(changedFiles)
     .filter(f => !f.startsWith('.'))
     .slice(0, 10)
-    .forEach(f => console.log(`   - ${f}`));
+    .forEach(f => console.log(`   - ${sanitizeLogInput(f)}`));
 
   // Process documentation changes
   const docChanges = Array.from(changedFiles).filter(f => 

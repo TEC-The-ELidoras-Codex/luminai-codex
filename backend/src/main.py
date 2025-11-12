@@ -14,6 +14,7 @@ import os
 from dotenv import load_dotenv
 import logging
 from routes import multi_llm
+from security import sanitize_log_input, sanitize_webhook_payload, validate_github_ref
 
 load_dotenv()
 
@@ -68,15 +69,20 @@ async def process_github_push(payload: dict, background_tasks: BackgroundTasks):
     ref = payload.get('ref', '')
     pusher = payload.get('pusher', {})
     
-    logger.info(f"📤 Processing push event")
-    logger.info(f"   Repository: {repository.get('full_name')}")
-    logger.info(f"   Branch: {ref}")
-    logger.info(f"   Commits: {len(commits)}")
-    logger.info(f"   Pusher: {pusher.get('name')}")
+    # Sanitize all webhook data before logging
+    repo_name = sanitize_log_input(repository.get('full_name'))
+    branch = sanitize_log_input(ref)
+    pusher_name = sanitize_log_input(pusher.get('name'))
     
-    # Only process main branch
-    if ref != 'refs/heads/main':
-        logger.info(f"⏭️ Skipping webhook (not main branch: {ref})")
+    logger.info(f"📤 Processing push event")
+    logger.info(f"   Repository: {repo_name}")
+    logger.info(f"   Branch: {branch}")
+    logger.info(f"   Commits: {len(commits)}")
+    logger.info(f"   Pusher: {pusher_name}")
+    
+    # Only process main branch (validate ref format first)
+    if not validate_github_ref(ref) or ref != 'refs/heads/main':
+        logger.info(f"⏭️ Skipping webhook (not main branch: {branch})")
         return {'status': 'skipped', 'reason': 'not-main-branch'}
     
     # Extract changed files
@@ -89,7 +95,8 @@ async def process_github_push(payload: dict, background_tasks: BackgroundTasks):
     logger.info(f"📄 Changed files ({len(changed_files)}):")
     for file in list(changed_files)[:10]:
         if not file.startswith('.'):
-            logger.info(f"   - {file}")
+            safe_file = sanitize_log_input(file)
+            logger.info(f"   - {safe_file}")
     
     # Process documentation changes
     doc_changes = [f for f in changed_files if f.startswith('docs/') or f.endswith('.md')]
@@ -126,7 +133,11 @@ async def update_github_pages(
     changed_files: list
 ):
     """Update GitHub Pages documentation"""
-    logger.info(f"📖 Updating GitHub Pages for {repository_name}...")
+    # Sanitize inputs before logging
+    safe_repo = sanitize_log_input(repository_name)
+    safe_pusher = sanitize_log_input(pusher_name)
+    
+    logger.info(f"📖 Updating GitHub Pages for {safe_repo}...")
     
     try:
         # In production, this would:
@@ -294,13 +305,16 @@ async def github_webhook(request: Request, background_tasks: BackgroundTasks):
         
         elif event_type == 'pull_request':
             action = payload.get('action', '')
-            logger.info(f'   Action: {action}')
+            safe_action = sanitize_log_input(action)
+            logger.info(f'   Action: {safe_action}')
             result = {'status': 'acknowledged', 'event': 'pull_request', 'action': action}
         
         elif event_type == 'release':
             action = payload.get('action', '')
             version = payload.get('release', {}).get('tag_name', '')
-            logger.info(f'   Action: {action}, Version: {version}')
+            safe_action = sanitize_log_input(action)
+            safe_version = sanitize_log_input(version)
+            logger.info(f'   Action: {safe_action}, Version: {safe_version}')
             result = {'status': 'processed', 'event': 'release', 'version': version}
         
         else:

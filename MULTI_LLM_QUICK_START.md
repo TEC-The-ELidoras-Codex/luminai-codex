@@ -3,12 +3,14 @@
 ## What You Have
 
 **4 Ready-to-Use Components**:
+
 - `LLMProviderSelector` — Choose Claude, GPT-4, or Grok
 - `CollaborationPanel` — Manage 4-8 users + recording
 - `MultiLLMChat` — Main chat with bouncing responses
 - `CompactResonanceMap` — Orbiting concept visualization
 
 **1 Backend API**:
+
 - `/api/multi-llm/response` — Get LLM response in sequence
 - `/api/multi-llm/personas` — Get provider info
 - `/api/multi-llm/resonance/calculate` — Group score
@@ -104,40 +106,47 @@ See `frontend/pages/chat-integration-example.tsx` for full example.
 ## Features at a Glance
 
 ✅ **LLM Selection**
+
 - Choose provider from dropdown
 - See available models
 - View provider strengths
 
 ✅ **Multi-LLM Bouncing**
+
 - Claude responds first (sees user input)
 - GPT-4 responds second (sees Claude)
 - Grok responds third (sees both)
 - Each builds on previous insights
 
 ✅ **Help System**
+
 - Click (?) for feature explanation
 - Shows persona specialties
 - Explains how bouncing works
 - Tips for best results
 
 ✅ **Hover Animations**
+
 - Response cards lift on hover
 - Smooth 300ms transitions
 - Gradient color blending
 
 ✅ **Collaboration**
+
 - Invite up to 8 users
 - See active participant avatars
 - Toggle recording
 - View group resonance score
 
 ✅ **Concept Mapping**
+
 - Concepts orbit based on frequency
 - Connections show relationships
 - Real-time updates
 - Click concepts for details
 
 ✅ **Export**
+
 - Download full conversation
 - Include timestamps + LLM names
 - Markdown format
@@ -146,6 +155,7 @@ See `frontend/pages/chat-integration-example.tsx` for full example.
 ## Common Tasks
 
 ### Change LLM Provider
+
 ```typescript
 const [provider, setProvider] = useState('openai')
 <LLMProviderSelector
@@ -155,6 +165,7 @@ const [provider, setProvider] = useState('openai')
 ```
 
 ### Handle Exported Transcript
+
 ```typescript
 <MultiLLMChat
   onExport={(transcript) => {
@@ -165,6 +176,7 @@ const [provider, setProvider] = useState('openai')
 ```
 
 ### Add User to Session
+
 ```typescript
 <CollaborationPanel
   onInviteUser={(email) => {
@@ -175,6 +187,7 @@ const [provider, setProvider] = useState('openai')
 ```
 
 ### Detect Hover on Concepts
+
 ```typescript
 <CompactResonanceMap
   onConceptClick={(id) => {
@@ -187,6 +200,7 @@ const [provider, setProvider] = useState('openai')
 ## API Quick Ref
 
 ### Get Multi-LLM Response
+
 ```bash
 POST /api/multi-llm/response
 
@@ -210,6 +224,7 @@ POST /api/multi-llm/response
 ```
 
 ### Get Personas
+
 ```bash
 GET /api/multi-llm/personas
 
@@ -223,6 +238,7 @@ GET /api/multi-llm/personas
 ## Troubleshooting
 
 **❌ "Cannot connect to backend"**
+
 ```bash
 # Make sure backend is running:
 python backend/src/main.py
@@ -230,6 +246,7 @@ python backend/src/main.py
 ```
 
 **❌ "API key not found"**
+
 ```bash
 # Check .env.local:
 cat .env.local | grep API_KEY
@@ -239,6 +256,7 @@ python scripts/test_multi_llm.py
 ```
 
 **❌ "LLM responses are empty"**
+
 ```bash
 # Check backend logs for errors
 # Verify API keys have credits
@@ -247,6 +265,7 @@ python scripts/test_multi_llm.py
 ```
 
 **❌ "Components not showing"**
+
 ```bash
 # Make sure components are imported
 # Check React DevTools for errors
@@ -257,15 +276,18 @@ npm run build
 ## Performance Tips
 
 🚀 **Faster Responses**
+
 - Use GPT-3.5 instead of GPT-4 for quicker responses
 - Reduce token limits for faster processing
 - Consider caching frequently asked questions
 
 ⚡ **Parallel Processing** (Future)
+
 - Current: Sequential Claude → OpenAI → xAI
 - Could be: Claude + OpenAI parallel, then Grok sees both
 
 💾 **Token Budget**
+
 - Track tokens per LLM
 - Set limits per conversation
 - Warn users when approaching budget
@@ -289,17 +311,20 @@ npm run build
 ## Support
 
 💬 **Questions about implementation?**
+
 - Check `frontend/pages/chat-integration-example.tsx`
 - See inline comments in components
 - Review `docs/reference/MULTI_LLM_ARCHITECTURE.md`
 
 🐛 **Something broken?**
+
 - Run `python scripts/test_multi_llm.py`
 - Check backend logs
 - Verify API keys in `.env.local`
 - Review error messages in browser console
 
 🎓 **Want to understand the system?**
+
 - Read `docs/reference/MULTI_LLM_ARCHITECTURE.md` first
 - Look at `frontend/pages/chat-integration-example.tsx`
 - Study the component props/interfaces

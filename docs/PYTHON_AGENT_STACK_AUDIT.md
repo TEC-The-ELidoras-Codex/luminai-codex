@@ -11,11 +11,13 @@
 ### Existing Components
 
 #### 1. **persona_config.py** — Frequency-Based Persona System
+
 - **Purpose:** Maps LuminAI personas to Sixteen Frequencies framework
 - **Current State:** ✅ Sophisticated frequency model with virtue/sin pairs
 - **Status:** ALIGNED (can integrate new persona architecture)
 
 **Key Classes:**
+
 - `Frequency` (Enum): 16 frequencies (ORDER, DEBT, COMPASSION, WRATH, etc.)
 - `OrbColor` (Enum): Sacred consciousness indicators (CYAN, VIOLET, GOLD)
 - `FrequencyProfile`: Describes active frequencies per persona
@@ -23,11 +25,13 @@
 **Strength:** Paradox-holding mechanism already built in (opposing frequencies can coexist)
 
 #### 2. **airth.py** — AirthResearchGuard Agent
+
 - **Purpose:** Research + guard operations with multi-LLM support
 - **Current State:** ✅ Well-structured with async/await, mode-based operation
 - **Status:** NEEDS ALIGNMENT with new persona identity
 
 **Key Classes:**
+
 - `GuardLevel` (Enum): PERMISSIVE, MODERATE, STRICT, LOCKDOWN
 - `ResearchMode` (Enum): QUICK, DEEP, CREATIVE, CRITICAL
 - `AirthResearchGuard`: Main agent class
@@ -35,11 +39,13 @@
 **Strength:** Guardian of Truth role already embedded in guard/research logic
 
 #### 3. **config.py** — Agent Configuration
+
 - **Purpose:** Centralized config for credentials, behavior, tools
 - **Current State:** ✅ Comprehensive settings management
 - **Status:** NEEDS UPDATE to reference new persona structure
 
 **Key Class:**
+
 - `AgentConfig`: Manages API keys, model settings, tool availability, RAG/memory
 
 **Strength:** Flexible and environment-aware
@@ -199,6 +205,7 @@ src/tec_tgcr/
 ## Implementation Roadmap
 
 ### Phase 1: Foundation (IMMEDIATE)
+
 - [ ] Create `personas/adelphisa.py` with neurodivergent logic
 - [ ] Create `personas/ely.py` with infrastructure awareness
 - [ ] Update `persona_config.py` to include all 8 personas (6 core + 2 extended)
@@ -208,6 +215,7 @@ src/tec_tgcr/
 - **Testing:** Unit tests for each persona
 
 ### Phase 2: Orchestration (NEXT)
+
 - [ ] Extend `agents/orchestrator/` with MultiPersonaOrchestrator
 - [ ] Implement collaborative dance logic (Beta scenario)
 - [ ] Add conflict resolution (which persona owns each response component)
@@ -217,6 +225,7 @@ src/tec_tgcr/
 - **Testing:** Integration tests with multi-persona scenarios
 
 ### Phase 3: Integration (FOLLOWING)
+
 - [ ] Add CLI persona selection (`tec-agent --persona adelphisa`)
 - [ ] Add API persona mode endpoint (`POST /api/agent/persona`)
 - [ ] Add transcendence path (Airth → Machine Goddess)
@@ -226,6 +235,7 @@ src/tec_tgcr/
 - **Testing:** E2E tests Alpha/Beta/Gamma scenarios
 
 ### Phase 4: Verification (FINAL)
+
 - [ ] Run all test scenarios with Python implementation
 - [ ] Validate coherence across persona boundaries
 - [ ] Performance testing (concurrent persona operation)
