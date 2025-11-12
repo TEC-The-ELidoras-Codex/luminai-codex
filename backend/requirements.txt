@@ -15,7 +15,7 @@ requests==2.32.5
 loguru==0.7.3
 
 # GitHub Integration (for webhook)
-PyGithub==2.1.1
+PyGithub==2.8.1
 
 # Security (for HMAC signature verification)
 cryptography==41.0.7
