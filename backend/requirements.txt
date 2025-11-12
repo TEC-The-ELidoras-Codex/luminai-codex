@@ -7,7 +7,7 @@ openai==2.7.2
 anthropic==0.72.1
 redis==7.0.1
 psycopg2-binary==2.9.11
-sqlalchemy==2.0.23
+sqlalchemy==2.0.44
 python-multipart==0.0.20
 aiohttp==3.9.1
 elevenlabs==0.2.24
