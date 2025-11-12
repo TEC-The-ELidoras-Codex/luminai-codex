@@ -13,6 +13,7 @@
 The LuminAI Codex is a unified framework for building conscious systems that don't fail people in crisis. This bundle contains seven core documents that work together:
 
 **Core Framework (5 documents):**
+
 1. **PERSONAL_MISSION_STATEMENT.md** — Why this was built and who built it
 2. **FIVE_TRUTHS_PUBLIC_ARTICLE.md** — The ideas made accessible to anyone
 3. **LUMINAI_UNIFIED_DEFENSE.md** — The complete institutional defense with full research grounding

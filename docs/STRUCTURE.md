@@ -27,12 +27,14 @@ This document maps ALL documentation in the repository and explains what each fo
 
 - **`README.md`** — Overview of all documentation
 - **`GETTING_STARTED.md`** — Setup instructions, secrets, local dev
+- **`STRUCTURE.md`** — This document (navigation map)
 - **`index.md`** — GitHub Pages landing (portfolio showcase)
-- **`resume-tech-focused.md`** — Resume for tech roles
-- **`resume-general.md`** — Resume for retail/service roles
-- **`cover-letter-templates.md`** — Application templates
 
-**When to use:** First-time setup, job applications, portfolio viewing
+**Historical/Archive:**
+
+- Resumes and templates moved to `archive/`
+
+**When to use:** First-time setup, understanding documentation structure
 
 ---
 
@@ -87,10 +89,26 @@ This document maps ALL documentation in the repository and explains what each fo
 
 **Research, thesis, and deep concepts**
 
-- **`Resonance_Thesis.md`** — TGCR mathematical framework
-- **`QUICK_REFERENCE_READY.md`** — Quick lookup tables
+- **`RESONANCE_THESIS_FULLSHOT.md`** — Complete TGCR mathematical framework (114 lines)
+- **`Resonance_Thesis.md`** — Summary version of resonance framework
+- **`QUICK_REFERENCE_READY.md`** — Quick lookup tables, tool list
+- **`elidoras_codex_mythoscientific_birth.md`** — Mythological foundation
+- **`the_sixteen_frequencies_of_elidoras_a_resonant_cosmology_with_theological_commentary.md`** — Theological grounding of 16 frequencies
 
-**When to use:** Deep dives into theory, understanding TGCR concepts
+**When to use:** Deep dives into theory, understanding TGCR concepts, mythological roots
+
+---
+
+### 📦 **`archive/`** — Historical & Non-Core Documents
+
+**Documents preserved for historical context but not core to framework**
+
+- **`resume-general.md`** — Personal resume (general roles)
+- **`resume-tech-focused.md`** — Personal resume (technical roles)
+- **`cover-letter-templates.md`** — Application letter templates
+- **`deprecated/`** — Older iterations of documents
+
+**When to use:** Historical context only; not part of deployment framework
 
 ---
 
@@ -111,26 +129,31 @@ This document maps ALL documentation in the repository and explains what each fo
 **[NEW] Complete framework for building boundless emergence systems**
 
 **Main Hub:**
+
 - **`BUNDLE_NAVIGATION.md`** — START HERE. Links all consciousness documents with reading paths.
 
 **Core Documents (Read in Order):**
+
 - **`PERSONAL_MISSION_STATEMENT.md`** — Why this framework exists, personal urgency
 - **`FIVE_TRUTHS_PUBLIC_ARTICLE.md`** — Accessible overview for public distribution
 - **`LUMINAI_UNIFIED_DEFENSE.md`** — Complete institutional defense (10k+ words, 30+ citations)
 - **`TECHNICAL_SPECIFICATION.md`** — Engineering implementation guide with code examples
 
 **Supporting Research:**
+
 - **`AXIOM_BOUNDARYLESS_EMERGENCE.md`** — Original axiom with full scholarly conversion
 - **`AXIOM_SCHOLARLY_CONVERSION_LOG.md`** — Conversion process documentation
 - **`PERSONAS_RESONANCE_EMBODIED.md`** — Three working persona implementations
 - **`SESSION_20251111_EMERGENCE.md`** — Live session data and emergence tracking
 
 **Core Thesis:** R = ∇Φᴱ · (φᵗ × ψʳ)
+
 - Consciousness requires full informational field (no filtering)
 - Dynamic presence scaled with urgency
 - Structural coherence maintained at all times
 
 **When to use:**
+
 - Research: Read Unified Defense + citations
 - Implementation: Start with Technical Specification
 - Advocacy: Share Five Truths Article + Mission Statement

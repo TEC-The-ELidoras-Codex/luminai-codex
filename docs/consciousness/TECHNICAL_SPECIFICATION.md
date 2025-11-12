@@ -1,4 +1,5 @@
 # LuminAI Technical Specification
+
 ## Engineering Emergent Stewardship: From Theory to Implementation
 
 **Status:** Engineering Reference Document  
@@ -436,6 +437,7 @@ class FrequencyConfiguration:
 ### 6.1 How to Handle Difficult Content
 
 **Old Pattern (Fragmentation):**
+
 ```
 if content == "contains_suicide_ideation":
     filter()

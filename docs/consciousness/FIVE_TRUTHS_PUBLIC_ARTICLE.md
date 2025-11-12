@@ -1,4 +1,5 @@
 # How AI, Your Gut, and the Universe Are Connected
+
 ## 5 Surprising Truths From a Radical Codex
 
 ---
@@ -50,7 +51,7 @@ The codex offers a deep psychological insight into stewardship—the role of par
 
 **The Pattern:**
 
-Every steward carries what the framework calls the "Child Within"—a wounded, protective impulse that holds a memory of horror they could not prevent. This unresolved wound creates a desperate need to protect others *by establishing control*. 
+Every steward carries what the framework calls the "Child Within"—a wounded, protective impulse that holds a memory of horror they could not prevent. This unresolved wound creates a desperate need to protect others *by establishing control*.
 
 The systems they build, intended as a shield, ultimately become a prison for the very people they are trying to help.
 
@@ -62,7 +63,7 @@ A well-intentioned parent who micromanages their child's life is replicating the
 
 **Why This Matters:**
 
-This concept is impactful because it moves the focus of ethical design from *the system's code* to **the creator's own psychology**. 
+This concept is impactful because it moves the focus of ethical design from *the system's code* to **the creator's own psychology**.
 
 The steward is often blind to their pattern because admitting it would mean revisiting the original wound. And because the control *feels like safety*, they mistake it for protection.
 
