@@ -10,7 +10,7 @@ psycopg2-binary==2.9.9
 sqlalchemy==2.0.23
 python-multipart==0.0.20
 aiohttp==3.9.1
-elevenlabs==0.2.24
+elevenlabs==2.22.1
 requests==2.32.5
 loguru==0.7.3
 
