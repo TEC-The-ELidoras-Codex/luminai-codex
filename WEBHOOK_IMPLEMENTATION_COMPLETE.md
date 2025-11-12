@@ -5,16 +5,19 @@
 ### ✅ Webhook System (Production-Ready)
 
 **Backend Endpoints:**
+
 - `POST /api/webhook/github` — Receives GitHub webhooks with signature verification
 - `GET /api/webhook/status` — Health check endpoint
 - `POST /api/webhook/test` — Manual test trigger (dev mode only)
 
 **Event Processing:**
+
 - **Push events** → Extract changed files → Update docs index → Notify website
 - **Pull Request events** → Track merged PRs → Deploy on merge
 - **Release events** → Tag new versions → Update changelog
 
 **Security:**
+
 - HMAC SHA256 signature verification (constant-time comparison)
 - Webhook secret in environment variables (never in code)
 - Signature validation on every incoming request
@@ -23,6 +26,7 @@
 ### ✅ Documentation Generation
 
 When webhook fires:
+
 1. **Extract changed files** from GitHub push event
 2. **Filter docs/** and **.md files**
 3. **Generate documentation index** (categorized by type)
@@ -33,6 +37,7 @@ When webhook fires:
 ### ✅ Configuration & Documentation
 
 **New Files Created:**
+
 - `backend/src/main.py` — FastAPI app with webhook routes
 - `backend/src/routes/webhook.ts` — TypeScript webhook handler (reference)
 - `backend/src/integrations/github-pages.ts` — GitHub Pages integration logic
@@ -41,6 +46,7 @@ When webhook fires:
 - `.env.example` — Updated with webhook config variables
 
 **Updated Files:**
+
 - `backend/requirements.txt` — Added PyGithub, cryptography, security libraries
 
 ---
@@ -214,6 +220,7 @@ PORT=8000
 ## Files Changed
 
 ### Created (7 files)
+
 - `backend/src/main.py` (FastAPI + webhook routes)
 - `backend/src/routes/webhook.ts` (TypeScript reference implementation)
 - `backend/src/integrations/github-pages.ts` (GitHub Pages integration)
@@ -223,6 +230,7 @@ PORT=8000
 - `.env.example` (updated with webhook config)
 
 ### Commit
+
 - **Commit Hash:** `dcf6cc1`
 - **Message:** "feat: GitHub webhook system for automated docs + platform deployment"
 - **Changes:** 7 files, 1912 insertions
@@ -232,6 +240,7 @@ PORT=8000
 ## What Happens Next (Phase 9d+)
 
 ### Immediate (This Week)
+
 1. Deploy backend to production (Heroku/Railway/Docker)
 2. Configure webhook in GitHub with production URL
 3. Enable GitHub Pages at `/docs` folder
@@ -239,6 +248,7 @@ PORT=8000
 5. Test end-to-end (push → webhook → docs rebuild → website update)
 
 ### Short-term (Next 2-4 Weeks)
+
 1. Build chat interface (React frontend)
 2. Implement resonance score calculation
 3. Add audio synthesis (ElevenLabs)
@@ -246,6 +256,7 @@ PORT=8000
 5. Deploy full platform to production
 
 ### Medium-term (1-3 Months)
+
 1. Beta user recruitment
 2. Clinical pilot testing
 3. Data validation
@@ -257,12 +268,14 @@ PORT=8000
 ## How to Use This
 
 ### For Developers
+
 1. Read: `WEBHOOK_QUICK_START.md` (5 minutes)
 2. Set up local: `.env.local` + `pip install -r backend/requirements.txt`
 3. Test: `python backend/src/main.py` + `curl POST /api/webhook/test`
 4. Deploy: Follow Phase 3 checklist above
 
 ### For DevOps/Deployment
+
 1. Read: `docs/deployment/GITHUB_WEBHOOK_SETUP.md` (complete 10-part guide)
 2. Deploy backend to production platform
 3. Configure GitHub webhook with production URL
@@ -270,6 +283,7 @@ PORT=8000
 5. Set up logging/alerting
 
 ### For Project Leads
+
 1. Webhook system enables: **docs automation + website sync**
 2. No manual updates needed — push to main → website updates
 3. Reduces deployment friction — focus on code, not infrastructure
@@ -281,30 +295,36 @@ PORT=8000
 ## Success Criteria
 
 ✅ **Webhook receives events from GitHub**
+
 - [ ] Webhook configured in GitHub settings
 - [ ] Recent deliveries show HTTP 200 responses
 
 ✅ **Signature verification works**
+
 - [ ] Invalid signatures rejected with 401
 - [ ] Valid signatures accepted
 - [ ] Constant-time comparison prevents timing attacks
 
 ✅ **Documentation changes detected**
+
 - [ ] Changes to `docs/` trigger processing
 - [ ] Changes to `.md` files trigger processing
 - [ ] Other files are ignored
 
 ✅ **Documentation index generated**
+
 - [ ] Files categorized by type (consciousness, deployment, etc.)
 - [ ] Search index created
 - [ ] Table of contents generated
 
 ✅ **Website notified**
+
 - [ ] Website receives update notifications
 - [ ] Website reflects documentation changes
 - [ ] Update latency < 5 minutes
 
 ✅ **GitHub Pages rebuilds**
+
 - [ ] GitHub detects docs/ changes
 - [ ] Jekyll builds new site
 - [ ] Site published to elidoras.codex
@@ -327,7 +347,9 @@ PORT=8000
 ## Troubleshooting Guide
 
 ### Issue: Webhook not firing
+
 **Solutions:**
+
 - [ ] Check GitHub webhook settings (Settings → Webhooks)
 - [ ] Verify Payload URL is correct and publicly accessible
 - [ ] Check GitHub "Recent Deliveries" for error messages
@@ -335,14 +357,18 @@ PORT=8000
 - [ ] Check firewall/security group allows HTTPS
 
 ### Issue: Invalid signature error
+
 **Solutions:**
+
 - [ ] Verify GITHUB_WEBHOOK_SECRET matches in .env.local AND GitHub
 - [ ] Regenerate secret if in doubt
 - [ ] Check that webhook secret hasn't been rotated elsewhere
 - [ ] Ensure no extra whitespace in secret
 
 ### Issue: Docs not updating
+
 **Solutions:**
+
 - [ ] Check that changed files are in docs/ or end with .md
 - [ ] Verify webhook is firing (check Recent Deliveries)
 - [ ] Check backend logs for processing errors
@@ -350,7 +376,9 @@ PORT=8000
 - [ ] Check GitHub Pages build logs
 
 ### Issue: Website not receiving updates
+
 **Solutions:**
+
 - [ ] Check WEBSITE_URL and WEBSITE_API_KEY in .env.local
 - [ ] Verify website API endpoint (/api/updates) exists
 - [ ] Check website is running and reachable
@@ -387,6 +415,7 @@ curl -X POST http://localhost:8000/api/webhook/test
 **Status:** ✅ **COMPLETE AND COMMITTED** (Commit: dcf6cc1)
 
 **What was done:**
+
 - Webhook receiver with HMAC verification
 - Event processing (push/PR/release)
 - Documentation index generation
@@ -397,6 +426,7 @@ curl -X POST http://localhost:8000/api/webhook/test
 - Dependency management
 
 **What's next:**
+
 1. Deploy backend to production
 2. Configure GitHub webhook
 3. Test end-to-end

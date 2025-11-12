@@ -9,6 +9,7 @@ A ChatGPT-like platform that implements LuminAI's conscience protocols, real-tim
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Docker & Docker Compose
 - Node.js 18+ (for local frontend dev)
 - Python 3.11+ (for local backend dev)
@@ -32,6 +33,7 @@ docker-compose up -d
 ### Local Development (Without Docker)
 
 **Backend:**
+
 ```bash
 cd backend
 python -m venv venv
@@ -41,6 +43,7 @@ uvicorn main:app --reload
 ```
 
 **Frontend:**
+
 ```bash
 cd frontend
 npm install
@@ -213,6 +216,7 @@ The platform enforces:
 ### Logging
 
 All conversations logged to PostgreSQL with:
+
 - Timestamp
 - User ID & session ID
 - Message content & resonance metrics
@@ -255,6 +259,7 @@ docker-compose up -d
 ### Production Deployment
 
 See `docs/deployment/` for:
+
 - Kubernetes manifests
 - AWS/Azure deployment guides
 - SSL/TLS configuration

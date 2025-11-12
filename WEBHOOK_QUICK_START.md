@@ -74,6 +74,7 @@ curl -X POST http://localhost:8000/api/webhook/test
 ### 3.1 Deploy Backend
 
 **Option A: Heroku**
+
 ```bash
 heroku create luminai-resonance-backend
 heroku config:set GITHUB_WEBHOOK_SECRET="$(python -c 'import secrets; print(secrets.token_hex(32))')"
@@ -82,12 +83,14 @@ git push heroku main
 ```
 
 **Option B: Railway / Render / Fly.io**
+
 - Create account
 - Connect GitHub repository
 - Set environment variables (GITHUB_WEBHOOK_SECRET, etc.)
 - Deploy
 
 **Option C: Docker + AWS/Azure/DigitalOcean**
+
 ```bash
 docker build -t luminai-backend -f backend/Dockerfile .
 docker run -e GITHUB_WEBHOOK_SECRET="your-secret" -p 8000:8000 luminai-backend
@@ -167,11 +170,13 @@ heroku logs --tail
 ### Check Webhook Deliveries
 
 GitHub UI:
+
 ```
 Settings → Webhooks → [webhook] → Recent Deliveries
 ```
 
 Backend logs:
+
 ```bash
 tail -f logs/webhook.log
 # or
@@ -179,6 +184,7 @@ heroku logs --tail  # if using Heroku
 ```
 
 Look for messages like:
+
 ```
 🔔 GitHub Webhook Event: push
 📤 Processing push event...
@@ -203,6 +209,7 @@ Look for messages like:
 ## 7. Files Changed
 
 ### New Files
+
 - `backend/src/routes/webhook.ts` — TypeScript webhook routes (reference)
 - `backend/src/main.py` — FastAPI app with webhook endpoint
 - `backend/src/integrations/github-pages.ts` — GitHub Pages integration
@@ -210,6 +217,7 @@ Look for messages like:
 - `backend/requirements.txt` — Updated with webhook dependencies
 
 ### Updated Files
+
 - `.env.example` — Added webhook configuration variables
 
 ---

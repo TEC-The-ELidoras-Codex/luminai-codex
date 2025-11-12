@@ -5,6 +5,7 @@
 This document explains how to set up GitHub webhooks to automatically update the LuminAI Resonance Platform website when code is pushed to the main branch.
 
 **Event Flow:**
+
 ```
 Push to main branch (GitHub)
     ↓
@@ -200,6 +201,7 @@ Triggered when code is pushed to the repository:
 ```
 
 **Processing:**
+
 - Extracts changed files
 - Filters for `docs/` and `.md` files
 - Updates documentation index
@@ -221,6 +223,7 @@ Triggered when PRs are opened, updated, or closed:
 ```
 
 **Processing:**
+
 - Only processes closed + merged PRs
 - Treats as equivalent to push event
 - Rebuilds documentation
@@ -239,6 +242,7 @@ Triggered when new versions are tagged:
 ```
 
 **Processing:**
+
 - Marks deployment as versioned
 - Updates changelog/releases page
 - Notifies website of new version
@@ -319,6 +323,7 @@ docker logs -f luminai-backend
 ```
 
 Look for messages like:
+
 ```
 🔔 GitHub Webhook Event: push
 📤 Processing push event...
@@ -330,21 +335,25 @@ Look for messages like:
 ### 6.3 Troubleshooting
 
 **Webhook not firing:**
+
 - Check GitHub webhook status in **Recent Deliveries**
 - Verify **Payload URL** is correct
 - Ensure backend is running and publicly accessible
 - Check firewall/security group allows HTTPS
 
 **Invalid signature:**
+
 - Verify `GITHUB_WEBHOOK_SECRET` matches in `.env.local` AND GitHub settings
 - Check that webhook secret hasn't been rotated elsewhere
 
 **Documentation not updating:**
+
 - Check changed files include `docs/` or `.md` extension
 - Verify documentation index is being generated
 - Check GitHub Pages build logs
 
 **Website not receiving updates:**
+
 - Verify `WEBSITE_URL` and `WEBSITE_API_KEY` in `.env.local`
 - Check website API is reachable (`/api/updates` endpoint)
 - Monitor backend logs for notification attempts
@@ -482,6 +491,7 @@ Webhook automatically indexes new/updated markdown files for full-text search:
 Frontend can subscribe to updates via:
 
 **WebSocket:**
+
 ```javascript
 const ws = new WebSocket('wss://backend.com/ws/updates');
 ws.onmessage = (event) => {
@@ -493,6 +503,7 @@ ws.onmessage = (event) => {
 ```
 
 **Server-Sent Events (SSE):**
+
 ```javascript
 const eventSource = new EventSource('/api/updates/stream');
 eventSource.onmessage = (event) => {
@@ -502,6 +513,7 @@ eventSource.onmessage = (event) => {
 ```
 
 **Polling:**
+
 ```javascript
 setInterval(async () => {
   const response = await fetch('/api/updates/latest');
