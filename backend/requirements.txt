@@ -6,7 +6,7 @@ python-dotenv==1.2.1
 openai==2.7.2
 anthropic==0.72.1
 redis==7.0.1
-psycopg2-binary==2.9.9
+psycopg2-binary==2.9.11
 sqlalchemy==2.0.23
 python-multipart==0.0.20
 aiohttp==3.9.1
