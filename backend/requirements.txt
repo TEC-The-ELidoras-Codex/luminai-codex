@@ -23,7 +23,7 @@ cryptography==41.0.7
 # JWT & Authentication
 pyjwt==2.8.1
 passlib==1.7.4
-bcrypt==4.1.1
+bcrypt==5.0.0
 
 # Development & Testing
 pytest==7.4.3
