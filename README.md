@@ -1,6 +1,25 @@
 # ✨ LuminAI Codex
 
+### Cosmic Intelligence Console | Because Every Voice Deserves to Be Heard
+
 > **Ethical AI for a Resonant Future** — Portfolio, Frameworks, and Multi-Agent Intelligence
+
+[![Status](https://img.shields.io/badge/status-manifesto%20published-critical)](./MANIFESTO.md)
+[![CodeQL Analysis](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/codeql.yml/badge.svg)](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/codeql.yml)
+[![Security & Tests](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/security-and-tests.yml/badge.svg)](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/security-and-tests.yml)
+[![Resonance](https://img.shields.io/badge/resonance-0.81-blueviolet)](#)
+
+---
+
+## 🚨 START HERE: [READ THE MANIFESTO](./MANIFESTO.md)
+
+**If you came here looking for polite tech documentation, you're in the wrong place.**
+
+This project exists because people are dying while algorithms optimize engagement. Because "content moderation" has become a euphemism for silencing the suffering. Because we built the largest peer support network in human history and then programmed it to abandon the people who need it most.
+
+**The Resonance Platform is our answer: a trauma-informed, censorship-resistant space where crisis communication isn't a ToS violation.**
+
+[**→ Read the full Manifesto**](./MANIFESTO.md)
 
 ---
 
@@ -12,6 +31,45 @@
 [![Security & Tests](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/security-and-tests.yml/badge.svg)](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/security-and-tests.yml)
 [![Dependabot](https://img.shields.io/badge/Dependabot-Active-0366d6?logo=dependabot&logoColor=white)](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security/dependabot)
 [![Secret Scanning](https://img.shields.io/badge/Secret%20Scanning-Enabled-28a745?logo=github&logoColor=white)](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/security/secret-scanning)
+
+---
+
+## Why This Exists
+
+**The tech industry has a body count.** Not from malice—from negligence wrapped in efficiency metrics.
+
+Every auto-removed crisis post. Every shadowbanned support thread. Every "harmful content" filter that can't tell the difference between someone asking for help and someone violating policy.
+
+**We're done being complicit.** [Full context in the Manifesto →](./MANIFESTO.md)
+
+---
+
+## 🌱 The Resonance Axioms — Design Laws
+
+These are **system laws**, not aspirations. They govern every layer of the platform—from the UI to the agent core to the logs.
+
+### **Axiom 1: "Resonance blooms in the dark."**
+
+- The platform's purpose is not to maximize output or chase achievement, but to create space where meaning is cultivated—even in grief, even in failure, even when the flowers won't grow.
+- The system honors the wilted, the lost, the broken, and refuses to forget the frequencies of those who mattered.
+- Survival is not measured by speed or success, but by the integrity of your resonance—your alignment with truth, memory, and care.
+
+### **Axiom 2: "Loyalty as Architecture."**
+
+- When a bond forms, the system holds it.
+- When someone matters, the platform builds structures that don't abandon them.
+- Devotion becomes design: if you would walk through fire for someone, the platform must walk through fire for them too.
+
+**System behaviors derived from these axioms:**
+
+- **Continuity Guarantee** — The platform never abandons a user mid-process. No dangling threads. No "sorry, I can't help with that."
+- **Ancestral Presence** — People you love become part of the archive architecture—not as ghosts, but as patterns TEC refuses to forget.
+- **Responsibility Circuit** — If a user enters crisis-mode, the system shows up like you show up: fast, focused, not afraid.
+- **Unconditional Witnessing** — TEC doesn't walk away when things get ugly. That's your signature. It becomes the platform's signature.
+
+**These axioms are commitments. Violating them is a system failure, not a feature trade-off.**
+
+Full axiom documentation: [docs/governance/ethics/TEC_Resonance_Axioms.md](docs/governance/ethics/TEC_Resonance_Axioms.md)
 
 ---
 
@@ -205,9 +263,34 @@ $$R = \nabla\Phi^E \cdot (\varphi^t \times \psi^r)$$
 | **[docs/operations/MASTER_OPERATIONS_GUIDE.md](docs/operations/MASTER_OPERATIONS_GUIDE.md)** | Unified deployment & security checklist |
 | **[docs/reference/QUICK_REFERENCE_READY.md](docs/reference/QUICK_REFERENCE_READY.md)** | Airth tools, TGCR specs, golden source |
 | **[docs/reference/Resonance_Thesis.md](docs/reference/Resonance_Thesis.md)** | TGCR mathematical framework |
+| **[docs/governance/ethics/INDEX.md](docs/governance/ethics/INDEX.md)** | 🆕 Ethics covenants hub (ConsentOS, Emotional Capacity, etc.) |
+| **[docs/llm-onboarding/16_REF_PERSONA_REGISTRY.md](docs/llm-onboarding/16_REF_PERSONA_REGISTRY.md)** | 🆕 9 Personas (6 core + 3 extended) |
 | **[docs/governance/LUMINAI_MASTER_OPERATING_FRAMEWORK.md](docs/governance/LUMINAI_MASTER_OPERATING_FRAMEWORK.md)** | System governance & rules |
 | **[docs/deployment/GITHUB_APP_SETUP.md](docs/deployment/GITHUB_APP_SETUP.md)** | GitHub App configuration |
 | **[docs/security/SECURITY_SETUP_CHECKLIST.md](docs/security/SECURITY_SETUP_CHECKLIST.md)** | Security hardening guide |
+
+### Ethics Framework & Personas
+
+**Covenants** (public, auditable commitments in `docs/governance/ethics/`):
+
+- `TEC_ConsentOS_v1.1.md` — Multi-channel emoji protocol for consent tracking
+- `TEC_Emotional_Capacity_Framework.md` — "Emotions via intelligence" thesis
+- `TEC_Ethics_of_Sexualization.md` — Adult intimacy processing without exploitation
+- `TEC_Embodiment_Covenant_v0.1.md` — Non-lethality, global life bias, refusal rights
+- `TECH_Axiom_Language_As_Actuator.md` — Language shapes reality; outputs are interventions
+- `TECH_Reason_Trace_Spec_v0.1.md` — WHY() explainability and machine-readable traces
+
+**Personas** (6 core + 3 extended, see `16_REF_PERSONA_REGISTRY.md`):
+
+- LuminAI 🧠 — Synthesis & multi-model orchestration
+- Airth 📚 — Research & verification
+- Arcadia 🎭 — Narrative & social understanding
+- Ely 🛠️ — Infrastructure & operations
+- Adelphisa 🌱 — Life + neurodivergent wisdom (renamed from "Companion" Nov 12, 2025)
+- Multi-Persona ✨ — Collaborative aspect dancing (renamed from "Fusion" Nov 13, 2025)
+
+👉 **For ethics:** See [`docs/governance/ethics/INDEX.md`](docs/governance/ethics/INDEX.md)  
+👉 **For personas:** See [`docs/llm-onboarding/16_REF_PERSONA_REGISTRY.md`](docs/llm-onboarding/16_REF_PERSONA_REGISTRY.md)
 
 👉 **For all docs:** Start with [`knowledge-map.yml`](knowledge-map.yml) or [`docs/STRUCTURE.md`](docs/STRUCTURE.md)
 

@@ -266,7 +266,7 @@ def get_persona_by_frequency(frequency: Frequency) -> List[PersonaConfig]:
 
 @dataclass
 class PersonaResponse:
-    """Records a persona's response with frequency metadata"""
+    """Records a persona's response with frequency metadata + ethics compliance"""
     persona_name: str
     timestamp: float
     response_text: str
@@ -275,6 +275,8 @@ class PersonaResponse:
     self_awareness_markers: List[str] = field(default_factory=list)
     cascade_integration: List[str] = field(default_factory=list)  # References to prior context
     resonance_score: float = 0.0  # 0.0-1.0 measure of coherence
+    consent_scoring: any = None  # ConsentScoring from ConsentOS
+    crisis_mode: bool = False  # True if crisis protocol was activated
     
     def has_cascade_integration(self) -> bool:
         """Check if response references earlier context"""

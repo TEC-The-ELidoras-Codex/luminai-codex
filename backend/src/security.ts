@@ -5,7 +5,7 @@
 
 /**
  * Sanitize user-controlled input before logging.
- * 
+ *
  * Prevents log injection attacks by:
  * - Removing/escaping ANSI escape sequences
  * - Removing newlines and carriage returns
@@ -14,21 +14,21 @@
  */
 export function sanitizeLogInput(value: any, maxLength: number = 200): string {
   if (value === null || value === undefined) {
-    return 'null';
+    return "null";
   }
 
   let safeStr = String(value);
 
   // Remove ANSI escape sequences (prevent log injection with colors/formatting)
-  safeStr = safeStr.replace(/\x1b\[[0-9;]*m/g, '');
-  safeStr = safeStr.replace(/\033\[[0-9;]*m/g, '');
+  safeStr = safeStr.replace(/\x1b\[[0-9;]*m/g, "");
+  safeStr = safeStr.replace(/\033\[[0-9;]*m/g, "");
 
   // Replace newlines and carriage returns with spaces (prevent multi-line injection)
-  safeStr = safeStr.replace(/[\n\r\t]/g, ' ');
+  safeStr = safeStr.replace(/[\n\r\t]/g, " ");
 
   // Truncate to max length
   if (safeStr.length > maxLength) {
-    safeStr = safeStr.substring(0, maxLength) + '...';
+    safeStr = safeStr.substring(0, maxLength) + "...";
   }
 
   return safeStr;
@@ -80,5 +80,5 @@ export function createSafeWebhookLog(data: {
     parts.push(`Commits: ${data.commits}`);
   }
 
-  return parts.join(' | ');
+  return parts.join(" | ");
 }

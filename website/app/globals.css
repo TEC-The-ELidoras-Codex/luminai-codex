@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-background font-sans text-text-primary;
+  background-image:
+    radial-gradient(120% 120% at 50% 0%, rgba(139, 92, 246, 0.12), transparent 65%),
+    radial-gradient(80% 80% at 80% 20%, rgba(14, 165, 233, 0.1), transparent 60%),
+    radial-gradient(100% 100% at 20% 20%, rgba(45, 212, 191, 0.12), transparent 70%);
+  min-height: 100vh;
+}
+
+main {
+  @apply min-h-screen;
+}

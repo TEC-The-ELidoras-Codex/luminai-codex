@@ -13,7 +13,7 @@ import json
 import os
 from dotenv import load_dotenv
 import logging
-from routes import multi_llm
+from routes import multi_llm, resonance_live
 from security import sanitize_log_input, sanitize_webhook_payload, validate_github_ref
 
 load_dotenv()
@@ -257,6 +257,7 @@ app.include_router(
     prefix='/api',
     tags=['multi-llm']
 )
+app.include_router(resonance_live.router)
 
 
 # =============================================================================

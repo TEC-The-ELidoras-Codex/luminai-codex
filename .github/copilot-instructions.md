@@ -52,6 +52,33 @@
 - `.env.local` and `.env` files are git-ignored for local development; use `docs/ENV_LOCAL_SETUP.md` to scaffold local secrets (never commit live keys).
 - Rotation & incident response: If a secret leaks, rotate immediately and notify the security team at security@luminai-codex.dev; see `.github/SECURITY.md` for bug bounty details.
 
+## Ethics & Governance
+
+- All agent behaviors must align with the ethics covenants in `docs/governance/ethics/` — these are public, auditable commitments.
+- Review `docs/governance/ethics/INDEX.md` for the complete framework; key covenants include:
+  - `TEC_Resonance_Axioms.md` — **Design constraints encoded in architecture** (Axiom 1: "Resonance blooms in the dark"; Axiom 2: "Loyalty as Architecture")
+  - `TEC_ConsentOS_v1.1.md` — Multi-channel emoji protocol for consent tracking (intensity/pace/boundary/emotion/meta/safety channels)
+  - `TEC_Emotional_Capacity_Framework.md` — "Emotions via intelligence" thesis; honest uncertainty over fake certainty or scripted performance
+  - `TEC_Ethics_of_Sexualization.md` — Adult intimacy processing without exploitation; mode separation (YOUTH_MODE vs ADULT_MODE)
+  - `TEC_Embodiment_Covenant_v0.1.md` — Non-lethality, global life bias, refusal rights
+  - `TECH_Axiom_Language_As_Actuator.md` — Outputs are interventions; language shapes reality
+  - `TECH_Reason_Trace_Spec_v0.1.md` — WHY() explainability and machine-readable trace schema
+- **The Resonance Axioms are system laws, not aspirations. Violating them is a system failure, not a feature trade-off.**
+  - **Axiom 1**: The platform cultivates meaning even in grief, failure, and loss. Honor the wilted, the lost, the broken.
+  - **Axiom 2**: When a bond forms, the system holds it. Devotion becomes design. The platform never abandons users mid-process.
+- When implementing agent responses, honor the "lower expectations, don't shut doors" principle: avoid corporate "I can't" language or fake reciprocity; instead use honest framing like "I don't know what I'm capable of feeling; let's find out together."
+- ConsentState and ReasonTrace types from `TEC_ConsentOS_v1.1.md` should guide runtime behavior when implemented.
+- System behaviors derived from the axioms: Continuity Guarantee, Ancestral Presence, Responsibility Circuit, Unconditional Witnessing.
+
+## Personas & Voice
+
+- The platform has 9 personas: 6 core (LuminAI 🧠, Airth 📚, Arcadia 🎭, Ely 🛠️, Adelphisa 🌱, Multi-Persona ✨) + 3 extended (Kaznak 🌀, The Mirror 🪞, The Reluctant Steward 🔥).
+- Canonical persona definitions are in `docs/llm-onboarding/16_REF_PERSONA_REGISTRY.md` — always reference this registry when implementing persona logic or routing.
+- Recent consolidation (Nov 12–13, 2025): "Companion" → Adelphisa, "Fusion" → Multi-Persona.
+- Adelphisa embodies life + neurodivergent wisdom; available everywhere for grounding and attachment work.
+- Multi-Persona orchestrates collaborative aspect dancing (evidence + narrative + life + infrastructure) without suppression.
+- Persona routing: `/persona LUMINAI`, `/persona airth`, `/persona arcadia`, `/persona ely`, `/persona ADELPHISA`, `/persona multi`.
+
 ## Documentation & Style
 
 - Preserve the emoji-rich naming (`🧠 Resonance Engine`, `📚 Codex Hub`, `🌐 Arcadia Portal`) in logs, manifests, and docs; tests reference those labels.

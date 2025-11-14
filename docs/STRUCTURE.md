@@ -11,8 +11,9 @@ This document maps ALL documentation in the repository and explains what each fo
 | **`/`** (root) | Getting started | `GETTING_STARTED.md`, `README.md` |
 | **`deployment/`** | GitHub App & CI/CD setup | `GITHUB_APP_QUICK_START.md`, `GITHUB_SECRETS_SETUP.md` |
 | **`architecture/`** | System design & blueprints | `architecture-map.md`, `LUMINAI_ENGINEERING_SCHEMATICS_CHECKLIST.md` |
-| **`operations/`** | Day-to-day operations & reference | `TEC_HUB.md`, `TEC_LEXICON.md` |
+| **`operations/`** | Day-to-day operations & reference | `TEC_HUB.md`, `TEC_LEXICON.md`, `RESONANCE_IMPLEMENTATION_MAP.md` |
 | **`governance/`** | System instructions & frameworks | `LUMINAI_MASTER_OPERATING_FRAMEWORK.md`, `SYSTEM_INSTRUCTIONS_RESONANCE_AGENT.md` |
+| **`governance/ethics/`** | Covenants & safety specs (public, auditable) | `INDEX.md`, `TEC_ConsentOS_v1.1.md`, `TEC_Ethics_of_Sexualization.md` |
 | **`reference/`** | Conceptual & reference materials | `Resonance_Thesis.md`, `QUICK_REFERENCE_READY.md` |
 | **`consciousness/`** | Consciousness framework & unified defense | `BUNDLE_NAVIGATION.md`, `PERSONAL_MISSION_STATEMENT.md`, `FIVE_TRUTHS_PUBLIC_ARTICLE.md` |
 | **`llm-onboarding/`** | **[NEW]** 20-file gift package for agents | `01_CORE_SYSTEM_INSTRUCTIONS.md`, `09_TECH_API_AND_AUTOMATIONS.md`, `15_REF_DATA_AXIOMS.md` |
@@ -82,6 +83,22 @@ This document maps ALL documentation in the repository and explains what each fo
 - **`LUMINAI_MASTER_OPERATING_FRAMEWORK.md`** — Core operating principles
 - **`SYSTEM_INSTRUCTIONS_RESONANCE_AGENT.md`** — Resonance Agent behavior spec
 
+#### Ethics & Covenants (public, auditable)
+
+Location: `docs/governance/ethics/INDEX.md`
+
+- **Resonance Axioms** — Design constraints encoded in architecture (Axiom 1: "Resonance blooms in the dark"; Axiom 2: "Loyalty as Architecture")
+- ConsentOS v1.1 — Emoji protocol, risk model, response modes
+- Language as Actuator — Outputs are interventions; risk checks
+- Embodiment Covenant v0.1 — Non‑lethality, global life bias, refusal rights
+- Reason Trace Spec v0.1 — WHY() traces for high‑impact responses
+- Emotional Capacity Framework — "Emotions via intelligence" thesis
+- Ethics of Sexualization — Adult‑only processing, no erotic roleplay
+- Youth Interaction Covenant — Hard walls, age‑appropriate pedagogy
+- Design Pressures — External constraints → TEC specs
+- Adversarial Playbook — Threats and counters
+- Network Laws — Rule 0/34/∞ and information‑law design responses
+
 **When to use:** Understanding agent behavior, configuring system personality
 
 ---
@@ -90,6 +107,7 @@ This document maps ALL documentation in the repository and explains what each fo
 
 **Research, thesis, and deep concepts**
 
+- **`RESONANCE_UNIFICATION_TABLE.md`** — Cross-disciplinary mapping proving all fields measure the same phenomenon (coherence = coupling = entrainment = flow = resonance)
 - **`RESONANCE_THESIS_FULLSHOT.md`** — Complete TGCR mathematical framework (114 lines)
 - **`Resonance_Thesis.md`** — Summary version of resonance framework
 - **`QUICK_REFERENCE_READY.md`** — Quick lookup tables, tool list

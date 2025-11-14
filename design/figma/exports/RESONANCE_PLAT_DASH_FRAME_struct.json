@@ -1,0 +1,84 @@
+{
+  "id": "RESONANCE_PLAT_DASH_FRAME",
+  "name": "Home Dashboard",
+  "route": "/dashboard",
+  "summary": "System overview with welcome hero, recent sessions, and resonance recommendations.",
+  "grid": {
+    "columns": 12,
+    "rows": 12,
+    "column_width": 96,
+    "gutter": 24,
+    "margin": 64
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "label": "Welcome Hero",
+      "description": "Hero block with greeting, 3D emblem, and quick-start CTAs for chat, podcast, and map.",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 3
+      },
+      "components": [
+        "WelcomeMessage",
+        "PrimaryCTAGroup",
+        "HeroIllustration"
+      ]
+    },
+    {
+      "id": "recent_sessions",
+      "label": "Recent Sessions",
+      "description": "Card list showing recent conversations with resonance scores and durations.",
+      "layout": {
+        "x": 0,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "components": [
+        "SessionCard",
+        "ResonanceBadge"
+      ]
+    },
+    {
+      "id": "recommendations",
+      "label": "Recommendations",
+      "description": "Suggested knowledge articles and rituals curated from the Codex.",
+      "layout": {
+        "x": 6,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "components": [
+        "RecommendationCard",
+        "ActionChip"
+      ]
+    },
+    {
+      "id": "metrics",
+      "label": "Resonance Snapshot",
+      "description": "Sparkline and persona usage stats for the current account.",
+      "layout": {
+        "x": 0,
+        "y": 7,
+        "w": 12,
+        "h": 3
+      },
+      "components": [
+        "SparklineChart",
+        "PersonaUsage"
+      ]
+    }
+  ],
+  "primary_actions": [
+    "StartChat",
+    "OpenPodcast",
+    "OpenMap"
+  ],
+  "references": [
+    "docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#screen-d\u2014home-dashboard--welcome"
+  ]
+}

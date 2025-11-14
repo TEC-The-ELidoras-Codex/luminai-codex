@@ -1,21 +1,36 @@
-import express, { Request, Response } from 'express';
-import crypto from 'crypto';
-import { updateGitHubPages, notifyWebsiteUpdate } from '../integrations/github-pages';
-import { sanitizeLogInput, validateGitHubRef, createSafeWebhookLog } from '../security';
+import express, { Request, Response } from "express";
+import crypto from "crypto";
+import {
+  updateGitHubPages,
+  notifyWebsiteUpdate,
+} from "../integrations/github-pages";
+import {
+  sanitizeLogInput,
+  validateGitHubRef,
+  createSafeWebhookLog,
+} from "../security";
 
 const router = express.Router();
 
 // GitHub webhook secret (set in environment)
-const GITHUB_WEBHOOK_SECRET = process.env.GITHUB_WEBHOOK_SECRET || 'development-secret';
+const GITHUB_WEBHOOK_SECRET =
+  process.env.GITHUB_WEBHOOK_SECRET || "development-secret";
 
 // ============================================================================
 // RATE LIMITING FOR WEBHOOK ENDPOINT
 // ============================================================================
 
 // Simple in-memory rate limiter: track requests per IP
-const webhookRateLimiter = new Map<string, { count: number; resetTime: number }>();
+const webhookRateLimiter = new Map<
+  string,
+  { count: number; resetTime: number }
+>();
 
-function checkRateLimit(clientIp: string, maxRequests: number = 10, windowMs: number = 60000): boolean {
+function checkRateLimit(
+  clientIp: string,
+  maxRequests: number = 10,
+  windowMs: number = 60000
+): boolean {
   const now = Date.now();
   const record = webhookRateLimiter.get(clientIp);
 
@@ -26,7 +41,9 @@ function checkRateLimit(clientIp: string, maxRequests: number = 10, windowMs: nu
   }
 
   if (record.count >= maxRequests) {
-    console.warn(`⚠️ Rate limit exceeded for IP: ${sanitizeLogInput(clientIp)}`);
+    console.warn(
+      `⚠️ Rate limit exceeded for IP: ${sanitizeLogInput(clientIp)}`
+    );
     return false;
   }
 
@@ -39,21 +56,21 @@ function checkRateLimit(clientIp: string, maxRequests: number = 10, windowMs: nu
  * GitHub includes X-Hub-Signature-256 header with HMAC SHA256 signature
  */
 function verifyGitHubSignature(req: Request): boolean {
-  const signature = req.headers['x-hub-signature-256'] as string;
-  
+  const signature = req.headers["x-hub-signature-256"] as string;
+
   if (!signature) {
-    console.warn('⚠️ No X-Hub-Signature-256 header found');
-    return process.env.NODE_ENV !== 'production'; // Allow in dev, deny in prod
+    console.warn("⚠️ No X-Hub-Signature-256 header found");
+    return process.env.NODE_ENV !== "production"; // Allow in dev, deny in prod
   }
 
   const body = JSON.stringify(req.body);
   const hash = crypto
-    .createHmac('sha256', GITHUB_WEBHOOK_SECRET)
+    .createHmac("sha256", GITHUB_WEBHOOK_SECRET)
     .update(body)
-    .digest('hex');
-  
+    .digest("hex");
+
   const expectedSignature = `sha256=${hash}`;
-  
+
   // Constant-time comparison to prevent timing attacks
   return crypto.timingSafeEqual(
     Buffer.from(signature),
@@ -63,9 +80,9 @@ function verifyGitHubSignature(req: Request): boolean {
 
 /**
  * POST /api/webhook/github
- * 
+ *
  * Receives GitHub push events and updates the website
- * 
+ *
  * Event flow:
  * 1. GitHub pushes to main branch
  * 2. GitHub sends webhook to this endpoint
@@ -74,28 +91,29 @@ function verifyGitHubSignature(req: Request): boolean {
  * 5. We update GitHub Pages (docs/ folder)
  * 6. We notify the website of updates
  */
-router.post('/github', async (req: Request, res: Response) => {
+router.post("/github", async (req: Request, res: Response) => {
   try {
     // Get client IP for rate limiting
-    const clientIp = (req.headers['x-forwarded-for'] as string)?.split(',')[0] || 
-                     req.socket.remoteAddress || 
-                     'unknown';
+    const clientIp =
+      (req.headers["x-forwarded-for"] as string)?.split(",")[0] ||
+      req.socket.remoteAddress ||
+      "unknown";
 
     // Check rate limit (10 requests per minute)
     if (!checkRateLimit(clientIp, 10, 60000)) {
-      return res.status(429).json({ 
-        error: 'Too Many Requests',
-        message: 'Webhook rate limit exceeded. Maximum 10 requests per minute.' 
+      return res.status(429).json({
+        error: "Too Many Requests",
+        message: "Webhook rate limit exceeded. Maximum 10 requests per minute.",
       });
     }
 
     // Verify webhook signature
     if (!verifyGitHubSignature(req)) {
-      console.error('❌ Invalid GitHub webhook signature');
-      return res.status(401).json({ error: 'Unauthorized: Invalid signature' });
+      console.error("❌ Invalid GitHub webhook signature");
+      return res.status(401).json({ error: "Unauthorized: Invalid signature" });
     }
 
-    const event = req.headers['x-github-event'] as string;
+    const event = req.headers["x-github-event"] as string;
     const { repository, ref, pusher, commits } = req.body;
 
     // Sanitize all webhook data before logging
@@ -111,31 +129,31 @@ router.post('/github', async (req: Request, res: Response) => {
     console.log(`📝 Commits: ${commits?.length || 0}`);
 
     // Only process pushes to main branch (validate ref format first)
-    if (!validateGitHubRef(ref) || ref !== 'refs/heads/main') {
+    if (!validateGitHubRef(ref) || ref !== "refs/heads/main") {
       console.log(`⏭️ Skipping webhook (not main branch: ${safeBranch}`);
-      return res.json({ status: 'skipped', reason: 'not-main-branch' });
+      return res.json({ status: "skipped", reason: "not-main-branch" });
     }
 
     // Handle different event types
     switch (event) {
-      case 'push':
+      case "push":
         return await handlePushEvent(req.body, res);
-      
-      case 'pull_request':
+
+      case "pull_request":
         return await handlePullRequestEvent(req.body, res);
-      
-      case 'release':
+
+      case "release":
         return await handleReleaseEvent(req.body, res);
-      
+
       default:
         console.log(`⏭️ Ignoring event type: ${event}`);
-        return res.json({ status: 'ignored', event });
+        return res.json({ status: "ignored", event });
     }
   } catch (error) {
-    console.error('❌ Webhook error:', error);
-    res.status(500).json({ 
-      error: 'Internal server error',
-      message: error instanceof Error ? error.message : 'Unknown error'
+    console.error("❌ Webhook error:", error);
+    res.status(500).json({
+      error: "Internal server error",
+      message: error instanceof Error ? error.message : "Unknown error",
     });
   }
 });
@@ -145,9 +163,9 @@ router.post('/github', async (req: Request, res: Response) => {
  */
 async function handlePushEvent(payload: any, res: Response) {
   const { repository, commits, pusher } = payload;
-  
+
   console.log(`\n📤 Processing push event...`);
-  
+
   // Extract changed files
   const changedFiles = new Set<string>();
   commits.forEach((commit: any) => {
@@ -158,50 +176,52 @@ async function handlePushEvent(payload: any, res: Response) {
 
   console.log(`📄 Changed files (${changedFiles.size}):`);
   Array.from(changedFiles)
-    .filter(f => !f.startsWith('.'))
+    .filter((f) => !f.startsWith("."))
     .slice(0, 10)
-    .forEach(f => console.log(`   - ${sanitizeLogInput(f)}`));
+    .forEach((f) => console.log(`   - ${sanitizeLogInput(f)}`));
 
   // Process documentation changes
-  const docChanges = Array.from(changedFiles).filter(f => 
-    f.startsWith('docs/') || f.endsWith('.md')
+  const docChanges = Array.from(changedFiles).filter(
+    (f) => f.startsWith("docs/") || f.endsWith(".md")
   );
 
   if (docChanges.length > 0) {
-    console.log(`\n📚 Documentation changes detected: ${docChanges.length} files`);
-    
+    console.log(
+      `\n📚 Documentation changes detected: ${docChanges.length} files`
+    );
+
     try {
       // Update GitHub Pages (rebuild site, update search index, etc.)
       const result = await updateGitHubPages({
         repository: repository.full_name,
         pusher: pusher.name,
         changedFiles: docChanges,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
 
       console.log(`✅ GitHub Pages updated:`, result);
 
       // Notify website of updates (WebSocket, SSE, or API call)
       await notifyWebsiteUpdate({
-        type: 'documentation-update',
+        type: "documentation-update",
         files: docChanges,
-        branch: 'main',
-        timestamp: new Date().toISOString()
+        branch: "main",
+        timestamp: new Date().toISOString(),
       });
 
       console.log(`📡 Website notified of updates`);
     } catch (error) {
-      console.error('❌ Error updating GitHub Pages:', error);
+      console.error("❌ Error updating GitHub Pages:", error);
       throw error;
     }
   }
 
   res.json({
-    status: 'processed',
-    event: 'push',
+    status: "processed",
+    event: "push",
     changedFiles: changedFiles.size,
     documentationFiles: docChanges.length,
-    message: `Processed ${commits.length} commits with ${changedFiles.size} changed files`
+    message: `Processed ${commits.length} commits with ${changedFiles.size} changed files`,
   });
 }
 
@@ -210,29 +230,29 @@ async function handlePushEvent(payload: any, res: Response) {
  */
 async function handlePullRequestEvent(payload: any, res: Response) {
   const { action, pull_request, repository } = payload;
-  
+
   console.log(`\n📋 Pull Request Event: ${action}`);
   console.log(`   Title: ${pull_request.title}`);
   console.log(`   URL: ${pull_request.html_url}`);
 
   // Only process when PR is merged
-  if (action === 'closed' && pull_request.merged) {
+  if (action === "closed" && pull_request.merged) {
     console.log(`✅ PR merged! Triggering deployment...`);
-    
+
     // This would trigger the same flow as push event
     return res.json({
-      status: 'processed',
-      event: 'pull_request',
+      status: "processed",
+      event: "pull_request",
       action,
-      message: 'PR merged - deployment triggered'
+      message: "PR merged - deployment triggered",
     });
   }
 
   res.json({
-    status: 'acknowledged',
-    event: 'pull_request',
+    status: "acknowledged",
+    event: "pull_request",
     action,
-    message: `PR ${action} - awaiting merge`
+    message: `PR ${action} - awaiting merge`,
   });
 }
 
@@ -246,29 +266,29 @@ async function handleReleaseEvent(payload: any, res: Response) {
   console.log(`   Version: ${release.tag_name}`);
   console.log(`   URL: ${release.html_url}`);
 
-  if (action === 'published') {
+  if (action === "published") {
     console.log(`📢 New release published! Updating deployment...`);
-    
+
     try {
       const result = await updateGitHubPages({
         repository: repository.full_name,
         version: release.tag_name,
         releaseNotes: release.body,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
 
       console.log(`✅ Release deployment completed`);
     } catch (error) {
-      console.error('❌ Error deploying release:', error);
+      console.error("❌ Error deploying release:", error);
       throw error;
     }
   }
 
   res.json({
-    status: 'processed',
-    event: 'release',
+    status: "processed",
+    event: "release",
     action,
-    version: release.tag_name
+    version: release.tag_name,
   });
 }
 
@@ -276,13 +296,13 @@ async function handleReleaseEvent(payload: any, res: Response) {
  * GET /api/webhook/status
  * Health check for webhook receiver
  */
-router.get('/status', (req: Request, res: Response) => {
+router.get("/status", (req: Request, res: Response) => {
   res.json({
-    status: 'operational',
-    endpoint: '/api/webhook/github',
-    events: ['push', 'pull_request', 'release'],
+    status: "operational",
+    endpoint: "/api/webhook/github",
+    events: ["push", "pull_request", "release"],
     requiresSignature: true,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
   });
 });
 
@@ -290,23 +310,25 @@ router.get('/status', (req: Request, res: Response) => {
  * POST /api/webhook/test
  * Manual webhook trigger for testing
  */
-router.post('/test', async (req: Request, res: Response) => {
-  if (process.env.NODE_ENV === 'production') {
-    return res.status(403).json({ error: 'Test endpoint disabled in production' });
+router.post("/test", async (req: Request, res: Response) => {
+  if (process.env.NODE_ENV === "production") {
+    return res
+      .status(403)
+      .json({ error: "Test endpoint disabled in production" });
   }
 
-  console.log('\n🧪 Test webhook triggered');
-  
+  console.log("\n🧪 Test webhook triggered");
+
   const result = await updateGitHubPages({
-    repository: 'TEC-The-ELidoras-Codex/luminai-codex',
-    pusher: 'test-user',
-    changedFiles: ['docs/test.md'],
-    timestamp: new Date().toISOString()
+    repository: "TEC-The-ELidoras-Codex/luminai-codex",
+    pusher: "test-user",
+    changedFiles: ["docs/test.md"],
+    timestamp: new Date().toISOString(),
   });
 
   res.json({
-    status: 'test-completed',
-    result
+    status: "test-completed",
+    result,
   });
 });
 

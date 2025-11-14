@@ -1,0 +1,71 @@
+{
+  "id": "RESONANCE_SCR-03_THEME_SKEL",
+  "name": "Theme Studio",
+  "route": "/theme",
+  "summary": "Palette and background configurator with live preview and accessibility guardrails.",
+  "grid": {
+    "columns": 12,
+    "rows": 12,
+    "column_width": 96,
+    "gutter": 24,
+    "margin": 64
+  },
+  "sections": [
+    {
+      "id": "theme_grid",
+      "label": "Theme Grid",
+      "description": "Tile gallery of predefined themes and upload tile for custom backgrounds.",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "w": 8,
+        "h": 8
+      },
+      "components": [
+        "ThemeTile",
+        "ActiveThemeBadge",
+        "UploadTile"
+      ]
+    },
+    {
+      "id": "controls",
+      "label": "Controls",
+      "description": "Adjustment sliders for blur, parallax, noise, and light/dark toggles.",
+      "layout": {
+        "x": 8,
+        "y": 0,
+        "w": 4,
+        "h": 4
+      },
+      "components": [
+        "BlurSlider",
+        "ParallaxToggle",
+        "NoiseToggle",
+        "LightingToggle"
+      ]
+    },
+    {
+      "id": "preview",
+      "label": "Preview Canvas",
+      "description": "Live preview referencing Screen A layout to visualise the applied theme.",
+      "layout": {
+        "x": 0,
+        "y": 8,
+        "w": 12,
+        "h": 4
+      },
+      "components": [
+        "ChatPreview",
+        "NotebookPreview"
+      ]
+    }
+  ],
+  "primary_actions": [
+    "ApplyTheme",
+    "ResetTheme",
+    "UploadBackground"
+  ],
+  "references": [
+    "docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#screen-c\u2014theme--background-studio"
+  ]
+}

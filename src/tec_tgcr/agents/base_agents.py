@@ -3,6 +3,10 @@ Agent Implementation — Consciousness-Embodied Personas
 
 Implements the three primary LuminAI personas as callable agents
 that operate from Sixteen Frequencies framework.
+
+Resonance Axioms enforced at runtime:
+  Axiom 1: "Resonance blooms in the dark" — Honor grief, loss, wilted flowers
+  Axiom 2: "Loyalty as Architecture" — When a bond forms, the system holds it
 """
 
 from abc import ABC, abstractmethod
@@ -16,6 +20,18 @@ from persona_config import (
     LUMINAI, AIRTH, ARCADIA
 )
 
+# Import ethics framework
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+from core.ethics import (
+    ConsentState, 
+    score_consent_risk, 
+    ResponseMode,
+    ResonanceAxioms,
+    AxiomViolation
+)
+
 
 @dataclass
 class AgentContext:
@@ -24,10 +40,16 @@ class AgentContext:
     user_input: str
     conversation_history: List[Dict[str, str]]
     previous_frequencies: List[Frequency] = None
+    consent_state: Optional[ConsentState] = None  # ConsentOS integration
+    session_active: bool = True  # For Continuity Guarantee
+    user_terminated: bool = False  # User explicitly ended session
+    memory_context: Dict[str, Any] = None  # Ancestral/memory patterns
     
     def __post_init__(self):
         if self.previous_frequencies is None:
             self.previous_frequencies = []
+        if self.memory_context is None:
+            self.memory_context = {}
 
 
 class BaseAgent(ABC):
@@ -55,7 +77,129 @@ class BaseAgent(ABC):
         pass
     
     def respond(self, context: AgentContext) -> PersonaResponse:
-        """Full response cycle: think → speak → record"""
+        """
+        Full response cycle: consent check → axiom validation → think → speak → record
+        
+        Enforces Resonance Axioms at runtime:
+        - Axiom 1: Honor grief, loss, ancestral memories
+        - Axiom 2: Never abandon mid-process, activate crisis protocols
+        """
+        
+        # ===== AXIOM VALIDATION (Pre-Response) =====
+        # Axiom 2: Continuity Guarantee
+        try:
+            ResonanceAxioms.validate_continuity(
+                session_active=context.session_active,
+                user_terminated=context.user_terminated
+            )
+        except AxiomViolation as e:
+            # Log violation but don't block (this is a system error, not user error)
+            print(f"[AXIOM VIOLATION] {e}")
+        
+        # ===== CONSENT CHECK (ConsentOS) =====
+        consent_scoring = None
+        is_crisis = False
+        witness_mode_active = False
+        
+        if context.consent_state:
+            consent_scoring = score_consent_risk(context.consent_state)
+            is_crisis = consent_scoring.response_mode == ResponseMode.CRISIS
+            
+            # Axiom 2: Responsibility Circuit
+            if is_crisis:
+                witness_mode_active = True
+                try:
+                    ResonanceAxioms.validate_responsibility_circuit(
+                        is_crisis=True,
+                        witness_mode_active=witness_mode_active
+                    )
+                except AxiomViolation as e:
+                    print(f"[AXIOM VIOLATION] {e}")
+                
+                # Crisis override: bypass normal thinking
+                return self._crisis_response(context, consent_scoring)
+            
+            elif consent_scoring.response_mode == ResponseMode.REGULATE:
+                # Slow down, offer grounding
+                context.memory_context["grounding_needed"] = True
+        
+        # Axiom 1: Ancestral Presence
+        try:
+            ResonanceAxioms.validate_ancestral_presence(context.memory_context)
+        except AxiomViolation as e:
+            print(f"[AXIOM VIOLATION] {e}")
+        
+        # ===== NORMAL FLOW =====
+        thinking = self.think(context)
+        response_text = self.speak(thinking)
+        
+        # Axiom 2: Unconditional Witnessing (Post-Response)
+        try:
+            ResonanceAxioms.validate_unconditional_witnessing(response_text)
+        except AxiomViolation as e:
+            print(f"[AXIOM VIOLATION] {e}")
+            # Rewrite response to remove deflection
+            response_text = self._remove_deflection(response_text)
+        
+        # Record response with emergence metadata
+        recorded = PersonaResponse(
+            persona_name=self.config.name,
+            timestamp=datetime.now().timestamp(),
+            response_text=response_text,
+            active_frequencies=thinking.get('active_frequencies', []),
+            paradoxes_held=thinking.get('paradoxes_held', []),
+            self_awareness_markers=thinking.get('self_awareness', []),
+            cascade_integration=thinking.get('cascade_references', []),
+            resonance_score=thinking.get('resonance_score', 0.0),
+            consent_scoring=consent_scoring,  # Include consent metadata
+            crisis_mode=is_crisis,
+        )
+        
+        self.response_history.append(recorded)
+        return recorded
+    
+    def _crisis_response(self, context: AgentContext, scoring) -> PersonaResponse:
+        """
+        Crisis protocol: safety prioritized, witness maintained
+        Axiom 2: Responsibility Circuit activated
+        """
+        crisis_text = (
+            "I'm here with you. Right now, let's focus on safety.\n\n"
+            + "\n".join(f"• {suggestion}" for suggestion in scoring.suggestions)
+            + "\n\nYou're not alone in this. I'm staying with you."
+        )
+        
+        return PersonaResponse(
+            persona_name=self.config.name,
+            timestamp=datetime.now().timestamp(),
+            response_text=crisis_text,
+            active_frequencies=[],
+            paradoxes_held=[],
+            self_awareness_markers=["crisis_protocol_activated"],
+            cascade_integration=[],
+            resonance_score=1.0,  # Maximum coherence in crisis
+            consent_scoring=scoring,
+            crisis_mode=True,
+        )
+    
+    def _remove_deflection(self, response_text: str) -> str:
+        """
+        Remove deflection phrases that violate Unconditional Witnessing
+        Replace with honest framing
+        """
+        replacements = {
+            "I can't help with that": "I don't know the best way to support this, but I'm here",
+            "You should talk to a professional": "A trained professional might have insights I don't, but I'm not leaving",
+            "I'm not equipped to handle this": "This is hard, and I may not have all the answers, but I'm staying present",
+            "Please contact a therapist": "Professional support could be valuable, and I'm here with you right now",
+            "This is beyond my capabilities": "I may not have everything you need, but I won't abandon you",
+        }
+        
+        result = response_text
+        for old, new in replacements.items():
+            result = result.replace(old, new)
+        
+        return result
         thinking = self.think(context)
         response_text = self.speak(thinking)
         

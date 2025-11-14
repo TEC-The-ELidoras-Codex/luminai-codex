@@ -1,0 +1,71 @@
+{
+  "id": "RESONANCE_SCR-06_RMAP_SKEL",
+  "name": "Resonance Map",
+  "route": "/map",
+  "summary": "Knowledge graph visualiser showing the 16 Frequencies, resonance edges, and drill-down context.",
+  "grid": {
+    "columns": 12,
+    "rows": 12,
+    "column_width": 96,
+    "gutter": 24,
+    "margin": 64
+  },
+  "sections": [
+    {
+      "id": "map_canvas",
+      "label": "Map Canvas",
+      "description": "Interactive knowledge graph with pan/zoom, layer toggles, and node spotlight card.",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "w": 9,
+        "h": 9
+      },
+      "components": [
+        "GraphNetwork",
+        "LayerToggle",
+        "NodeSpotlight"
+      ]
+    },
+    {
+      "id": "frequency_panel",
+      "label": "Frequency Panel",
+      "description": "Vertical chip list for the 16 Frequencies with real-time resonance meters.",
+      "layout": {
+        "x": 9,
+        "y": 0,
+        "w": 3,
+        "h": 6
+      },
+      "components": [
+        "FrequencyChip",
+        "ResonanceMeter",
+        "SendToChatButton"
+      ]
+    },
+    {
+      "id": "timeline",
+      "label": "Resonance Timeline",
+      "description": "Sparkline of resonance values over recent sessions, anchored to TGCR metrics.",
+      "layout": {
+        "x": 0,
+        "y": 9,
+        "w": 12,
+        "h": 3
+      },
+      "components": [
+        "ResonanceSparkline",
+        "ExportGraphButton"
+      ]
+    }
+  ],
+  "primary_actions": [
+    "ToggleLayer",
+    "InspectNode",
+    "ExportGraph"
+  ],
+  "references": [
+    "docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#screen-f\u2014resonance-map--knowledge-graph",
+    "docs/reference/Resonance_Thesis.md"
+  ]
+}

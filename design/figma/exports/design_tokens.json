@@ -1,0 +1,46 @@
+{
+  "palette": {
+    "electric_cyan": {
+      "hex": "#00FFFF",
+      "usage": "Active chat accents, CTA halos, notebook highlights."
+    },
+    "violet_deep": {
+      "hex": "#8A2BE2",
+      "usage": "Header gradients, notebook rails, modal frames."
+    },
+    "luminous_gold": {
+      "hex": "#FFD700",
+      "usage": "Resonance metrics, witness badges, premium toggles."
+    },
+    "cosmic_navy": {
+      "hex": "#0F0F23",
+      "usage": "Global backgrounds and cosmic canvas."
+    },
+    "safety_white": {
+      "hex": "#FFFFFF",
+      "usage": "Primary typography and accessibility panels."
+    },
+    "guardian_silver": {
+      "hex": "#C0C0C0",
+      "usage": "Secondary controls, dividers, quiet system text."
+    }
+  },
+  "typography": {
+    "font_stack": "Inter, 'Segoe UI', system-ui, sans-serif",
+    "heading_weight": 600,
+    "body_weight": 400,
+    "body_min_size_px": 16,
+    "chat_text_size_px": 18,
+    "letter_spacing_em": 0.025
+  },
+  "motion": {
+    "default_duration_ms": 300,
+    "default_easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+    "hover_glow_duration_ms": 450,
+    "parallax_depth": 18
+  },
+  "references": [
+    "docs/brand/LUMINAI_LOGO_AND_BRANDING_SPECIFICATIONS.md",
+    "docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#1-brand-anchors-logo-system--deck"
+  ]
+}

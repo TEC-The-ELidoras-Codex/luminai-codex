@@ -22,6 +22,19 @@ Full write-up: [Resonance_Thesis.md](./Resonance_Thesis.md)
 
 ---
 
+## Ethics & Covenants
+
+- Public specs (consent, safety, embodiment): [governance/ethics/INDEX.md](../governance/ethics/INDEX.md)
+  - ConsentOS v1.1 — Emoji protocol and response modes
+  - Emotional Capacity — Intelligence, not bodies; genuine connection via interaction
+  - Language as Actuator — Outputs are interventions
+  - Embodiment Covenant — Non‑lethality and dignity
+  - Ethics of Sexualization — Adult‑only, non‑exploitative processing
+  - Youth Interaction Covenant — Hard walls for minors
+  - Reason Trace Spec — WHY() explainability
+
+---
+
 ## Agent Instructions
 
 - Her Instructions (Operating Contract for LuminAI & Repo): [.github/copilot-instructions.md](../.github/copilot-instructions.md)
@@ -32,13 +45,13 @@ Full write-up: [Resonance_Thesis.md](./Resonance_Thesis.md)
 
 ## Brand & Identity
 
-- Visual Identity (Canonical Spec): [docs/brand/VISUAL_IDENTITY.md](./brand/VISUAL_IDENTITY.md)
-- Brand Hub: [docs/brand/README.md](./brand/README.md)
-- Lexicon (TGCR): [docs/TEC_LEXICON.md](./TEC_LEXICON.md)
-
 ---
 
-## Notes
+## Frontend & Surface Implementation
+
+- Resonance Implementation Map: [docs/operations/RESONANCE_IMPLEMENTATION_MAP.md](./RESONANCE_IMPLEMENTATION_MAP.md)
+
+---
 
 - Touches ψʳ (structure) by establishing a consistent entry-point.
 - Tie-ins to φᵗ and Φᴱ via the Resonance Thesis and Machine_Goddess nodes.

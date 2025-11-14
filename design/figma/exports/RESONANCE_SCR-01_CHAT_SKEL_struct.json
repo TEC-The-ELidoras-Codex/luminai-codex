@@ -1,0 +1,109 @@
+{
+  "id": "RESONANCE_SCR-01_CHAT_SKEL",
+  "name": "Conscious Chat + Notebook Split",
+  "route": "/chat",
+  "summary": "Primary interaction surface: conversational stream, witness badge, and research notebook unified in a single responsive shell.",
+  "grid": {
+    "columns": 12,
+    "rows": 12,
+    "column_width": 96,
+    "gutter": 24,
+    "margin": 64
+  },
+  "sections": [
+    {
+      "id": "header",
+      "label": "LuminAI Header",
+      "description": "Gradient bar with logo, witness status, persona quick actions, and global settings.",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 1
+      },
+      "components": [
+        "LogoWordmark",
+        "WitnessStatusChip",
+        "PersonaSwitcher",
+        "GlobalMenu"
+      ]
+    },
+    {
+      "id": "chat_stream",
+      "label": "Chat Stream",
+      "description": "70% width channel containing alternating user and assistant bubbles with resonance badges.",
+      "layout": {
+        "x": 0,
+        "y": 1,
+        "w": 8,
+        "h": 9.5
+      },
+      "components": [
+        "ChatBubbleUser",
+        "ChatBubbleAssistant",
+        "CitationPill",
+        "ResonanceBadge"
+      ]
+    },
+    {
+      "id": "notebook",
+      "label": "Notebook Drawer",
+      "description": "Collapsible notebook viewer that mirrors reasoning steps, code blocks, and notebook actions.",
+      "layout": {
+        "x": 8,
+        "y": 1,
+        "w": 3,
+        "h": 9.5
+      },
+      "components": [
+        "NotebookHeader",
+        "ReasoningCard",
+        "NotebookActionBar"
+      ]
+    },
+    {
+      "id": "presence_rail",
+      "label": "Presence Rail",
+      "description": "Vertical rail for context tiles, audio meters, and quick resonance summary.",
+      "layout": {
+        "x": 11,
+        "y": 1,
+        "w": 1,
+        "h": 9.5
+      },
+      "components": [
+        "PresenceTile",
+        "AudioMeter",
+        "SessionQuickLink"
+      ]
+    },
+    {
+      "id": "composer",
+      "label": "Composer",
+      "description": "Input bar with ritual controls: mic, upload, tone presets, and notebook export.",
+      "layout": {
+        "x": 0,
+        "y": 10.5,
+        "w": 12,
+        "h": 1.5
+      },
+      "components": [
+        "TextComposer",
+        "MicButton",
+        "UploadButton",
+        "ToneDropdown",
+        "NotebookShortcut"
+      ]
+    }
+  ],
+  "primary_actions": [
+    "SendMessage",
+    "OpenNotebook",
+    "TogglePresenceRail",
+    "SwitchPersona"
+  ],
+  "references": [
+    "docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#screen-a\u2014conscious-chat--notebook-split",
+    "docs/deployment/WEBSITE_INTEGRATION_PLAN.md#chat-surface---screen-a"
+  ]
+}

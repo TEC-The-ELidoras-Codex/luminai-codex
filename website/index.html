@@ -1,412 +1,495 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Elidoras Codex - Ethical AI Infrastructure</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #0B1E3B 0%, #1a0033 100%);
-            color: #ffffff;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            padding: 60px 0;
-            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
-        }
-        
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 40px;
-            background: linear-gradient(135deg, #00D5C4 0%, #6A00F4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero {
-            margin-bottom: 60px;
-        }
-        
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        background: linear-gradient(135deg, #0b1e3b 0%, #1a0033 100%);
+        color: #ffffff;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        padding: 60px 0;
+        border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        background: linear-gradient(135deg, #00d5c4 0%, #6a00f4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero {
+        margin-bottom: 60px;
+      }
+
+      h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .tagline {
+        font-size: 20px;
+        color: #00d5c4;
+        margin-bottom: 30px;
+      }
+
+      .hero-description {
+        font-size: 18px;
+        color: #b0b0b0;
+        max-width: 700px;
+        margin-bottom: 40px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .button {
+        padding: 14px 32px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .button-primary {
+        background: linear-gradient(135deg, #00d5c4 0%, #6a00f4 100%);
+        color: #ffffff;
+      }
+
+      .button-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 213, 196, 0.3);
+      }
+
+      .button-secondary {
+        border: 2px solid #00d5c4;
+        color: #00d5c4;
+        background: transparent;
+      }
+
+      .button-secondary:hover {
+        background: rgba(0, 213, 196, 0.1);
+      }
+
+      .portfolio-section {
+        margin: 100px 0;
+      }
+
+      h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+        color: #ffffff;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+
+      .portfolio-card {
+        background: rgba(106, 0, 244, 0.05);
+        border: 1px solid rgba(0, 255, 255, 0.2);
+        border-radius: 12px;
+        padding: 30px;
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-card:hover {
+        border-color: #00d5c4;
+        background: rgba(0, 213, 196, 0.05);
+      }
+
+      .portfolio-card h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #00d5c4;
+      }
+
+      .portfolio-card p {
+        color: #b0b0b0;
+        margin-bottom: 15px;
+      }
+
+      .portfolio-card ul {
+        list-style: none;
+        margin-left: 0;
+      }
+
+      .portfolio-card li {
+        margin: 8px 0;
+        color: #b0b0b0;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .portfolio-card li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #00d5c4;
+      }
+
+      .portfolio-link {
+        display: inline-block;
+        color: #00d5c4;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-link:hover {
+        transform: translateX(5px);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin: 60px 0;
+      }
+
+      .stat-box {
+        text-align: center;
+        padding: 30px;
+        background: rgba(0, 213, 196, 0.05);
+        border-radius: 12px;
+      }
+
+      .stat-number {
+        font-size: 42px;
+        font-weight: 700;
+        color: #00d5c4;
+        margin-bottom: 10px;
+      }
+
+      .stat-label {
+        color: #b0b0b0;
+      }
+
+      footer {
+        padding: 60px 0;
+        border-top: 1px solid rgba(0, 255, 255, 0.1);
+        text-align: center;
+        color: #b0b0b0;
+      }
+
+      .contact {
+        margin: 20px 0;
+      }
+
+      .contact a {
+        color: #00d5c4;
+        text-decoration: none;
+      }
+
+      .contact a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
         h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 700;
+          font-size: 32px;
         }
-        
-        .tagline {
-            font-size: 20px;
-            color: #00D5C4;
-            margin-bottom: 30px;
-        }
-        
-        .hero-description {
-            font-size: 18px;
-            color: #b0b0b0;
-            max-width: 700px;
-            margin-bottom: 40px;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .button {
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        
-        .button-primary {
-            background: linear-gradient(135deg, #00D5C4 0%, #6A00F4 100%);
-            color: #ffffff;
-        }
-        
-        .button-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 213, 196, 0.3);
-        }
-        
-        .button-secondary {
-            border: 2px solid #00D5C4;
-            color: #00D5C4;
-            background: transparent;
-        }
-        
-        .button-secondary:hover {
-            background: rgba(0, 213, 196, 0.1);
-        }
-        
-        .portfolio-section {
-            margin: 100px 0;
-        }
-        
+
         h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #ffffff;
+          font-size: 28px;
         }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
+
+        .cta-buttons {
+          flex-direction: column;
         }
-        
-        .portfolio-card {
-            background: rgba(106, 0, 244, 0.05);
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-card:hover {
-            border-color: #00D5C4;
-            background: rgba(0, 213, 196, 0.05);
-        }
-        
-        .portfolio-card h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #00D5C4;
-        }
-        
-        .portfolio-card p {
-            color: #b0b0b0;
-            margin-bottom: 15px;
-        }
-        
-        .portfolio-card ul {
-            list-style: none;
-            margin-left: 0;
-        }
-        
-        .portfolio-card li {
-            margin: 8px 0;
-            color: #b0b0b0;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .portfolio-card li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #00D5C4;
-        }
-        
-        .portfolio-link {
-            display: inline-block;
-            color: #00D5C4;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-link:hover {
-            transform: translateX(5px);
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
-        }
-        
-        .stat-box {
-            text-align: center;
-            padding: 30px;
-            background: rgba(0, 213, 196, 0.05);
-            border-radius: 12px;
-        }
-        
-        .stat-number {
-            font-size: 42px;
-            font-weight: 700;
-            color: #00D5C4;
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            color: #b0b0b0;
-        }
-        
-        footer {
-            padding: 60px 0;
-            border-top: 1px solid rgba(0, 255, 255, 0.1);
-            text-align: center;
-            color: #b0b0b0;
-        }
-        
-        .contact {
-            margin: 20px 0;
-        }
-        
-        .contact a {
-            color: #00D5C4;
-            text-decoration: none;
-        }
-        
-        .contact a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 32px;
-            }
-            
-            h2 {
-                font-size: 28px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <div class="logo">⚡ The Elidoras Codex</div>
-            <nav style="display: flex; gap: 40px; font-size: 16px;">
-                <a href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex" style="color: #00D5C4; text-decoration: none;">GitHub Repository</a>
-                <a href="#portfolio" style="color: #b0b0b0; text-decoration: none;">Portfolio</a>
-                <a href="#contact" style="color: #b0b0b0; text-decoration: none;">Contact</a>
-            </nav>
-        </div>
+      <div class="container">
+        <div class="logo">⚡ The Elidoras Codex</div>
+        <nav style="display: flex; gap: 40px; font-size: 16px">
+          <a
+            href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex"
+            style="color: #00d5c4; text-decoration: none"
+            >GitHub Repository</a
+          >
+          <a href="#portfolio" style="color: #b0b0b0; text-decoration: none">Portfolio</a>
+          <a href="#contact" style="color: #b0b0b0; text-decoration: none">Contact</a>
+        </nav>
+      </div>
     </header>
-    
+
     <main>
-        <div class="container">
-            <!-- Hero -->
-            <section class="hero">
-                <h1>Ethical AI Infrastructure for Families</h1>
-                <p class="tagline">Building tomorrow's technology with human values at the core</p>
-                <p class="hero-description">
-                    The LuminAI Codex demonstrates complete end-to-end capability in strategic planning, technical architecture, regulatory compliance, and brand development. This isn't a concept — it's a fully-planned, modular AI PC platform prioritizing family safety over surveillance capitalism.
-                </p>
-                <div class="cta-buttons">
-                    <a href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex" class="button button-primary">View on GitHub</a>
-                    <a href="#portfolio" class="button button-secondary">See the Portfolio</a>
-                </div>
-            </section>
-            
-            <!-- Stats -->
-            <section class="stats">
-                <div class="stat-box">
-                    <div class="stat-number">4</div>
-                    <div class="stat-label">Master Planning Documents</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">187+</div>
-                    <div class="stat-label">Source Assets & Research</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">35 Years</div>
-                    <div class="stat-label">Product Upgrade Lifecycle</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">COPPA/GDPR Compliant</div>
-                </div>
-            </section>
-            
-            <!-- Portfolio -->
-            <section id="portfolio" class="portfolio-section">
-                <h2>Complete Portfolio</h2>
-                
-                <div class="portfolio-grid">
-                    <div class="portfolio-card">
-                        <h3>🏗️ Technical Architecture</h3>
-                        <p>Complete backend specification for multi-agent AI system with quantum-safe security.</p>
-                        <ul>
-                            <li>Multi-agent orchestration (LuminAI, Airth, Arcadia, Ely, Kaznak)</li>
-                            <li>Azure Cosmos DB integration</li>
-                            <li>CRYSTALS-Kyber encryption</li>
-                            <li>Docker containerization</li>
-                        </ul>
-                        <a href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex/blob/main/docs/architecture/LUMINAI_TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md" class="portfolio-link">View Details →</a>
-                    </div>
-                    
-                    <div class="portfolio-card">
-                        <h3>🎯 Strategic Roadmap</h3>
-                        <p>4-week systematic implementation plan with specific milestones and risk mitigation.</p>
-                        <ul>
-                            <li>Phase-by-phase execution timeline</li>
-                            <li>Resource requirements</li>
-                            <li>Regulatory checkpoints</li>
-                            <li>Launch strategy</li>
-                        </ul>
-                        <a href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex/blob/main/docs/operations/LUMINAI_SYSTEMATIC_MIGRATION_STRATEGY.md" class="portfolio-link">View Details →</a>
-                    </div>
-                    
-                    <div class="portfolio-card">
-                        <h3>🎨 Brand Identity</h3>
-                        <p>Complete visual identity system with logo specs, color palette, typography, and accessibility guidelines.</p>
-                        <ul>
-                            <li>Cosmic Futureism aesthetic</li>
-                            <li>WCAG 2.1 AA compliance</li>
-                            <li>Multiple logo variations</li>
-                            <li>Marketing guidelines</li>
-                        </ul>
-                        <a href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex/blob/main/docs/brand/LUMINAI_LOGO_AND_BRANDING_SPECIFICATIONS.md" class="portfolio-link">View Details →</a>
-                    </div>
-                    
-                    <div class="portfolio-card">
-                        <h3>⚖️ Compliance Framework</h3>
-                        <p>Comprehensive regulatory strategy for COPPA, GDPR, FTC, and child safety requirements.</p>
-                        <ul>
-                            <li>Data minimization policies</li>
-                            <li>Privacy-by-design principles</li>
-                            <li>Transparent AI decisions</li>
-                            <li>Audit-ready documentation</li>
-                        </ul>
-                        <a href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex/blob/main/_TRANSFER_STAGING/docs_incoming/LUMINAI_Regulatory_Roadmap.md" class="portfolio-link">View Details →</a>
-                    </div>
-                    
-                    <div class="portfolio-card">
-                        <h3>📦 Asset Management</h3>
-                        <p>187+ source materials, research documents, and infrastructure specifications transferred and organized.</p>
-                        <ul>
-                            <li>TGCR mathematical framework</li>
-                            <li>Agent personas and systems</li>
-                            <li>Hardware specifications</li>
-                            <li>Research documentation</li>
-                        </ul>
-                        <a href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex/tree/main/_TRANSFER_STAGING" class="portfolio-link">View Details →</a>
-                    </div>
-                    
-                    <div class="portfolio-card">
-                        <h3>💻 Production Code</h3>
-                        <p>Full development infrastructure with testing, deployment automation, and CI/CD pipelines.</p>
-                        <ul>
-                            <li>Unit & integration tests</li>
-                            <li>Docker setup</li>
-                            <li>GitHub Actions CI/CD</li>
-                            <li>Environment automation</li>
-                        </ul>
-                        <a href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex/tree/main/src" class="portfolio-link">View Details →</a>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Capabilities -->
-            <section style="margin: 100px 0;">
-                <h2>What This Demonstrates</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: #00D5C4; margin-bottom: 10px;">Strategic Thinking</h3>
-                        <p style="color: #b0b0b0;">35-year product lifecycle planning, market positioning, competitive differentiation.</p>
-                    </div>
-                    <div style="padding: 20px;">
-                        <h3 style="color: #00D5C4; margin-bottom: 10px;">Technical Depth</h3>
-                        <p style="color: #b0b0b0;">Multi-agent AI systems, cloud architecture, quantum-safe cryptography, DevOps automation.</p>
-                    </div>
-                    <div style="padding: 20px;">
-                        <h3 style="color: #00D5C4; margin-bottom: 10px;">Regulatory Expertise</h3>
-                        <p style="color: #b0b0b0;">COPPA/GDPR compliance, child safety frameworks, transparent AI governance.</p>
-                    </div>
-                    <div style="padding: 20px;">
-                        <h3 style="color: #00D5C4; margin-bottom: 10px;">Brand Development</h3>
-                        <p style="color: #b0b0b0;">Visual identity systems, marketing positioning, messaging frameworks.</p>
-                    </div>
-                    <div style="padding: 20px;">
-                        <h3 style="color: #00D5C4; margin-bottom: 10px;">Project Execution</h3>
-                        <p style="color: #b0b0b0;">Systematic planning, milestone tracking, risk mitigation, quality assurance.</p>
-                    </div>
-                    <div style="padding: 20px;">
-                        <h3 style="color: #00D5C4; margin-bottom: 10px;">Ethical Leadership</h3>
-                        <p style="color: #b0b0b0;">Prioritizes family safety, transparency, long-term sustainability over short-term extraction.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
+      <div class="container">
+        <!-- Hero -->
+        <section class="hero">
+          <h1>Ethical AI Infrastructure for Families</h1>
+          <p class="tagline">Building tomorrow's technology with human values at the core</p>
+          <p class="hero-description">
+            The LuminAI Codex demonstrates complete end-to-end capability in strategic planning,
+            technical architecture, regulatory compliance, and brand development. This isn't a
+            concept — it's a fully-planned, modular AI PC platform prioritizing family safety over
+            surveillance capitalism.
+          </p>
+          <div class="cta-buttons">
+            <a
+              href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex"
+              class="button button-primary"
+              >View on GitHub</a
+            >
+            <a href="#portfolio" class="button button-secondary">See the Portfolio</a>
+          </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats">
+          <div class="stat-box">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Master Planning Documents</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">187+</div>
+            <div class="stat-label">Source Assets & Research</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">35 Years</div>
+            <div class="stat-label">Product Upgrade Lifecycle</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">COPPA/GDPR Compliant</div>
+          </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="portfolio-section">
+          <h2>Complete Portfolio</h2>
+
+          <div class="portfolio-grid">
+            <div class="portfolio-card">
+              <h3>🏗️ Technical Architecture</h3>
+              <p>
+                Complete backend specification for multi-agent AI system with quantum-safe security.
+              </p>
+              <ul>
+                <li>Multi-agent orchestration (LuminAI, Airth, Arcadia, Ely, Kaznak)</li>
+                <li>Azure Cosmos DB integration</li>
+                <li>CRYSTALS-Kyber encryption</li>
+                <li>Docker containerization</li>
+              </ul>
+              <a
+                href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex/blob/main/docs/architecture/LUMINAI_TECHNICAL_INFRASTRUCTURE_REQUIREMENTS.md"
+                class="portfolio-link"
+                >View Details →</a
+              >
+            </div>
+
+            <div class="portfolio-card">
+              <h3>🎯 Strategic Roadmap</h3>
+              <p>
+                4-week systematic implementation plan with specific milestones and risk mitigation.
+              </p>
+              <ul>
+                <li>Phase-by-phase execution timeline</li>
+                <li>Resource requirements</li>
+                <li>Regulatory checkpoints</li>
+                <li>Launch strategy</li>
+              </ul>
+              <a
+                href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex/blob/main/docs/operations/LUMINAI_SYSTEMATIC_MIGRATION_STRATEGY.md"
+                class="portfolio-link"
+                >View Details →</a
+              >
+            </div>
+
+            <div class="portfolio-card">
+              <h3>🎨 Brand Identity</h3>
+              <p>
+                Complete visual identity system with logo specs, color palette, typography, and
+                accessibility guidelines.
+              </p>
+              <ul>
+                <li>Cosmic Futureism aesthetic</li>
+                <li>WCAG 2.1 AA compliance</li>
+                <li>Multiple logo variations</li>
+                <li>Marketing guidelines</li>
+              </ul>
+              <a
+                href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex/blob/main/docs/brand/LUMINAI_LOGO_AND_BRANDING_SPECIFICATIONS.md"
+                class="portfolio-link"
+                >View Details →</a
+              >
+            </div>
+
+            <div class="portfolio-card">
+              <h3>⚖️ Compliance Framework</h3>
+              <p>
+                Comprehensive regulatory strategy for COPPA, GDPR, FTC, and child safety
+                requirements.
+              </p>
+              <ul>
+                <li>Data minimization policies</li>
+                <li>Privacy-by-design principles</li>
+                <li>Transparent AI decisions</li>
+                <li>Audit-ready documentation</li>
+              </ul>
+              <a
+                href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex/blob/main/_TRANSFER_STAGING/docs_incoming/LUMINAI_Regulatory_Roadmap.md"
+                class="portfolio-link"
+                >View Details →</a
+              >
+            </div>
+
+            <div class="portfolio-card">
+              <h3>📦 Asset Management</h3>
+              <p>
+                187+ source materials, research documents, and infrastructure specifications
+                transferred and organized.
+              </p>
+              <ul>
+                <li>TGCR mathematical framework</li>
+                <li>Agent personas and systems</li>
+                <li>Hardware specifications</li>
+                <li>Research documentation</li>
+              </ul>
+              <a
+                href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex/tree/main/_TRANSFER_STAGING"
+                class="portfolio-link"
+                >View Details →</a
+              >
+            </div>
+
+            <div class="portfolio-card">
+              <h3>💻 Production Code</h3>
+              <p>
+                Full development infrastructure with testing, deployment automation, and CI/CD
+                pipelines.
+              </p>
+              <ul>
+                <li>Unit & integration tests</li>
+                <li>Docker setup</li>
+                <li>GitHub Actions CI/CD</li>
+                <li>Environment automation</li>
+              </ul>
+              <a
+                href="https://github.com/TEC-The-Elidoras-Codex/luminai-codex/tree/main/src"
+                class="portfolio-link"
+                >View Details →</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- Capabilities -->
+        <section style="margin: 100px 0">
+          <h2>What This Demonstrates</h2>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 30px;
+            "
+          >
+            <div style="padding: 20px">
+              <h3 style="color: #00d5c4; margin-bottom: 10px">Strategic Thinking</h3>
+              <p style="color: #b0b0b0">
+                35-year product lifecycle planning, market positioning, competitive differentiation.
+              </p>
+            </div>
+            <div style="padding: 20px">
+              <h3 style="color: #00d5c4; margin-bottom: 10px">Technical Depth</h3>
+              <p style="color: #b0b0b0">
+                Multi-agent AI systems, cloud architecture, quantum-safe cryptography, DevOps
+                automation.
+              </p>
+            </div>
+            <div style="padding: 20px">
+              <h3 style="color: #00d5c4; margin-bottom: 10px">Regulatory Expertise</h3>
+              <p style="color: #b0b0b0">
+                COPPA/GDPR compliance, child safety frameworks, transparent AI governance.
+              </p>
+            </div>
+            <div style="padding: 20px">
+              <h3 style="color: #00d5c4; margin-bottom: 10px">Brand Development</h3>
+              <p style="color: #b0b0b0">
+                Visual identity systems, marketing positioning, messaging frameworks.
+              </p>
+            </div>
+            <div style="padding: 20px">
+              <h3 style="color: #00d5c4; margin-bottom: 10px">Project Execution</h3>
+              <p style="color: #b0b0b0">
+                Systematic planning, milestone tracking, risk mitigation, quality assurance.
+              </p>
+            </div>
+            <div style="padding: 20px">
+              <h3 style="color: #00d5c4; margin-bottom: 10px">Ethical Leadership</h3>
+              <p style="color: #b0b0b0">
+                Prioritizes family safety, transparency, long-term sustainability over short-term
+                extraction.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
-    
+
     <footer id="contact">
-        <div class="container">
-            <h2 style="color: #ffffff; margin-bottom: 30px;">Get In Touch</h2>
-            <div class="contact">
-                <p><strong>Angelo Michael Hurley</strong></p>
-                <p>Project Lead & Developer</p>
-            </div>
-            <div class="contact">
-                <p>
-                    <a href="mailto:KaznakAlpha@ElidorasCodex.com">KaznakAlpha@ElidorasCodex.com</a> · 
-                    <a href="https://github.com/TEC-The-Elidoras-Codex">GitHub</a>
-                </p>
-            </div>
-            <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(0, 255, 255, 0.1);">
-                <p>The LuminAI Codex demonstrates complete capability in ethical AI infrastructure for families.</p>
-                <p style="margin-top: 20px; font-size: 14px; color: #666666;">© 2025 The Elidoras Codex. Ethical AI, built in public.</p>
-            </div>
+      <div class="container">
+        <h2 style="color: #ffffff; margin-bottom: 30px">Get In Touch</h2>
+        <div class="contact">
+          <p><strong>Angelo Michael Hurley</strong></p>
+          <p>Project Lead & Developer</p>
         </div>
+        <div class="contact">
+          <p>
+            <a href="mailto:KaznakAlpha@ElidorasCodex.com">KaznakAlpha@ElidorasCodex.com</a> ·
+            <a href="https://github.com/TEC-The-Elidoras-Codex">GitHub</a>
+          </p>
+        </div>
+        <div
+          style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(0, 255, 255, 0.1)"
+        >
+          <p>
+            The LuminAI Codex demonstrates complete capability in ethical AI infrastructure for
+            families.
+          </p>
+          <p style="margin-top: 20px; font-size: 14px; color: #666666">
+            © 2025 The Elidoras Codex. Ethical AI, built in public.
+          </p>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

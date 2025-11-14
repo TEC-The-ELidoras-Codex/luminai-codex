@@ -1,0 +1,72 @@
+{
+  "id": "RESONANCE_SCR-02_NOTE_SKEL",
+  "name": "Notebook Focus",
+  "route": "/notebook",
+  "summary": "Expanded research notebook with transcript drawer, export controls, and reasoning depth indicators.",
+  "grid": {
+    "columns": 12,
+    "rows": 12,
+    "column_width": 96,
+    "gutter": 24,
+    "margin": 64
+  },
+  "sections": [
+    {
+      "id": "notebook_canvas",
+      "label": "Notebook Canvas",
+      "description": "Dominant canvas highlighting reasoning cards, TGCR math, and inline multimedia artefacts.",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "w": 9,
+        "h": 9.75
+      },
+      "components": [
+        "NotebookTitleBar",
+        "ReasoningCard",
+        "EquationBlock",
+        "InlineCitation"
+      ]
+    },
+    {
+      "id": "transcript_drawer",
+      "label": "Transcript Drawer",
+      "description": "Searchable transcript list with export shortcuts and persona filters.",
+      "layout": {
+        "x": 9,
+        "y": 0,
+        "w": 3,
+        "h": 9.75
+      },
+      "components": [
+        "TranscriptSearch",
+        "TranscriptList",
+        "ExportMenu"
+      ]
+    },
+    {
+      "id": "action_bar",
+      "label": "Notebook Actions",
+      "description": "Pinned action bar for export, sharing, and timeline navigation.",
+      "layout": {
+        "x": 0,
+        "y": 9.75,
+        "w": 12,
+        "h": 2.25
+      },
+      "components": [
+        "ExportButton",
+        "ShareButton",
+        "TimelineScrubber"
+      ]
+    }
+  ],
+  "primary_actions": [
+    "ExportNotebook",
+    "SearchTranscript",
+    "CopyResonanceLink"
+  ],
+  "references": [
+    "docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#screen-b\u2014notebook-focus--transcript-drawer"
+  ]
+}

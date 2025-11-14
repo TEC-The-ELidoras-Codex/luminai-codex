@@ -1,0 +1,71 @@
+{
+  "id": "RESONANCE_SCR-05_POD_SKEL",
+  "name": "Podcast Studio",
+  "route": "/pod",
+  "summary": "Audio creation environment with player, script builder, and voice tuning controls.",
+  "grid": {
+    "columns": 12,
+    "rows": 12,
+    "column_width": 96,
+    "gutter": 24,
+    "margin": 64
+  },
+  "sections": [
+    {
+      "id": "player",
+      "label": "Podcast Player",
+      "description": "Waveform-driven player with playback controls and transcript toggle.",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 4.5
+      },
+      "components": [
+        "PodcastWaveform",
+        "PlaybackControls",
+        "TranscriptToggle"
+      ]
+    },
+    {
+      "id": "script_builder",
+      "label": "Script Builder",
+      "description": "Structured editor for outlines, AI notes, and export actions.",
+      "layout": {
+        "x": 0,
+        "y": 4.5,
+        "w": 7,
+        "h": 4.5
+      },
+      "components": [
+        "ScriptOutline",
+        "AINotesPanel",
+        "ExportActions"
+      ]
+    },
+    {
+      "id": "voice_controls",
+      "label": "Voice Controls",
+      "description": "Voice model selector with resonance meter and ElevenLabs integration toggles.",
+      "layout": {
+        "x": 7,
+        "y": 4.5,
+        "w": 5,
+        "h": 4.5
+      },
+      "components": [
+        "VoiceSelector",
+        "ResonanceMeter",
+        "SynthesisToggle"
+      ]
+    }
+  ],
+  "primary_actions": [
+    "GenerateEpisode",
+    "DownloadAudio",
+    "OpenTranscript"
+  ],
+  "references": [
+    "docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#screen-e\u2014audio--podcast-studio"
+  ]
+}
