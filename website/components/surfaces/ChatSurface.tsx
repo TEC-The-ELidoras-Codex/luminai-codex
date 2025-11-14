@@ -26,15 +26,80 @@ export function ChatSurface() {
 
   const effectiveMessages = useMemo(() => messages.slice(-6), [messages]);
 
-  // Mock axiom events and consent state (replace with real backend data)
+  // Consent state management
   const [axiomEvents, setAxiomEvents] = useState<any[]>([]);
-  const mockConsentState = {
+  const [consentEmoji, setConsentEmoji] = useState("");
+  const [consentState, setConsentState] = useState<any>({
     intensity: "GREEN" as const,
     pace: "PLAY" as const,
     boundary: "DOOR" as const,
-    emotions: ["TEAR" as const],
-    meta: ["EYE" as const],
+    emotions: [] as const,
+    meta: [] as const,
     safety: null,
+  });
+  const [riskLevel, setRiskLevel] = useState(0);
+  const [responseMode, setResponseMode] = useState<"EXPLORE" | "PROCEED" | "PAUSE" | "GROUND" | "CRISIS">("EXPLORE");
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [messageInput, setMessageInput] = useState(\"\");
+  const [isSending, setIsSending] = useState(false);
+
+  // Send message with consent emoji to backend
+  const sendMessage = async () => {
+    if (!messageInput.trim()) return;
+    
+    setIsSending(true);
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000'}/api/message`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          text: messageInput,
+          consent_emoji: consentEmoji,
+          territory: territory,
+        }),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        // Display axiom violation if HTTP 400
+        if (response.status === 400 && error.axiom_violation) {
+          setAxiomEvents(prev => [...prev, {
+            id: Date.now().toString(),
+            behavior: error.axiom_violation.behavior,
+            message: error.axiom_violation.message,
+            severity: error.axiom_violation.severity,
+          }]);
+        }
+        throw new Error(error.error || 'Request failed');
+      }
+
+      const data = await response.json();
+      
+      // Update consent state from backend response
+      if (data.consent_state) {
+        setConsentState(data.consent_state);
+        setRiskLevel(data.risk_level || 0);
+        setResponseMode(data.response_mode || 'EXPLORE');
+        setSuggestions(data.suggestions || []);
+      }
+
+      // Clear input
+      setMessageInput('');
+      
+      // Add axiom event if axiom was upheld
+      if (data.axiom_upheld) {
+        setAxiomEvents(prev => [...prev, {
+          id: Date.now().toString(),
+          behavior: data.axiom_upheld.behavior,
+          message: data.axiom_upheld.message,
+          severity: 'success',
+        }]);
+      }
+    } catch (err) {
+      console.error('Failed to send message:', err);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   if (!territory) {
@@ -61,14 +126,32 @@ export function ChatSurface() {
 
       <div className="space-y-6">
         {/* ConsentOS Panel (if consent state exists) */}
-        {mockConsentState && (
+        {consentState && (
           <ConsentPanel
-            consentState={mockConsentState}
-            riskLevel={0}
-            responseMode="EXPLORE"
-            suggestions={[]}
+            consentState={consentState}
+            riskLevel={riskLevel}
+            responseMode={responseMode}
+            suggestions={suggestions}
           />
         )}
+
+        {/* Consent Emoji Input */}
+        <div className="rounded-3xl border border-border-subtle/50 bg-surface-raised/80 p-4 shadow-sm">
+          <label htmlFor="consent-emoji" className="block text-sm font-medium text-text-secondary mb-2">
+            Consent Emoji (e.g., 💚⏩🚪)
+          </label>
+          <input
+            id="consent-emoji"
+            type="text"
+            value={consentEmoji}
+            onChange={(e) => setConsentEmoji(e.target.value)}
+            placeholder="💚⏩🚪 or 🔴⏸️🧱"
+            className="w-full px-4 py-2 rounded-xl border border-border-subtle bg-surface-base text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-primary"
+          />
+          <p className="text-xs text-text-muted mt-1">
+            Use 6-channel emoji: Intensity (💚🟡🟠🔴🟣) + Pace (⏩▶️⏸️⏪🔄) + Boundary (🚪🪟🧱🌉🗝️) + optional Emotion/Meta/Safety
+          </p>
+        </div>
 
         <div className="rounded-3xl border border-border-subtle/50 bg-surface-raised/80 p-6 shadow-sm">
           <header className="flex items-center justify-between">
@@ -145,7 +228,16 @@ export function ChatSurface() {
             </label>
             <textarea
               id="chat-composer"
-              className="h-24 w-full resize-none rounded-2xl border border-border-subtle/50 bg-surface-sunken/80 p-4 text-sm text-text-primary placeholder:text-text-muted focus:border-accent-primary/70 focus:outline-none"
+              value={messageInput}
+              onChange={(e) => setMessageInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
+                  e.preventDefault();
+                  sendMessage();
+                }
+              }}
+              disabled={isSending}
+              className="h-24 w-full resize-none rounded-2xl border border-border-subtle/50 bg-surface-sunken/80 p-4 text-sm text-text-primary placeholder:text-text-muted focus:border-accent-primary/70 focus:outline-none disabled:opacity-50"
               placeholder="Channel a resonance query or direct a witness…"
             />
             <div className="mt-3 flex items-center justify-between">
@@ -153,8 +245,11 @@ export function ChatSurface() {
                 <span aria-hidden>⌘</span>
                 <span>Enter to transmit</span>
               </div>
-              <button className="to-aura-DEFAULT rounded-full bg-gradient-to-r from-accent-primary px-4 py-2 text-sm font-semibold text-surface-base shadow-md shadow-accent-primary/40 transition hover:shadow-xl">
-                Send Pulse
+              <button 
+                onClick={sendMessage}
+                disabled={isSending || !messageInput.trim()}
+                className="to-aura-DEFAULT rounded-full bg-gradient-to-r from-accent-primary px-4 py-2 text-sm font-semibold text-surface-base shadow-md shadow-accent-primary/40 transition hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed">
+                {isSending ? 'Sending...' : 'Send Pulse'}
               </button>
             </div>
           </div>

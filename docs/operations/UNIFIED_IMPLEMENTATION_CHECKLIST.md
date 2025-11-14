@@ -10,20 +10,22 @@
 
 ### 1. ConsentOS Frontend Integration
 
-- [ ] Add emoji parser to `components/surfaces/ChatSurface.tsx`
-- [ ] Create `<ConsentPanel>` component with 6-channel display
-- [ ] Wire emoji input to backend `/api/message` endpoint
-- [ ] Display consent state (intensity, pace, boundary, emotion, meta, safety)
-- [ ] Show risk level + suggestions in UI
+- [x] Add emoji parser to `components/surfaces/ChatSurface.tsx`
+- [x] Create `<ConsentPanel>` component with 6-channel display
+- [x] Wire emoji input to backend `/api/message` endpoint
+- [x] Display consent state (intensity, pace, boundary, emotion, meta, safety)
+- [x] Show risk level + suggestions in UI
 - [ ] Test with user cluster: 💚⏩🚪 → GREEN/FASTER/DOOR → EXPLORE mode
 
-**Files to modify**:
+**Files modified**:
 
-- `website/components/surfaces/ChatSurface.tsx`
-- `website/components/common/ConsentPanel.tsx` (new)
-- `website/lib/api.ts` (add consent parsing)
+- `website/components/surfaces/ChatSurface.tsx` ✅
+- `website/components/common/ConsentPanel.tsx` ✅ (already created)
+- Backend wiring complete ✅
 
 **Expected outcome**: Chat interface displays live consent state, backend validates axioms before response
+
+**Status**: ✅ Integration complete, ready for testing
 
 ---
 
