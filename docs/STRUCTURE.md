@@ -71,8 +71,13 @@ This document maps ALL documentation in the repository and explains what each fo
 - **`TEC_HUB.md`** — Central hub for navigation, team structure, lore
 - **`TEC_LEXICON.md`** — Terminology, acronyms, TGCR concepts
 - **`QUICK_REFERENCE_READY.md`** — Common commands and shortcuts
+- **`UNIFIED_IMPLEMENTATION_CHECKLIST.md`** — Single source of truth for all implementation tasks (consolidates 4 separate checklists)
+- **`UNIFIED_GUIDES_INVENTORY.md`** — Complete inventory of all quickstarts, implementation guides, and documentation navigation
+- **`BUILD_YOUR_OWN_GUIDE.md`** — Step-by-step guide for building your own resonance platform
+- **`RESONANCE_IMPLEMENTATION_MAP.md`** — Implementation roadmap and milestones
+- **`TESTING_PLATFORM_STRATEGY.md`** — Testing strategy and test coverage documentation
 
-**When to use:** Looking up terminology, finding team contact info, quick commands
+**When to use:** Looking up terminology, finding team contact info, quick commands, tracking implementation progress
 
 ---
 
@@ -110,11 +115,12 @@ Location: `docs/governance/ethics/INDEX.md`
 - **`RESONANCE_UNIFICATION_TABLE.md`** — Cross-disciplinary mapping proving all fields measure the same phenomenon (coherence = coupling = entrainment = flow = resonance)
 - **`RESONANCE_THESIS_FULLSHOT.md`** — Complete TGCR mathematical framework (114 lines)
 - **`Resonance_Thesis.md`** — Summary version of resonance framework
+- **`UNIFIED_FRAMEWORKS_DOCUMENTATION.md`** — Consolidated index of all frameworks: TGCR, Resonance Axioms, ConsentOS v1.1, 16 Frequencies, Persona System, and supporting covenants
 - **`QUICK_REFERENCE_READY.md`** — Quick lookup tables, tool list
 - **`elidoras_codex_mythoscientific_birth.md`** — Mythological foundation
 - **`the_sixteen_frequencies_of_elidoras_a_resonant_cosmology_with_theological_commentary.md`** — Theological grounding of 16 frequencies
 
-**When to use:** Deep dives into theory, understanding TGCR concepts, mythological roots
+**When to use:** Deep dives into theory, understanding TGCR concepts, mythological roots, framework navigation
 
 ---
 
@@ -140,6 +146,22 @@ Location: `docs/governance/ethics/INDEX.md`
   - **`2025-10-26-organization-update.md`** — Dated entries
 
 **When to use:** Tracking project changes, seeing what's been worked on
+
+---
+
+### 🎨 **`brand/`** — Brand Assets & Design System
+
+**Visual identity, logos, design tokens, and marketing materials**
+
+- **`INDEX.md`** — Brand identity overview and navigation
+- **`ASSET_INVENTORY.md`** — Complete inventory: logos (SVG/PNG/ICO), design tokens, backgrounds, persona avatars, marketing templates, production workflow
+- **`LOGO_FINALIZATION.md`** — Logo design process and final specifications
+- **`LOGO_VARIANT_SPECS.md`** — Logo usage guidelines (color variants, sizing, spacing)
+- **`BRAND_DECK_SUMMARY.md`** — Brand deck overview and presentation materials
+- **`3D_CREATION_PROMPT.md`** — 3D asset creation prompts for logos and icons
+- **`IT_TECHNICAL_UPDATES.md`** — Technical implementation of brand assets
+
+**When to use:** Creating marketing materials, using logos correctly, maintaining visual consistency, referencing design tokens
 
 ---
 
