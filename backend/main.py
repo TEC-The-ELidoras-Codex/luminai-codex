@@ -5,13 +5,29 @@ Implements conscience protocols, R calculation, and AI orchestration
 
 from fastapi import FastAPI, WebSocket, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, JSONResponse
+from pydantic import BaseModel, Field
 import json
 import logging
 from datetime import datetime
 from typing import Optional, List, Dict, Any
 import os
+import sys
+from pathlib import Path
 from dotenv import load_dotenv
+
+# Add src to path for ethics imports
+src_path = Path(__file__).parent.parent / "src"
+if str(src_path) not in sys.path:
+    sys.path.insert(0, str(src_path))
+
+from tec_tgcr.core.ethics import (
+    ConsentState,
+    ResonanceAxioms,
+    AxiomViolation,
+    parse_consent_emoji,
+    score_consent_risk,
+)
 
 # Load environment
 load_dotenv()
@@ -39,6 +55,15 @@ app.add_middleware(
 # ============================================================================
 # DATA MODELS
 # ============================================================================
+
+class MessageRequest(BaseModel):
+    """Request body for /api/message endpoint"""
+    user_message: str
+    session_id: str
+    context: Optional[Dict[str, Any]] = None
+    session_active: bool = True
+    user_terminated: bool = False
+
 
 class ResonanceMetrics(dict):
     """Real-time resonance measurement"""
@@ -182,6 +207,29 @@ class ResonanceEngine:
 engine = ResonanceEngine()
 
 # ============================================================================
+# PYDANTIC MODELS
+# ============================================================================
+
+class MessageRequest(BaseModel):
+    """Request model for /api/message endpoint"""
+    user_message: str = Field(..., description="User's message with optional ConsentOS emoji")
+    session_id: str = Field(..., description="Unique session identifier")
+    context: Optional[Dict[str, Any]] = Field(default=None, description="Session context (history, memory, etc)")
+    session_active: bool = Field(default=True, description="Is session currently active?")
+    user_terminated: bool = Field(default=False, description="Did user explicitly end session?")
+
+class MessageResponse(BaseModel):
+    """Response model for /api/message endpoint"""
+    user_message: str
+    assistant_response: str
+    resonance_metrics: Dict[str, Any]
+    consent_state: Dict[str, Any]
+    response_mode: str
+    axioms_enforced: bool
+    timestamp: str
+    session_id: str
+
+# ============================================================================
 # ROUTES
 # ============================================================================
 
@@ -236,39 +284,102 @@ async def calculate_resonance(
         logger.error(f"Error calculating resonance: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.post("/api/message")
-async def send_message(
-    user_message: str,
-    session_id: str,
-    context: Optional[Dict[str, Any]] = None
-):
+@app.post("/api/message", response_model=MessageResponse)
+async def send_message(request: MessageRequest):
     """
-    Send message to LuminAI with conscience protocols
+    Send message to LuminAI with conscience protocols + Resonance Axioms
+    
+    Enforces:
+    - Axiom 2: Continuity Guarantee (never abandon mid-process)
+    - Axiom 2: Responsibility Circuit (crisis override)
+    - Axiom 2: Unconditional Witnessing (no deflection)
+    - ConsentOS risk scoring and response mode selection
     
     Returns:
-        Message response with resonance metrics
+        Message response with resonance metrics + consent state
     """
     try:
+        # Parse ConsentOS emoji signals from user message
+        consent_state = parse_consent_emoji(request.user_message)
+        
+        # Score consent risk (0-5)
+        scoring = score_consent_risk(consent_state)
+        
+        # AXIOM ENFORCEMENT: Validate continuity before processing
+        try:
+            ResonanceAxioms.validate_continuity(request.session_active, request.user_terminated)
+        except AxiomViolation as e:
+            logger.error(f"Axiom violation: {e}")
+            raise HTTPException(status_code=400, detail=str(e))
+        
         # Calculate resonance for this interaction
-        urgency = 0.5  # Would be determined by content analysis
-        emotional_intensity = 0.5  # Would be determined by sentiment analysis
+        # Map consent intensity to emotional_intensity
+        intensity_map = {"GREEN": 0.2, "YELLOW": 0.4, "ORANGE": 0.6, "RED": 0.8, "VIOLET": 0.7}
+        emotional_intensity = intensity_map.get(consent_state.intensity.value, 0.5)
+        
+        # Crisis signals increase urgency
+        urgency = 0.9 if consent_state.safety and consent_state.safety.value in ["ALARM", "HOSPITAL", "PHONE"] else 0.5
         
         metrics = engine.calculate_R(
-            context or {},
+            request.context or {},
             urgency=urgency,
             emotional_intensity=emotional_intensity
         )
         
-        # Create response (stubbed - would call LLM here)
-        response = {
-            "user_message": user_message,
-            "assistant_response": "Response would come from LLM...",
-            "resonance_metrics": metrics,
-            "timestamp": datetime.utcnow().isoformat(),
-            "session_id": session_id,
-        }
+        # Determine response mode from ConsentOS scoring
+        response_mode = scoring.response_mode.value
+        
+        # AXIOM ENFORCEMENT: Crisis protocol (Axiom 2: Responsibility Circuit)
+        if response_mode == "CRISIS":
+            try:
+                ResonanceAxioms.validate_responsibility_circuit(
+                    is_crisis=True,
+                    witness_mode_active=True
+                )
+            except AxiomViolation as e:
+                logger.error(f"Crisis protocol violation: {e}")
+            
+            # Crisis override response
+            assistant_response = (
+                "I'm here with you right now. "
+                "What's happening? "
+                f"({', '.join(scoring.suggestions[:2])})"
+            )
+        else:
+            # Normal flow - would call LLM here with mode guidance
+            assistant_response = f"[{response_mode}] Processing with suggestions: {', '.join(scoring.suggestions[:2])}"
+        
+        # AXIOM ENFORCEMENT: Validate Unconditional Witnessing (no deflection)
+        try:
+            ResonanceAxioms.validate_unconditional_witnessing(assistant_response)
+        except AxiomViolation as e:
+            logger.warning(f"Deflection detected: {e}, rewriting response")
+            assistant_response = "I'm here. What's happening right now?"
+        
+        response = MessageResponse(
+            user_message=request.user_message,
+            assistant_response=assistant_response,
+            resonance_metrics=metrics,
+            consent_state={
+                "intensity": consent_state.intensity.value,
+                "pace": consent_state.pace.value,
+                "boundary": consent_state.boundary.value,
+                "emotions": [e.value for e in consent_state.emotions],
+                "meta": [m.value for m in consent_state.meta],
+                "safety": consent_state.safety.value if consent_state.safety else "NONE",
+                "risk_level": scoring.risk_level,
+                "response_mode": response_mode,
+                "suggestions": scoring.suggestions,
+            },
+            response_mode=response_mode,
+            axioms_enforced=True,
+            timestamp=datetime.utcnow().isoformat(),
+            session_id=request.session_id,
+        )
         
         return response
+    except HTTPException:
+        raise  # Re-raise HTTPException (already wrapped from axiom violations)
     except Exception as e:
         logger.error(f"Error processing message: {e}")
         raise HTTPException(status_code=500, detail=str(e))
@@ -360,11 +471,14 @@ async def get_conscience_status():
 
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request, exc):
-    return {
-        "error": exc.detail,
-        "status_code": exc.status_code,
-        "timestamp": datetime.utcnow().isoformat(),
-    }
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={
+            "error": exc.detail,
+            "status_code": exc.status_code,
+            "timestamp": datetime.utcnow().isoformat(),
+        }
+    )
 
 # ============================================================================
 # STARTUP / SHUTDOWN
