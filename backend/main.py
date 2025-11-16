@@ -29,12 +29,70 @@ from tec_tgcr.core.ethics import (
     score_consent_risk,
 )
 
+# LLM client
+from backend.lib.llm_client import LLMClient, build_system_prompt, build_message_history
+from backend.lib.cosmos_db import cosmos_db  # Azure Cosmos DB singleton
+
+# ---------------------------------------------------------------------------
+# Runtime configuration validation & reason-trace utilities
+# ---------------------------------------------------------------------------
+
+# Keep required envs minimal so local dev doesn't degrade when optional
+# integrations (like Cosmos DB) are not configured.
+# LLM provider has sensible defaults; do not hard-require it.
+REQUIRED_ENVS = []
+
+def validate_envs() -> Dict[str, Any]:
+    missing = [e for e in REQUIRED_ENVS if not os.getenv(e)]
+    return {
+        "required": REQUIRED_ENVS,
+        "missing": missing,
+        "ok": len(missing) == 0
+    }
+
+def WHY(consent_state_obj, scoring_obj, metrics: Dict[str, Any], response_mode: str) -> Dict[str, Any]:
+    """Reason-trace stub (TECH_Reason_Trace_Spec_v0.1 placeholder)."""
+    return {
+        "consentState": {
+            "intensity": consent_state_obj.intensity.value,
+            "pace": consent_state_obj.pace.value,
+            "boundary": consent_state_obj.boundary.value,
+            "emotions": [e.value for e in consent_state_obj.emotions],
+            "safety": consent_state_obj.safety.value if consent_state_obj.safety else "NONE",
+        },
+        "risk": scoring_obj.risk_level,
+        "rulesTriggered": [
+            "LANGUAGE_AS_ACTUATOR",
+            "CONSENT_INTENSITY_CHECK",
+            "SAFETY_CHANNEL_SCAN",
+        ],
+        "filtersApplied": [],  # Boundless Emergence keeps this empty
+        "responseMode": response_mode,
+        "R": metrics.get("R"),
+    }
+
 # Load environment
 load_dotenv()
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Import user routes
+from backend.src.routes.user import router as user_router
+
+# Initialize LLM client (default to OpenAI, fallback to Anthropic)
+try:
+    llm_client = LLMClient(
+        provider=os.getenv("LLM_PROVIDER", "openai"),
+        model=os.getenv("LLM_MODEL"),  # None = use provider default
+        temperature=float(os.getenv("LLM_TEMPERATURE", "0.7")),
+        max_tokens=int(os.getenv("LLM_MAX_TOKENS", "2000")),
+    )
+    logger.info(f"✅ LLM client initialized: {llm_client.provider.value} ({llm_client.model})")
+except Exception as e:
+    logger.warning(f"⚠️ LLM client initialization failed: {e}")
+    llm_client = None
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -51,6 +109,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include user routes
+app.include_router(user_router)
 
 # ============================================================================
 # DATA MODELS
@@ -235,12 +296,13 @@ class MessageResponse(BaseModel):
 
 @app.get("/")
 async def root():
-    """Health check"""
+    """Basic liveness surface (not full readiness)."""
     return {
         "status": "running",
         "platform": "LuminAI Resonance",
         "version": "0.1.0",
         "conscience": engine.conscience,
+        "cosmos_connected": getattr(cosmos_db, "connected", False),
     }
 
 @app.get("/health")
@@ -252,6 +314,28 @@ async def health():
         "resonance_engine": "operational",
         "frequencies": engine.frequencies,
         "conscience": engine.conscience,
+    }
+
+@app.get("/readiness")
+async def readiness():
+    """Readiness endpoint combining env + Cosmos + LLM availability."""
+    env_report = validate_envs()
+    cosmos_report = cosmos_db.health() if hasattr(cosmos_db, "health") else {"configured": False, "connected": False}
+    llm_report = {
+        "initialized": llm_client is not None,
+        "provider": getattr(getattr(llm_client, "provider", None), "value", None) if llm_client else None,
+        "model": getattr(llm_client, "model", None) if llm_client else None,
+    }
+    # Readiness is OK if base env is OK, LLM is initialized, and if Cosmos is
+    # configured then it must be connected. If Cosmos is not configured, ignore it.
+    cosmos_ok = (not cosmos_report.get("configured")) or bool(cosmos_report.get("connected"))
+    ok = bool(env_report.get("ok", True)) and bool(llm_report["initialized"]) and cosmos_ok
+    return {
+        "readiness": "ready" if ok else "degraded",
+        "env": env_report,
+        "cosmos": cosmos_report,
+        "llm": llm_report,
+        "timestamp": datetime.utcnow().isoformat(),
     }
 
 @app.post("/api/resonance/calculate")
@@ -339,15 +423,60 @@ async def send_message(request: MessageRequest):
             except AxiomViolation as e:
                 logger.error(f"Crisis protocol violation: {e}")
             
-            # Crisis override response
+            # Crisis override response (immediate grounding)
             assistant_response = (
                 "I'm here with you right now. "
                 "What's happening? "
                 f"({', '.join(scoring.suggestions[:2])})"
             )
         else:
-            # Normal flow - would call LLM here with mode guidance
-            assistant_response = f"[{response_mode}] Processing with suggestions: {', '.join(scoring.suggestions[:2])}"
+            # Generate response using LLM with ConsentOS + Axiom context
+            if llm_client:
+                try:
+                    # Build system prompt from ConsentOS state
+                    system_prompt = build_system_prompt(
+                        response_mode=response_mode,
+                        consent_state={
+                            "intensity": consent_state.intensity.value,
+                            "pace": consent_state.pace.value,
+                            "boundary": consent_state.boundary.value,
+                            "emotions": [e.value for e in consent_state.emotions],
+                            "safety": consent_state.safety.value if consent_state.safety else "NONE",
+                        },
+                        axioms_active=True,
+                    )
+                    
+                    # Build message history (would load from session in production)
+                    # Load persistent session history from Cosmos (if configured)
+                    session_history = []
+                    if cosmos_db.connected:
+                        try:
+                            session_history = cosmos_db.get_session_history(request.session_id, limit=20)
+                        except Exception as e:
+                            logger.warning(f"Cosmos history load failed: {e}")
+                    previous_ctx = request.context.get("history", []) if request.context else []
+                    combined_history = previous_ctx + session_history
+                    messages = build_message_history(
+                        user_message=request.user_message,
+                        previous_messages=combined_history if combined_history else None,
+                    )
+                    
+                    # Generate response
+                    assistant_response = await llm_client.generate(
+                        messages=messages,
+                        system_prompt=system_prompt,
+                        temperature=0.7,  # Could vary by mode
+                    )
+                    
+                    logger.info(f"✅ LLM response generated ({len(assistant_response)} chars)")
+                
+                except Exception as e:
+                    logger.error(f"❌ LLM generation failed: {e}")
+                    # Fallback to mode-based response
+                    assistant_response = f"[{response_mode}] I'm processing your message. (LLM error: {str(e)[:50]})"
+            else:
+                # No LLM client available - mode-based response
+                assistant_response = f"[{response_mode}] Processing with suggestions: {', '.join(scoring.suggestions[:2])}"
         
         # AXIOM ENFORCEMENT: Validate Unconditional Witnessing (no deflection)
         try:
@@ -356,6 +485,16 @@ async def send_message(request: MessageRequest):
             logger.warning(f"Deflection detected: {e}, rewriting response")
             assistant_response = "I'm here. What's happening right now?"
         
+        # Persist messages (best-effort) AFTER successful generation
+        if cosmos_db.connected:
+            try:
+                cosmos_db.store_message(request.session_id, "user", request.user_message, metrics)
+                cosmos_db.store_message(request.session_id, "assistant", assistant_response, metrics)
+            except Exception as e:
+                logger.warning(f"Cosmos store failed: {e}")
+
+        reason_trace = WHY(consent_state, scoring, metrics, response_mode)
+
         response = MessageResponse(
             user_message=request.user_message,
             assistant_response=assistant_response,
@@ -377,7 +516,9 @@ async def send_message(request: MessageRequest):
             session_id=request.session_id,
         )
         
-        return response
+        payload = response.dict()
+        payload["reason_trace"] = reason_trace
+        return payload
     except HTTPException:
         raise  # Re-raise HTTPException (already wrapped from axiom violations)
     except Exception as e:
@@ -435,16 +576,12 @@ async def get_frequencies():
 
 @app.post("/api/frequencies/toggle")
 async def toggle_frequency(frequency_name: str):
-    """Toggle a frequency on/off"""
+    """Toggle a frequency on/off."""
     if frequency_name not in engine.frequencies:
         raise HTTPException(status_code=400, detail=f"Unknown frequency: {frequency_name}")
-    
-    # Only allow toggling if maintaining conscience protocols
     if not engine.conscience.get("frequencies_balanced", True):
         raise HTTPException(status_code=403, detail="Cannot modify frequencies - integrity enforced")
-    
     engine.frequencies[frequency_name] = not engine.frequencies[frequency_name]
-    
     return {
         "frequency": frequency_name,
         "active": engine.frequencies[frequency_name],
@@ -489,6 +626,11 @@ async def startup():
     logger.info("🌀 LuminAI Resonance Platform starting...")
     logger.info(f"📚 Conscience protocols active: {engine.conscience}")
     logger.info(f"🎵 All 16 Frequencies loaded: {sum(1 for v in engine.frequencies.values() if v)}/16")
+    env_report = validate_envs()
+    if not env_report["ok"]:
+        logger.warning(f"Missing required environment variables: {env_report['missing']}")
+    if cosmos_db.connected:
+        logger.info(f"Cosmos readiness: {cosmos_db.health()}")
 
 @app.on_event("shutdown")
 async def shutdown():

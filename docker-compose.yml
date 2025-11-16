@@ -60,8 +60,8 @@ services:
   # Backend FastAPI server (Resonance Platform)
   backend:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: backend/Dockerfile
     ports:
       - "8000:8000"
     environment:
@@ -69,8 +69,6 @@ services:
       - BACKEND_PORT=8000
       - DATABASE_URL=postgresql://luminai:luminai@postgres:5432/luminai
       - REDIS_URL=redis://redis:6379
-      - OLLAMA_URL=http://ollama:11434
-      - UNSLOTH_URL=http://unsloth:8001
     depends_on:
       postgres:
         condition: service_healthy
@@ -97,6 +95,7 @@ services:
       - backend
     volumes:
       - ./frontend:/app/frontend
+      - /app/frontend/node_modules
       - /app/frontend/.next
     command: npm run dev
     networks:

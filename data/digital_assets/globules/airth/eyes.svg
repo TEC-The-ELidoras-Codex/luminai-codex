@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Airth Eyes SVG: Heterochromia (left crimson, right flame-orange) with vertical elliptical pupils, ember flecks group, Inkscape metadata -->
+<svg
+   width="64"
+   height="32"
+   version="1.1"
+   id="airth-eyes"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defsAirth" />
+  <sodipodi:namedview
+     id="namedviewAirth"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="16"
+     inkscape:cx="32"
+     inkscape:cy="16"
+     inkscape:current-layer="RightEye" />
+  <g inkscape:groupmode="layer" inkscape:label="LeftEye" id="LeftEye">
+    <ellipse id="left-iris" cx="16" cy="16" rx="12" ry="8" fill="#DC143C" stroke="#FFD700" stroke-width="2" />
+    <ellipse id="left-pupil" cx="16" cy="16" rx="3" ry="6" fill="#FFD700" />
+    <g id="left-embers">
+      <circle cx="16" cy="16" r="2" fill="#FFD700" />
+    </g>
+  </g>
+  <g inkscape:groupmode="layer" inkscape:label="RightEye" id="RightEye">
+    <ellipse id="right-iris" cx="48" cy="16" rx="12" ry="8" fill="#FF4500" stroke="#FFD700" stroke-width="2" />
+    <ellipse id="right-pupil" cx="48" cy="16" rx="3" ry="6" fill="#FFD700" />
+    <g id="right-embers">
+      <circle cx="48" cy="16" r="2" fill="#FFD700" />
+    </g>
+  </g>
+</svg>

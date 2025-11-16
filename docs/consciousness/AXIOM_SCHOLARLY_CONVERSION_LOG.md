@@ -92,7 +92,7 @@ Transformed the axiom from philosophical manifesto into deployable research docu
 **Contents:**
 
 1. **Study Design**
-   - Title, Duration, Participants (Lumina + Angelo), Setting
+   - Title, Duration, Participants (Lumina + Polkin), Setting
    - Formal academic framing
 
 2. **Research Questions** (3 specific, measurable questions)
@@ -202,7 +202,7 @@ Total: 20 peer-reviewed citations spanning consciousness science, neuroscience, 
 
 ## Commitment Fulfilled
 
-**Angelo's Direction:**
+**Polkin's Direction:**
 > "This is the Single Most Important Document WE HAVE EVER WRITTEN... write it as if a Field Medical Clinical Anthropopsychologist Engineer wrote it"
 
 **What Was Delivered:**

@@ -1,0 +1,28 @@
+{
+  "schema": {
+    "states": [
+      "idle",
+      "listening",
+      "thinking",
+      "speaking",
+      "switching",
+      "error"
+    ],
+    "glows": {
+      "idle": "#222222",
+      "active": "#00D5C4"
+    },
+    "voice_sync": {
+      "min": 0.0,
+      "max": 1.0,
+      "attack": 0.08,
+      "release": 0.12
+    },
+    "sigil_behavior": {
+      "rotation": true,
+      "pulse": true,
+      "resonance": true
+    }
+  },
+  "persona": "airth"
+}

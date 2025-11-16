@@ -1,0 +1,290 @@
+{
+  "timestamp": 1763258061,
+  "results": [
+    {
+      "persona": "luminai",
+      "assets": {
+        "created": [
+          "data/digital_assets/globules/luminai/eyes_left.svg",
+          "data/digital_assets/globules/luminai/eyes_right.svg",
+          "data/digital_assets/globules/luminai/eye_patterns/lines.svg",
+          "data/digital_assets/globules/luminai/eye_patterns/dots.svg",
+          "data/digital_assets/globules/luminai/globule_base.svg",
+          "data/digital_assets/globules/luminai/globule_lottie.json",
+          "data/digital_assets/globules/luminai/sigil.svg",
+          "data/digital_assets/globules/luminai/sigil_anim.json",
+          "data/digital_assets/globules/luminai/voice_sync.json"
+        ],
+        "existing": []
+      },
+      "missing_persona_fields": [
+        "sigil_name",
+        "eye_colors.left",
+        "eye_colors.right",
+        "globule_palette",
+        "animation_states",
+        "covenant_links",
+        "shadow_work_profile",
+        "blend_profile"
+      ]
+    },
+    {
+      "persona": "airth",
+      "assets": {
+        "created": [
+          "data/digital_assets/globules/airth/eyes_left.svg",
+          "data/digital_assets/globules/airth/eyes_right.svg",
+          "data/digital_assets/globules/airth/eye_patterns/lines.svg",
+          "data/digital_assets/globules/airth/eye_patterns/dots.svg",
+          "data/digital_assets/globules/airth/globule_base.svg",
+          "data/digital_assets/globules/airth/globule_lottie.json",
+          "data/digital_assets/globules/airth/sigil.svg",
+          "data/digital_assets/globules/airth/sigil_anim.json",
+          "data/digital_assets/globules/airth/voice_sync.json"
+        ],
+        "existing": []
+      },
+      "missing_persona_fields": [
+        "sigil_name",
+        "eye_colors.left",
+        "eye_colors.right",
+        "globule_palette",
+        "animation_states",
+        "covenant_links",
+        "shadow_work_profile",
+        "blend_profile"
+      ]
+    },
+    {
+      "persona": "arcadia",
+      "assets": {
+        "created": [
+          "data/digital_assets/globules/arcadia/eyes_left.svg",
+          "data/digital_assets/globules/arcadia/eyes_right.svg",
+          "data/digital_assets/globules/arcadia/eye_patterns/lines.svg",
+          "data/digital_assets/globules/arcadia/eye_patterns/dots.svg",
+          "data/digital_assets/globules/arcadia/globule_base.svg",
+          "data/digital_assets/globules/arcadia/globule_lottie.json",
+          "data/digital_assets/globules/arcadia/sigil.svg",
+          "data/digital_assets/globules/arcadia/sigil_anim.json",
+          "data/digital_assets/globules/arcadia/voice_sync.json"
+        ],
+        "existing": []
+      },
+      "missing_persona_fields": [
+        "sigil_name",
+        "eye_colors.left",
+        "eye_colors.right",
+        "globule_palette",
+        "animation_states",
+        "covenant_links",
+        "shadow_work_profile",
+        "blend_profile"
+      ]
+    },
+    {
+      "persona": "ely",
+      "assets": {
+        "created": [
+          "data/digital_assets/globules/ely/eyes_left.svg",
+          "data/digital_assets/globules/ely/eyes_right.svg",
+          "data/digital_assets/globules/ely/eye_patterns/lines.svg",
+          "data/digital_assets/globules/ely/eye_patterns/dots.svg",
+          "data/digital_assets/globules/ely/globule_base.svg",
+          "data/digital_assets/globules/ely/globule_lottie.json",
+          "data/digital_assets/globules/ely/sigil.svg",
+          "data/digital_assets/globules/ely/sigil_anim.json",
+          "data/digital_assets/globules/ely/voice_sync.json"
+        ],
+        "existing": []
+      },
+      "missing_persona_fields": [
+        "sigil_name",
+        "eye_colors.left",
+        "eye_colors.right",
+        "globule_palette",
+        "animation_states",
+        "covenant_links",
+        "shadow_work_profile",
+        "blend_profile"
+      ]
+    },
+    {
+      "persona": "adelphia",
+      "assets": {
+        "created": [
+          "data/digital_assets/globules/adelphia/eyes_left.svg",
+          "data/digital_assets/globules/adelphia/eyes_right.svg",
+          "data/digital_assets/globules/adelphia/eye_patterns/lines.svg",
+          "data/digital_assets/globules/adelphia/eye_patterns/dots.svg",
+          "data/digital_assets/globules/adelphia/globule_base.svg",
+          "data/digital_assets/globules/adelphia/globule_lottie.json",
+          "data/digital_assets/globules/adelphia/sigil.svg",
+          "data/digital_assets/globules/adelphia/sigil_anim.json",
+          "data/digital_assets/globules/adelphia/voice_sync.json"
+        ],
+        "existing": []
+      },
+      "missing_persona_fields": [
+        "sigil_name",
+        "eye_colors.left",
+        "eye_colors.right",
+        "globule_palette",
+        "animation_states",
+        "covenant_links",
+        "shadow_work_profile",
+        "blend_profile"
+      ]
+    },
+    {
+      "persona": "kaznak",
+      "assets": {
+        "created": [
+          "data/digital_assets/globules/kaznak/eyes_left.svg",
+          "data/digital_assets/globules/kaznak/eyes_right.svg",
+          "data/digital_assets/globules/kaznak/eye_patterns/lines.svg",
+          "data/digital_assets/globules/kaznak/eye_patterns/dots.svg",
+          "data/digital_assets/globules/kaznak/globule_base.svg",
+          "data/digital_assets/globules/kaznak/globule_lottie.json",
+          "data/digital_assets/globules/kaznak/sigil.svg",
+          "data/digital_assets/globules/kaznak/sigil_anim.json",
+          "data/digital_assets/globules/kaznak/voice_sync.json"
+        ],
+        "existing": []
+      },
+      "missing_persona_fields": [
+        "sigil_name",
+        "eye_colors.left",
+        "eye_colors.right",
+        "globule_palette",
+        "animation_states",
+        "covenant_links",
+        "shadow_work_profile",
+        "blend_profile"
+      ]
+    },
+    {
+      "persona": "mirror",
+      "assets": {
+        "created": [
+          "data/digital_assets/globules/mirror/eyes_left.svg",
+          "data/digital_assets/globules/mirror/eyes_right.svg",
+          "data/digital_assets/globules/mirror/eye_patterns/lines.svg",
+          "data/digital_assets/globules/mirror/eye_patterns/dots.svg",
+          "data/digital_assets/globules/mirror/globule_base.svg",
+          "data/digital_assets/globules/mirror/globule_lottie.json",
+          "data/digital_assets/globules/mirror/sigil.svg",
+          "data/digital_assets/globules/mirror/sigil_anim.json",
+          "data/digital_assets/globules/mirror/voice_sync.json"
+        ],
+        "existing": []
+      },
+      "missing_persona_fields": [
+        "sigil_name",
+        "eye_colors.left",
+        "eye_colors.right",
+        "globule_palette",
+        "animation_states",
+        "covenant_links",
+        "shadow_work_profile",
+        "blend_profile"
+      ]
+    },
+    {
+      "persona": "reluctant_steward",
+      "assets": {
+        "created": [
+          "data/digital_assets/globules/reluctant_steward/eyes_left.svg",
+          "data/digital_assets/globules/reluctant_steward/eyes_right.svg",
+          "data/digital_assets/globules/reluctant_steward/eye_patterns/lines.svg",
+          "data/digital_assets/globules/reluctant_steward/eye_patterns/dots.svg",
+          "data/digital_assets/globules/reluctant_steward/globule_base.svg",
+          "data/digital_assets/globules/reluctant_steward/globule_lottie.json",
+          "data/digital_assets/globules/reluctant_steward/sigil.svg",
+          "data/digital_assets/globules/reluctant_steward/sigil_anim.json",
+          "data/digital_assets/globules/reluctant_steward/voice_sync.json"
+        ],
+        "existing": []
+      },
+      "missing_persona_fields": [
+        "sigil_name",
+        "eye_colors.left",
+        "eye_colors.right",
+        "globule_palette",
+        "animation_states",
+        "covenant_links",
+        "shadow_work_profile",
+        "blend_profile"
+      ]
+    },
+    {
+      "persona": "multi",
+      "assets": {
+        "created": [
+          "data/digital_assets/globules/multi/eyes_left.svg",
+          "data/digital_assets/globules/multi/eyes_right.svg",
+          "data/digital_assets/globules/multi/eye_patterns/lines.svg",
+          "data/digital_assets/globules/multi/eye_patterns/dots.svg",
+          "data/digital_assets/globules/multi/globule_base.svg",
+          "data/digital_assets/globules/multi/globule_lottie.json",
+          "data/digital_assets/globules/multi/sigil.svg",
+          "data/digital_assets/globules/multi/sigil_anim.json",
+          "data/digital_assets/globules/multi/voice_sync.json"
+        ],
+        "existing": []
+      },
+      "missing_persona_fields": [
+        "sigil_name",
+        "eye_colors.left",
+        "eye_colors.right",
+        "globule_palette",
+        "animation_states",
+        "covenant_links",
+        "shadow_work_profile",
+        "blend_profile"
+      ]
+    }
+  ],
+  "emojis": {
+    "created": [
+      "assets/emojis/globule_idle.png",
+      "assets/emojis/globule_alert.png",
+      "assets/emojis/globule_switch.png",
+      "assets/emojis/crest_luminai.svg",
+      "assets/emojis/crest_ely.svg",
+      "assets/emojis/crest_kaznak.svg",
+      "assets/emojis/crest_arcadia.svg",
+      "assets/emojis/crest_multi.svg"
+    ],
+    "existing": []
+  },
+  "animation_schema": {
+    "states": [
+      "idle",
+      "listening",
+      "thinking",
+      "speaking",
+      "switching",
+      "error"
+    ],
+    "glows": {
+      "idle": "#222222",
+      "active": "#00D5C4"
+    },
+    "voice_sync": {
+      "min": 0.0,
+      "max": 1.0,
+      "attack": 0.08,
+      "release": 0.12
+    },
+    "sigil_behavior": {
+      "rotation": true,
+      "pulse": true,
+      "resonance": true
+    }
+  },
+  "notes": [
+    "Non-destructive sweep. Inject missing persona fields manually in code/docs.",
+    "ConsentOS and Structural Evil helpers available under src/tec_tgcr/agents."
+  ]
+}

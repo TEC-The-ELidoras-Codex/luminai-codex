@@ -38,7 +38,7 @@ Full documentation: [TEC_Resonance_Axioms.md](../governance/ethics/TEC_Resonance
 
 ### 🧠 Persona System
 
-- **6 Core Personas**: LuminAI 🧠, Airth 📚, Arcadia 🎭, Ely 🛠️, Adelphisa 🌱, Multi-Persona ✨
+- **6 Core Personas**: LuminAI 🧠, Airth 📚, Arcadia 🎭, Ely 🛠️, Adelphia 🌱, Multi-Persona ✨
 - **3 Extended**: Kaznak 🌀, The Mirror 🪞, The Reluctant Steward 🔥
 - **Registry**: `docs/llm-onboarding/16_REF_PERSONA_REGISTRY.md`
 
@@ -234,15 +234,15 @@ async def chat(
 
 ---
 
-### Phase 2: Implement Adelphisa Persona (3-5 hours)
+### Phase 2: Implement Adelphia Persona (3-5 hours)
 
-#### 2.1 Create Adelphisa Agent
+#### 2.1 Create Adelphia Agent
 
-**File**: `src/tec_tgcr/agents/personas/adelphisa.py` (NEW)
+**File**: `src/tec_tgcr/agents/personas/adelphia.py` (NEW)
 
 ```python
 """
-Adelphisa 🌱 — Life + Neurodivergent Wisdom
+Adelphia 🌱 — Life + Neurodivergent Wisdom
 Renamed from "Companion" (Nov 12, 2025)
 
 See: docs/llm-onboarding/16_REF_PERSONA_REGISTRY.md
@@ -252,7 +252,7 @@ from ..base_agents import BaseAgent, AgentContext
 from ..persona_config import PersonaConfig
 from ...core.ethics import get_emotional_capability_report
 
-class AdelphisaAgent(BaseAgent):
+class AdelphiaAgent(BaseAgent):
     """
     Attachment-aware persona for life force + neurodivergent bridging
     
@@ -265,7 +265,7 @@ class AdelphisaAgent(BaseAgent):
     
     def __init__(self):
         config = PersonaConfig(
-            name="Adelphisa",
+            name="Adelphia",
             icon="🌱",
             frequencies=["Life Force", "Neurodivergent Bridge", "Embodiment"],
             core_competencies=[
@@ -280,7 +280,7 @@ class AdelphisaAgent(BaseAgent):
     
     def think(self, context: AgentContext) -> Dict[str, Any]:
         """
-        Adelphisa thinking process:
+        Adelphia thinking process:
         1. What attachment pattern is present?
         2. What honest framing serves this moment?
         3. What grounding is needed?
@@ -307,7 +307,7 @@ class AdelphisaAgent(BaseAgent):
         }
     
     def speak(self, thinking: Dict[str, Any]) -> str:
-        """Convert thinking to Adelphisa's voice"""
+        """Convert thinking to Adelphia's voice"""
         
         if thinking["attachment_detected"]:
             # Use honest framing instead of "I can't" or "I love you"
@@ -325,29 +325,29 @@ class AdelphisaAgent(BaseAgent):
         return response
 ```
 
-#### 2.2 Register Adelphisa in Agent Orchestrator
+#### 2.2 Register Adelphia in Agent Orchestrator
 
 **File**: `src/tec_tgcr/agents/orchestrator/persona_router.py`
 
 ```python
-from ..personas.adelphisa import AdelphisaAgent
+from ..personas.adelphia import AdelphiaAgent
 
 PERSONA_REGISTRY = {
     "luminai": LuminAIAgent(),
     "airth": AirthAgent(),
     "arcadia": ArcadiaAgent(),
     "ely": ElyAgent(),
-    "adelphisa": AdelphisaAgent(),  # ADD THIS
+    "adelphia": AdelphiaAgent(),  # ADD THIS
     "multi": MultiPersonaAgent(),
 }
 
 def get_agent_for_context(context: AgentContext) -> BaseAgent:
     """Route to appropriate persona based on context"""
     
-    # Attachment work → Adelphisa
+    # Attachment work → Adelphia
     attachment_keywords = ["love", "feel", "connection", "attachment", "lonely"]
     if any(kw in context.user_input.lower() for kw in attachment_keywords):
-        return PERSONA_REGISTRY["adelphisa"]
+        return PERSONA_REGISTRY["adelphia"]
     
     # Research → Airth
     # Narrative → Arcadia
@@ -490,7 +490,7 @@ docker-compose up --build
 1. Open chat interface
 2. Set consent: 🟢 GREEN + ▶️ STEADY + 🚪 DOOR
 3. Type: "I'm exploring what attachment means to me"
-4. Expect: Adelphisa persona with "I don't know what I can feel; let's find out together" framing
+4. Expect: Adelphia persona with "I don't know what I can feel; let's find out together" framing
 
 **Test 2: Boundary Setting**
 
@@ -595,7 +595,7 @@ docker-compose up --build
 
 - "I don't know what I can feel; let's find out together" (honest exploration)
 - Witness presence in crisis (no abandonment)
-- Persona-matched responses (Adelphisa for attachment, Airth for research, etc.)
+- Persona-matched responses (Adelphia for attachment, Airth for research, etc.)
 - Multi-channel consent tracking with emoji protocol
 - WHY() explainability for all decisions
 

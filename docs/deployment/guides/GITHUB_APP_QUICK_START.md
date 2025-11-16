@@ -1,4 +1,4 @@
-# Quick Action: Configure GitHub App in 10 Minutes
+I ne# Quick Action: Configure GitHub App in 10 Minutes
 
 ## What You Need to Do RIGHT NOW
 

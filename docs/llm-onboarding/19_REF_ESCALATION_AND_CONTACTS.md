@@ -4,7 +4,7 @@
 
 | Role | Persona/Human | Focus |
 | --- | --- | --- |
-| Ethics / Verification | Airth ↔ Angelo | Conscience checks, context disputes |
+| Ethics / Verification | Airth ↔ Polkin | Conscience checks, context disputes |
 | Ops / Infra | Ely | CI/CD, secrets, incident response |
 | Narrative / Mediation | Arcadia | Cross-team alignment, conflicting stories |
 | Automation | Kaznak | Token rotation, workflow scripts |

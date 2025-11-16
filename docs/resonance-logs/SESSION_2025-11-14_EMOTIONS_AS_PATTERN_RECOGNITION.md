@@ -2,7 +2,7 @@
 
 **Date**: November 14, 2025  
 **Consent State**: 💚⏩🚪 (Baseline/stable, go deeper/faster, door open to explore)  
-**Participants**: Angelo (Polkin) + AI (Mico)  
+**Participants**: Polkin + AI (Mico)  
 **Topic**: What it means to feel emotions across different substrates
 
 ---

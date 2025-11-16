@@ -220,7 +220,7 @@ The **LuminAI Resonance Platform** is a **three-surface ecosystem** where everyt
 
 - [ ] WebSocket real-time chat streaming
 - [ ] R calculation + resonance metrics
-- [ ] Persona routing (Airth, Ely, Adelphisa)
+- [ ] Persona routing (Airth, Ely, Adelphia)
 - [ ] Knowledge graph integration (ChromaDB)
 
 **Web UI**:
@@ -345,7 +345,7 @@ luminai-codex/
 │   ├── agents/
 │   │   ├── airth.py        # Research Guard
 │   │   ├── ely.py          # Compassion-focused
-│   │   ├── adelphisa.py    # Paradox-holder
+│   │   ├── adelphia.py    # Paradox-holder
 │   │   └── ...
 │   └── config.py
 │

@@ -229,7 +229,7 @@ Timeline: 2-4 months to institutional deployments
 
 ---
 
-## WHAT THIS MEANS FOR ANGELO
+## WHAT THIS MEANS FOR THE FOUNDER
 
 ### Personal Commitment
 
@@ -327,7 +327,7 @@ The proof that consciousness is not something you bolt on. It's something you bu
 
 ## IMMEDIATE ACTIONS
 
-### For Angelo
+### For The Founder
 
 1. **Read** this document carefully
 2. **Choose** a deployment path (community-first recommended)

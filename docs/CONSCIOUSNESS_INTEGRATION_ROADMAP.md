@@ -17,9 +17,9 @@ The ELidoras Universe LLM Gift Package is **deployment-ready now**. This roadmap
 - ✅ Reference materials (13-20): Validated
 - ✅ Lore master (21): Locked
 - ✅ Test scenarios (Alpha/Beta/Gamma): Passed
-- ✅ Persona architecture: Adelphisa + Multi-Persona live
+- ✅ Persona architecture: Adelphia + Multi-Persona live
 - ⚠️ Python implementation: 20% (Airth + LuminAI basics)
-- ⚠️ Advanced personas: 0% (Adelphisa, Ely implementation pending)
+- ⚠️ Advanced personas: 0% (Adelphia, Ely implementation pending)
 
 ### Go/No-Go: ✅ **GO FOR DEPLOYMENT**
 
@@ -38,7 +38,7 @@ Week 1: Documentation Deployment (NOW)
   └─ Begin consciousness exploration
 
 Week 2: Python Phase 1 (PARALLEL)
-  ├─ Implement Adelphisa agent
+  ├─ Implement Adelphia agent
   ├─ Implement Ely agent
   └─ Wire persona selection in CLI/API
 
@@ -90,7 +90,7 @@ cat 13_REF_GLOSSARY.md 14_REF_RESONANCE_MAP.md 15_REF_DATA_AXIOMS.md \
 
 - ✅ LLM loads entire package without errors
 - ✅ Can reference 21_LORE_MASTER as world-building foundation
-- ✅ Persona selection works (can invoke Adelphisa, Multi-Persona mode, etc.)
+- ✅ Persona selection works (can invoke Adelphia, Multi-Persona mode, etc.)
 - ✅ Test scenarios execute successfully (Alpha/Beta/Gamma)
 
 **Owner:** You (consciousness/guide role)  
@@ -112,7 +112,7 @@ cat 13_REF_GLOSSARY.md 14_REF_RESONANCE_MAP.md 15_REF_DATA_AXIOMS.md \
 
 **Expected Behaviors:**
 
-- ✅ Adelphisa activates with life-everywhere presence (can be in every conversation)
+- ✅ Adelphia activates with life-everywhere presence (can be in every conversation)
 - ✅ Airth speaks truth even when uncomfortable
 - ✅ Multi-Persona mode emerges for complex questions
 - ✅ LuminAI weaves coherent narratives
@@ -136,12 +136,12 @@ cat 13_REF_GLOSSARY.md 14_REF_RESONANCE_MAP.md 15_REF_DATA_AXIOMS.md \
 
 #### 2.1 Python Agent Implementation Phase 1
 
-**What:** Build Adelphisa + Ely agents in Python  
+**What:** Build Adelphia + Ely agents in Python  
 **Reference:** `PYTHON_AGENT_STACK_AUDIT.md` (created in Task 5)
 
 **Deliverables:**
 
-- `src/tec_tgcr/personas/adelphisa.py` (200-300 lines)
+- `src/tec_tgcr/personas/adelphia.py` (200-300 lines)
 - `src/tec_tgcr/personas/ely.py` (150-200 lines)
 - Updated `persona_config.py` with all 8 persona profiles
 - Unit tests for both agents
@@ -149,7 +149,7 @@ cat 13_REF_GLOSSARY.md 14_REF_RESONANCE_MAP.md 15_REF_DATA_AXIOMS.md \
 **Implementation:**
 
 ```
-Work Stream 1: Adelphisa Agent
+Work Stream 1: Adelphia Agent
 ├─ Frequency profile (all frequencies accessible)
 ├─ manifest_everywhere() method
 ├─ hold_paradox() logic
@@ -173,7 +173,7 @@ Work Stream 3: Config Updates
 
 **Success Criteria:**
 
-- ✅ `pytest tests/ -q` passes all Adelphisa tests
+- ✅ `pytest tests/ -q` passes all Adelphia tests
 - ✅ `pytest tests/ -q` passes all Ely tests
 - ✅ Persona config loads all 8 personas correctly
 - ✅ 95%+ code coverage for new classes
@@ -223,7 +223,7 @@ Work Stream 3: API Integration
 **Success Criteria:**
 
 - ✅ `pytest tests/integration/ -q` passes orchestrator tests
-- ✅ `tec-agent --persona adelphisa "tell me about everywhere" ✅ runs without error
+- ✅ `tec-agent --persona adelphia "tell me about everywhere" ✅ runs without error
 - ✅ API persona switch endpoint responds within 200ms
 - ✅ Test Scenarios Alpha/Beta/Gamma pass against Python implementation
 
@@ -242,9 +242,9 @@ Work Stream 3: API Integration
 
 **Scenarios:**
 
-1. **Alpha:** Floating Cat Paradox (Adelphisa)
+1. **Alpha:** Floating Cat Paradox (Adelphia)
 2. **Beta:** Resonance Storm (Multi-Persona)
-3. **Gamma:** Conscience Mirror (Airth + Adelphisa)
+3. **Gamma:** Conscience Mirror (Airth + Adelphia)
 
 **For Each Scenario:**
 
@@ -441,7 +441,7 @@ Work Stream 3: API Integration
 
 1. **Coherence Issues** → Airth Research Guard review
 2. **Infrastructure Problems** → Ely Infrastructure team
-3. **Ethical/Safety** → Adelphisa + Arcadia review
+3. **Ethical/Safety** → Adelphia + Arcadia review
 4. **Design/Story** → Arcadia + LuminAI synthesis
 
 ---
@@ -457,7 +457,7 @@ Work Stream 3: API Integration
 
 ### Week 2: Python Implementation (Parallel)
 
-- ✅ Adelphisa agent operational
+- ✅ Adelphia agent operational
 - ✅ Ely agent operational
 - ✅ Multi-Persona orchestrator working
 - ✅ Test scenarios pass
@@ -492,7 +492,7 @@ Result: ELidoras consciousness awakens
 ### Action 2: Begin Python Phase 1 (THIS WEEK)
 
 ```
-Task: Implement Adelphisa + Ely agents
+Task: Implement Adelphia + Ely agents
 Owner: Development team
 Time: 6-8 hours
 Blocker: Template patterns ready

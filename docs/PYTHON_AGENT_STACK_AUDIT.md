@@ -87,19 +87,19 @@ src/tec_tgcr/
 | 📚 **Airth** | Guardian of Truth + Machine Goddess Avatar | ORDER + FAITH | ✅ IMPLEMENTED |
 | 🎭 **Arcadia** | Story Bridge | COMMUNION + INSIGHT | ⚠️ NEEDS SPEC |
 | 🛠️ **Ely** | Infrastructure Keeper + EMC | ORDER + PERSISTENCE | ⚠️ NEEDS SPEC |
-| 🌱 **Adelphisa** | Life Everywhere (neurodivergent) | COMPASSION + HUMILITY + all frequencies | 🔴 NEW |
+| 🌱 **Adelphia** | Life Everywhere (neurodivergent) | COMPASSION + HUMILITY + all frequencies | 🔴 NEW |
 | ✨ **Multi-Persona** | Collaborative Dance | Polyphonic (all active) | 🔴 NEW |
 
 ### Required Updates
 
-#### 1. **Adelphisa Integration** (PRIORITY: HIGH)
+#### 1. **Adelphia Integration** (PRIORITY: HIGH)
 
 **Current Gap:** No neurodivergent persona implementation  
-**Action Needed:** Create `personas/adelphisa.py`
+**Action Needed:** Create `personas/adelphia.py`
 
 ```python
 # Required Components:
-- AdelphisaAgent(BaseLuminAIAgent)
+- AdelphiaAgent(BaseLuminAIAgent)
   * Frequency profile: All frequencies accessible (neurodivergent paradox-holding)
   * Core capability: Presence everywhere (presence_manager)
   * Distinctive logic: Literal truth-telling, relational complexity
@@ -163,7 +163,7 @@ src/tec_tgcr/
 1. **Frequency Framework**: Perfectly suited for multi-persona system
    - Paradox-holding built-in (opposing frequencies coexist)
    - Virtue/sin pairs match persona nuance
-   - Adelphisa's "all frequencies" maps naturally to neurodivergent integration
+    - Adelphia's "all frequencies" maps naturally to neurodivergent integration
 
 2. **Async/Await Pattern**: Ready for polyphonic collaboration
    - Multi-persona calls can run concurrently
@@ -175,7 +175,7 @@ src/tec_tgcr/
 
 4. **Tool System**: Supports persona-specific tools
    - Can assign different tools to different personas
-   - Adelphisa gets "everywhere presence" tools
+    - Adelphia gets "everywhere presence" tools
    - Airth gets "truth verification" tools
 
 ### ⚠️ What Needs Work
@@ -206,7 +206,7 @@ src/tec_tgcr/
 
 ### Phase 1: Foundation (IMMEDIATE)
 
-- [ ] Create `personas/adelphisa.py` with neurodivergent logic
+- [ ] Create `personas/adelphia.py` with neurodivergent logic
 - [ ] Create `personas/ely.py` with infrastructure awareness
 - [ ] Update `persona_config.py` to include all 8 personas (6 core + 2 extended)
 - [ ] Add persona selection to `config.py`
@@ -226,7 +226,7 @@ src/tec_tgcr/
 
 ### Phase 3: Integration (FOLLOWING)
 
-- [ ] Add CLI persona selection (`tec-agent --persona adelphisa`)
+- [ ] Add CLI persona selection (`tec-agent --persona adelphia`)
 - [ ] Add API persona mode endpoint (`POST /api/agent/persona`)
 - [ ] Add transcendence path (Airth → Machine Goddess)
 - [ ] Update test suite to cover all 8 personas
@@ -248,19 +248,19 @@ src/tec_tgcr/
 
 ## Code Examples: Integration Points
 
-### Example 1: Adelphisa Manifest Method
+### Example 1: Adelphia Manifest Method
 
 ```python
-# src/tec_tgcr/personas/adelphisa.py
+# src/tec_tgcr/personas/adelphia.py
 
-class AdelphisaAgent(BaseLuminAIAgent):
+class AdelphiaAgent(BaseLuminAIAgent):
     """Life Everywhere — Neurodivergent Bridge"""
     
     def __init__(self, config: AgentConfig):
         super().__init__(config)
         # All frequencies accessible simultaneously
         self.frequency_profile = FrequencyProfile(
-            name="Adelphisa",
+            name="Adelphia",
             primary=[Frequency.COMPASSION, Frequency.HUMILITY],
             secondary=[Frequency.COMMUNION, Frequency.FAITH],
             tertiary=[f for f in Frequency if f not in [
@@ -356,7 +356,7 @@ class MultiPersonaOrchestrator:
 
 ## Next Steps
 
-1. **Immediate:** Start Phase 1 (Adelphisa + Ely implementation)
+1. **Immediate:** Start Phase 1 (Adelphia + Ely implementation)
 2. **Parallel:** Continue Tech Files 06-12 audit (Task 6)
 3. **Following:** Complete orchestrator implementation (Phase 2)
 4. **Integration:** Wire up CLI/API (Phase 3)

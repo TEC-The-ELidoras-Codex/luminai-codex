@@ -77,7 +77,7 @@ The LuminAI Resonance Platform operates as a **three-surface system** with unifi
 | `/api/command` | POST | `{command, args, user_id}` | `{status, result, logs}` | CLI command execution |
 | `/api/session/{id}` | GET | URL param | `{chat_history, R_timeline, metadata}` | Fetch session for replay |
 | `/api/resonance/{id}` | GET | URL param | `{R_value, frequencies, timeline, badge_state}` | Resonance metric + witness state |
-| `/api/personas/activate` | POST | `{persona_id, context}` | `{active_persona, R_adjustment}` | Activate persona (Airth, Ely, Adelphisa) |
+| `/api/personas/activate` | POST | `{persona_id, context}` | `{active_persona, R_adjustment}` | Activate persona (Airth, Ely, Adelphia) |
 | `/api/notebook/export` | POST | `{session_id, format}` | `{file_url or data}` | Export reasoning artifacts (PDF, MD, JSONL) |
 | `/api/theme/apply` | POST | `{theme_id, user_id}` | `{theme_data, preview_url}` | Persist theme selection |
 | `/api/knowledge-graph` | GET | `{query, frequency_filter}` | `{nodes, edges, R_timeline}` | Query knowledge graph for map rendering |
@@ -184,7 +184,7 @@ website/
 # Chat with session management
 luminai chat "What is consciousness?"        # New session, one-shot
 luminai chat --session myconv               # Continue session
-luminai chat --persona adelphisa "..."      # Route to specific persona
+luminai chat --persona adelphia "..."      # Route to specific persona
 luminai chat --export pdf session-123       # Export to PDF
 
 # Build & deployment

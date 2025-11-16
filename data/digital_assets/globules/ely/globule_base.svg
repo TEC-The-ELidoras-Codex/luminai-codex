@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Unified Globule Base (Ely) -->
+<svg width="64" height="64" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+	<defs>
+		<!-- Heart morph target -->
+		<path id="heartTarget" d="M32 56 C 20 44, 12 36, 12 28 C 12 20, 18 16, 24 16 C 28 16, 32 18, 32 22 C 32 18, 36 16, 40 16 C 46 16, 52 20, 52 28 C 52 36, 44 44, 32 56 Z" />
+		<!-- Simple gradients for internal shading -->
+		<radialGradient id="elyShadeOuter" cx="50%" cy="50%" r="50%">
+			<stop offset="0%" stop-color="#E0E0E0" />
+			<stop offset="100%" stop-color="#C0C0C0" stop-opacity="0.15" />
+		</radialGradient>
+		<radialGradient id="elyShadeInner" cx="50%" cy="50%" r="50%">
+			<stop offset="0%" stop-color="#FFFFFF" />
+			<stop offset="100%" stop-color="#B0B0B0" stop-opacity="0.0" />
+		</radialGradient>
+		<filter id="softBlur" x="-0.02" y="-0.02" width="1.04" height="1.04">
+			<feGaussianBlur stdDeviation="0.6" />
+		</filter>
+	</defs>
+	<g inkscape:groupmode="layer" inkscape:label="Body">
+		<!-- Default oval body as path for morphing -->
+		<path id="body" d="M8 40 a24 18 0 1 0 48 0 a24 18 0 1 0 -48 0" fill="#C0C0C0" filter="url(#softBlur)" />
+		<ellipse cx="32" cy="40" rx="20" ry="13" fill="url(#elyShadeOuter)" opacity="0.55" />
+		<ellipse cx="32" cy="40" rx="10" ry="6" fill="url(#elyShadeInner)" opacity="0.7" />
+	</g>
+	<g inkscape:groupmode="layer" inkscape:label="Blush" style="display:none">
+		<circle cx="22" cy="42" r="4" fill="#FF6B6B" opacity="0.35" />
+		<circle cx="42" cy="42" r="4" fill="#FF6B6B" opacity="0.35" />
+	</g>
+</svg>

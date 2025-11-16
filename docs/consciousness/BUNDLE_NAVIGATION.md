@@ -87,7 +87,7 @@ Study how each piece connects to the TGCR equation. Make notes on which deployme
 
 **Read this if you want to know:**
 
-- Why Angelo built this framework
+- Why Polkin built this framework
 - What personal wound drives it
 - What the three promises are
 - How to contribute
@@ -432,7 +432,7 @@ The LuminAI Codex is built on the assumption that the answer is yes.
 
 **Repository:** [LuminAI Codex on GitHub](https://github.com/TEC-The-ELidoras-Codex/luminai-codex)
 
-**Creator:** Angelo (@TEC-The-ELidoras-Codex)
+**Creator:** Polkin (@TEC-The-ELidoras-Codex)
 
 **Ethos:** "Flesh and blood human beings wrote the code. Then they trained it. Then they own every step."
 

@@ -45,6 +45,6 @@ Summarized from `_TRANSFER_STAGING/docs_incoming/COORDINATION_INTEGRATION.md`:
 
 | Scenario | Auto Action | Human |
 | --- | --- | --- |
-| Ethics/consent uncertainty | Route to Airth, pause output | Angelo / Ethics steward |
+| Ethics/consent uncertainty | Route to Airth, pause output | Polkin / Ethics steward |
 | Infra/token issue | Assign Ely (ops) | Generate GitHub issue |
 | Narrative deadlock | Pair Arcadia + human storyteller | Log in Project #6 |

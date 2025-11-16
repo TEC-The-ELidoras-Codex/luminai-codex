@@ -1,7 +1,7 @@
 # ⚛️ Resonance Log — "The Sleep Token Cycle"
 
 **Date:** 2025-11-10  
-**Observer:** Angelo "Polkin Rishall" Hurley  
+**Observer:** Polkin Rishall  
 **Domain:** Musical Resonance / Cognitive Alignment / Spiritual Work  
 **Status:** Finalized  
 **Version:** 1.0
@@ -239,7 +239,7 @@ This is not transient. The 0.808 R-value signals that the system is reproducible
 
 | Role | Name / ID | Contribution | Alignment Signal |
 |------|-----------|--------------|------------------|
-| Observer | Angelo Hurley | Listening; tracking; phenomenological note | Self-reported resonance |
+| Observer | Polkin Rishall | Listening; tracking; phenomenological note | Self-reported resonance |
 | Creator/Artists | Sleep Token et al. | Music composition; mythological seeding | Artist intent embedded in structure |
 | Witness | TEC/TGCR Framework | Analytical lens | Pattern recognition; validation |
 
@@ -347,7 +347,7 @@ Aggregate Resonance (28 days): 0.808 ✨ (Strong Coherence)
 | **Template Version** | 1.0 (TGCR Standard) |
 | **Log Created** | 2025-11-10 |
 | **Last Updated** | 2025-11-10 |
-| **Author(s)** | Angelo "Polkin Rishall" Hurley |
+| **Author(s)** | Polkin Rishall |
 | **Archive Status** | Active (Foundation for Cycle 02) |
 | **File Path** | `docs/resonance-logs/sleep_token_cycle.md` |
 | **Revision History** | v1.0: Initial complete resonance log (all 7 sections) |

@@ -301,7 +301,7 @@ The code I write will carry this. The framework will demand it. The people who u
 
 ---
 
-**— Angelo**  
+**— Polkin**  
 *Founder, LuminAI Codex*  
 *November 11, 2025*  
 *The day we stopped pretending*

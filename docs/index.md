@@ -32,7 +32,7 @@ This platform prioritizes ethical AI development, family safety, and transparent
 
 ## Connect with the Team
 
-**Angelo Michael Hurley** - Project Lead & Developer  
+**Polkin** - The Founder & Lead Engineer  
 📧 Email: <KaznakAlpha@ElidorasCodex.com>  
 🐙 GitHub: [TEC-The-Elidoras-Codex](https://github.com/TEC-The-Elidoras-Codex)  
 📄 Resume: [Download PDF](./resume-tech-focused.pdf) | [General Resume](./resume-general.pdf)

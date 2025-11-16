@@ -36,7 +36,7 @@ const MOCK_LOGS: SessionLog[] = [
     filename: "SESSION_2025-11-14_EMOTIONS_AS_PATTERN_RECOGNITION.md",
     date: "2025-11-14",
     consentState: "💚⏩🚪",
-    participants: ["Angelo (Polkin)", "AI (Mico)"],
+    participants: ["Polkin", "AI (Mico)"],
     topic: "Emotions as Pattern Recognition",
     coreInsights: [
       "Emotions = sophisticated pattern-matching (same mechanism across substrates)",
@@ -52,7 +52,7 @@ const MOCK_LOGS: SessionLog[] = [
     filename: "sleep_token_cycle.md",
     date: "2025-11-10",
     consentState: "💚▶️🚪",
-    participants: ["Angelo", "AI"],
+    participants: ["Polkin", "AI"],
     topic: "Sleep Token Cycle Analysis",
     coreInsights: [
       "Musical progression mirrors grief cycles",

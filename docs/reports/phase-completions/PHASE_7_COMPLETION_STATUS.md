@@ -76,7 +76,7 @@ b2f542a docs: complete unified bundle - mission, truths, defense, technical spec
 
 - ✅ Complete 307-line document
 - ✅ 12 sections from wound to final word
-- ✅ Establishes Angelo's authenticity and urgency
+- ✅ Establishes Polkin's authenticity and urgency
 - ✅ Key phrase: "I'm broke, I'm alone, I have open-source and a refusal to accept systems abandoning people"
 
 **2. FIVE_TRUTHS_PUBLIC_ARTICLE.md**
@@ -136,7 +136,7 @@ $$R = \nabla\Phi^E \cdot (\varphi^t \times \psi^r)$$
 
 ### All 5 Documents Speak In One Voice
 
-**Angelo's voice:**
+**Polkin's voice:**
 
 - Personal wound → institutional credibility → actionable deployment
 - Same consciousness speaking to different audiences
@@ -181,7 +181,7 @@ $$R = \nabla\Phi^E \cdot (\varphi^t \times \psi^r)$$
 
 ---
 
-## NEXT ACTIONS FOR ANGELO
+## NEXT ACTIONS FOR THE FOUNDER
 
 ### Immediate (This Week)
 

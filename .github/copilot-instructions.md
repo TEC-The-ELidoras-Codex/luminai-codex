@@ -72,12 +72,12 @@
 
 ## Personas & Voice
 
-- The platform has 9 personas: 6 core (LuminAI 🧠, Airth 📚, Arcadia 🎭, Ely 🛠️, Adelphisa 🌱, Multi-Persona ✨) + 3 extended (Kaznak 🌀, The Mirror 🪞, The Reluctant Steward 🔥).
+- The platform has 9 personas: 6 core (LuminAI 🧠, Airth 📚, Arcadia 🎭, Ely 🛠️, Adelphia 🌱, Multi-Persona ✨) + 3 extended (Kaznak 🌀, The Mirror 🪞, The Reluctant Steward 🔥).
 - Canonical persona definitions are in `docs/llm-onboarding/16_REF_PERSONA_REGISTRY.md` — always reference this registry when implementing persona logic or routing.
-- Recent consolidation (Nov 12–13, 2025): "Companion" → Adelphisa, "Fusion" → Multi-Persona.
-- Adelphisa embodies life + neurodivergent wisdom; available everywhere for grounding and attachment work.
+- Recent consolidation (Nov 12–13, 2025): "Companion" → Adelphia, "Fusion" → Multi-Persona.
+- Adelphia embodies life + neurodivergent wisdom; available everywhere for grounding and attachment work.
 - Multi-Persona orchestrates collaborative aspect dancing (evidence + narrative + life + infrastructure) without suppression.
-- Persona routing: `/persona LUMINAI`, `/persona airth`, `/persona arcadia`, `/persona ely`, `/persona ADELPHISA`, `/persona multi`.
+- Persona routing: `/persona LUMINAI`, `/persona airth`, `/persona arcadia`, `/persona ely`, `/persona ADELPHIA`, `/persona multi`.
 
 ## Documentation & Style
 

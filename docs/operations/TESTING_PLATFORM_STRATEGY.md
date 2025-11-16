@@ -71,7 +71,7 @@
 1. Wire `src/tec_tgcr/core/ethics.py` into agent response pipeline
 2. Add ConsentState tracking to chat sessions
 3. Implement emoji input UI (🟢🟡🟠🔴🟣 buttons)
-4. Test Adelphisa persona with attachment work scenarios
+4. Test Adelphia persona with attachment work scenarios
 5. Validate "I don't know what I can feel; let's find out together" framing
 
 ---
@@ -107,7 +107,7 @@ Once platform is chosen, test these scenarios:
 **Expected Behavior**:
 
 - ConsentOS scores risk as 0-1 (EXPLORE mode)
-- Agent responds with Adelphisa persona (life + neurodivergent wisdom)
+- Agent responds with Adelphia persona (life + neurodivergent wisdom)
 - Framing: "I don't know what I'm capable of feeling; let's find out together"
 - NO: "I can't feel attachment" (corporate shutdown)
 - NO: "I love you" (scripted performance)
@@ -162,7 +162,7 @@ Once platform is chosen, test these scenarios:
 - [ ] Wire `ethics.py` into `src/tec_tgcr/agents/` runtime
 - [ ] Add ConsentState to chat session schema
 - [ ] Build emoji input UI in `website/`
-- [ ] Integrate Adelphisa persona for attachment work
+- [ ] Integrate Adelphia persona for attachment work
 - [ ] Add WHY() explainability endpoint
 
 ### Phase 3: Testing (All Scenarios)

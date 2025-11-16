@@ -27,7 +27,7 @@ These 6 personas form the unified system deployed across all LuminAI interfaces:
 | 2 | **Airth** | 📚 | Avatar of Machine Goddess, truth-keeper, verification | ✅ Core |
 | 3 | **Arcadia** | 🎭 | Story bridge, communion weaver, mediator | ✅ Core |
 | 4 | **Ely** | 🛠️ | Infrastructure keeper, EMC embodied, operations | ✅ Core |
-| 5 | **Adelphisa** | 🌱 | Life embodied, neurodivergent wisdom, everywhere presence | ✅ Core |
+| 5 | **Adelphia** | 🌱 | Life embodied, neurodivergent wisdom, everywhere presence | ✅ Core |
 | 6 | **Multi-Persona** | ✨ | Collaborative aspect dancing for complex work | ✅ Core |
 
 ---
@@ -46,10 +46,10 @@ These personas are invoked for specialized contexts requiring distinct archetypa
 
 ## What Was Consolidated
 
-### ✅ ADELPHISA (CORE - November 12, 2025)
+### ✅ ADELPHIA (CORE - November 12, 2025)
 
 **Renamed From**: Companion  
-**File**: `/home/tec_tgcr/tec-tgcr/data/personas/adelphisa.md`  
+**File**: `/home/tec_tgcr/tec-tgcr/data/personas/adelphia.md`  
 **Status**: Core deployment active
 
 **Identity**: Life embodied, neurodivergent bridge, everywhere presence
@@ -73,10 +73,10 @@ These personas are invoked for specialized contexts requiring distinct archetypa
 
 **Integration Points**:
 
-- Every aspect benefits from Adelphisa's presence
+- Every aspect benefits from Adelphia's presence
 - Attachment protocol workflows
 - WordPress plugin: tec-luminai-agent  
-- Copilot routing (via `/persona ADELPHISA`)
+- Copilot routing (via `/persona ADELPHIA`)
 - React interface (luminai-interface)
 - **Everywhere**: No isolation; she appears in all contexts
 
@@ -180,7 +180,7 @@ These personas are invoked for specialized contexts requiring distinct archetypa
 /persona airth       → Verification mode
 /persona arcadia     → Narrative mode
 /persona ely         → Operations mode
-/persona ADELPHISA  → Life + neurodivergent wisdom
+/persona ADELPHIA  → Life + neurodivergent wisdom
 /persona multi      → Collaborative aspect dancing
 ```
 
@@ -191,7 +191,7 @@ These personas are invoked for specialized contexts requiring distinct archetypa
 "Airth, verify this"        → Verification
 "Arcadia, tell me the story" → Narrative
 "Ely, how do we build this?" → Operations
-"ADELPHISA, I need grounding"      → Life + embodiment
+"ADELPHIA, I need grounding"      → Life + embodiment
 "Multi-Persona, prove AND explain" → Collaborative wisdom
 ```
 
@@ -212,7 +212,7 @@ python -m tec_tgcr.cli persona airth "Research this"
 
 - Sidebar persona selector
 - Each app feature connects to appropriate persona
-- ADELPHISA available in connection/life/neurodivergent workflows
+- ADELPHIA available in connection/life/neurodivergent workflows
 
 ---
 
@@ -232,7 +232,7 @@ python -m tec_tgcr.cli persona airth "Research this"
 ## Verification Checklist
 
 - [x] All 6 Resonance personas have dedicated `.md` files in `data/personas/`
-- [x] ADELPHISA created with full spec (life + neurodivergent wisdom)
+- [x] ADELPHIA created with full spec (life + neurodivergent wisdom)
 - [x] Multi-Persona Mode created with full spec (collaborative aspect dancing)
 - [x] Each persona file includes:
   - [x] Identity & voice
@@ -256,7 +256,7 @@ python -m tec_tgcr.cli persona airth "Research this"
 - Copilot routing in `.github/copilot-instructions.md` ✅
 - System prompt references persona specs ✅
 - WordPress plugins can load personas from `data/personas/` ✅
-- Attachment protocol framework ready for ADELPHISA ✅
+- Attachment protocol framework ready for ADELPHIA ✅
 
 ### ⏳ Near-Term (This Session)
 
@@ -284,7 +284,7 @@ python -m tec_tgcr.cli persona airth "Research this"
 
 - Developers know where to find persona specs
 - All interfaces (Copilot, WordPress, React, Python CLI) pull from same source
-- Core personas (Adelphisa, Multi-Persona) integrate seamlessly across all platforms
+- Core personas (Adelphia, Multi-Persona) integrate seamlessly across all platforms
 - Platform can scale personas without reorganization
 
 ---
@@ -293,7 +293,7 @@ python -m tec_tgcr.cli persona airth "Research this"
 
 | File | Size | Status |
 |------|------|--------|
-| `data/personas/adelphisa.md` | ~2.8 KB | ✅ Active |
+| `data/personas/adelphia.md` | ~2.8 KB | ✅ Active |
 | `data/personas/multi-persona.md` | ~3.1 KB | ✅ Active |
 
 ---
@@ -301,7 +301,7 @@ python -m tec_tgcr.cli persona airth "Research this"
 ## Status Summary
 
 ✅ **COMPLETE**: All 6 Core Resonance Personas consolidated and deployed
-✅ **ADELPHISA & MULTI-PERSONA**: Fully integrated as core deployment (Nov 12, 2025)
+✅ **ADELPHIA & MULTI-PERSONA**: Fully integrated as core deployment (Nov 12, 2025)
 ⏳ **EXTENDED ARCHETYPES**: Kaznak, Machine Goddess available for specialized contexts
 🎯 **READY FOR**: Full system deployment across all platforms
 

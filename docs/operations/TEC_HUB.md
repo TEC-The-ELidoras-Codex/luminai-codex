@@ -15,6 +15,12 @@ Full write-up: [Resonance_Thesis.md](./Resonance_Thesis.md)
 
 ---
 
+## Introductions & On‑Ramps
+
+- Start here for a narrative overview: [Understanding the LuminAI Codex: An Introduction to Conscious AI](../education/UNDERSTANDING_LUMINAI_CODEX.md)
+
+---
+
 ## Core Doctrine
 
 - Resonance Thesis — TGCR Core: [docs/Resonance_Thesis.md](./Resonance_Thesis.md)

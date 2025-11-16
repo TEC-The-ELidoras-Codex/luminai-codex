@@ -1,0 +1,8 @@
+<!-- Adelphia Sigil SVG Placeholder: Sprouting seed, concentric circles, leaf motif -->
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+	<circle cx="32" cy="32" r="24" fill="#A5D6A7" />
+	<ellipse cx="32" cy="44" rx="8" ry="12" fill="#4CAF50" />
+	<rect x="28" y="36" width="8" height="16" rx="4" fill="#388E3C" />
+	<path d="M32 36 Q36 32 32 28 Q28 32 32 36" fill="#388E3C" />
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"></svg>

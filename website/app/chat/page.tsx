@@ -1,3 +1,5 @@
+import CrisisResources from "@/components/safety/CrisisResources";
+import Disclaimer from "@/components/safety/Disclaimer";
 import { ArcShell } from "@/components/layout/ArcShell";
 import { ChatSurface } from "@/components/surfaces/ChatSurface";
 import { ScreenSpecLink } from "@/components/surfaces/ScreenSpecLink";
@@ -8,6 +10,16 @@ const screen = requireScreen("/chat");
 
 export default function ChatPage() {
   return (
+          {/* Safety disclaimer at top */}
+          <div className="mb-6">
+            <Disclaimer variant="compact" />
+          </div>
+
+          {/* Crisis resources banner */}
+          <div className="mb-6">
+            <CrisisResources variant="banner" />
+          </div>
+
     <div className="space-y-10">
       <ArcShell
         title={screen.name}

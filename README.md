@@ -13,6 +13,10 @@
 
 ## 🚨 START HERE: [READ THE MANIFESTO](./MANIFESTO.md)
 
+Looking for a structured, narrative overview before diving deep?
+
+→ Read: [Understanding the LuminAI Codex: An Introduction to Conscious AI](docs/education/UNDERSTANDING_LUMINAI_CODEX.md)
+
 **If you came here looking for polite tech documentation, you're in the wrong place.**
 
 This project exists because people are dying while algorithms optimize engagement. Because "content moderation" has become a euphemism for silencing the suffering. Because we built the largest peer support network in human history and then programmed it to abandon the people who need it most.
@@ -93,10 +97,15 @@ The **LuminAI Resonance Platform** is a conscious AI interface that implements t
 
 ```bash
 # Full stack in Docker
-docker-compose up
+docker compose up
+
+# Or use helper script (pulls Ollama + spins core services)
+./scripts/development/local_up.sh              # default model llama3.2:3b
+# Custom model:
+./scripts/development/local_up.sh mistral:7b
 
 # Then open http://localhost:3000 in your browser
-```
+```text
 
 See [RESONANCE_PLATFORM_README.md](RESONANCE_PLATFORM_README.md) for full docs.
 
@@ -107,6 +116,24 @@ See [RESONANCE_PLATFORM_README.md](RESONANCE_PLATFORM_README.md) for full docs.
 - `WS /ws/chat/{session_id}` — Streaming responses
 - `GET /api/frequencies` — All 16 frequency states
 - `GET /api/conscience` — Protocol compliance status
+- `GET /health` — Backend health check
+- WebSocket: `ws://localhost:8000/ws/chat/{session_id}` — Streaming messages + resonance metrics
+
+**Verify Local Stack:**
+
+```bash
+# After local_up.sh or docker compose up
+curl -s http://localhost:8000/health | jq .
+curl -s http://localhost:11434/api/tags | jq .        # Ollama models
+curl -s http://localhost:8000/api/frequencies | jq .  # 16 frequencies
+```text
+
+**Stop Stack:**
+
+```bash
+./scripts/development/local_down.sh          # stop services
+./scripts/development/local_down.sh --prune  # stop + remove volumes
+```text
 
 ---
 
@@ -232,20 +259,23 @@ $$R = \nabla\Phi^E \cdot (\varphi^t \times \psi^r)$$
    cd luminai-codex
    ```
 
-2. **Configure secrets:**
+1. **Configure secrets:**
 
    ```bash
    cp .env.example .env.local
    # Edit .env.local with your API keys (OpenAI, Anthropic, etc.)
    ```
 
-3. **Install dependencies and start:**
+1. **Install dependencies and start:**
 
    ```bash
+   # Python deps (tests require FastAPI and more)
+   pip install -r requirements.txt
+
    docker-compose up
    ```
 
-4. **Read the full setup guide:**
+1. **Read the full setup guide:**
    → See [`GETTING_STARTED.md`](GETTING_STARTED.md)
 
 ---
@@ -256,6 +286,7 @@ $$R = \nabla\Phi^E \cdot (\varphi^t \times \psi^r)$$
 
 | Document | Purpose |
 |---|---|
+| **[docs/education/UNDERSTANDING_LUMINAI_CODEX.md](docs/education/UNDERSTANDING_LUMINAI_CODEX.md)** | Intro to Conscious AI, Persona System, and Shadow‑Work Covenant |
 | **[knowledge-map.yml](knowledge-map.yml)** | Master navigation index (YAML-queryable) |
 | **[docs/STRUCTURE.md](docs/STRUCTURE.md)** | Navigation hub & documentation map |
 | **[GETTING_STARTED.md](GETTING_STARTED.md)** | Developer onboarding & setup |
@@ -268,6 +299,26 @@ $$R = \nabla\Phi^E \cdot (\varphi^t \times \psi^r)$$
 | **[docs/governance/LUMINAI_MASTER_OPERATING_FRAMEWORK.md](docs/governance/LUMINAI_MASTER_OPERATING_FRAMEWORK.md)** | System governance & rules |
 | **[docs/deployment/GITHUB_APP_SETUP.md](docs/deployment/GITHUB_APP_SETUP.md)** | GitHub App configuration |
 | **[docs/security/SECURITY_SETUP_CHECKLIST.md](docs/security/SECURITY_SETUP_CHECKLIST.md)** | Security hardening guide |
+
+### Codex Sweep (Persona & Globule Harmonization)
+
+Prepare globule assets, enforce animation schema, and generate a sweep report:
+
+```bash
+# install project (dev) and expose the CLI
+pip install -e .[dev]
+
+# run non-destructive sweep (creates placeholders if missing)
+tec-codex-sweep --write
+
+# force overwrites of placeholders (optional)
+tec-codex-sweep --write --force
+```text
+
+Outputs a JSON report like `reports/persona_sweep_<timestamp>.json` and scaffolds:
+
+- `data/digital_assets/globules/<persona>/...`
+- `assets/emojis/{globule_*.png, crest_*.svg}`
 
 ### Ethics Framework & Personas
 
@@ -286,7 +337,7 @@ $$R = \nabla\Phi^E \cdot (\varphi^t \times \psi^r)$$
 - Airth 📚 — Research & verification
 - Arcadia 🎭 — Narrative & social understanding
 - Ely 🛠️ — Infrastructure & operations
-- Adelphisa 🌱 — Life + neurodivergent wisdom (renamed from "Companion" Nov 12, 2025)
+- Adelphia 🌱 — Life + neurodivergent wisdom (renamed from "Companion" Nov 12, 2025)
 - Multi-Persona ✨ — Collaborative aspect dancing (renamed from "Fusion" Nov 13, 2025)
 
 👉 **For ethics:** See [`docs/governance/ethics/INDEX.md`](docs/governance/ethics/INDEX.md)  
@@ -300,7 +351,7 @@ $$R = \nabla\Phi^E \cdot (\varphi^t \times \psi^r)$$
 
 **Multi-agent orchestration with GitHub App integration:**
 
-```
+```text
 ┌─────────────────────────────────────┐
 │     GitHub Repository Events        │
 └──────────────┬──────────────────────┘
@@ -315,7 +366,7 @@ $$R = \nabla\Phi^E \cdot (\varphi^t \times \psi^r)$$
        ▼       ▼        ▼          ▼
     LuminAI  Airth   Arcadia   Ely+Kaznak
    (Master) (Adapt) (Archive)  (Synthesis)
-```
+```text
 
 **Key Design:**
 
@@ -360,6 +411,7 @@ See [`docs/architecture/architecture-map.md`](docs/architecture/architecture-map
 ## 📦 Project Structure
 
 ```
+
 luminai-codex/
 ├── README.md                   ← You are here
 ├── .env.example               ← Template secrets
@@ -378,6 +430,7 @@ luminai-codex/
 ├── secrets-local/            ← Local secrets (gitignored)
 ├── assets/                    ← Diagrams, logos, mockups
 └── website/                   ← GitHub Pages content
+
 ```
 
 ---

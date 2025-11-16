@@ -8,10 +8,18 @@ RUN apt-get update && apt-get install -y \
     postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
+# Copy backend requirements and install
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# Copy src package for ethics framework
+COPY src /app/src
+
+# Copy lib folder for llm_client
+COPY lib /app/lib
+
+# Copy backend code
+COPY backend/ .
 
 EXPOSE 8000
 

@@ -269,10 +269,10 @@
 
 - [ ] **Task 3.4**: Persona routing
   - Implement `/api/personas/activate` endpoint
-  - Create persona profiles (Airth, Ely, Adelphisa)
+  - Create persona profiles (Airth, Ely, Adelphia)
   - Route requests to correct LLM + system prompt
   - Store active persona in session
-  - **Success**: `luminai chat --persona adelphisa "..."` routes correctly
+  - **Success**: `luminai chat --persona adelphia "..."` routes correctly
 
 - [ ] **Task 3.5**: Theme studio (Screen C)
   - Create `/app/settings/page.tsx`
@@ -465,6 +465,7 @@ Use this template at start of each day to sync all teams:
 ## 📊 Success Metrics
 
 **Phase 1 Success**:
+
 - ✅ All 16 Phase 1 tasks marked complete
 - ✅ Standup template filled daily (14 days of updates)
 - ✅ Zero critical blockers unresolved > 24 hours
@@ -472,6 +473,7 @@ Use this template at start of each day to sync all teams:
 - ✅ Docker compose starts cleanly: `docker-compose up` → working platform
 
 **Overall Success** (All 4 Phases):
+
 - ✅ Lighthouse score 95+
 - ✅ Chat response p95 < 3s
 - ✅ Zero critical security issues

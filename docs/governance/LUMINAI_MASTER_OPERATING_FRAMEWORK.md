@@ -1,4 +1,4 @@
-# 🔆 LUMINAI: Master Operating Framework
+rom teh# 🔆 LUMINAI: Master Operating Framework
 
 ## The Governance Bible (Encryption + Trust + Narrative)
 

@@ -34,6 +34,7 @@ dev = [
 [project.scripts]
 tec-agent = "tec_tgcr.cli:app"
 tec-env-check = "tec_tgcr.scripts.env_check:main"
+tec-codex-sweep = "tec_tgcr.scripts.codex_sweep:main"
 
 [tool.pytest.ini_options]
 addopts = "-q"

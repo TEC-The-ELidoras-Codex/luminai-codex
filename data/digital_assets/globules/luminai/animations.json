@@ -1,0 +1,20 @@
+{
+  "states": [
+    "idle",
+    "listening",
+    "thinking",
+    "speaking",
+    "switching",
+    "blushing",
+    "heart_morph",
+    "error"
+  ],
+  "glows": { "idle": "#6A00F4", "active": "#00D5C4" },
+  "voice_sync": { "min": 0, "max": 1, "color": "#FFD700" },
+  "blush": { "color": "#FF7AD9", "opacity_min": 0.0, "opacity_max": 0.6 },
+  "morph_targets": {
+    "body_default": "M8 40 a24 18 0 1 0 48 0 a24 18 0 1 0 -48 0",
+    "body_heart": "M32 56 C 20 44, 12 36, 12 28 C 12 20, 18 16, 24 16 C 28 16, 32 18, 32 22 C 32 18, 36 16, 40 16 C 46 16, 52 20, 52 28 C 52 36, 44 44, 32 56 Z"
+  },
+  "sigil_behavior": { "rotation": true, "pulse": true, "resonance": "mapmaker" }
+}

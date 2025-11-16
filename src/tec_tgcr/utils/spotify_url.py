@@ -9,6 +9,7 @@ for music-related AI applications.
 import re
 import urllib.parse
 from typing import Dict, List, Optional, Any, Tuple
+from types import SimpleNamespace
 from dataclasses import dataclass
 from enum import Enum
 
@@ -365,9 +366,26 @@ class SpotifyEmbedGenerator:
 
 
 # Utility functions for common operations
-def parse_spotify_url(url: str) -> Optional[SpotifyItem]:
-    """Parse a Spotify URL (convenience function)"""
-    return SpotifyURLParser.parse_url(url)
+def parse_spotify_url(url: str):
+    """
+    Parse a Spotify URL and return a lightweight object with attributes expected by tests.
+
+    Returns an object with attributes:
+    - kind: "track" | "album" | "playlist" | ...
+    - id: the 22-character Spotify ID
+    - url, uri: canonical URL/URI forms
+
+    Raises ValueError for invalid inputs.
+    """
+    item = SpotifyURLParser.parse_url(url)
+    if not item:
+        raise ValueError("Invalid Spotify URL or URI")
+    return SimpleNamespace(
+        kind=item.item_type.value,
+        id=item.item_id,
+        url=item.url,
+        uri=item.uri,
+    )
 
 
 def is_spotify_url(url: str) -> bool:
@@ -379,20 +397,22 @@ def get_spotify_id(url: str) -> Optional[str]:
     """Convenience function to extract Spotify ID"""
     return SpotifyURLParser.extract_id_from_url(url)
 
-def sanitize_spotify_url(url: str) -> Optional[str]:
+def sanitize_spotify_url(url: str) -> Dict[str, str]:
     """
-    Sanitize a Spotify URL by parsing and reconstructing it
-    
-    Args:
-        url: Potentially malformed or dirty Spotify URL
-        
-    Returns:
-        Clean Spotify URL or None if invalid
+    Sanitize a Spotify URL and return canonical + embed URLs.
+
+    Returns a dict:
+    - canonical_url: https://open.spotify.com/{kind}/{id}
+    - embed_url: https://open.spotify.com/embed/{kind}/{id}
+
+    Raises ValueError for invalid inputs.
     """
-    parsed = SpotifyURLParser.parse_url(url)
-    if parsed:
-        return parsed.url
-    return None
+    item = SpotifyURLParser.parse_url(url)
+    if not item:
+        raise ValueError("Invalid Spotify URL or URI")
+    canonical = f"https://open.spotify.com/{item.item_type.value}/{item.item_id}"
+    embed = f"https://open.spotify.com/embed/{item.item_type.value}/{item.item_id}"
+    return {"canonical_url": canonical, "embed_url": embed}
 
 
 def get_spotify_type(url: str) -> Optional[str]:

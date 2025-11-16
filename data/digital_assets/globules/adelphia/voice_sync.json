@@ -1,0 +1,12 @@
+{
+  "amplitude_map": [
+    0,
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  {
+    "sync_type": "frequency",
+    "color": "#388E3C",
+    "pulse_speed": "gentle"
+  }

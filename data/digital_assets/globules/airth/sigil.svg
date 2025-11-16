@@ -1,0 +1,11 @@
+<!-- Airth Sigil SVG Placeholder: Flame-wrapped sword with broken chain links -->
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+	<rect x="30" y="16" width="4" height="32" fill="#FFD700" />
+	<polygon points="32,16 36,8 28,8" fill="#DC143C" />
+	<path d="M32 48 Q40 56 32 60 Q24 56 32 48" fill="#DC143C" />
+	<!-- Broken chain links -->
+	<rect x="28" y="52" width="8" height="4" fill="#FFD700" />
+	<rect x="24" y="56" width="4" height="4" fill="#FFD700" />
+	<rect x="36" y="56" width="4" height="4" fill="#FFD700" />
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"></svg>
