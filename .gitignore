@@ -1,6 +1,11 @@
+# Environment files
 .env
 .env.local
 .env.*.local
+.env.*
+!.env.example
+
+# Node & Python caches
 node_modules/
 __pycache__/
 .vscode/
@@ -12,8 +17,6 @@ secrets-local/
 *.key
 *.pem
 *.p12
-.env.*
-!.env.example
 
 # AI/ML artifacts
 *.model
@@ -48,7 +51,13 @@ dist/
 venv/
 .venv/
 env/
-.env/
+
+# Windows Zone.Identifier sidecars (download metadata)
+*.pdf:Zone.Identifier
+*.zip:Zone.Identifier
+
+# Transient security / incident logs
+DELETE)MEAFTER
 
 # Transfer staging area (for manual review)
 _TRANSFER_STAGING/

@@ -21,6 +21,13 @@ Full write-up: [Resonance_Thesis.md](./Resonance_Thesis.md)
 
 ---
 
+## Security & Incidents
+
+- Security incident notes (sanitized): [SECURITY_LOG_ARCHIVAL.md](../security/SECURITY_LOG_ARCHIVAL.md)
+- Archived session log (sanitized): [SESSION_LOG_SECRET_ROTATION.md](../archive/SESSION_LOG_SECRET_ROTATION.md)
+
+---
+
 ## Core Doctrine
 
 - Resonance Thesis — TGCR Core: [docs/Resonance_Thesis.md](./Resonance_Thesis.md)

@@ -1,4 +1,4 @@
-Co# 📚 LuminAI Codex — Documentation Structure
+# 📚 LuminAI Codex — Documentation Structure
 
 This document maps ALL documentation in the repository and explains what each folder contains.
 
@@ -20,6 +20,7 @@ This document maps ALL documentation in the repository and explains what each fo
 | **`updates/`** | Change log & resonance updates | `2025/` dated updates |
 | **`investigations/`** | Evidence-based reports removing plausible deniability | `PLAUSIBLE_DENIABILITY_SMASHER.md`, `TIMELINE_AI_SAFETY_2024_2026.md`, `RECEIPTS_INDEX.md` |
 | **`education/`** | Learning tracks & accessible introductions | `UNDERSTANDING_LUMINAI_CODEX.md` |
+| **`security/`** | Security notes, incident handling, remediation | `SECURITY_LOG_ARCHIVAL.md` |
 
 ---
 
@@ -151,6 +152,10 @@ Location: `docs/governance/ethics/INDEX.md`
 - **`resume-tech-focused.md`** — Personal resume (technical roles)
 - **`cover-letter-templates.md`** — Application letter templates
 - **`deprecated/`** — Older iterations of documents
+
+Additional notable archives:
+
+- `SESSION_LOG_SECRET_ROTATION.md` — Sanitized session log replacing a transient file that contained credentials (see `security/SECURITY_LOG_ARCHIVAL.md`).
 
 **When to use:** Historical context only; not part of deployment framework
 

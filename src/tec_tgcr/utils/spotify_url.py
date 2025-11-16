@@ -66,7 +66,7 @@ class SpotifyURLParser:
     
     # Regex patterns for different URL formats
     WEB_URL_PATTERN = re.compile(
-        r'https://open\.spotify\.com/(?:embed/)?'
+        r'https?://open\.spotify\.com/(?:embed/)?'
         r'(?P<type>track|album|playlist|artist|show|episode)/'
         r'(?P<id>[a-zA-Z0-9]{22})'
         r'(?:\?.*)?'
@@ -88,6 +88,27 @@ class SpotifyURLParser:
             SpotifyItem if parsing succeeds, None otherwise
         """
         url = url.strip()
+        if not url:
+            return None
+
+        # Normalize scheme-less inputs and spotify.link redirects
+        lowered = url.lower()
+        if lowered.startswith('open.spotify.com/'):
+            url = f"https://{url}"
+        elif lowered.startswith('spotify.link/'):
+            # Normalize to open.spotify.com canonical domain
+            url = f"https://{url}"
+        elif lowered.startswith('http://spotify.link/'):
+            url = 'https://' + url[len('http://'):]  # upgrade scheme
+
+        # If the URL uses spotify.link, rewrite domain to open.spotify.com while preserving path/query
+        if url.lower().startswith('https://spotify.link/'):
+            try:
+                parsed = urllib.parse.urlparse(url)
+                url = urllib.parse.urlunparse(parsed._replace(netloc='open.spotify.com'))
+            except Exception:
+                # Fallback simple replace if parsing fails
+                url = url.replace('https://spotify.link/', 'https://open.spotify.com/')
         
         # Try web URL pattern first
         match = cls.WEB_URL_PATTERN.match(url)
@@ -98,7 +119,7 @@ class SpotifyURLParser:
             return SpotifyItem(
                 item_type=item_type,
                 item_id=item_id,
-                url=url,
+                url=f"https://open.spotify.com/{item_type.value}/{item_id}",
                 uri=f"spotify:{item_type.value}:{item_id}"
             )
         
