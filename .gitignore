@@ -1,11 +1,11 @@
 .env
 .env.local
+.env.*.local
 node_modules/
 __pycache__/
 .vscode/
 .idea/
 *.log
-.env.local
 
 # The Elidoras Codex specific ignores
 secrets-local/
