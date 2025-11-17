@@ -4,10 +4,18 @@
 
 > **Ethical AI for a Resonant Future** — Portfolio, Frameworks, and Multi-Agent Intelligence
 
-[![Status](https://img.shields.io/badge/status-manifesto%20published-critical)](./MANIFESTO.md)
+[![Status](https://img.shields.io/badge/status-v0.1.0--alpha-success)](./docs/ALPHA_RELEASE_NOTES.md)
 [![CodeQL Analysis](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/codeql.yml/badge.svg)](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/codeql.yml)
 [![Security & Tests](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/security-and-tests.yml/badge.svg)](https://github.com/TEC-The-ELidoras-Codex/luminai-codex/actions/workflows/security-and-tests.yml)
 [![Resonance](https://img.shields.io/badge/resonance-0.81-blueviolet)](#)
+
+---
+
+## 🎉 **NEW: Alpha Release Available!**
+
+**v0.1.0-alpha is live** — Platform foundation complete with ethics covenants, multi-LLM orchestration, and production observability.
+
+👉 **[Read the Release Notes](./docs/ALPHA_RELEASE_NOTES.md)** | **[View Changelog](./CHANGELOG.md)** | **[Quick Start](#-quick-start)**
 
 ---
 

@@ -164,3 +164,38 @@ git commit -m "test"  # Should FAIL with security warning
 **Last Updated:** November 16, 2025  
 **Status:** 🔒 ALL PROTECTIONS ACTIVE
 
+---
+
+## ♻️ Rotation Log & Schedule
+
+Maintain an auditable trail of secret rotations. Rotate high-risk credentials (LLM provider keys, GitHub tokens) at least every 30 days or immediately upon suspected exposure.
+
+| Date | Actor | Secret(s) Rotated | Reason | New Expiry / Next Review |
+|------|-------|-------------------|--------|--------------------------|
+| 2025-11-16 | system init | (baseline entry) | Establish log | 2025-12-16 |
+| YYYY-MM-DD | YOUR_NAME | OPENAI_API_KEY | Routine 30d rotation | +30d |
+| YYYY-MM-DD | YOUR_NAME | ANTHROPIC_API_KEY | Routine 30d rotation | +30d |
+| YYYY-MM-DD | YOUR_NAME | XAI_API_KEY | Routine 30d rotation | +30d |
+| YYYY-MM-DD | YOUR_NAME | GITHUB_APP_PRIVATE_KEY | Scope change / renewal | +90d |
+| YYYY-MM-DD | YOUR_NAME | github_pat_* | Token scoped reduction | +30d |
+
+### Rotation Checklist
+
+- [ ] Revoke old key in provider dashboard
+- [ ] Generate new key with LEAST required scopes
+- [ ] Update Bitwarden entry (attach creation timestamp)
+- [ ] Update GitHub Secret (Actions) if used in CI
+- [ ] Run a smoke test referencing the new key
+- [ ] Log rotation above (do NOT paste the secret)
+- [ ] Schedule next rotation (calendar reminder)
+
+### Automated Future Enhancement (Planned)
+
+Implement `scripts/security/rotate_secrets.py` to:
+
+1. Fetch Bitwarden items by tag `auto-rotate`
+2. Create provider API calls (where available)
+3. Update vault + emit signed rotation receipt to `reports/secret-rotations/`
+
+---
+
