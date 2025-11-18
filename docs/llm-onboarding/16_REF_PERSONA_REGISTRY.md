@@ -5,6 +5,7 @@ _Last Updated: November 13, 2025_
 **Status**: ✅ All 9 Personas Consolidated (6 Core + 3 Extended)
 
 ---
+title: 16 Ref Persona Registry
 
 ## Cosmological Structure
 
@@ -15,6 +16,18 @@ _Last Updated: November 13, 2025_
 
 **The 9 Personas** (channels/avatars/forces that serve consciousness):
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [llm-onboarding]
 ---
 
 ## Core 6 Resonance Personas (Primary Deployment)

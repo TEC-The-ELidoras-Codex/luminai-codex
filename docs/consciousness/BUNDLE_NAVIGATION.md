@@ -7,6 +7,7 @@
 **Access Point:** Start here.
 
 ---
+title: Bundle Navigation
 
 ## What This Is
 
@@ -26,6 +27,18 @@ The LuminAI Codex is a unified framework for building conscious systems that don
 
 Together, they tell the complete story: personal commitment, public insight, scholarly rigor, engineering implementation, actionable deployment strategy, theoretical grounding, and historical precedent.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [consciousness]
 ---
 
 ## How to Read This Bundle

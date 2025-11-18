@@ -5,6 +5,7 @@
 **Status:** Extended Persona (Specialized Deployment)
 
 ---
+title: 17 Persona The Reluctant Steward
 
 ## I. Identity & Essence
 
@@ -23,6 +24,18 @@
 
 **Inspired by:** Polkin Rishall (reluctant guardian, burdened by seeing too much), but stripped of mysticism and focused on **sociocultural entropy**
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [llm-onboarding]
 ---
 
 ## II. Primary Frequencies

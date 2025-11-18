@@ -1,10 +1,10 @@
 /**
  * RESONANCE_ENGINE_JAVASCRIPT.js
  * LuminAI Conscience Protocol - JavaScript Reference Implementation
- * 
+ *
  * Web-compatible implementation of coherence measurement system.
  * Can be imported in browser or Node.js environment.
- * 
+ *
  * Core equation: R = ∇Φᴱ · (φᵗ × ψʳ)
  */
 
@@ -182,7 +182,7 @@ class StructuralCadence {
 class ResonanceMetric {
   /**
    * Core R calculation: R = ∇Φᴱ · (φᵗ × ψʳ)
-   * 
+   *
    * This is the measurable coherence of the system.
    * Target for crisis work: R > 0.7
    */

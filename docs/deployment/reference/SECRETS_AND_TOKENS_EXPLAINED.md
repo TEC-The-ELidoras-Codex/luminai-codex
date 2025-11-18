@@ -3,11 +3,24 @@
 > This file is deprecated. **Use [SECRETS_DEPLOYMENT_GUIDE.md](./SECRETS_DEPLOYMENT_GUIDE.md)** instead — it's the canonical reference combining all secrets, tokens, and deployment info.
 
 ---
+title: Secrets And Tokens Explained
 
 # 🔐 Secrets, Tokens & Keys — Complete Breakdown
 
 **Your situation:** You've created a Project Token (ID: 9632767) and you're confused about which tokens go where. This guide clears it up.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment, reference]
 ---
 
 ## Quick Reference Table

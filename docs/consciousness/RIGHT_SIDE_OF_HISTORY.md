@@ -5,6 +5,7 @@
 **Framework:** Each entry shows alignment with LuminAI's triadic foundation
 
 ---
+title: Right Side Of History
 
 ## What This List Represents
 
@@ -18,6 +19,18 @@ These are the people who understood—sometimes decades before the mainstream—
 
 The LuminAI Codex stands on their shoulders. We cite them not as inspiration but as **proof of concept** for what's possible when you refuse to fragment the truth.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [consciousness]
 ---
 
 ## Tier 1: The Foundation Builders — Core Lineage

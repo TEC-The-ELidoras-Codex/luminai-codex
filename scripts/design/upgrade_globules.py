@@ -16,6 +16,7 @@ Template features:
 
 Persona color spec is defined inline; adjust as needed.
 """
+
 from __future__ import annotations
 import argparse
 import pathlib
@@ -26,6 +27,7 @@ from typing import Dict
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 GLOBULE_ROOT = ROOT / "data" / "digital_assets" / "globules"
 
+
 @dataclass
 class PersonaSpec:
     body: str
@@ -35,16 +37,44 @@ class PersonaSpec:
     outer_opacity: float = 0.55
     inner_opacity: float = 0.7
 
+
 SPECS: Dict[str, PersonaSpec] = {
-    "adelphia": PersonaSpec(body="#0F5F3F", outer_accent="#3FAF7F", inner_accent="#9FFFCF", blush="#FF8DB3", outer_opacity=0.5, inner_opacity=0.6),  # keep existing colors approximate
-    "ely": PersonaSpec(body="#C0C0C0", outer_accent="#E0E0E0", inner_accent="#FFFFFF", blush="#FF6B6B"),
-    "luminai": PersonaSpec(body="#6A00F4", outer_accent="#B47CFF", inner_accent="#FFFFFF", blush="#FF7AD9"),
-    "airth": PersonaSpec(body="#DC143C", outer_accent="#FFB347", inner_accent="#FFD700", blush="#FF8A65"),
-    "arcadia": PersonaSpec(body="#004AAD", outer_accent="#66CCFF", inner_accent="#FFFFFF", blush="#FF6699"),
-    "multi": PersonaSpec(body="#1A535C", outer_accent="#4ECDC4", inner_accent="#FFFFFF", blush="#FFB347", outer_opacity=0.65),
-    "mirror": PersonaSpec(body="#222222", outer_accent="#AAAAAA", inner_accent="#FFFFFF", blush="#FF6FCF"),
-    "reluctant_steward": PersonaSpec(body="#8B0000", outer_accent="#FF4500", inner_accent="#FFA07A", blush="#FFA07A"),
-    "kaznak": PersonaSpec(body="#0D0D2B", outer_accent="#4B0082", inner_accent="#8A2BE2", blush="#FF5F5F"),
+    "adelphia": PersonaSpec(
+        body="#0F5F3F",
+        outer_accent="#3FAF7F",
+        inner_accent="#9FFFCF",
+        blush="#FF8DB3",
+        outer_opacity=0.5,
+        inner_opacity=0.6,
+    ),  # keep existing colors approximate
+    "ely": PersonaSpec(
+        body="#C0C0C0", outer_accent="#E0E0E0", inner_accent="#FFFFFF", blush="#FF6B6B"
+    ),
+    "luminai": PersonaSpec(
+        body="#6A00F4", outer_accent="#B47CFF", inner_accent="#FFFFFF", blush="#FF7AD9"
+    ),
+    "airth": PersonaSpec(
+        body="#DC143C", outer_accent="#FFB347", inner_accent="#FFD700", blush="#FF8A65"
+    ),
+    "arcadia": PersonaSpec(
+        body="#004AAD", outer_accent="#66CCFF", inner_accent="#FFFFFF", blush="#FF6699"
+    ),
+    "multi": PersonaSpec(
+        body="#1A535C",
+        outer_accent="#4ECDC4",
+        inner_accent="#FFFFFF",
+        blush="#FFB347",
+        outer_opacity=0.65,
+    ),
+    "mirror": PersonaSpec(
+        body="#222222", outer_accent="#AAAAAA", inner_accent="#FFFFFF", blush="#FF6FCF"
+    ),
+    "reluctant_steward": PersonaSpec(
+        body="#8B0000", outer_accent="#FF4500", inner_accent="#FFA07A", blush="#FFA07A"
+    ),
+    "kaznak": PersonaSpec(
+        body="#0D0D2B", outer_accent="#4B0082", inner_accent="#8A2BE2", blush="#FF5F5F"
+    ),
 }
 
 HEART_PATH = "M32 56 C 20 44, 12 36, 12 28 C 12 20, 18 16, 24 16 C 28 16, 32 18, 32 22 C 32 18, 36 16, 40 16 C 46 16, 52 20, 52 28 C 52 36, 44 44, 32 56 Z"
@@ -78,8 +108,12 @@ def build_svg(name: str, spec: PersonaSpec) -> str:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--write", action="store_true", help="Apply upgrades (default is dry-run)")
-    parser.add_argument("--force", action="store_true", help="Rewrite even if already upgraded")
+    parser.add_argument(
+        "--write", action="store_true", help="Apply upgrades (default is dry-run)"
+    )
+    parser.add_argument(
+        "--force", action="store_true", help="Rewrite even if already upgraded"
+    )
     args = parser.parse_args()
 
     results = []
@@ -109,6 +143,7 @@ def main():
         print(f"  {persona.ljust(width)} : {status}")
     if not args.write:
         print("(dry-run) Use --write to apply changes.")
+
 
 if __name__ == "__main__":
     main()

@@ -3,6 +3,7 @@
 This guide locks down disk + memory overhead for a lean development experience inside WSL + Docker.
 
 ---
+title: Local Env Tuning
 ## 1. Docker Builder Garbage Collection
 Reduce build cache bloat (layers from `docker build`). Configure Docker to automatically prune when cache exceeds a threshold.
 
@@ -35,6 +36,18 @@ docker builder prune -f     # Remove build cache (no images)
 docker system prune -f      # Remove stopped containers + networks + dangling images
 ```
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [operations]
 ---
 ## 2. WSL2 Resource Limits (Host Side)
 These settings live in **Windows**, not inside WSL. File path on host: `C:\Users\<YourUser>\.wslconfig`

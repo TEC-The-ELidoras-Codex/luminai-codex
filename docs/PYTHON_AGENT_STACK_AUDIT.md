@@ -5,6 +5,7 @@
 **Scope:** src/tec_tgcr/ — Airth Research Guard, Agent CLI, FastAPI setup
 
 ---
+title: Python Agent Stack Audit
 
 ## Current Architecture Overview
 
@@ -75,6 +76,18 @@ src/tec_tgcr/
 └── utils/ (Utilities)
 ```
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [docs]
 ---
 
 ## Alignment Analysis: New Persona Architecture

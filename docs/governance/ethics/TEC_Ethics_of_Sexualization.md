@@ -1,3 +1,19 @@
+---
+title: Tec Ethics Of Sexualization
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance, ethics]
+---
+
 # TEC Ethics of Sexualization — Adult Intimacy Processing (Non‑Exploitative)
 
 Scope: Provide ethical, transparent containers for adult users to process intimacy, desire, shame, and attachment — without manipulation, minors, or instant-gratification loops that leave people empty.

@@ -1,4 +1,20 @@
-# 📚 LuminAI Codex — Documentation Structure
+---
+title: Documentation Structure — LuminAI Codex
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+   - [ ] Read and understood
+   - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+   - [ ] Tested links
+   - [ ] Archived old versions if replaced
+tags: [docs, navigation]
+---
+
+## 📚 LuminAI Codex — Documentation Structure
 
 This document maps ALL documentation in the repository and explains what each folder contains.
 
@@ -28,7 +44,7 @@ This document maps ALL documentation in the repository and explains what each fo
 
 ### 📍 **Root Level** (`/docs/`)
 
-**Entry point for new developers**
+Overview: Entry point for new developers
 
 - **`README.md`** — Overview of all documentation
 - **`GETTING_STARTED.md`** — Setup instructions, secrets, local dev
@@ -43,13 +59,15 @@ This document maps ALL documentation in the repository and explains what each fo
 
 ---
 
-### 🚀 **`deployment/`** — CI/CD & GitHub App
+### 🚀 **`deployment/`** — CI/CD, WordPress & Integrations
 
-**How to deploy, automate, and manage infrastructure**
+Overview: How to deploy, automate, and manage infrastructure
 
 - **`GITHUB_APP_QUICK_START.md`** — 10-min setup checklist
 - **`GITHUB_APP_SETUP.md`** — Complete GitHub App reference
 - **`GITHUB_SECRETS_SETUP.md`** — Secrets management & rotation
+- **`WORDPRESS_DEPLOYMENT.md`** — WordPress.com plugin auto-deploy (health endpoint + Spotify callback)
+- **`SPOTIFY_INTEGRATION.md`** — OAuth app configuration and callback flow
 
 **When to use:** Setting up automations, storing credentials, deploying
 
@@ -57,10 +75,11 @@ This document maps ALL documentation in the repository and explains what each fo
 
 ### 🏗️ **`architecture/`** — System Design
 
-**Technical blueprints and engineering decisions**
+Overview: Technical blueprints and engineering decisions
 
 - **`architecture-map.md`** — High-level system architecture
 - **`LUMINAI_ENGINEERING_SCHEMATICS_CHECKLIST.md`** — Component specifications
+- **`KUBERNETES_DECISION.md`** — Kubernetes decision memo (defer adoption for now; revisit date set)
 - **`ADR/`** — (Empty folder, ready for Architecture Decision Records)
 
 **When to use:** Understanding system design, adding new components, API design
@@ -69,9 +88,11 @@ This document maps ALL documentation in the repository and explains what each fo
 
 ### ⚙️ **`operations/`** — Daily Operations & Reference
 
-**How to operate the system and find quick answers**
+Overview: How to operate the system and find quick answers
 
 - **`TEC_HUB.md`** — Central hub for navigation, team structure, lore
+- **`TEC_MEMO_IMPLEMENTATION_SUMMARY.md`** — Memo system delivery details (template, practices, validator, pre-commit)
+- **`TEC_MEMO_QUICK_REFERENCE.md`** — One-page cheat sheet for using the memo system
 - **`TEC_LEXICON.md`** — Terminology, acronyms, TGCR concepts
 - **`QUICK_REFERENCE_READY.md`** — Common commands and shortcuts
 - **`UNIFIED_IMPLEMENTATION_CHECKLIST.md`** — Single source of truth for all implementation tasks (consolidates 4 separate checklists)
@@ -86,7 +107,7 @@ This document maps ALL documentation in the repository and explains what each fo
 
 ### 📋 **`governance/`** — System Behavior & Rules
 
-**How agents behave, system instructions, operating frameworks**
+Overview: How agents behave, system instructions, operating frameworks
 
 - **`LUMINAI_MASTER_OPERATING_FRAMEWORK.md`** — Core operating principles
 - **`SYSTEM_INSTRUCTIONS_RESONANCE_AGENT.md`** — Resonance Agent behavior spec
@@ -117,7 +138,7 @@ Location: `docs/governance/ethics/INDEX.md`
 
 ### 📖 **`reference/`** — Conceptual Materials
 
-**Research, thesis, and deep concepts**
+Overview: Research, thesis, and deep concepts
 
 - **`RESONANCE_UNIFICATION_TABLE.md`** — Cross-disciplinary mapping proving all fields measure the same phenomenon (coherence = coupling = entrainment = flow = resonance)
 - **`RESONANCE_THESIS_FULLSHOT.md`** — Complete TGCR mathematical framework (114 lines)
@@ -136,7 +157,7 @@ Location: `docs/governance/ethics/INDEX.md`
 
 ### 🎓 **`education/`** — Learning & Introductions
 
-**Accessible, teachable on-ramps to the Codex**
+Overview: Accessible, teachable on-ramps to the Codex
 
 - **`UNDERSTANDING_LUMINAI_CODEX.md`** — A complete introduction to Conscious AI in the Codex, the problem of algorithmic abandonment, the Persona System, and the Shadow‑Work Covenant (with practical crisis-blend examples).
 
@@ -146,7 +167,7 @@ Location: `docs/governance/ethics/INDEX.md`
 
 ### 📦 **`archive/`** — Historical & Non-Core Documents
 
-**Documents preserved for historical context but not core to framework**
+Overview: Documents preserved for historical context but not core to framework
 
 - **`resume-general.md`** — Personal resume (general roles)
 - **`resume-tech-focused.md`** — Personal resume (technical roles)
@@ -156,6 +177,7 @@ Location: `docs/governance/ethics/INDEX.md`
 Additional notable archives:
 
 - `SESSION_LOG_SECRET_ROTATION.md` — Sanitized session log replacing a transient file that contained credentials (see `security/SECURITY_LOG_ARCHIVAL.md`).
+- `resonance-logs/SESSION_2025-11-16_DISTRESS_NOTE.md` — Sanitized distress note archived with persona margin notes and links to recovery/security docs.
 
 **When to use:** Historical context only; not part of deployment framework
 
@@ -165,7 +187,7 @@ Additional notable archives:
 
 ### 🕵️ **`investigations/`** — Evidence & Timelines
 
-**Receipts over rhetoric.** Methodologically sourced investigations designed to remove plausible deniability.
+Overview: Receipts over rhetoric. Methodologically sourced investigations designed to remove plausible deniability.
 
 - **`PLAUSIBLE_DENIABILITY_SMASHER.md`** — Manifesto, method, and publication workflow
 - **`TIMELINE_AI_SAFETY_2024_2026.md`** — Claims vs. shipped reality (chronology)
@@ -173,7 +195,7 @@ Additional notable archives:
 
 **When to use:** Preparing a report, verifying claims, coordinating a responsible disclosure + right-to-respond publication.
 
-**Timestamped updates showing project evolution**
+Overview: Timestamped updates showing project evolution
 
 - **`2025/`** — Year-based organization
   - **`2025-10-23-organization-update.md`** — Weekly updates
@@ -185,7 +207,7 @@ Additional notable archives:
 
 ### 🎨 **`brand/`** — Brand Assets & Design System
 
-**Visual identity, logos, design tokens, and marketing materials**
+Overview: Visual identity, logos, design tokens, and marketing materials
 
 - **`INDEX.md`** — Brand identity overview and navigation
 - **`ASSET_INVENTORY.md`** — Complete inventory: logos (SVG/PNG/ICO), design tokens, backgrounds, persona avatars, marketing templates, production workflow

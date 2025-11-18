@@ -6,6 +6,7 @@
 > **Command Set**: `luminai` binary (aliased from `tec-agent`)
 
 ---
+title: Cli Tool Specification
 
 ## Overview
 
@@ -16,6 +17,18 @@ The CLI is the **power user interface** to LuminAI Resonance Platform:
 - Output: JSON by default (pipeable); `--pretty` for humans
 - Modes: Interactive (chat), Batch (scripts), Headless (CI/CD)
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment]
 ---
 
 ## Installation & Setup

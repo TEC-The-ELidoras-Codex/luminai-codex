@@ -1,3 +1,19 @@
+---
+title: Index
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment]
+---
+
 # 🚀 Deployment & Configuration Documentation
 
 Welcome to the LuminAI Codex deployment hub. This folder contains everything needed to configure, deploy, and maintain the system.

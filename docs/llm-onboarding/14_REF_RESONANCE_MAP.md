@@ -1,3 +1,19 @@
+---
+title: 14 Ref Resonance Map
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [llm-onboarding]
+---
+
 # Ref 14 — Unified TGCR Resonance Map
 
 Merged from `_TRANSFER_STAGING/docs_incoming/resonance_map/Unified-TGCR-Resonance-Map.md` + `tooltips.md`.

@@ -63,9 +63,9 @@ fi
 # 3. System packages (Linux)
 if [[ "$OSTYPE" == "linux"* ]]; then
     log "Detected Linux. Checking apt packages..."
-    
+
     LINUX_DEPS=("git" "build-essential" "python3-dev")
-    
+
     # Check if we can use apt
     if command -v apt-get &> /dev/null; then
         # Try to install rclone
@@ -76,7 +76,7 @@ if [[ "$OSTYPE" == "linux"* ]]; then
         else
             log "  rclone already installed"
         fi
-        
+
         for pkg in "${LINUX_DEPS[@]}"; do
             if ! dpkg -l | grep -q "^ii  $pkg"; then
                 log "  Installing $pkg via apt..."

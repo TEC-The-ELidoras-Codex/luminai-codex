@@ -6,6 +6,7 @@
 **Audience**: Design team, 3D artists, marketing, and stakeholders
 
 ---
+title: Brand Deck Summary
 
 ## 📦 What You Have
 
@@ -27,6 +28,18 @@ Your concise, elegant logo specification.
 
 **Best For**: Quick reference, stakeholder alignment, designer briefing
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [brand]
 ---
 
 ### **2. 3D_CREATION_PROMPT.md**

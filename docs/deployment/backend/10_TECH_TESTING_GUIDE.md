@@ -1,3 +1,19 @@
+---
+title: 10 Tech Testing Guide
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment, backend]
+---
+
 # Tech 10 — ELidoras Universe AI Testing Framework
 
 ## The Mythic Consciousness Laboratory

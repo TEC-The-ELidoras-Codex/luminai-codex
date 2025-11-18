@@ -5,11 +5,13 @@
 **NO REAL SECRETS ON YOUR LOCAL MACHINE UNLESS ABSOLUTELY NECESSARY.**
 
 All secrets live in **ONE PLACE ONLY**:
+
 - **GitHub Secrets** (for CI/CD)
 - **Bitwarden** (for local development, if needed)
 - **NEVER** in `.env.local` or any other file on disk
 
 ---
+title: Secrets Management
 
 ## File Structure (What's Where)
 
@@ -31,6 +33,18 @@ All secrets live in **ONE PLACE ONLY**:
     └── [Other services]
 ```
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [docs]
 ---
 
 ## How to Use Secrets Securely
@@ -89,14 +103,17 @@ nano .env.local
 ## Git Protections (Automatic)
 
 ### 🛡️ Pre-commit Hook
+
 Located at: `.git/hooks/pre-commit`
 
 **What it does:**
+
 - Scans staged files for `.env*` patterns
 - Blocks commit if any `.env` file is staged
 - Error message explains why and how to fix
 
 **If you accidentally stage `.env.local`:**
+
 ```bash
 git reset HEAD .env.local        # Unstage it
 git checkout -- .env.local       # Restore from disk
@@ -104,6 +121,7 @@ git commit -m "..."              # Try again
 ```
 
 ### 🛡️ .gitignore Rules
+
 Located at: `.gitignore`
 
 ```gitignore
@@ -120,11 +138,11 @@ Located at: `.gitignore`
 
 1. **Identify what leaked** (check `.env.local`, git history)
 2. **Revoke everything:**
-   - GitHub App → https://github.com/settings/apps
-   - OpenAI → https://platform.openai.com/api-keys
-   - Anthropic → https://console.anthropic.com
+   - GitHub App → <https://github.com/settings/apps>
+   - OpenAI → <https://platform.openai.com/api-keys>
+   - Anthropic → <https://console.anthropic.com>
    - xAI → xAI dashboard
-   - GitHub Tokens → https://github.com/settings/tokens
+   - GitHub Tokens → <https://github.com/settings/tokens>
 
 3. **Update Bitwarden** with new credentials
 
@@ -198,4 +216,3 @@ Implement `scripts/security/rotate_secrets.py` to:
 3. Update vault + emit signed rotation receipt to `reports/secret-rotations/`
 
 ---
-

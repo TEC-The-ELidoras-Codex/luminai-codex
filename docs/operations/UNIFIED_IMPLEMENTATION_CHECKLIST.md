@@ -5,6 +5,7 @@
 **Replaces**: MASTER_CHECKLIST.md, LUMINAI_ENGINEERING_SCHEMATICS_CHECKLIST.md, DEPLOYMENT_CHECKLIST.md, SECURITY_SETUP_CHECKLIST.md
 
 ---
+title: Unified Implementation Checklist
 
 ## 🎯 IMMEDIATE PRIORITIES (This Week)
 
@@ -29,6 +30,18 @@
 
 **Status**: ✅ **COMPLETE** — All 33 tests passing (11 frontend + 22 backend), full emoji parsing validated
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [operations]
 ---
 
 ### 2. Backend Axiom Enforcement Display

@@ -32,7 +32,7 @@ const REGION_BANDS = [
 
 /**
  * DemographicBands — Optional aggregated demographic collection
- * 
+ *
  * Part of the User Data Anonymization Framework:
  * - Broad bands only (no specific ages/locations)
  * - Fully optional (can skip entirely)
@@ -136,7 +136,7 @@ export default function DemographicBands({ onContinue, onSkip }: DemographicBand
       {/* Privacy Notice */}
       <div className="px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg">
         <p className="text-xs text-slate-500 leading-relaxed">
-          🔒 <span className="font-semibold text-slate-400">Privacy guarantee:</span> We never store specific ages or locations. 
+          🔒 <span className="font-semibold text-slate-400">Privacy guarantee:</span> We never store specific ages or locations.
           This data is aggregated with thousands of other users and used only to improve platform features.
         </p>
       </div>

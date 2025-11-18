@@ -102,13 +102,13 @@ async def list_available_models():
     """List available base models for fine-tuning"""
     models = [
         "unsloth/llama-2-7b-bnb-4bit",
-        "unsloth/llama-2-13b-bnb-4bit", 
+        "unsloth/llama-2-13b-bnb-4bit",
         "unsloth/mistral-7b-v0.1-bnb-4bit",
         "unsloth/codellama-34b-bnb-4bit",
         "unsloth/zephyr-sft-bnb-4bit",
         "unsloth/tinyllama-bnb-4bit"
     ]
-    
+
     return {
         "available_models": models,
         "custom_models": list(models_cache.keys())
@@ -122,12 +122,12 @@ async def start_fine_tuning(
 ):
     """Start a fine-tuning job"""
     job_id = str(uuid.uuid4())
-    
+
     # Validate dataset path
     dataset_path = Path(request.dataset_path)
     if not dataset_path.exists():
         raise HTTPException(status_code=400, f"Dataset not found: {request.dataset_path}")
-    
+
     # Create job entry
     job_status = TrainingStatus(
         job_id=job_id,
@@ -140,16 +140,16 @@ async def start_fine_tuning(
         created_at=datetime.utcnow().isoformat(),
         updated_at=datetime.utcnow().isoformat()
     )
-    
+
     training_jobs[job_id] = job_status
-    
+
     # Start training in background
     background_tasks.add_task(
         run_fine_tuning,
         job_id,
         request
     )
-    
+
     return {
         "job_id": job_id,
         "status": "started",
@@ -162,7 +162,7 @@ async def get_job_status(job_id: str):
     """Get status of a specific training job"""
     if job_id not in training_jobs:
         raise HTTPException(status_code=404, detail="Job not found")
-    
+
     return training_jobs[job_id]
 
 
@@ -177,14 +177,14 @@ async def cancel_job(job_id: str):
     """Cancel a training job"""
     if job_id not in training_jobs:
         raise HTTPException(status_code=404, detail="Job not found")
-    
+
     job = training_jobs[job_id]
     if job.status in ["completed", "failed"]:
         raise HTTPException(status_code=400, detail="Cannot cancel completed job")
-    
+
     job.status = "cancelled"
     job.updated_at = datetime.utcnow().isoformat()
-    
+
     return {"message": "Job cancelled successfully"}
 
 
@@ -193,20 +193,20 @@ async def upload_dataset(file: UploadFile = File(...)):
     """Upload a training dataset"""
     if not file.filename.endswith(('.json', '.jsonl', '.csv')):
         raise HTTPException(
-            status_code=400, 
+            status_code=400,
             detail="Only JSON, JSONL, and CSV files are supported"
         )
-    
+
     # Save uploaded file
     dataset_dir = Path("/app/data/training")
     dataset_dir.mkdir(parents=True, exist_ok=True)
-    
+
     file_path = dataset_dir / file.filename
-    
+
     with open(file_path, "wb") as buffer:
         content = await file.read()
         buffer.write(content)
-    
+
     return {
         "filename": file.filename,
         "path": str(file_path),
@@ -220,17 +220,17 @@ async def deploy_to_ollama(job_id: str):
     """Deploy a fine-tuned model to Ollama"""
     if job_id not in training_jobs:
         raise HTTPException(status_code=404, detail="Job not found")
-    
+
     job = training_jobs[job_id]
     if job.status != "completed":
         raise HTTPException(status_code=400, detail="Job not completed")
-    
+
     if not job.model_path:
         raise HTTPException(status_code=400, detail="No model path available")
-    
+
     # TODO: Implement Ollama deployment
     # This would involve converting the model and registering it with Ollama
-    
+
     return {
         "message": "Model deployment to Ollama initiated",
         "job_id": job_id,
@@ -241,17 +241,17 @@ async def deploy_to_ollama(job_id: str):
 async def run_fine_tuning(job_id: str, request: FineTuningRequest):
     """Run the actual fine-tuning process"""
     job = training_jobs[job_id]
-    
+
     try:
         job.status = "running"
         job.updated_at = datetime.utcnow().isoformat()
-        
+
         # Import Unsloth (done here to avoid import issues)
         from unsloth import FastLanguageModel
         import torch
         from trl import SFTTrainer
         from transformers import TrainingArguments
-        
+
         # Load model and tokenizer
         model, tokenizer = FastLanguageModel.from_pretrained(
             model_name=request.model_name,
@@ -259,7 +259,7 @@ async def run_fine_tuning(job_id: str, request: FineTuningRequest):
             dtype=None,
             load_in_4bit=True,
         )
-        
+
         # Add LoRA adapters
         model = FastLanguageModel.get_peft_model(
             model,
@@ -274,14 +274,14 @@ async def run_fine_tuning(job_id: str, request: FineTuningRequest):
             use_rslora=False,
             loftq_config=None,
         )
-        
+
         # Load dataset
         dataset = load_dataset(request.dataset_path)
-        
+
         # Calculate total steps
         total_steps = len(dataset) // request.batch_size * request.num_epochs
         job.total_steps = total_steps
-        
+
         # Training arguments
         trainer = SFTTrainer(
             model=model,
@@ -308,48 +308,48 @@ async def run_fine_tuning(job_id: str, request: FineTuningRequest):
                 report_to=None,
             ),
         )
-        
+
         # Custom callback to update job progress
         class ProgressCallback:
             def __init__(self, job_id):
                 self.job_id = job_id
-                
+
             def on_step_end(self, args, state, control, **kwargs):
                 job = training_jobs[self.job_id]
                 job.current_step = state.global_step
                 job.current_epoch = int(state.epoch)
                 job.progress = state.global_step / state.max_steps
                 job.updated_at = datetime.utcnow().isoformat()
-                
+
                 if hasattr(state, 'log_history') and state.log_history:
                     latest_log = state.log_history[-1]
                     if 'train_loss' in latest_log:
                         job.loss = latest_log['train_loss']
-        
+
         # Add callback
         trainer.add_callback(ProgressCallback(job_id))
-        
+
         # Start training
         trainer.train()
-        
+
         # Save the model
         model_output_dir = f"/app/models/fine_tuned/{request.output_name}"
         model.save_pretrained(model_output_dir)
         tokenizer.save_pretrained(model_output_dir)
-        
+
         # Update job status
         job.status = "completed"
         job.progress = 1.0
         job.model_path = model_output_dir
         job.updated_at = datetime.utcnow().isoformat()
-        
+
         # Cache the model
         models_cache[request.output_name] = {
             "path": model_output_dir,
             "base_model": request.model_name,
             "created_at": datetime.utcnow().isoformat()
         }
-        
+
     except Exception as e:
         job.status = "failed"
         job.error_message = str(e)
@@ -359,13 +359,13 @@ async def run_fine_tuning(job_id: str, request: FineTuningRequest):
 def load_dataset(dataset_path: str) -> Dataset:
     """Load dataset from file"""
     path = Path(dataset_path)
-    
+
     if path.suffix == '.json':
         import json
         with open(path) as f:
             data = json.load(f)
         return Dataset.from_list(data)
-    
+
     elif path.suffix == '.jsonl':
         import json
         data = []
@@ -373,12 +373,12 @@ def load_dataset(dataset_path: str) -> Dataset:
             for line in f:
                 data.append(json.loads(line.strip()))
         return Dataset.from_list(data)
-    
+
     elif path.suffix == '.csv':
         import pandas as pd
         df = pd.read_csv(path)
         return Dataset.from_pandas(df)
-    
+
     else:
         raise ValueError(f"Unsupported file format: {path.suffix}")
 

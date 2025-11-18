@@ -1,3 +1,19 @@
+---
+title: Index
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance, ethics]
+---
+
 # Ethics & Covenants — TEC Stack
 
 This folder contains the public, inspectable covenants and specs that govern human–AI interaction in the TEC ecosystem. Each file is designed to be auditable, forkable, and enforceable in code.

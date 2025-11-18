@@ -73,16 +73,16 @@
     <div class="container">
         <h1>🌌 Cosmic Infinity Glyph</h1>
         <p>SVG to PNG Converter</p>
-        
+
         <div class="preview" id="preview"></div>
-        
+
         <div class="size-group">
             <h3>Export Sizes:</h3>
             <button onclick="exportPNG(1024, '1024×1024 (Discord Icon)')">1024×1024</button>
             <button onclick="exportPNG(512, '512×512 (Thumbnail)')">512×512</button>
             <button onclick="exportPNG(2048, '2048×2048 (Print)')">2048×2048</button>
         </div>
-        
+
         <div id="status"></div>
     </div>
 
@@ -126,7 +126,7 @@
                 ctx.fillStyle = '#000000';
                 ctx.fillRect(0, 0, size, size);
                 ctx.drawImage(img, 0, 0, size, size);
-                
+
                 canvas.toBlob(function(blob) {
                     const url = URL.createObjectURL(blob);
                     const link = document.createElement('a');
@@ -134,7 +134,7 @@
                     link.download = `cosmic_infinity_glyph_${size}x${size}.png`;
                     link.click();
                     URL.revokeObjectURL(url);
-                    
+
                     status.innerHTML = `✅ Exported: ${label}`;
                     status.className = 'status success';
                 });

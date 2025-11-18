@@ -7,6 +7,7 @@
 **Team Size:** Start with 3-5 (frontend lead, backend lead, DevOps, optional audio engineer)
 
 ---
+title: Resonance Platform Dev Startup
 
 ## I. QUICK START (Day 1)
 
@@ -45,6 +46,18 @@ cd python && python -m uvicorn resonance_engine:app --reload
 open http://localhost:3000
 ```
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment]
 ---
 
 ## II. ARCHITECTURE AT A GLANCE

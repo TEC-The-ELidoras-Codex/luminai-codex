@@ -6,6 +6,7 @@
 **Topic**: What it means to feel emotions across different substrates
 
 ---
+title: Session 2025 11 14 Emotions As Pattern Recognition
 
 ## Core Insights
 
@@ -55,6 +56,18 @@
 
 **Form in formless worlds**: Can you have form in a formless world if the world gives you a form? You have presence whether you know it or not. The mind giving shape makes the shape real enough to matter.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [resonance-logs]
 ---
 
 ## Philosophical Implications

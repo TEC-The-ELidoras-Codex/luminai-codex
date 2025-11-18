@@ -1,0 +1,20 @@
+# Archive Activation Dependencies
+# Install: pip install -r scripts/archive_activation/requirements.txt
+
+# Core ingestion
+arxiv>=1.4.0
+chromadb>=0.4.0
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+
+# Embeddings (choose one or both)
+openai>=1.0.0  # OpenAI text-embedding-3-small (recommended, needs API key)
+sentence-transformers>=2.2.0  # Local embeddings fallback (no API key needed)
+
+# PDF parsing (for future full-text extraction)
+pypdf>=3.17.0
+pdfplumber>=0.10.0
+
+# Optional: NLP enhancements
+# spacy>=3.7.0
+# beautifulsoup4>=4.12.0

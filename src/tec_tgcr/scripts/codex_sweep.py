@@ -13,6 +13,7 @@ CLI will create folders under data/digital_assets/globules/<persona>/ and
 assets/emojis/ if missing. It will not overwrite existing files unless
 --force is provided.
 """
+
 from __future__ import annotations
 
 import json
@@ -25,8 +26,15 @@ from typing import Dict, List
 REPO_ROOT = Path(__file__).resolve().parents[3]
 
 PERSONAS = [
-    "luminai", "airth", "arcadia", "ely", "adelphia",
-    "kaznak", "mirror", "reluctant_steward", "multi",
+    "luminai",
+    "airth",
+    "arcadia",
+    "ely",
+    "adelphia",
+    "kaznak",
+    "mirror",
+    "reluctant_steward",
+    "multi",
 ]
 
 REQUIRED_FILES = [
@@ -68,14 +76,29 @@ def ensure_globule_assets(persona: str, force: bool) -> Dict[str, List[str]]:
         if rel.endswith(".svg"):
             wrote = write_file(p, SVG_PLACEHOLDER, force)
         elif rel.endswith("globule_lottie.json"):
-            wrote = write_file(p, json.dumps({"schema": ANIMATION_SCHEMA, "persona": persona}, indent=2) + "\n", force)
+            wrote = write_file(
+                p,
+                json.dumps({"schema": ANIMATION_SCHEMA, "persona": persona}, indent=2)
+                + "\n",
+                force,
+            )
         elif rel.endswith("voice_sync.json"):
-            wrote = write_file(p, json.dumps({"amplitude_map": [0, 0.2, 0.5, 0.8, 1.0]}, indent=2) + "\n", force)
+            wrote = write_file(
+                p,
+                json.dumps({"amplitude_map": [0, 0.2, 0.5, 0.8, 1.0]}, indent=2) + "\n",
+                force,
+            )
         else:  # sigil_anim.json or others
-            wrote = write_file(p, json.dumps({"sigil_frames": []}, indent=2) + "\n", force)
+            wrote = write_file(
+                p, json.dumps({"sigil_frames": []}, indent=2) + "\n", force
+            )
         (created if wrote else skipped).append(str(p.relative_to(REPO_ROOT)))
     # Write a separate animation.schema.json for validation tooling
-    write_file(base / "animation.schema.json", json.dumps(ANIMATION_SCHEMA, indent=2) + "\n", force)
+    write_file(
+        base / "animation.schema.json",
+        json.dumps(ANIMATION_SCHEMA, indent=2) + "\n",
+        force,
+    )
     return {"created": created, "existing": skipped}
 
 
@@ -110,9 +133,19 @@ def ensure_emojis(force: bool) -> Dict[str, List[str]]:
     created: List[str] = []
     skipped: List[str] = []
     pngs = ["globule_idle.png", "globule_alert.png", "globule_switch.png"]
-    svgs = ["crest_luminai.svg", "crest_ely.svg", "crest_kaznak.svg", "crest_arcadia.svg", "crest_multi.svg"]
+    svgs = [
+        "crest_luminai.svg",
+        "crest_ely.svg",
+        "crest_kaznak.svg",
+        "crest_arcadia.svg",
+        "crest_multi.svg",
+    ]
     # Write 1x1 transparent PNG placeholders
-    png_stub = bytes.fromhex("89504E470D0A1A0A0000000D49484452000000010000000108060000001F15C4890000000A49444154789C6300010000050001E2'\n".replace("'", ""))
+    png_stub = bytes.fromhex(
+        "89504E470D0A1A0A0000000D49484452000000010000000108060000001F15C4890000000A49444154789C6300010000050001E2'\n".replace(
+            "'", ""
+        )
+    )
     for name in pngs:
         p = base / name
         p.parent.mkdir(parents=True, exist_ok=True)
@@ -134,7 +167,13 @@ def run(write: bool = True, force: bool = False) -> Dict[str, any]:
     missing_fields = check_persona_fields()
     for persona in PERSONAS:
         assets = ensure_globule_assets(persona, force=force if write else False)
-        results.append(SweepResult(persona=persona, assets=assets, missing_persona_fields=missing_fields.get(persona, [])))
+        results.append(
+            SweepResult(
+                persona=persona,
+                assets=assets,
+                missing_persona_fields=missing_fields.get(persona, []),
+            )
+        )
     emojis = ensure_emojis(force=force if write else False)
     report = {
         "timestamp": int(time.time()),
@@ -156,9 +195,16 @@ def run(write: bool = True, force: bool = False) -> Dict[str, any]:
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description="Codex-wide persona & globule harmonization sweep")
-    parser.add_argument("--write", action="store_true", help="Write missing assets to disk")
-    parser.add_argument("--force", action="store_true", help="Overwrite existing placeholder files")
+
+    parser = argparse.ArgumentParser(
+        description="Codex-wide persona & globule harmonization sweep"
+    )
+    parser.add_argument(
+        "--write", action="store_true", help="Write missing assets to disk"
+    )
+    parser.add_argument(
+        "--force", action="store_true", help="Overwrite existing placeholder files"
+    )
     args = parser.parse_args()
     report = run(write=args.write, force=args.force)
     print("✔ Persona updates complete")

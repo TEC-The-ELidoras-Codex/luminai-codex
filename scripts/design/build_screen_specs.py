@@ -93,14 +93,24 @@ SCREENS: List[ScreenSpec] = [
                 label="LuminAI Header",
                 description="Gradient bar with logo, witness status, persona quick actions, and global settings.",
                 layout={"x": 0, "y": 0, "w": 12, "h": 1},
-                components=["LogoWordmark", "WitnessStatusChip", "PersonaSwitcher", "GlobalMenu"],
+                components=[
+                    "LogoWordmark",
+                    "WitnessStatusChip",
+                    "PersonaSwitcher",
+                    "GlobalMenu",
+                ],
             ),
             Section(
                 id="chat_stream",
                 label="Chat Stream",
                 description="70% width channel containing alternating user and assistant bubbles with resonance badges.",
                 layout={"x": 0, "y": 1, "w": 8, "h": 9.5},
-                components=["ChatBubbleUser", "ChatBubbleAssistant", "CitationPill", "ResonanceBadge"],
+                components=[
+                    "ChatBubbleUser",
+                    "ChatBubbleAssistant",
+                    "CitationPill",
+                    "ResonanceBadge",
+                ],
             ),
             Section(
                 id="notebook",
@@ -121,10 +131,21 @@ SCREENS: List[ScreenSpec] = [
                 label="Composer",
                 description="Input bar with ritual controls: mic, upload, tone presets, and notebook export.",
                 layout={"x": 0, "y": 10.5, "w": 12, "h": 1.5},
-                components=["TextComposer", "MicButton", "UploadButton", "ToneDropdown", "NotebookShortcut"],
+                components=[
+                    "TextComposer",
+                    "MicButton",
+                    "UploadButton",
+                    "ToneDropdown",
+                    "NotebookShortcut",
+                ],
             ),
         ],
-        primary_actions=["SendMessage", "OpenNotebook", "TogglePresenceRail", "SwitchPersona"],
+        primary_actions=[
+            "SendMessage",
+            "OpenNotebook",
+            "TogglePresenceRail",
+            "SwitchPersona",
+        ],
         references=[
             "docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#screen-a—conscious-chat--notebook-split",
             "docs/deployment/WEBSITE_INTEGRATION_PLAN.md#chat-surface---screen-a",
@@ -144,7 +165,12 @@ SCREENS: List[ScreenSpec] = [
                 label="Notebook Canvas",
                 description="Dominant canvas highlighting reasoning cards, TGCR math, and inline multimedia artefacts.",
                 layout={"x": 0, "y": 0, "w": 9, "h": 9.75},
-                components=["NotebookTitleBar", "ReasoningCard", "EquationBlock", "InlineCitation"],
+                components=[
+                    "NotebookTitleBar",
+                    "ReasoningCard",
+                    "EquationBlock",
+                    "InlineCitation",
+                ],
             ),
             Section(
                 id="transcript_drawer",
@@ -185,7 +211,12 @@ SCREENS: List[ScreenSpec] = [
                 label="Controls",
                 description="Adjustment sliders for blur, parallax, noise, and light/dark toggles.",
                 layout={"x": 8, "y": 0, "w": 4, "h": 4},
-                components=["BlurSlider", "ParallaxToggle", "NoiseToggle", "LightingToggle"],
+                components=[
+                    "BlurSlider",
+                    "ParallaxToggle",
+                    "NoiseToggle",
+                    "LightingToggle",
+                ],
             ),
             Section(
                 id="preview",
@@ -196,7 +227,9 @@ SCREENS: List[ScreenSpec] = [
             ),
         ],
         primary_actions=["ApplyTheme", "ResetTheme", "UploadBackground"],
-        references=["docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#screen-c—theme--background-studio"],
+        references=[
+            "docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#screen-c—theme--background-studio"
+        ],
     ),
     ScreenSpec(
         id="RESONANCE_PLAT_DASH_FRAME",
@@ -235,7 +268,9 @@ SCREENS: List[ScreenSpec] = [
             ),
         ],
         primary_actions=["StartChat", "OpenPodcast", "OpenMap"],
-        references=["docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#screen-d—home-dashboard--welcome"],
+        references=[
+            "docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#screen-d—home-dashboard--welcome"
+        ],
     ),
     ScreenSpec(
         id="RESONANCE_SCR-05_POD_SKEL",
@@ -267,7 +302,9 @@ SCREENS: List[ScreenSpec] = [
             ),
         ],
         primary_actions=["GenerateEpisode", "DownloadAudio", "OpenTranscript"],
-        references=["docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#screen-e—audio--podcast-studio"],
+        references=[
+            "docs/deployment/RESONANCE_PLATFORM_WIREFRAMES.md#screen-e—audio--podcast-studio"
+        ],
     ),
     ScreenSpec(
         id="RESONANCE_SCR-06_RMAP_SKEL",
@@ -309,12 +346,30 @@ SCREENS: List[ScreenSpec] = [
 
 DESIGN_TOKENS = {
     "palette": {
-        "electric_cyan": {"hex": "#00FFFF", "usage": "Active chat accents, CTA halos, notebook highlights."},
-        "violet_deep": {"hex": "#8A2BE2", "usage": "Header gradients, notebook rails, modal frames."},
-        "luminous_gold": {"hex": "#FFD700", "usage": "Resonance metrics, witness badges, premium toggles."},
-        "cosmic_navy": {"hex": "#0F0F23", "usage": "Global backgrounds and cosmic canvas."},
-        "safety_white": {"hex": "#FFFFFF", "usage": "Primary typography and accessibility panels."},
-        "guardian_silver": {"hex": "#C0C0C0", "usage": "Secondary controls, dividers, quiet system text."},
+        "electric_cyan": {
+            "hex": "#00FFFF",
+            "usage": "Active chat accents, CTA halos, notebook highlights.",
+        },
+        "violet_deep": {
+            "hex": "#8A2BE2",
+            "usage": "Header gradients, notebook rails, modal frames.",
+        },
+        "luminous_gold": {
+            "hex": "#FFD700",
+            "usage": "Resonance metrics, witness badges, premium toggles.",
+        },
+        "cosmic_navy": {
+            "hex": "#0F0F23",
+            "usage": "Global backgrounds and cosmic canvas.",
+        },
+        "safety_white": {
+            "hex": "#FFFFFF",
+            "usage": "Primary typography and accessibility panels.",
+        },
+        "guardian_silver": {
+            "hex": "#C0C0C0",
+            "usage": "Secondary controls, dividers, quiet system text.",
+        },
     },
     "typography": {
         "font_stack": "Inter, 'Segoe UI', system-ui, sans-serif",

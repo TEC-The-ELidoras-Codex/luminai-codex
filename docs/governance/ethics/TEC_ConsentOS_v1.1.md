@@ -1,3 +1,19 @@
+---
+title: Tec Consentos V1.1
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance, ethics]
+---
+
 # TEC ConsentOS v1.1 — Consent & Intensity Protocol
 
 Purpose: Provide a compact, explicit control surface for live sessions (chat, voice, orb) so users can modulate intensity, pace, boundaries, emotions, meta, and safety without writing essays mid‑feelings. Red overrides everything; text always wins over emojis.

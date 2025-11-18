@@ -5,6 +5,7 @@
 **Audience:** Users of LuminAI Codex (Discord Bot + Research Framework)
 
 ---
+title: Privacy Policy
 
 ## 1. What We Collect (And Why)
 
@@ -78,6 +79,18 @@ We collect **only the minimum data needed** to:
 - **Your Control**: We notify you of suspicious activity; you can review in your Discord security settings
 - **Encrypted**: Yes (TLS + AES-256)
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance]
 ---
 
 ## 2. What We DO NOT Collect

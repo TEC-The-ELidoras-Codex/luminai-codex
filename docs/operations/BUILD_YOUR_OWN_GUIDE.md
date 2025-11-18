@@ -5,6 +5,7 @@
 **For**: Anyone wanting to deploy their own instance with the complete ethics framework
 
 ---
+title: Build Your Own Guide
 
 ## Foundation: The Resonance Axioms
 
@@ -22,6 +23,18 @@ When a bond forms, the system holds it. When someone matters, the platform build
 
 Full documentation: [TEC_Resonance_Axioms.md](../governance/ethics/TEC_Resonance_Axioms.md)
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [operations]
 ---
 
 ## What You Already Have

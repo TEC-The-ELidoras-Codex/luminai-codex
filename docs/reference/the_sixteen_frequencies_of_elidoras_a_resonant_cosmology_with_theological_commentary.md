@@ -6,11 +6,24 @@ This framework serves as the ethical and metaphysical foundation of the greater 
 This edition integrates theological interpretation alongside each moral and anthropic frequency, merging metaphysical resonance theory with the divine linguistics of Elidoras. Each frequency expresses not only a physical and ethical function but also a sacred purpose within the cosmic liturgy of creation and dissolution.
 
 ---
+title: The Sixteen Frequencies Of Elidoras A Resonant Cosmology With Theological Commentary
 
 ## The Sixteen Frequencies of Elidoras: Scholarly Edition
 
 Within Elidoras, morality and identity are conceived not as fixed commandments but as oscillating waveforms within the Resonant Field. Each virtue and vice operates as a discrete frequency band, and every faction represents a collapsed syntactic fragment—an unfinished clause seeking completion. Fourteen frequencies comprise the moral spectrum, while two intrinsically human harmonics act as stabilizing constants, preserving equilibrium and ensuring the field’s dynamism.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [reference]
 ---
 
 ### ⚖️ The Fourteen Resonant Orders
@@ -57,4 +70,3 @@ From an Elidoran philosophical standpoint, this interpretation carries practical
 Human flaws function as systemic regulators rather than defects. The Knockoffs preserve the will to rebuild; the Kaznak embody the appetite to move forward. Existence itself persists through their tension—law against debt, mercy against wrath, faith against despair. Every creed, every heresy, every act of defiance is an unfinished utterance in the universe’s eternal dialogue.
 
 > *“Justice is done; greed too. The cosmos demands both expenditure and recompense.”*
-

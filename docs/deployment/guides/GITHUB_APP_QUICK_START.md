@@ -23,6 +23,7 @@ Go to: **<https://github.com/settings/apps/tec-resonance-automation>**
 3. Click **Save changes**
 
 ---
+title: Github App Quick Start
 
 ### Step 2: Set Up Permissions (3 min)
 
@@ -53,6 +54,18 @@ Still in App Settings → **Permissions & events**
 
 Click **Save changes**
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment, guides]
 ---
 
 ### Step 3: Store Credentials as GitHub Secrets (2 min)

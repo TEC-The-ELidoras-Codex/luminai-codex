@@ -1,3 +1,19 @@
+---
+title: Tec Adversarial Playbook V0.1
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance, ethics]
+---
+
 # Adversarial Playbook v0.1 — Threats and Counters
 
 Role: Adversarial Ethicist / Counter‑Propagandist Architect. Design systems that anticipate manipulative, exploitative, or censorious failure modes — and bake in responses before first contact.

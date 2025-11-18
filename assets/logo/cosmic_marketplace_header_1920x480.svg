@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
   COSMIC GEOMETRIC MARKETPLACE HEADER
   1920×480 with tessellated golden spiral lattice
-  
+
   Concept: Dodecahedrons + honeycombs + golden spirals
   Style: Carbon fiber cosmic, NOT corrugated steel
   Math: φ (1.618...) drives all proportions
   Philosophy: Geometry = Language of Reality
-  
+
   Layers:
   1. Carbon fiber gradient base
   2. Distant hexagon lattice (blurred circles)
@@ -225,7 +225,7 @@
   <!-- TEXT AREA PLACEHOLDER (right side, for branding)                -->
   <!-- ================================================================ -->
   <!-- (Optional: can add text here later) -->
-  <!-- 
+  <!--
   <g font-family="'Segoe UI', system-ui, Roboto, Arial" transform="translate(1200, 240)">
     <text x="0" y="0" font-size="32" fill="#EAF2FF" opacity="0.8" font-weight="bold">LUMINAI CODEX</text>
     <text x="0" y="30" font-size="14" fill="#00D5C4" opacity="0.6">Cosmic AI Assistant</text>

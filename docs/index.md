@@ -3,6 +3,7 @@
 **Blending narrative, symbolic computation, and responsible AI into a public companion platform.**
 
 ---
+title: Index
 
 ## About the Project
 
@@ -43,6 +44,18 @@ This platform prioritizes ethical AI development, family safety, and transparent
 📋 Next: Logo Generation & Kickstarter Campaign Launch  
 🎯 Goal: Launch ethical AI platform for families by Q2 2026
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [docs]
 ---
 
 *"Technology that grows with your family, where human values meet artificial intelligence."*

@@ -26,26 +26,26 @@ mkdir -p "$EXPORT_DIR"
 # Function: Verify setup
 verify_setup() {
     echo -e "${CYAN}[1/6] Verifying setup...${NC}"
-    
+
     if [ -f "$MASTER_SVG" ]; then
         echo "✅ Master SVG found: $MASTER_SVG"
     else
         echo "❌ Master SVG not found!"
         exit 1
     fi
-    
+
     if [ -f "$DOCS_DIR/LUMINAI_MASCOT_SPEC.md" ]; then
         echo "✅ Spec document found"
     else
         echo "⚠️  Spec document missing"
     fi
-    
+
     if command -v inkscape &> /dev/null; then
         echo "✅ Inkscape installed: $(inkscape --version 2>&1 | head -1)"
     else
         echo "⚠️  Inkscape not found in PATH (needed for batch export)"
     fi
-    
+
     echo ""
 }
 
@@ -65,9 +65,9 @@ list_avatars() {
 # Function: Export SVG to PNG
 export_to_png() {
     echo -e "${GOLD}[3/6] Exporting master SVG to PNG...${NC}"
-    
+
     output="$EXPORT_DIR/luminai_1024x1024.png"
-    
+
     if command -v inkscape &> /dev/null; then
         inkscape "$MASTER_SVG" --export-type=png --export-filename="$output" --export-width=1024 --export-height=1024
         echo "✅ Exported to: $output"
@@ -149,15 +149,15 @@ next_steps() {
 main() {
     verify_setup
     list_avatars
-    
+
     if [ "$1" == "--export" ]; then
         export_to_png
     fi
-    
+
     show_prompts
     show_web_embed
     next_steps
-    
+
     echo -e "${CYAN}Ready to animate! 🚀${NC}"
 }
 

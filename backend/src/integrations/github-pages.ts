@@ -1,6 +1,6 @@
 /**
  * GitHub Pages Integration
- * 
+ *
  * Handles automatic documentation updates, search index generation,
  * and website rebuild triggers when code is pushed to main
  */
@@ -236,7 +236,7 @@ export async function notifyWebsiteUpdate(payload: WebsiteNotificationPayload) {
         },
         body: JSON.stringify(payload)
       });
-      
+
       if (response.ok) {
         console.log(`   ✅ Website received update notification`);
       }
@@ -282,7 +282,7 @@ function broadcastSSEUpdate(payload: WebsiteNotificationPayload) {
   if (!global.eventClients) return;
 
   const message = `data: ${JSON.stringify(payload)}\n\n`;
-  
+
   global.eventClients.forEach((res: any) => {
     res.write(message);
   });

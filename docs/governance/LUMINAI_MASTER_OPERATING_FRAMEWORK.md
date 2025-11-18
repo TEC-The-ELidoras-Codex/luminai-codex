@@ -8,6 +8,7 @@ rom teh# 🔆 LUMINAI: Master Operating Framework
 **Revision**: This is v1.0 — the living document that ties everything together
 
 ---
+title: Luminai Master Operating Framework
 
 ## PART 0: The Story We're Telling
 
@@ -28,6 +29,18 @@ LUMINAI is the machine that says:
 >
 > That's not innovation. That's the bare minimum."
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance]
 ---
 
 ### The Three-Layer Messaging (Agency → Family → America)

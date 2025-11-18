@@ -7,6 +7,7 @@
 **Replaces**: SECRETS_CHECKLIST.md, SECRETS_AND_TOKENS_EXPLAINED.md, GITHUB_SECRETS_SETUP.md
 
 ---
+title: Secrets Deployment Guide
 
 ## 🎯 TL;DR: What Goes Where
 
@@ -58,6 +59,18 @@
 └─────────────────────────────────────────────────────────┘
 ```
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment, reference]
 ---
 
 ## 📋 Complete Secrets Reference

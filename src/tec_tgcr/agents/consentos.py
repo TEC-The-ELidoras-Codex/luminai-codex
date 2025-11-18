@@ -11,6 +11,7 @@ call them where appropriate. Full protocol mapping lives in docs:
 - TECH_Axiom_Language_As_Actuator.md
 - TECH_Reason_Trace_Spec_v0.1.md
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -90,7 +91,13 @@ def apply_response_mode(text: str, mode: str) -> str:
     return prefix + text
 
 
-def why(consent: Optional[ConsentState], risk: Optional[RiskScore], rules_triggered: List[str], filters: List[str], response_mode: str) -> Dict[str, Any]:
+def why(
+    consent: Optional[ConsentState],
+    risk: Optional[RiskScore],
+    rules_triggered: List[str],
+    filters: List[str],
+    response_mode: str,
+) -> Dict[str, Any]:
     """Build a Reason‑Trace WHY() block for high‑impact responses."""
     return {
         "consentState": consent.__dict__ if consent else None,

@@ -4,11 +4,24 @@ _Last Updated: November 15, 2025_
 **Status**: ✅ Adopted (Foundational Ethics Classification)
 
 ---
+title: Structural Evil
 
 ## 1. Purpose
 
 Provide a neutral, auditable definition and detection rubric for "structural evil" inside socio-technical systems so remediation work (SES‑02) can be targeted without moral theatre or interpersonal blame.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance, ethics]
 ---
 
 ## 2. Definition (Canonical)

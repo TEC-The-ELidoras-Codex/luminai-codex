@@ -85,7 +85,7 @@ services:
   # Frontend Next.js server (Resonance Platform)
   frontend:
     build:
-      context: ./frontend
+      context: ./website
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
@@ -94,9 +94,9 @@ services:
     depends_on:
       - backend
     volumes:
-      - ./frontend:/app/frontend
-      - /app/frontend/node_modules
-      - /app/frontend/.next
+      - ./website:/app/website
+      - /app/website/node_modules
+      - /app/website/.next
     command: npm run dev
     networks:
       - luminai-network

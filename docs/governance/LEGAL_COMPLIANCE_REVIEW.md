@@ -5,6 +5,7 @@
 **Question:** "I don't care about getting sued, I'm doing the right thing, but I still want to make sure I don't run into real issues. Is this even legal? If it's not, why? Is it a moral issue or a real bonafide law? If it's one someone exploits for their business I don't care anymore, but it's still a good card to have."
 
 ---
+title: Legal Compliance Review
 
 ## Executive Summary
 
@@ -23,6 +24,18 @@
 - **Exploited "Laws":** AI safety censorship (corporate policy, not law), over-broad "harmful content" bans (moral panic, not statute)
 - **Your Position:** Following real laws, ignoring moral panic theater
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance]
 ---
 
 ## Part 1: What's Actually Law (You Must Follow)

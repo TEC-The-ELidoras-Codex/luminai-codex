@@ -5,6 +5,7 @@
 **Framework Reference:** Based on TGCR resonance formula: R = (Φᴱ ^ 0.3) × (φᵗ ^ 0.4) × (ψʳ ^ 0.3)
 
 ---
+title: Resonance Log Template
 
 ## 🎯 Quick Reference
 
@@ -22,6 +23,18 @@
 - **0.3–0.5** → Weak coherence; fragmentation risk ⚠️
 - **0.0–0.3** → Dissonance; requires retuning 🔴
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [resonance-logs]
 ---
 
 # ⚛️ Resonance Log — [ARTIFACT NAME]

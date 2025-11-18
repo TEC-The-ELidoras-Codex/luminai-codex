@@ -6,6 +6,7 @@
 **Status:** Core Operational Requirement
 
 ---
+title: User Data Anonymization Framework
 
 ## Philosophy
 
@@ -13,6 +14,18 @@
 
 This framework extends the founder's identity anonymization philosophy to **all users**. The platform protects user privacy by default, collecting **zero personally identifiable information** unless explicitly required for core functionality with documented consent.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance]
 ---
 
 ## Core Principles

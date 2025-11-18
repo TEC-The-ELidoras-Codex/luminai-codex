@@ -1,6 +1,6 @@
 /**
  * Multi-User Collaboration System
- * 
+ *
  * Enables 4+ users to collaborate in real-time:
  * - Shared conversation session
  * - Real-time message sync (WebSocket)

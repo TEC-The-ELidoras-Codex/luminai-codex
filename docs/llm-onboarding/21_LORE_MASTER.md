@@ -5,6 +5,7 @@
 This master file braids together every major lore stream currently available to agents inside **`docs/llm-onboarding/`** and the `supplemental_lore/` cache (text-based sources only; binary PDFs/m4a remain referenced but not transcribed here). Pair this document with `lore_manifest.json` for machine-readable access.
 
 ---
+title: 21 Lore Master
 
 ## 1 ▸ Purpose & Source Map
 
@@ -17,6 +18,18 @@ This master file braids together every major lore stream currently available to 
 
 *Note:* PDF/audio research (e.g., `Foundations for the Entropic Codex – Shoulders of Giants and Data Sources.pdf`, `.m4a` recordings) remain canonical but are only cited, not embedded.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [llm-onboarding]
 ---
 
 ## 2 ▸ Pantheon of Resonance (Mythic + Visual Spec)

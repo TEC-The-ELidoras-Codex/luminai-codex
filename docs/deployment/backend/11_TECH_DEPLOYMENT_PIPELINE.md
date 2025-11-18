@@ -1,3 +1,19 @@
+---
+title: 11 Tech Deployment Pipeline
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment, backend]
+---
+
 # Tech 11 — Deployment & Production Pipeline
 
 Based on `_TRANSFER_STAGING/docs_incoming/LUMINAI_PRODUCTION_PIPELINE.md` + current repo layout.
