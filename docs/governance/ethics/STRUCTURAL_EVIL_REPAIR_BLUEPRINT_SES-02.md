@@ -4,11 +4,24 @@ _Last Updated: November 15, 2025_
 **Status**: Draft (Open for refinement before activation)
 
 ---
+title: Structural Evil Repair Blueprint Ses 02
 
 ## 1. Purpose
 
 Standardize how Confirmed Structural Evil (CSE) findings (per SES-01) are converted into actionable, time-bound remediation programs with accountability, coherence restoration metrics, and user-facing transparency.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance, ethics]
 ---
 
 ## 2. Core Principles

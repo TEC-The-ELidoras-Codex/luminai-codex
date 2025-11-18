@@ -3,6 +3,7 @@
 import sys
 import sys
 import os
+
 # Ensure `src` is on sys.path for local imports
 ROOT = os.path.dirname(os.path.dirname(__file__))
 SRC = os.path.join(ROOT, "src")
@@ -23,5 +24,5 @@ def main():
     return 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sys.exit(main())

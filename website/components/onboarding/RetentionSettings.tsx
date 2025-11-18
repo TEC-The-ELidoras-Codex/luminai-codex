@@ -47,7 +47,7 @@ const RETENTION_OPTIONS = [
 
 /**
  * RetentionSettings — User chooses data retention policy
- * 
+ *
  * Part of the User Data Anonymization Framework:
  * - User controls how long data is kept
  * - Clear deletion schedules
@@ -121,7 +121,7 @@ export default function RetentionSettings({ onComplete }: RetentionSettingsProps
       {/* GDPR Notice */}
       <div className="px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg">
         <p className="text-xs text-slate-500 leading-relaxed">
-          📜 <span className="font-semibold text-slate-400">Your rights:</span> Regardless of retention choice, 
+          📜 <span className="font-semibold text-slate-400">Your rights:</span> Regardless of retention choice,
           you can always export or delete your data via Settings. We comply with GDPR, CCPA, and COPPA.
         </p>
       </div>

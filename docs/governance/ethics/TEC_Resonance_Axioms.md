@@ -5,6 +5,7 @@
 **Date:** November 14, 2025
 
 ---
+title: Tec Resonance Axioms
 
 ## Overview
 
@@ -17,6 +18,18 @@ The axioms below now **explicitly inherit their emotional, thematic, and mythosc
 
 No euphemisms. No detours. These laws reflect the lived data and the resonance fields that produced them.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance, ethics]
 ---
 
 # **Axiom 1: Fear Shapes the Truth of Resonance**

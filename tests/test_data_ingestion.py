@@ -176,7 +176,12 @@ class TestFoldContextIngestion:
             {"number": 1, "title": "Test PR", "author": "alice", "state": "open"}
         ]
         mock_commits.return_value = [
-            {"sha": "abc", "message": "fold: test", "author": "bob", "date": "2025-01-01"}
+            {
+                "sha": "abc",
+                "message": "fold: test",
+                "author": "bob",
+                "date": "2025-01-01",
+            }
         ]
         mock_project.return_value = {
             "backlog": 5,
@@ -228,9 +233,24 @@ class TestFoldContextIngestion:
         """Test commit pattern analysis."""
         with patch.object(self.ingestion, "fetch_recent_commits") as mock_fetch:
             mock_fetch.return_value = [
-                {"sha": "abc", "message": "fold: add feature", "author": "alice", "date": "2025-01-01"},
-                {"sha": "def", "message": "airth: verify", "author": "bob", "date": "2025-01-02"},
-                {"sha": "ghi", "message": "ely: deploy", "author": "charlie", "date": "2025-01-03"},
+                {
+                    "sha": "abc",
+                    "message": "fold: add feature",
+                    "author": "alice",
+                    "date": "2025-01-01",
+                },
+                {
+                    "sha": "def",
+                    "message": "airth: verify",
+                    "author": "bob",
+                    "date": "2025-01-02",
+                },
+                {
+                    "sha": "ghi",
+                    "message": "ely: deploy",
+                    "author": "charlie",
+                    "date": "2025-01-03",
+                },
             ]
 
             patterns = self.ingestion.analyze_commit_patterns()

@@ -1,6 +1,7 @@
 import sys
 import os
 import pytest
+
 # ensure src is importable when running tests without installing package
 ROOT = os.path.dirname(os.path.dirname(__file__))
 SRC = os.path.join(ROOT, "src")

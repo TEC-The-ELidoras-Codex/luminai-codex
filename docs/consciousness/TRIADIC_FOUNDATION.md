@@ -5,6 +5,7 @@
 **Purpose:** Bridge ethical theory to implementable architecture through three interdependent pillars
 
 ---
+title: Triadic Foundation
 
 ## Opening Thesis
 
@@ -18,6 +19,18 @@ Together, they form an answer to a singular, critical failure of contemporary te
 
 This document explains how these three pillars work together, ground them in established research and precedent, and position them as implementable, auditable architecture for ethical intelligence.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [consciousness]
 ---
 
 ## PART I: UNIFIED DEFENSE — The Ceremonial Armor

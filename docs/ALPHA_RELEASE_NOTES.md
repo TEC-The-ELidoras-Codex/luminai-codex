@@ -394,8 +394,8 @@ This is an **alpha release** — contributions welcome but expect breaking chang
 
 ### Contact
 
-- **Email:** TEC@elidoras.com (for sensitive issues)
-- **Security:** security@luminai-codex.dev (for vulnerabilities)
+- **Email:** <TEC@elidoras.com> (for sensitive issues)
+- **Security:** <security@luminai-codex.dev> (for vulnerabilities)
 - **Repository:** [github.com/TEC-The-ELidoras-Codex/luminai-codex](https://github.com/TEC-The-ELidoras-Codex/luminai-codex)
 
 ---

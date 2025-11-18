@@ -46,7 +46,7 @@ export function ChatSurface() {
   // Send message with consent emoji to backend
   const sendMessage = async () => {
     if (!messageInput.trim()) return;
-    
+
     setIsSending(true);
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000'}/api/message`, {
@@ -74,7 +74,7 @@ export function ChatSurface() {
       }
 
       const data = await response.json();
-      
+
       // Update consent state from backend response
       if (data.consent_state) {
         setConsentState(data.consent_state);
@@ -85,7 +85,7 @@ export function ChatSurface() {
 
       // Clear input
       setMessageInput('');
-      
+
       // Add axiom event if axiom was upheld
       if (data.axiom_upheld) {
         setAxiomEvents(prev => [...prev, {
@@ -245,7 +245,7 @@ export function ChatSurface() {
                 <span aria-hidden>⌘</span>
                 <span>Enter to transmit</span>
               </div>
-              <button 
+              <button
                 onClick={sendMessage}
                 disabled={isSending || !messageInput.trim()}
                 className="to-aura-DEFAULT rounded-full bg-gradient-to-r from-accent-primary px-4 py-2 text-sm font-semibold text-surface-base shadow-md shadow-accent-primary/40 transition hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed">

@@ -1,3 +1,19 @@
+---
+title: 20 Ref Resource Index
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [llm-onboarding]
+---
+
 # Ref 20 — Resource Index (Read These Next)
 
 Quick map to the rest of the repo after finishing the gift package.

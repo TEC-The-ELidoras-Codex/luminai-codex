@@ -110,7 +110,9 @@ def parse_transcripts(content: str, collected_at: str) -> list[TranscriptRecord]
 
 def write_dataset(config: NoteConfig, transcripts: list[TranscriptRecord]) -> None:
     if not transcripts:
-        print(f"No transcripts found in {config.source.relative_to(REPO_ROOT)}; skipping")
+        print(
+            f"No transcripts found in {config.source.relative_to(REPO_ROOT)}; skipping"
+        )
         return
 
     output_dir = TRANSCRIPTS_ROOT / config.slug
@@ -120,7 +122,9 @@ def write_dataset(config: NoteConfig, transcripts: list[TranscriptRecord]) -> No
     csv_path = output_dir / f"{config.basename}.csv"
 
     json_data = [record.as_dict() for record in transcripts]
-    json_path.write_text(json.dumps(json_data, ensure_ascii=False, indent=2), encoding="utf-8")
+    json_path.write_text(
+        json.dumps(json_data, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
 
     with csv_path.open("w", encoding="utf-8", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=["id", "date", "speaker_id", "raw_text"])
@@ -153,8 +157,10 @@ def main() -> int:
 
     for note in notes:
         config, body = load_note_config(note)
-        collected_at = datetime.fromtimestamp(note.stat().st_mtime, tz=timezone.utc).isoformat().replace(
-            "+00:00", "Z"
+        collected_at = (
+            datetime.fromtimestamp(note.stat().st_mtime, tz=timezone.utc)
+            .isoformat()
+            .replace("+00:00", "Z")
         )
         transcripts = parse_transcripts(body, collected_at)
         print(

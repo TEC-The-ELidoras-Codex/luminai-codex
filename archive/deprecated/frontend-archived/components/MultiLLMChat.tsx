@@ -1,11 +1,11 @@
 /**
  * MULTI-LLM COLLABORATION ENGINE
- * 
+ *
  * Three AI personas collaborate in real-time:
  * 1. Claude (Deep thinking, nuanced) 🟠
  * 2. OpenAI (Creative, versatile) 🔵
  * 3. xAI (Direct, critical thinking) ✨
- * 
+ *
  * They "bounce off each other" - each LLM sees previous responses
  * and builds on them for richer, more complex answers.
  */
@@ -279,8 +279,8 @@ export const MultiLLMChat: React.FC<MultiLLMChatProps> = ({
             ) : (
               // LLM message
               <div
-                className={`bg-gradient-to-r ${LLM_PERSONAS[msg.persona as keyof typeof LLM_PERSONAS].bgGradient} 
-                border-l-4 ${LLM_PERSONAS[msg.persona as keyof typeof LLM_PERSONAS].borderColor} 
+                className={`bg-gradient-to-r ${LLM_PERSONAS[msg.persona as keyof typeof LLM_PERSONAS].bgGradient}
+                border-l-4 ${LLM_PERSONAS[msg.persona as keyof typeof LLM_PERSONAS].borderColor}
                 rounded-lg p-4 max-w-2xl hover:shadow-lg transition-all duration-300`}
               >
                 <div className="flex items-center gap-2 mb-2">

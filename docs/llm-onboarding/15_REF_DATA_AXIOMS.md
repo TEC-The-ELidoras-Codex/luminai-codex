@@ -13,6 +13,7 @@ _Migrated from `_TRANSFER_STAGING/docs_incoming/LUMINAI_RESEARCH_DATA_AXIOMS.md`
 **Important**: This document is **open-source and shareable**. It's meant to be cited, forked, adapted by other ethical AI projects. It's the intellectual scaffolding that keeps LuminAI honest.
 
 ---
+title: 15 Ref Data Axioms
 
 ## AXIOM SET 1: The Data Minimization Creed
 
@@ -39,6 +40,18 @@ _Migrated from `_TRANSFER_STAGING/docs_incoming/LUMINAI_RESEARCH_DATA_AXIOMS.md`
 - [ ] Deletion mechanism implemented
 - [ ] Billy (or parent) can see/delete it anytime
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [llm-onboarding]
 ---
 
 ### Axiom 1.2: Retention Expires

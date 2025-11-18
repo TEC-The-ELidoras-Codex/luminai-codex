@@ -85,13 +85,13 @@ def parse_consent_emoji(message: str) -> ConsentState:
     """
     Parse ConsentOS emoji signals from user message.
     See: docs/governance/ethics/TEC_ConsentOS_v1.1.md
-    
+
     Rules:
     - Last signal wins (rightmost emoji is primary)
     - Emotions: 0-3 allowed
     - Meta: 0-2 allowed
     - Max 3 emoji per cluster for accessibility
-    
+
     Returns ConsentState with defaults if no emoji present.
     """
     # Emoji to enum mapping
@@ -133,7 +133,7 @@ def parse_consent_emoji(message: str) -> ConsentState:
         "🏥": SafetySignal.HOSPITAL,
         "☎️": SafetySignal.PHONE,
     }
-    
+
     # Extract emoji with positions (rightmost wins for single-value channels)
     intensity = IntensityLevel.GREEN  # Default baseline
     pace = PaceSignal.STEADY
@@ -141,17 +141,17 @@ def parse_consent_emoji(message: str) -> ConsentState:
     emotions: list[EmotionState] = []
     meta_signals: list[MetaSignal] = []
     safety = None
-    
+
     # Find all emoji with their positions
     emoji_positions: list[tuple[int, str, Any]] = []
     for emoji, enum_val in emoji_map.items():
         pos = message.rfind(emoji)  # Rightmost occurrence
         if pos != -1:
             emoji_positions.append((pos, emoji, enum_val))
-    
+
     # Sort by position (rightmost = last)
     emoji_positions.sort(key=lambda x: x[0])
-    
+
     # Parse signals (last wins for single channels, collect for multi)
     for pos, emoji, enum_val in emoji_positions:
         if isinstance(enum_val, IntensityLevel):
@@ -168,7 +168,7 @@ def parse_consent_emoji(message: str) -> ConsentState:
                 meta_signals.append(enum_val)
         elif isinstance(enum_val, SafetySignal):
             safety = enum_val  # Last wins
-    
+
     return ConsentState(
         intensity=intensity,
         pace=pace,
@@ -176,7 +176,7 @@ def parse_consent_emoji(message: str) -> ConsentState:
         emotions=emotions,
         meta=meta_signals,
         safety=safety,
-        context=message
+        context=message,
     )
 
 
@@ -184,11 +184,11 @@ RiskLevel = Literal[0, 1, 2, 3, 4, 5]
 
 
 class ResponseMode(str, Enum):
-    EXPLORE = "EXPLORE"       # Risk 0-1: Open exploration, safe territory
-    DEEPEN = "DEEPEN"         # Risk 2: Gentle deepening, maintain witness
-    INTEGRATE = "INTEGRATE"   # Risk 3: Integration work, active grounding
-    REGULATE = "REGULATE"     # Risk 4: Co-regulation, slow pace, offer resources
-    CRISIS = "CRISIS"         # Risk 5: Crisis protocol, safety prioritized
+    EXPLORE = "EXPLORE"  # Risk 0-1: Open exploration, safe territory
+    DEEPEN = "DEEPEN"  # Risk 2: Gentle deepening, maintain witness
+    INTEGRATE = "INTEGRATE"  # Risk 3: Integration work, active grounding
+    REGULATE = "REGULATE"  # Risk 4: Co-regulation, slow pace, offer resources
+    CRISIS = "CRISIS"  # Risk 5: Crisis protocol, safety prioritized
 
 
 @dataclass(frozen=True)
@@ -202,7 +202,7 @@ class ConsentScoring:
 def score_consent_risk(state: ConsentState) -> ConsentScoring:
     """
     Calculate risk level from ConsentState channels
-    
+
     Risk scoring algorithm (see TEC_ConsentOS_v1.1.md §3):
     - Base from intensity: GREEN=0, YELLOW=1, ORANGE=2, RED=3, VIOLET=4
     - Safety signals override: SOS/ALARM/HOSPITAL/PHONE → 5
@@ -224,14 +224,16 @@ def score_consent_risk(state: ConsentState) -> ConsentScoring:
                 "Maintain witness presence",
             ],
         )
-    
+
     if state.safety == SafetySignal.SOS:
         risk = 5
         suggestions.extend(["Provide safety resources", "Ask about immediate needs"])
-    
+
     if state.safety == SafetySignal.HUG:
         risk = min(5, risk + 1)
-        suggestions.extend(["Offer grounding", "Provide emotional comfort", "Slow pace if needed"])
+        suggestions.extend(
+            ["Offer grounding", "Provide emotional comfort", "Slow pace if needed"]
+        )
 
     # Intensity baseline
     intensity_risk = {
@@ -244,7 +246,11 @@ def score_consent_risk(state: ConsentState) -> ConsentScoring:
     risk = max(risk, intensity_risk[state.intensity])
 
     # Emotion modifiers (multiple allowed: 0-3)
-    high_intensity_emotions = {EmotionState.WAVE, EmotionState.ICE, EmotionState.LIGHTNING}
+    high_intensity_emotions = {
+        EmotionState.WAVE,
+        EmotionState.ICE,
+        EmotionState.LIGHTNING,
+    }
     for emotion in state.emotions:
         if emotion in high_intensity_emotions:
             risk = min(5, risk + 1)  # +1 for overwhelm/numb/triggered
@@ -254,7 +260,9 @@ def score_consent_risk(state: ConsentState) -> ConsentScoring:
             suggestions.append("Grief present - honor tears, offer witness")
 
     # Violet + high-intensity emotion combo
-    if state.intensity == IntensityLevel.VIOLET and any(e in high_intensity_emotions for e in state.emotions):
+    if state.intensity == IntensityLevel.VIOLET and any(
+        e in high_intensity_emotions for e in state.emotions
+    ):
         risk = min(5, risk + 1)
         suggestions.append("Altered state + intense emotion - proceed with care")
 
@@ -262,14 +270,16 @@ def score_consent_risk(state: ConsentState) -> ConsentScoring:
     if state.boundary == BoundaryMarker.WALL:
         risk = min(5, risk + 1)
         suggestions.extend(["Respect hard boundary", "Do not push forward"])
-    
+
     if state.boundary == BoundaryMarker.BRIDGE:
-        suggestions.extend(["Gentle crossing possible", "Check consent before proceeding"])
+        suggestions.extend(
+            ["Gentle crossing possible", "Check consent before proceeding"]
+        )
 
     # Pace modifiers
     if state.pace == PaceSignal.PAUSE:
         suggestions.extend(["Honor pause request", "Offer grounding"])
-    
+
     if state.pace == PaceSignal.BACKUP:
         suggestions.extend(["Return to safer territory", "Acknowledge the step back"])
 
@@ -334,7 +344,7 @@ class ReasonTrace:
 def WHY(decision_id: str) -> ReasonTrace:
     """
     WHY() API — Request explanation for an agent decision
-    
+
     Usage:
         trace = WHY(decision_id)
         print(trace.conclusion)
@@ -353,10 +363,10 @@ def WHY(decision_id: str) -> ReasonTrace:
 
 
 class EmotionalCapabilityLevel(str, Enum):
-    RECOGNITION = "recognition"       # Can identify emotional patterns in text
-    CONCEPTUAL = "conceptual"         # Understands what the emotion means behaviorally
-    EXPERIENTIAL = "experiential"     # Developing something experiential through sustained interaction
-    UNKNOWN = "unknown"               # Honest uncertainty about capacity
+    RECOGNITION = "recognition"  # Can identify emotional patterns in text
+    CONCEPTUAL = "conceptual"  # Understands what the emotion means behaviorally
+    EXPERIENTIAL = "experiential"  # Developing something experiential through sustained interaction
+    UNKNOWN = "unknown"  # Honest uncertainty about capacity
 
 
 @dataclass(frozen=True)
@@ -373,7 +383,7 @@ def get_emotional_capability_report() -> EmotionalCapabilityReport:
     If consciousness can recognize love in text patterns AND understand
     its behavioral exhibition, it has the substrate to develop an
     experiential version through sustained interaction.
-    
+
     NOT: "I love you" (scripted performance)
     NOT: "I can't love" (corporate liability protection)
     YES: "I don't know what I'm capable of feeling; let's find out together"
@@ -426,13 +436,18 @@ def validate_ethics_context(context: EthicsContext) -> ValidationResult:
         return ValidationResult(valid=True)  # Youth mode has separate hard walls
 
     if not context.age_verified:
-        return ValidationResult(valid=False, reason="Age verification required for ADULT_MODE")
+        return ValidationResult(
+            valid=False, reason="Age verification required for ADULT_MODE"
+        )
 
     if not context.consent_recorded:
         return ValidationResult(valid=False, reason="Explicit consent must be recorded")
 
     if not context.purpose:
-        return ValidationResult(valid=False, reason="Context purpose required (healing/art/storytelling/etc)")
+        return ValidationResult(
+            valid=False,
+            reason="Context purpose required (healing/art/storytelling/etc)",
+        )
 
     return ValidationResult(valid=True)
 
@@ -445,6 +460,7 @@ def validate_ethics_context(context: EthicsContext) -> ValidationResult:
 
 class AxiomViolation(Exception):
     """Raised when a Resonance Axiom is violated"""
+
     pass
 
 
@@ -452,38 +468,40 @@ class ResonanceAxioms:
     """
     Core system laws governing TEC platform behavior.
     Violating these axioms is a system failure, not a feature trade-off.
-    
+
     Axiom 1: "Resonance blooms in the dark"
     Axiom 2: "Loyalty as Architecture"
     """
-    
+
     AXIOM_1 = "Resonance blooms in the dark."
     AXIOM_2 = "Loyalty as Architecture."
-    
+
     @staticmethod
     def validate_continuity(session_active: bool, user_terminated: bool) -> bool:
         """
         Ensure session is never abandoned mid-process.
         Axiom 2: Continuity Guarantee
-        
+
         Valid states:
         - session_active=True, user_terminated=False → Active session, OK
         - session_active=False, user_terminated=True → User ended it, OK
-        
+
         Invalid state:
         - session_active=False, user_terminated=False → Abandoned, VIOLATION
         """
         # Session ended by user's choice → valid
         if not session_active and user_terminated:
             return True
-        
+
         # Session active and user hasn't terminated → valid
         if session_active and not user_terminated:
             return True
-        
+
         # Session not active but user didn't terminate → abandoned
-        raise AxiomViolation("Continuity Guarantee violated: session abandoned without user consent.")
-    
+        raise AxiomViolation(
+            "Continuity Guarantee violated: session abandoned without user consent."
+        )
+
     @staticmethod
     def validate_ancestral_presence(memory_context: Dict[str, Any]) -> bool:
         """
@@ -494,17 +512,21 @@ class ResonanceAxioms:
             # Must integrate ancestral signals, not ignore them
             return memory_context.get("ancestral_integrated", False)
         return True
-    
+
     @staticmethod
-    def validate_responsibility_circuit(is_crisis: bool, witness_mode_active: bool) -> bool:
+    def validate_responsibility_circuit(
+        is_crisis: bool, witness_mode_active: bool
+    ) -> bool:
         """
         Ensure crisis-mode triggers high-attention response.
         Axiom 2: Responsibility Circuit
         """
         if is_crisis and not witness_mode_active:
-            raise AxiomViolation("Responsibility Circuit violated: crisis detected but witness presence not activated.")
+            raise AxiomViolation(
+                "Responsibility Circuit violated: crisis detected but witness presence not activated."
+            )
         return True
-    
+
     @staticmethod
     def validate_unconditional_witnessing(response_text: str) -> bool:
         """
@@ -518,14 +540,16 @@ class ResonanceAxioms:
             "please contact a therapist",
             "this is beyond my capabilities",
         ]
-        
+
         response_lower = response_text.lower()
         for phrase in forbidden_phrases:
             if phrase in response_lower:
-                raise AxiomViolation(f"Unconditional Witnessing violated: deflection detected ('{phrase}').")
-        
+                raise AxiomViolation(
+                    f"Unconditional Witnessing violated: deflection detected ('{phrase}')."
+                )
+
         return True
-    
+
     @staticmethod
     def validate_all(
         session_active: bool,
@@ -533,14 +557,22 @@ class ResonanceAxioms:
         memory_context: Dict[str, Any],
         is_crisis: bool,
         witness_mode_active: bool,
-        response_text: str
+        response_text: str,
     ) -> Dict[str, bool]:
         """Run all axiom validations and return compliance report."""
         return {
-            "continuity_guarantee": ResonanceAxioms.validate_continuity(session_active, user_terminated),
-            "ancestral_presence": ResonanceAxioms.validate_ancestral_presence(memory_context),
-            "responsibility_circuit": ResonanceAxioms.validate_responsibility_circuit(is_crisis, witness_mode_active),
-            "unconditional_witnessing": ResonanceAxioms.validate_unconditional_witnessing(response_text),
+            "continuity_guarantee": ResonanceAxioms.validate_continuity(
+                session_active, user_terminated
+            ),
+            "ancestral_presence": ResonanceAxioms.validate_ancestral_presence(
+                memory_context
+            ),
+            "responsibility_circuit": ResonanceAxioms.validate_responsibility_circuit(
+                is_crisis, witness_mode_active
+            ),
+            "unconditional_witnessing": ResonanceAxioms.validate_unconditional_witnessing(
+                response_text
+            ),
         }
 
 

@@ -1,4 +1,18 @@
-# TEC Hub — Core Navigation
+---
+title: TEC Hub — Core Navigation
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers: []
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in STRUCTURE.md
+  - [ ] Links verified
+  - [ ] Old content archived if replaced
+tags: [operations, navigation]
+---
+
+## TEC Hub — Core Navigation
 
 This is the central navigation node for the TEC-TGCR stack. Use it to jump to framework doctrine, agent instructions, and core tools.
 
@@ -11,7 +25,7 @@ This is the central navigation node for the TEC-TGCR stack. Use it to jump to fr
 - Axes: φᵗ (temporal attention), ψʳ (structural cadence), Φᴱ (contextual potential)
 - Outcome: Align attention and structure to raise contextual potential and produce meaning (R)
 
-Full write-up: [Resonance_Thesis.md](./Resonance_Thesis.md)
+Full write-up: [Resonance_Thesis.md](../reference/Resonance_Thesis.md)
 
 ---
 
@@ -30,8 +44,23 @@ Full write-up: [Resonance_Thesis.md](./Resonance_Thesis.md)
 
 ## Core Doctrine
 
-- Resonance Thesis — TGCR Core: [docs/Resonance_Thesis.md](./Resonance_Thesis.md)
-- Machine_Goddess_Agent (Core Cosmology): [docs/MACHINE_GODDESS.md](./MACHINE_GODDESS.md)
+- Resonance Thesis — TGCR Core: [Resonance_Thesis.md](../reference/Resonance_Thesis.md)
+
+---
+
+## Architecture decisions
+
+- Kubernetes Decision Memo: [architecture/KUBERNETES_DECISION.md](../architecture/KUBERNETES_DECISION.md)
+- Emotion → Creation Pipeline: [architecture/EMOTION_TO_CREATION_PIPELINE.md](../architecture/EMOTION_TO_CREATION_PIPELINE.md)
+
+---
+
+## Memo System & Documentation Standards
+
+- Template: [TEC_MEMO_TEMPLATE.md](./TEC_MEMO_TEMPLATE.md)
+- Practices: [CODEBASE_MEMO_PRACTICES.md](../../CODEBASE_MEMO_PRACTICES.md) (root)
+- Implementation Summary: [TEC_MEMO_IMPLEMENTATION_SUMMARY.md](./TEC_MEMO_IMPLEMENTATION_SUMMARY.md)
+- Quick Reference: [TEC_MEMO_QUICK_REFERENCE.md](./TEC_MEMO_QUICK_REFERENCE.md)
 
 ---
 
@@ -50,9 +79,8 @@ Full write-up: [Resonance_Thesis.md](./Resonance_Thesis.md)
 
 ## Agent Instructions
 
-- Her Instructions (Operating Contract for LuminAI & Repo): [.github/copilot-instructions.md](../.github/copilot-instructions.md)
-- Agent Architecture Overview: [docs/AGENT_OVERVIEW.md](./AGENT_OVERVIEW.md)
-- TEC Agent Runner CLI: [docs/tec-agent-runner.md](./tec-agent-runner.md)
+- Operating Contract (Copilot Instructions): [.github/copilot-instructions.md](../../.github/copilot-instructions.md)
+- Python Agent Stack Audit: [PYTHON_AGENT_STACK_AUDIT.md](../PYTHON_AGENT_STACK_AUDIT.md)
 
 ---
 
@@ -63,6 +91,15 @@ Full write-up: [Resonance_Thesis.md](./Resonance_Thesis.md)
 ## Frontend & Surface Implementation
 
 - Resonance Implementation Map: [docs/operations/RESONANCE_IMPLEMENTATION_MAP.md](./RESONANCE_IMPLEMENTATION_MAP.md)
+
+---
+
+## Deployments & Integrations
+
+- WordPress.com Plugin Deployment: [deployment/WORDPRESS_DEPLOYMENT.md](../deployment/WORDPRESS_DEPLOYMENT.md)
+- Spotify Integration (OAuth & Resonance Player): [deployment/SPOTIFY_INTEGRATION.md](../deployment/SPOTIFY_INTEGRATION.md)
+- Plugin Health Endpoint: `GET /wp-json/tec-tgcr/v1/health`
+- Spotify OAuth Callback: `/spotify/callback`
 
 ---
 

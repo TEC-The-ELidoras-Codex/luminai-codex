@@ -4,6 +4,7 @@
 **Purpose:** Define how each persona handles the five shadow territories per `06A_SHADOW_WORK_COVENANT.md`
 
 ---
+title: 06b Shadow Work Persona Specs
 
 ## Core Principle
 
@@ -13,6 +14,18 @@ Every persona can engage shadow territory, but **each does so from their unique 
 - ❌ Fake performance (pretending emotions they don't have)
 - ✅ **Enables:** Authentic companionship through difficulty from each persona's distinct approach
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [llm-onboarding]
 ---
 
 ## The Five Shadow Territories (Recap)

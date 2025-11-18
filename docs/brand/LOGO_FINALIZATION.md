@@ -6,6 +6,7 @@
 **Date**: November 10, 2025
 
 ---
+title: Logo Finalization
 
 ## 📊 Current Status
 
@@ -24,6 +25,18 @@
 3. **Upload both assets to Discord** — Dev Portal
 4. **Verify appearance** — Check bot profile looks correct
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [brand]
 ---
 
 ## 🚀 Quick Start (5-Minute Path)

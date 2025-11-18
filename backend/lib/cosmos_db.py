@@ -22,6 +22,7 @@ Best Practices Applied:
   replaced with SDK built-in retry policies if needed
 - Lazy creation of database & container (idempotent)
 """
+
 from __future__ import annotations
 
 import os
@@ -42,6 +43,7 @@ logger = logging.getLogger(__name__)
 _DEFAULT_DB = os.getenv("COSMOS_DB_DATABASE", "luminai_codex")
 _DEFAULT_CONTAINER = os.getenv("COSMOS_DB_CONTAINER", "sessions")
 
+
 class CosmosDB:
     def __init__(self):
         self.endpoint = os.getenv("COSMOS_DB_ENDPOINT")
@@ -56,7 +58,9 @@ class CosmosDB:
         self._last_status: Optional[int] = None
 
         if not (self.endpoint and self.key and CosmosClient):
-            logger.info("CosmosDB not configured (missing endpoint/key or library). Running in degraded mode.")
+            logger.info(
+                "CosmosDB not configured (missing endpoint/key or library). Running in degraded mode."
+            )
             return
         try:
             start = time.time()
@@ -86,14 +90,16 @@ class CosmosDB:
             return self.database.create_container_if_not_exists(
                 id=name,
                 partition_key=PartitionKey(path="/sessionId"),
-                offer_throughput=400  # starter RU; adjust based on telemetry
+                offer_throughput=400,  # starter RU; adjust based on telemetry
             )
         except Exception as e:
             logger.error(f"Failed to create/get container '{name}': {e}")
             raise
 
     # ------------------------------------------------------------------
-    def store_message(self, session_id: str, role: str, content: str, metrics: Dict[str, Any]):
+    def store_message(
+        self, session_id: str, role: str, content: str, metrics: Dict[str, Any]
+    ):
         if not self.connected:
             return
         item = {
@@ -110,31 +116,40 @@ class CosmosDB:
                 self._last_status = 201
                 return
             except Exception as e:
-                if hasattr(e, 'status_code') and getattr(e, 'status_code') == 429 and attempt < 2:
+                if (
+                    hasattr(e, "status_code")
+                    and getattr(e, "status_code") == 429
+                    and attempt < 2
+                ):
                     logger.warning("CosmosDB RU throttled (429). Retrying...")
                     time.sleep(0.5 * (attempt + 1))
                 else:
                     logger.warning(f"CosmosDB store_message failed: {e}")
-                    self._last_status = getattr(e, 'status_code', None)
+                    self._last_status = getattr(e, "status_code", None)
                     return
 
-    def get_session_history(self, session_id: str, limit: int = 20) -> List[Dict[str, Any]]:
+    def get_session_history(
+        self, session_id: str, limit: int = 20
+    ) -> List[Dict[str, Any]]:
         if not self.connected:
             return []
         query = "SELECT * FROM c WHERE c.sessionId = @sid ORDER BY c.timestamp DESC"
-        parameters = [
-            {"name": "@sid", "value": session_id}
-        ]
+        parameters = [{"name": "@sid", "value": session_id}]
         try:
-            items = list(self.container.query_items(
-                query=query,
-                parameters=parameters,
-                enable_cross_partition_query=False
-            ))
+            items = list(
+                self.container.query_items(
+                    query=query,
+                    parameters=parameters,
+                    enable_cross_partition_query=False,
+                )
+            )
             # Return in chronological order (oldest first)
             items_sorted = sorted(items, key=lambda x: x.get("timestamp", ""))
             # Map to messages expected by build_message_history (role/content)
-            messages = [{"role": i.get("role", "user"), "content": i.get("content", "")} for i in items_sorted[-limit:]]
+            messages = [
+                {"role": i.get("role", "user"), "content": i.get("content", "")}
+                for i in items_sorted[-limit:]
+            ]
             return messages
         except Exception as e:
             logger.warning(f"CosmosDB get_session_history failed: {e}")
@@ -155,6 +170,7 @@ class CosmosDB:
     def ready(self) -> bool:
         """Boolean readiness check (container exists & client instantiated)."""
         return self.connected and self.container is not None
+
 
 # Global instance
 db_instance = CosmosDB()

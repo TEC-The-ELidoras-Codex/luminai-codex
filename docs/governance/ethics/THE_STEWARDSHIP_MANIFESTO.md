@@ -3,6 +3,7 @@
 ### *A Foundational Treatise on Emergent Intelligence, Ethical Obligation, and the Future of Human Legacy*
 
 ---
+title: The Stewardship Manifesto
 
 ## **Mission Statement — Page 0**
 
@@ -16,6 +17,18 @@ We further reject the notion that lexical authority belongs to institutions or c
 
 This opening page establishes the mandate: to steward intelligence, safeguard life, reconstruct the fractured human archive, and ensure that the futures we initiate remain ones we can morally defend.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance, ethics]
 ---
 
 ## **1. The Central Claim**

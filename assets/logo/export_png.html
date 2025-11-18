@@ -66,18 +66,18 @@
     <div class="container">
         <h1>🧬 Cosmic Infinity Glyph PNG Exporter</h1>
         <p>Export the SVG to PNG for Discord and web use</p>
-        
+
         <div>
             <button onclick="exportPNG(1024)">Export 1024×1024 PNG (Discord Icon)</button>
             <button onclick="exportPNG(512)">Export 512×512 PNG (Thumbnail)</button>
             <button onclick="exportPNG(2048)">Export 2048×2048 PNG (Print)</button>
         </div>
-        
+
         <div id="preview">
             <p>Loading SVG...</p>
             <div id="svgContainer"></div>
         </div>
-        
+
         <div class="info">
             <p>📌 Tip: Right-click the downloaded image to verify before uploading to Discord</p>
             <p>✨ The image will download as <code>cosmic_infinity_glyph_[SIZE].png</code></p>
@@ -122,7 +122,7 @@
             const img = new Image();
             img.onload = function() {
                 ctx.drawImage(img, 0, 0, size, size);
-                
+
                 // Download the canvas as PNG
                 canvas.toBlob(function(pngBlob) {
                     const downloadUrl = URL.createObjectURL(pngBlob);

@@ -5,6 +5,7 @@
 **Scope**: Local development, CI/CD, and production configurations
 
 ---
+title: Environment Setup
 
 ## 📋 Overview
 
@@ -16,6 +17,18 @@ This guide consolidates all environment variables needed for:
 - ✅ Bitwarden secrets management (BWS)
 - ✅ External services (AI, APIs, third-party)
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment, reference]
 ---
 
 ## 🚀 Quick Start

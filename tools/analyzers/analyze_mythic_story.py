@@ -135,7 +135,9 @@ def format_markdown(
     dotted_edges = sum(1 for edge in data["edges"] if edge.get("style") == "dotted")
     fill_counts = Counter(summary.fill for summary in node_summaries.values())
 
-    archetype_nodes = [summary for summary in node_summaries.values() if "—" in summary.label]
+    archetype_nodes = [
+        summary for summary in node_summaries.values() if "—" in summary.label
+    ]
     archetype_nodes.sort(key=lambda item: item.outdegree + item.indegree, reverse=True)
 
     deg_sorted = sorted(
@@ -171,29 +173,44 @@ def format_markdown(
 
     if archetype_nodes:
         lines.append("## Mythic Archetypes")
-        lines.append("Characters encoded with em dash titles highlight narrative roles.")
+        lines.append(
+            "Characters encoded with em dash titles highlight narrative roles."
+        )
         for summary in archetype_nodes:
             safe_label = summary.label.replace("\n", " / ")
-            lines.append(f"- `{summary.node_id}` → {safe_label} (total degree {summary.indegree + summary.outdegree})")
+            lines.append(
+                f"- `{summary.node_id}` → {safe_label} (total degree {summary.indegree + summary.outdegree})"
+            )
         lines.append("")
 
     if components:
         lines.append("## Cyclical Components")
-        lines.append("The following strongly connected components indicate feedback loops in the mythic system:")
+        lines.append(
+            "The following strongly connected components indicate feedback loops in the mythic system:"
+        )
         for component in components:
-            labels = [node_summaries[node_id].label.replace("\n", " / ") for node_id in component]
-            joined = ", ".join(f"`{node_id}` ({label})" for node_id, label in zip(component, labels))
+            labels = [
+                node_summaries[node_id].label.replace("\n", " / ")
+                for node_id in component
+            ]
+            joined = ", ".join(
+                f"`{node_id}` ({label})" for node_id, label in zip(component, labels)
+            )
             lines.append(f"- {joined}")
         lines.append("")
 
     lines.append("## Guidance Edges")
     if dotted_edges:
-        lines.append("Dotted edges signal mentor-like influences or narrative foreshadowing:")
+        lines.append(
+            "Dotted edges signal mentor-like influences or narrative foreshadowing:"
+        )
         for edge in data["edges"]:
             if edge.get("style") == "dotted":
                 origin = node_summaries[edge["from"]].label.replace("\n", " / ")
                 target = node_summaries[edge["to"]].label.replace("\n", " / ")
-                lines.append(f"- `{edge['from']}` → `{edge['to']}` :: {origin} ⇒ {target}")
+                lines.append(
+                    f"- `{edge['from']}` → `{edge['to']}` :: {origin} ⇒ {target}"
+                )
     else:
         lines.append("No dotted guidance edges detected in the dataset.")
 

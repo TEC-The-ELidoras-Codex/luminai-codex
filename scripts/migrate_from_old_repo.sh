@@ -36,7 +36,7 @@ print_error() {
 # Function to create directory structure
 create_directory_structure() {
     print_status "Creating directory structure..."
-    
+
     directories=(
         "src/core/resonance"
         "src/core/memory"
@@ -91,12 +91,12 @@ create_directory_structure() {
         "config/services"
         "config/schemas"
     )
-    
+
     for dir in "${directories[@]}"; do
         mkdir -p "$BASE_PATH/$dir"
         echo "Created: $dir"
     done
-    
+
     print_status "Directory structure created successfully."
 }
 
@@ -107,7 +107,7 @@ check_old_repository() {
         print_warning "Please set OLD_REPO_PATH environment variable or place the old repository at $OLD_REPO_PATH"
         return 1
     fi
-    
+
     print_status "Old repository found at: $OLD_REPO_PATH"
     return 0
 }
@@ -115,7 +115,7 @@ check_old_repository() {
 # Function to migrate configuration files
 migrate_configurations() {
     print_status "Migrating configuration files..."
-    
+
     # Check for common configuration files in old repository
     config_files=(
         "config.json"
@@ -126,7 +126,7 @@ migrate_configurations() {
         "package.json"
         "pyproject.toml"
     )
-    
+
     for file in "${config_files[@]}"; do
         if [ -f "$OLD_REPO_PATH/$file" ]; then
             print_status "Copying $file..."
@@ -140,7 +140,7 @@ migrate_configurations() {
 # Function to migrate core AI components
 migrate_ai_components() {
     print_status "Migrating AI components..."
-    
+
     # List of potential AI component directories
     ai_dirs=(
         "ai"
@@ -154,7 +154,7 @@ migrate_ai_components() {
         "ml"
         "src/ml"
     )
-    
+
     for dir in "${ai_dirs[@]}"; do
         if [ -d "$OLD_REPO_PATH/$dir" ]; then
             print_status "Found AI components in: $dir"
@@ -166,7 +166,7 @@ migrate_ai_components() {
 # Function to migrate documentation
 migrate_documentation() {
     print_status "Migrating documentation..."
-    
+
     doc_dirs=(
         "docs"
         "documentation"
@@ -174,7 +174,7 @@ migrate_documentation() {
         "CONTRIBUTING.md"
         "CHANGELOG.md"
     )
-    
+
     for item in "${doc_dirs[@]}"; do
         if [ -e "$OLD_REPO_PATH/$item" ]; then
             if [ -d "$OLD_REPO_PATH/$item" ]; then
@@ -191,14 +191,14 @@ migrate_documentation() {
 # Function to migrate scripts
 migrate_scripts() {
     print_status "Migrating scripts..."
-    
+
     script_dirs=(
         "scripts"
         "tools"
         "utilities"
         "bin"
     )
-    
+
     for dir in "${script_dirs[@]}"; do
         if [ -d "$OLD_REPO_PATH/$dir" ]; then
             print_status "Found scripts in: $dir"
@@ -216,7 +216,7 @@ migrate_scripts() {
 # Function to migrate infrastructure code
 migrate_infrastructure() {
     print_status "Migrating infrastructure code..."
-    
+
     infra_dirs=(
         "infrastructure"
         "infra"
@@ -226,7 +226,7 @@ migrate_infrastructure() {
         "k8s"
         "docker"
     )
-    
+
     for dir in "${infra_dirs[@]}"; do
         if [ -d "$OLD_REPO_PATH/$dir" ]; then
             print_status "Found infrastructure code in: $dir"
@@ -238,14 +238,14 @@ migrate_infrastructure() {
 # Function to migrate test files
 migrate_tests() {
     print_status "Migrating test files..."
-    
+
     test_dirs=(
         "tests"
         "test"
         "testing"
         "__tests__"
     )
-    
+
     for dir in "${test_dirs[@]}"; do
         if [ -d "$OLD_REPO_PATH/$dir" ]; then
             print_status "Found tests in: $dir"
@@ -257,7 +257,7 @@ migrate_tests() {
 # Function to create essential files
 create_essential_files() {
     print_status "Creating essential files..."
-    
+
     # Create .env.example if it doesn't exist
     if [ ! -f "$BASE_PATH/.env.example" ]; then
         cat > "$BASE_PATH/.env.example" << 'EOF'
@@ -296,7 +296,7 @@ ENCRYPTION_KEY=your_encryption_key_here
 EOF
         print_status "Created .env.example"
     fi
-    
+
     # Create basic requirements.txt if it doesn't exist
     if [ ! -f "$BASE_PATH/requirements.txt" ]; then
         cat > "$BASE_PATH/requirements.txt" << 'EOF'
@@ -344,7 +344,7 @@ loguru>=0.7.2
 EOF
         print_status "Created requirements.txt"
     fi
-    
+
     # Create basic Dockerfile if it doesn't exist
     if [ ! -f "$BASE_PATH/Dockerfile" ]; then
         cat > "$BASE_PATH/Dockerfile" << 'EOF'
@@ -389,7 +389,7 @@ EOF
 # Function to set up git configuration
 setup_git() {
     print_status "Setting up Git configuration..."
-    
+
     # Update .gitignore
     cat >> "$BASE_PATH/.gitignore" << 'EOF'
 
@@ -430,21 +430,21 @@ build/
 dist/
 *.egg-info/
 EOF
-    
+
     print_status "Updated .gitignore"
 }
 
 # Function to run post-migration setup
 post_migration_setup() {
     print_status "Running post-migration setup..."
-    
+
     # Make scripts executable
     find "$BASE_PATH/scripts" -name "*.sh" -exec chmod +x {} \;
-    
+
     # Create Python __init__.py files
     find "$BASE_PATH/src" -type d -exec touch {}/__init__.py \;
     find "$BASE_PATH/tests" -type d -exec touch {}/__init__.py \;
-    
+
     print_status "Post-migration setup completed."
 }
 
@@ -454,17 +454,17 @@ display_migration_summary() {
     echo -e "${BLUE}Migration Summary${NC}"
     echo -e "${BLUE}=================${NC}"
     echo ""
-    
+
     # Count migrated files
     total_files=$(find "$BASE_PATH" -type f | wc -l)
     python_files=$(find "$BASE_PATH" -name "*.py" | wc -l)
     config_files=$(find "$BASE_PATH" -name "*.json" -o -name "*.yml" -o -name "*.yaml" | wc -l)
-    
+
     echo -e "Total files: ${GREEN}$total_files${NC}"
     echo -e "Python files: ${GREEN}$python_files${NC}"
     echo -e "Configuration files: ${GREEN}$config_files${NC}"
     echo ""
-    
+
     print_status "Migration completed successfully!"
     print_warning "Next steps:"
     echo "  1. Review migrated files and resolve any conflicts"
@@ -479,12 +479,12 @@ display_migration_summary() {
 main() {
     echo "Starting migration process..."
     echo ""
-    
+
     # Check if we should create directory structure
     if [ "$1" = "--create-structure" ] || [ ! -d "$BASE_PATH/src" ]; then
         create_directory_structure
     fi
-    
+
     # Check if old repository is available for migration
     if check_old_repository; then
         migrate_configurations
@@ -496,12 +496,12 @@ main() {
     else
         print_warning "Skipping file migration - old repository not available"
     fi
-    
+
     # Always create essential files and setup
     create_essential_files
     setup_git
     post_migration_setup
-    
+
     display_migration_summary
 }
 

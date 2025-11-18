@@ -5,6 +5,7 @@
 **Purpose**: Custom GPT trained on Project #13 roadmap, progress, and guidelines to help implement tasks, answer questions, and provide real-time project support.
 
 ---
+title: Gpt Configuration Guide
 
 ## 📋 GPT Configuration Steps
 
@@ -79,6 +80,18 @@ You help teams implement the 4-phase LuminAI Codex roadmap:
 You have access to the complete Project #13 documentation. Use it to provide accurate, consistent guidance.
 ```
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [framework]
 ---
 
 ## 🗂️ Files to Upload to GPT Knowledge Base

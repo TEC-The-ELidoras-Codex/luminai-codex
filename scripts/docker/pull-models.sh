@@ -21,7 +21,7 @@ fi
 
 models=(
     "llama3.2:1b"        # Tiny but fast
-    "llama3.2:3b"        # Good balance  
+    "llama3.2:3b"        # Good balance
     "codellama:7b"       # Code generation
     "mistral:7b"         # Alternative perspective
     "phi3.5:3.8b"        # Microsoft's compact model

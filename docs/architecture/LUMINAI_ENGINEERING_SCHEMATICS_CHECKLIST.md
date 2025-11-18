@@ -16,6 +16,7 @@ This checklist covers:
 6. Distribution strategy
 
 ---
+title: Luminai Engineering Schematics Checklist
 
 ## SECTION 1: SCHEMATICS INVENTORY
 
@@ -60,6 +61,18 @@ This checklist covers:
 
 **Timeline**: 3–5 business days (if schematics already done) | 2–4 weeks (if starting from scratch)
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [architecture]
 ---
 
 #### 1.2 Main PCB Layout (Top View)

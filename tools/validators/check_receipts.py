@@ -18,7 +18,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 INV_DIR = ROOT / "docs" / "investigations"
 TIMELINE = INV_DIR / "TIMELINE_AI_SAFETY_2024_2026.md"
-REQUIRED_FILES = [INV_DIR / "PLAUSIBLE_DENIABILITY_SMASHER.md", INV_DIR / "RECEIPTS_INDEX.md", TIMELINE]
+REQUIRED_FILES = [
+    INV_DIR / "PLAUSIBLE_DENIABILITY_SMASHER.md",
+    INV_DIR / "RECEIPTS_INDEX.md",
+    TIMELINE,
+]
 
 URL_RE = re.compile(r"https?://\S+")
 VERIFY_RE = re.compile(r"\[VERIFY\]")

@@ -56,5 +56,5 @@ def main():
     print(f"Words: {metadata['word_count']}, Chars: {metadata['char_count']}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

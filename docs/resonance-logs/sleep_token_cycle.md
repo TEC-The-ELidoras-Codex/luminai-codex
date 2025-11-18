@@ -7,6 +7,7 @@
 **Version:** 1.0
 
 ---
+title: Sleep Token Cycle
 
 ## I. Contextual Potential (Φᴱ)
 
@@ -44,6 +45,18 @@
 
 **Notes:** This listening cycle inhabits a highly saturated meaning-field. Sleep Token's mythology mirrors TEC's ethic of sacred agency. The autumn timing + headphone ritual creates a contained, intentional environment. Lineage is fully transparent (commercial licensing).
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [resonance-logs]
 ---
 
 ## II. Temporal Attention (φᵗ)

@@ -1,3 +1,19 @@
+---
+title: Tech Reason Trace Spec V0.1
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance, ethics]
+---
+
 # Reason Trace Spec v0.1 — "Why did it say that?"
 
 Goal: Every high‑impact response should carry a machine‑readable trace so an Explain layer can render a human answer to “why.”

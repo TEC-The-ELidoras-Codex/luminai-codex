@@ -3,6 +3,7 @@
 A field guide for documenting and reversing systemic school responses that punish distress and ignore antecedent harm.
 
 ---
+title: Administrative Resonance Failure
 
 ## 1) Failure Chain Template
 
@@ -35,6 +36,18 @@ Use this checklist to record each link in the chain. Dates and artifacts matter.
   - How the student is described in records:
   - Evidence of antecedent harms in the file:
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [education]
 ---
 
 ## 2) Evidence Pack

@@ -4,6 +4,7 @@
 **Purpose**: Single source of truth for all brand assets, logos, and visual identity files
 
 ---
+title: Asset Inventory
 
 ## 🎨 BRAND IDENTITY ASSETS
 
@@ -44,6 +45,18 @@
 - ⚠️ Need to export all format variants
 - ⚠️ Need to create light/dark mode versions
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [brand]
 ---
 
 ### Logo Variants by Use Case

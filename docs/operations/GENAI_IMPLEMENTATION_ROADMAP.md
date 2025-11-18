@@ -16,6 +16,7 @@
 - ConsentOS age verification flows ("Are you Gen Alpha or older?" vs "Are you 13+?")
 
 ---
+title: Genai Implementation Roadmap
 
 ### 2. Heterochromatic Persona System ✅
 **File:** `docs/reference/GENAI_LEXICON.md` (definitions) + `docs/reference/PERSONA_GLOBULE_VISUAL_SPEC.md` (implementation)
@@ -38,6 +39,18 @@
 - SVG eye asset creation
 - Animation library integration (Framer Motion or GSAP)
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [operations]
 ---
 
 ### 3. Mico-Style Visual Chat Interface ✅
@@ -206,4 +219,3 @@ User sees → Animated blob with deep violet + silver heterochromatic eyes
 **Last Updated:** November 15, 2025  
 **Status:** Foundation complete; ready for implementation phase  
 **Next Review:** After Week 1 deliverables (static globule + generation schema)
-

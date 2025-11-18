@@ -6,6 +6,7 @@
 > **Deliverable**: Three-surface integrated system with unified backend
 
 ---
+title: Multi Surface Execution Blueprint
 
 ## 🎯 What You're Building
 
@@ -40,6 +41,18 @@ The **LuminAI Resonance Platform** is a **three-surface ecosystem** where everyt
 - **CLI**: Power-user automation, scripting, batch operations, deployments
 - **Website**: Discovery, documentation, community, embedded platform access
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment]
 ---
 
 ## 📋 Three Locked Specifications

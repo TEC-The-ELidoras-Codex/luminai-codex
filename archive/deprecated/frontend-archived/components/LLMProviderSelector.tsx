@@ -1,11 +1,11 @@
 /**
  * LLM Provider Selector
- * 
+ *
  * Allows users to choose which AI provider to use:
  * - OpenAI (GPT-4, GPT-3.5)
  * - Anthropic (Claude)
  * - xAI (Grok)
- * 
+ *
  * Each provider has different strengths for conversation style
  */
 

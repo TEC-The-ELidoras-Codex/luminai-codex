@@ -6,6 +6,7 @@
 > **Target Launch**: Q1 2025
 
 ---
+title: Project 13 Roadmap
 
 ## 🎯 Mission
 
@@ -18,6 +19,18 @@ Build a modular, ethical AI infrastructure platform that prioritizes:
 
 **Context**: Child safety crisis (Roblox case + others) demands better infrastructure. LuminAI Codex represents a fundamental shift toward transparent, ethical AI technology.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [operations]
 ---
 
 ## 📋 Overview: 4-Phase Implementation

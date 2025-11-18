@@ -4,6 +4,7 @@ Primary reference: `docs/deployment/guides/ENV_LOCAL_SETUP.md`
 Example mapping extracted from `_TRANSFER_STAGING/docs_incoming/SECRETS_MAPPING_EXAMPLE.md`
 
 ---
+title: 07 Tech Env And Secrets
 
 ## Mandatory Variables
 
@@ -17,6 +18,18 @@ Example mapping extracted from `_TRANSFER_STAGING/docs_incoming/SECRETS_MAPPING_
 
 Store them in `.env.local` (ignored) or Codespaces secrets UI.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment, backend]
 ---
 
 ## Bitwarden Mapping Template

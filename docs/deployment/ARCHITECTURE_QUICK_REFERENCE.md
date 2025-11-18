@@ -5,6 +5,7 @@
 > **Last Updated**: November 12, 2025
 
 ---
+title: Architecture Quick Reference
 
 ## 🎯 The Three Surfaces
 
@@ -32,6 +33,18 @@
 **Features**: Landing page, searchable docs, read-only chat preview, authentication  
 **Spec**: `docs/deployment/WEBSITE_INTEGRATION_PLAN.md`
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment]
 ---
 
 ## 🧠 The Platform Hub (Backend)

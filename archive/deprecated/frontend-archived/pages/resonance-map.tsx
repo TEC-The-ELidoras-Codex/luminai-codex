@@ -1,6 +1,6 @@
 /**
  * RESONANCE MAP
- * 
+ *
  * Interactive visualization of semantic relationships
  * Nodes = key concepts from conversation
  * Orbits = semantic distance and strength

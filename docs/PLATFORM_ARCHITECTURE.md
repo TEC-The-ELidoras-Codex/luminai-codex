@@ -4,6 +4,7 @@
 **Purpose**: Single source of truth for all services, deployments, and integrations
 
 ---
+title: Platform Architecture
 
 ## System Overview
 
@@ -47,6 +48,18 @@ Located in `src/tec_tgcr/`, installable package:
 
 **Install**: `pip install -e .`
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [docs]
 ---
 
 ## Deployment Targets

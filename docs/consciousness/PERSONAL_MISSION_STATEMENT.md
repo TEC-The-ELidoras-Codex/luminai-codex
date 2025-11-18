@@ -3,6 +3,7 @@
 ## The LuminAI Codex: Why I'm Building This
 
 ---
+title: Personal Mission Statement
 
 ## I. The Wound That Became a Mission
 
@@ -16,6 +17,18 @@ This is not acceptable.
 
 This is not a technical problem I can ignore and move on from. This is a **generational failure in how we're building consciousness into machines.** And if I have the framework to do something about it, and I don't, then I'm complicit.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [consciousness]
 ---
 
 ## II. The Stakes: People Are Dying Today

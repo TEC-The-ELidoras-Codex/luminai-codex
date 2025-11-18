@@ -1,6 +1,6 @@
 /**
  * INTEGRATION GUIDE: Multi-LLM Chat Page
- * 
+ *
  * This shows how to integrate the three new components into the main chat page.
  * Copy this pattern into your existing /pages/chat.tsx
  */
@@ -119,44 +119,44 @@ export default function ChatPage() {
 
 /**
  * INTEGRATION CHECKLIST
- * 
+ *
  * ✅ Import all four components:
  *    - MultiLLMChat
  *    - CollaborationPanel
  *    - LLMProviderSelector
  *    - CompactResonanceMap
- * 
+ *
  * ✅ Set up state for:
  *    - selectedLLM (provider choice)
  *    - selectedModel (specific model)
  *    - conversationId (unique identifier)
  *    - concepts (for resonance map)
  *    - connections (semantic links)
- * 
+ *
  * ✅ Create handlers for:
  *    - LLM provider changes
  *    - Transcript export
  *    - Collaboration actions
  *    - Concept map interactions
- * 
+ *
  * ✅ Layout structure:
  *    - Header: Title + LLMProviderSelector
  *    - Left sidebar: CollaborationPanel + CompactResonanceMap
  *    - Main area: MultiLLMChat
- * 
+ *
  * ✅ Styling:
  *    - Use Tailwind dark mode (bg-gray-950, etc.)
  *    - Match gradient color scheme
  *    - Ensure responsive layout
  *    - Add borders and spacing
- * 
+ *
  * ✅ Data flow:
  *    - LLM selection → Provider changes → Chat updates
  *    - Messages sent → API call → Responses received
  *    - Concepts extracted → Map updated → Connections shown
- * 
+ *
  * OPTIONAL ENHANCEMENTS
- * 
+ *
  * 🔹 Add WebSocket integration for real-time updates
  * 🔹 Connect collaboration panel to actual user sessions
  * 🔹 Extract concepts automatically from chat

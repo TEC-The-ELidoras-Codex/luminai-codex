@@ -1,6 +1,6 @@
 /**
  * Multi-LLM Collaboration Chat
- * 
+ *
  * Allow Claude, OpenAI, and xAI to have conversations together
  * Each LLM sees previous responses and builds on them
  * Creates natural debate/discussion dynamic

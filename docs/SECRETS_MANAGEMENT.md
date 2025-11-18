@@ -5,11 +5,13 @@
 **NO REAL SECRETS ON YOUR LOCAL MACHINE UNLESS ABSOLUTELY NECESSARY.**
 
 All secrets live in **ONE PLACE ONLY**:
+
 - **GitHub Secrets** (for CI/CD)
 - **Bitwarden** (for local development, if needed)
 - **NEVER** in `.env.local` or any other file on disk
 
 ---
+title: Secrets Management
 
 ## File Structure (What's Where)
 
@@ -30,6 +32,20 @@ All secrets live in **ONE PLACE ONLY**:
     ├── xAI API
     └── [Other services]
 ```
+
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+
+- persona: Ely
+    role: Engineering Steward
+owner_checklist:
+- [ ] Read and understood
+- [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+- [ ] Tested commands/steps (if procedural)
+- [ ] Old version archived if replaced
+tags: [docs]
 
 ---
 
@@ -89,14 +105,17 @@ nano .env.local
 ## Git Protections (Automatic)
 
 ### 🛡️ Pre-commit Hook
+
 Located at: `.git/hooks/pre-commit`
 
 **What it does:**
+
 - Scans staged files for `.env*` patterns
 - Blocks commit if any `.env` file is staged
 - Error message explains why and how to fix
 
 **If you accidentally stage `.env.local`:**
+
 ```bash
 git reset HEAD .env.local        # Unstage it
 git checkout -- .env.local       # Restore from disk
@@ -104,6 +123,7 @@ git commit -m "..."              # Try again
 ```
 
 ### 🛡️ .gitignore Rules
+
 Located at: `.gitignore`
 
 ```gitignore
@@ -120,11 +140,11 @@ Located at: `.gitignore`
 
 1. **Identify what leaked** (check `.env.local`, git history)
 2. **Revoke everything:**
-   - GitHub App → https://github.com/settings/apps
-   - OpenAI → https://platform.openai.com/api-keys
-   - Anthropic → https://console.anthropic.com
+   - GitHub App → <https://github.com/settings/apps>
+   - OpenAI → <https://platform.openai.com/api-keys>
+   - Anthropic → <https://console.anthropic.com>
    - xAI → xAI dashboard
-   - GitHub Tokens → https://github.com/settings/tokens
+   - GitHub Tokens → <https://github.com/settings/tokens>
 
 3. **Update Bitwarden** with new credentials
 
@@ -160,6 +180,99 @@ git commit -m "test"  # Should FAIL with security warning
 ```
 
 ---
+
+## ⚙️ Quick helpers included in repo
+
+To make adding repository secrets easier, this repo now includes interactive helper scripts:
+
+- `scripts/secrets/add_github_secrets.sh` — Bash script (WSL / Linux / macOS) that prompts for each secret and uses the `gh` CLI to set repository secrets.
+- `scripts/secrets/add_github_secrets.ps1` — PowerShell script equivalent for Windows PowerShell.
+
+Usage (example):
+
+```bash
+# Login to GitHub CLI first:
+gh auth login
+
+# Then run the interactive helper (WSL / bash):
+./scripts/secrets/add_github_secrets.sh
+
+# Or in PowerShell:
+./scripts/secrets/add_github_secrets.ps1
+```
+
+Important: do not paste secrets into chat or issue trackers. Use these interactive scripts locally so values are read from stdin and sent directly to GitHub.
+
+### Bitwarden → GitHub automation
+
+If you keep secrets in Bitwarden (the recommended approach), you can automate pushing them to GitHub using the Bitwarden CLI and the GitHub CLI. The repo includes a helper script:
+
+- `scripts/secrets/bitwarden_to_github.sh` — reads `secrets-local/bw/mapping.json` (JSON map ENV_NAME -> Bitwarden item title) and sets GitHub Actions secrets using your current `bw` session and `gh` login.
+
+Example mapping template: `secrets-local/bw/mapping.json.example` (copy to `secrets-local/bw/mapping.json` and edit names to match your Bitwarden items).
+
+Usage (WSL / bash):
+
+```bash
+# 1) Login and unlock Bitwarden CLI
+bw login
+bw unlock
+export BW_SESSION=$(bw unlock --raw)
+
+# 2) Authenticate gh CLI
+gh auth login
+
+# 3) Copy the example mapping and edit
+cp secrets-local/bw/mapping.json.example secrets-local/bw/mapping.json
+# Edit secrets-local/bw/mapping.json to match your Bitwarden item names
+
+# 4) Run the sync script
+./scripts/secrets/bitwarden_to_github.sh
+```
+
+Important: the script reads the `BW_SESSION` environment variable to authenticate with `bw` (do not commit your session value). The script extracts common fields from Bitwarden items in this order: `.login.password`, `.notes`, and then `.fields[].value`.
+
+
+## Optional backend secrets (Arcadia / FOLD)
+
+Some entries you may see in `.env.example` (for example `TEC_ARCADIA_URL`,
+`TEC_ARCADIA_API_KEY`, and `FOLD_API_URL`) are optional placeholders that come from
+the repository's server/back-end scaffolding and deployment documentation. They are
+present to support running the Arcadia "resonance" backend or other server-side
+integrations from this repo.
+
+If you only use this repository as a static site (GitHub Pages) or manage a
+separate WordPress site (not deployed from this repo), you do NOT need these
+values. They were included by the original project scaffolding (templates and
+deployment docs) or added by previous maintainers to document optional integrations.
+
+How to restore/enable them if you ever need them:
+
+1. Create Bitwarden items with clear names (example: "Arcadia API Key", "Fold API URL").
+2. Copy `secrets-local/bw/mapping.json.example` → `secrets-local/bw/mapping.json` and
+   add mapping entries like:
+
+```json
+{
+  "TEC_ARCADIA_API_KEY": "Arcadia API Key",
+  "FOLD_API_URL": "Fold API URL"
+}
+```
+
+3. Unlock Bitwarden and run the `bitwarden_to_github.sh` helper to populate GitHub
+   Actions secrets, or manually add them to GitHub repo secrets if preferred.
+
+Notes on provenance: these keys typically originate from one of these places:
+
+- The project's initial scaffold/template that included a backend service definition.
+- Developer-added entries for optional integrations that may be run locally by
+  engineers (resonance testing, dev-only services).
+- Documentation in `docs/deployment/backend/07_TECH_ENV_AND_SECRETS.md` which
+  intentionally lists optional integrations.
+
+If you'd like, I can prune these optional placeholders from `.env.example` and
+the default mapping file to keep the repo minimal — or leave them commented as
+optional examples. Tell me which you prefer.
 
 **Last Updated:** November 16, 2025  
 **Status:** 🔒 ALL PROTECTIONS ACTIVE
@@ -198,4 +311,8 @@ Implement `scripts/security/rotate_secrets.py` to:
 3. Update vault + emit signed rotation receipt to `reports/secret-rotations/`
 
 ---
+
+## Optional backend secrets (Arcadia / FOLD)
+
+Some entries in .env.example (for example TEC_ARCADIA_URL, TEC_ARCADIA_API_KEY, FOLD_API_URL) are optional placeholders from the project's backend scaffolding. If you only run a static site (GitHub Pages) or manage a separate WordPress instance, you can ignore these. They were added by repository scaffolding or maintainers. See docs/deployment/backend/07_TECH_ENV_AND_SECRETS.md for details.
 

@@ -4,11 +4,13 @@ We do not require a live Cosmos DB; the global cosmos_db instance will be in
 "degraded" mode (connected == False) when env vars are absent. Test ensures
 routes respond and include cosmos flag.
 """
+
 from fastapi.testclient import TestClient
 from backend.main import app
 from backend.lib.cosmos_db import cosmos_db
 
 client = TestClient(app)
+
 
 def test_root_includes_cosmos_flag():
     resp = client.get("/")
@@ -16,6 +18,7 @@ def test_root_includes_cosmos_flag():
     data = resp.json()
     assert "cosmos_connected" in data
     assert data["cosmos_connected"] in (True, False)
+
 
 def test_message_route_graceful_without_cosmos():
     # Ensure cosmos not configured for this test context
@@ -25,7 +28,7 @@ def test_message_route_graceful_without_cosmos():
         "session_id": "test-session-1",
         "context": {"history": []},
         "session_active": True,
-        "user_terminated": False
+        "user_terminated": False,
     }
     resp = client.post("/api/message", json=payload)
     assert resp.status_code == 200

@@ -4,11 +4,24 @@
 **Purpose**: Consolidated index of all getting-started guides, quickstarts, and how-tos
 
 ---
+title: Unified Guides Inventory
 
 ## 📚 GUIDE CATEGORIES
 
 This inventory organizes all guides by purpose, eliminating duplication and providing clear navigation paths.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [operations]
 ---
 
 ## 🚀 QUICK STARTS (Getting Started Fast)

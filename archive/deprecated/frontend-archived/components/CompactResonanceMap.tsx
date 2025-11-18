@@ -1,6 +1,6 @@
 /**
  * RESONANCE MAP COMPONENT
- * 
+ *
  * Embeddable visualization with simplified orbit physics
  * Used in chat sidebar or as full-page interactive map
  */
@@ -61,7 +61,7 @@ export const CompactResonanceMap: React.FC<CompactResonanceMapProps> = ({
     // Draw resonance lines first (behind nodes)
     ctx.strokeStyle = 'rgba(100, 150, 200, 0.2)';
     ctx.lineWidth = 1;
-    
+
     resonances.forEach(res => {
       const source = concepts.find(c => c.id === res.source);
       const target = concepts.find(c => c.id === res.target);

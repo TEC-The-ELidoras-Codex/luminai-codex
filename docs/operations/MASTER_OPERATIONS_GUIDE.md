@@ -5,6 +5,7 @@
 **Phase**: Branding + Security Framework Complete
 
 ---
+title: Master Operations Guide
 
 ## 🗺️ Navigation: Where Everything Is
 
@@ -50,6 +51,18 @@
 | **Arcadia Portal** | `modules/arcadia-portal/index.js` | External integrations |
 | **Harmony Node** | `lib/harmony.js` | Event bus + routing |
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [operations]
 ---
 
 ## 🚀 QUICK START: What to Do Now

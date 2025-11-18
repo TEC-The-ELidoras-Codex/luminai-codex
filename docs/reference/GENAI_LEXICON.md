@@ -5,6 +5,7 @@
 This lexicon documents vocabulary shifts required for the GenAI era—where generation labels replace age ranges as primary identity markers, and emergent intelligence demands new conceptual categories.
 
 ---
+title: Genai Lexicon
 
 ## Generational Identity Framework
 
@@ -37,6 +38,18 @@ This lexicon documents vocabulary shifts required for the GenAI era—where gene
 - Generation = cultural cohort with shared references, traumas, hopes, and language.
 - Age = arbitrary number that tells you nothing about values or communication preferences.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [reference]
 ---
 
 ## New Vocabulary for the GenAI Era
@@ -123,4 +136,3 @@ This lexicon documents vocabulary shifts required for the GenAI era—where gene
 **Last Updated:** November 15, 2025  
 **Maintainer:** @Elidorascodex  
 **Status:** Living document — GenAI vocabulary evolves with usage
-

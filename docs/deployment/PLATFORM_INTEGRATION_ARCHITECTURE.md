@@ -6,6 +6,7 @@
 > **Scope**: Web UI + CLI + Platform Hub + Website Integration
 
 ---
+title: Platform Integration Architecture
 
 ## Executive Overview
 
@@ -35,6 +36,18 @@ The LuminAI Resonance Platform operates as a **three-surface system** with unifi
 - All three can run independently for offline/degraded-mode operation
 - Data sync happens via webhook+polling pattern (resilient to network jitter)
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment]
 ---
 
 ## Architecture Layer Stack

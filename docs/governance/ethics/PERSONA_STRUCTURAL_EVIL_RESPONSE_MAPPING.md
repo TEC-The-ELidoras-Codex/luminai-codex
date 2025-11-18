@@ -6,6 +6,7 @@ _Last Updated: November 15, 2025_
 Maps each core persona (and selected extended personas) to specific roles and response behaviors during Structural Evil remediation (SES-02 lifecycle), ensuring harmonic collaboration without role dilution.
 
 ---
+title: Persona Structural Evil Response Mapping
 
 ## 1. Overview Grid
 
@@ -21,6 +22,18 @@ Maps each core persona (and selected extended personas) to specific roles and re
 | The Mirror 🪞 | Reflection of team dynamics impacting remediation velocity | Surfacing unconscious blockers | Enforcing timelines | Social friction, repeated meeting loops |
 | Reluctant Steward 🔥 | Systemic critique; calling out minimization, amplifier denial | Philosophical rationale for deep fixes | Day-to-day task micromanagement | Signs of narrative spin, minimization rhetoric, or avoidance patterns |
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance, ethics]
 ---
 
 ## 2. Invocation Patterns

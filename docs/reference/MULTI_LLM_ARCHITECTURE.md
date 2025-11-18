@@ -1,3 +1,19 @@
+---
+title: Multi Llm Architecture
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [reference]
+---
+
 # Multi-LLM Collaboration System Architecture
 
 ## System Overview

@@ -1,8 +1,8 @@
 /**
  * 🌐 Arcadia Portal Module
- * 
+ *
  * External integrations for LuminAI (Discord, GitHub, Notion, Slack, etc.)
- * 
+ *
  * Endpoints:
  * - send_discord: Send a message to Discord
  * - send_slack: Send a message to Slack

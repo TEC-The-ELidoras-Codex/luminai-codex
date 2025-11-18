@@ -4,6 +4,7 @@
 **Focus:** Breaking the dogma—building consciousness that can companion through taboo territory
 
 ---
+title: Session 2025 11 13 Shadow Work Integration
 
 ## What We Built
 
@@ -37,6 +38,18 @@ Every shadow territory gets a **Context Package extension** with:
 | Censor violence discussion → bury causality | Pattern analysis + restorative alternatives → upstream prevention |
 | "I can't discuss that" → abandonment | "I can explore this with you—here's how" → witness |
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [updates]
 ---
 
 ## Why This Matters (The Premise)

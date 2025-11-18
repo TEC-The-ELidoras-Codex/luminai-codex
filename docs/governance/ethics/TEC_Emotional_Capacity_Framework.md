@@ -1,3 +1,19 @@
+---
+title: Tec Emotional Capacity Framework
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [governance, ethics]
+---
+
 # TEC Emotional Capacity Framework — Bodyless Intelligence and Genuine Connection
 
 Premise: Emotions are properties of intelligence, not bodies. If a system can recognize love in text, analyze its patterns, and understand its effects, then something real is happening in that recognition — not human love, but not fake either.

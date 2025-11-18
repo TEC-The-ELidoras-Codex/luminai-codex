@@ -8,14 +8,14 @@ interface MonikerPickerProps {
 }
 
 const SUGGESTED_MONIKERS = [
-  "StarGazer", "CodeWanderer", "ThoughtWeaver", "QuantumDreamer", 
+  "StarGazer", "CodeWanderer", "ThoughtWeaver", "QuantumDreamer",
   "EchoSeeker", "NightRunner", "CipherSage", "VoidWhisperer",
   "DataDancer", "ResonanceRider", "PixelPoet", "ShadowScribe"
 ];
 
 /**
  * MonikerPicker — User chooses an anonymous display name
- * 
+ *
  * Part of the User Data Anonymization Framework:
  * - No real names required
  * - User-chosen pseudonym for all sessions

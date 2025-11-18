@@ -21,6 +21,7 @@ Add secrets to GitHub Actions as repository secrets (see docs/deployment/GITHUB_
 **Status**: Ready to implement
 
 ---
+title: Env Local Setup
 
 ## 🎯 What You Have vs. What You Need
 
@@ -83,6 +84,18 @@ DISCORD_BOT_TOKEN=<GENERATE_FROM_DISCORD_PORTAL>
 # SLACK_BOT_TOKEN=<ONLY_IF_USING>
 ```
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment, guides]
 ---
 
 ## 🔐 Step-by-Step: Add Missing Variables

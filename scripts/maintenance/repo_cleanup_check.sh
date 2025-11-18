@@ -33,11 +33,10 @@ git ls-files --others --exclude-standard | sed -n '1,200p' || true
 echo
 
 echo "7) Suggested next commands (no automatic deletion):"
-echo "  - Review the largest files above and decide which to archive or remove." 
+echo "  - Review the largest files above and decide which to archive or remove."
 echo "  - To preview removal: git clean -nd ; To apply: git clean -fd  # CAUTION"
 echo "  - To preview ignored removal: git clean -ndX ; To apply: git clean -fdX  # CAUTION"
 echo "  - To archive a directory: tar -czvf ../repo-archive-\$(date +%Y%m%d%H%M).tar.gz <path>"
 echo
 
 echo "Inspection complete. Reply here with which files/paths you'd like me to archive or remove, and I'll prepare the exact commands or create tarballs for you."
-

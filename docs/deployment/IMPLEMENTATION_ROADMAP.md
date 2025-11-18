@@ -6,6 +6,7 @@
 > **Scope**: Complete 4-phase rollout (7-8 weeks)
 
 ---
+title: Implementation Roadmap
 
 ## 🎯 Quick Navigation
 
@@ -16,6 +17,18 @@
 
 👉 **Each phase has a clear deliverable date and success criteria**
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [deployment]
 ---
 
 ## 📋 PHASE 1: Foundation (Weeks 1–2)

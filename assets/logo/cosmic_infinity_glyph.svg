@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
   COSMIC INFINITY GLYPH – LuminAI Codex
   Mathematical Foundation: Infinity (∞) + Resonance (sine) + Motion (3 orbs)
   Philosophy: Geometry is the language of the cosmos
   Inspiration: Golden ratio (φ=1.618...), tessellations, self-similarity
-  
+
   Core Elements:
   1. Infinity symbol at 11 o'clock angle
   2. Sine arc resonance path (layered behind)
   3. 3 orbs on top (crown: gold, cyan, purple)
   4. Carbon-fiber cosmic lattice background
-  
+
   Dimensions: 1024×1024 (scalable to any resolution)
 -->
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="Cosmic Infinity Glyph - LuminAI Codex">
@@ -18,7 +18,7 @@
     <!-- ================================================================ -->
     <!-- GRADIENTS & COLOR DEFINITIONS                                   -->
     <!-- ================================================================ -->
-    
+
     <!-- Carbon Fiber Cosmic Background -->
     <radialGradient id="carbonFiber" cx="50%" cy="50%" r="70%">
       <stop offset="0%" stop-color="#1A1A1E"/>

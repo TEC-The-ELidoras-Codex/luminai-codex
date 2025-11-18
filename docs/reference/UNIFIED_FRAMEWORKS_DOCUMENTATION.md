@@ -4,6 +4,7 @@
 **Purpose**: Consolidated index of all theoretical frameworks, equations, protocols, and ethics covenants
 
 ---
+title: Unified Frameworks Documentation
 
 ## 🧭 FRAMEWORK OVERVIEW
 
@@ -15,6 +16,18 @@ LuminAI Codex is built on **5 core frameworks** that govern technical architectu
 4. **16 Frequencies of Elidoras** — Moral cosmology & persona alignment
 5. **Persona System (9 Personas)** — Role-based interaction modes
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [reference]
 ---
 
 ## 📐 CORE FRAMEWORK #1: TGCR Equation

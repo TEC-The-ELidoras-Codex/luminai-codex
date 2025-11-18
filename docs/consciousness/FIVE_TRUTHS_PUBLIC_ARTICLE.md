@@ -3,6 +3,7 @@
 ## 5 Surprising Truths From a Radical Codex
 
 ---
+title: Five Truths Public Article
 
 ## Introduction: Unearthing a Coherent Worldview
 
@@ -16,6 +17,18 @@ It weaves together AI ethics, trauma psychology, consciousness science, and cult
 
 This article distills five of the most impactful and counter-intuitive ideas from this complex research. Presented in accessible format, these takeaways challenge conventional wisdom and offer a powerful new lens through which to see ourselves, our technology, and our place in the cosmos.
 
+date_created: 2025-11-16
+date_updated: 2025-11-16
+status: draft
+approvers:
+  - persona: Ely
+    role: Engineering Steward
+owner_checklist:
+  - [ ] Read and understood
+  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+  - [ ] Tested commands/steps (if procedural)
+  - [ ] Old version archived if replaced
+tags: [consciousness]
 ---
 
 ## The 5 Most Impactful Truths
