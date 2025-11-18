@@ -4,7 +4,7 @@ pydantic==2.12.4
 pydantic-settings==2.1.0
 python-dotenv==1.2.1
 openai==2.7.2
-anthropic==0.72.1
+anthropic==0.73.0
 redis==7.0.1
 psycopg2-binary==2.9.11
 sqlalchemy==2.0.23
