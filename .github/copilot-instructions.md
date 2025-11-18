@@ -4,7 +4,7 @@
 
 - Anchor yourself with `docs/STRUCTURE.md` (documentation map) and `docs/operations/TEC_HUB.md` (navigation hub) before modifying docs or flows.
 - Treat specs in `docs/reference/QUICK_REFERENCE_READY.md` and `README.md` as commitments; new work should either satisfy or explicitly update those promises.
-- Keep the cosmic-futurism voice (emoji module names, resonance language) consistent when touching copy or logs.
+- Keep the cosmic-futurism voice (emoji module names, resonance language) consii nestent when touching copy or logs.
 - When proposing new docs, link them from `docs/STRUCTURE.md` rather than duplicating existing material.
 
 ## Runtime Architecture

@@ -210,7 +210,7 @@ Now tracked in:
 > Spotify client secret NEVER touches `.env.local`. It lives in:
 >
 > 1. Bitwarden vault: `TEC-TGCR/Spotify API`
-> 2. GitHub Secrets: `SPOTIFY_CLIENT_SECRET`
+> 2. GitHub Secrets: `SPOTIFY_CLIENT_SECRET` <!-- pragma: allowlist secret -->
 > 3. Pulled at runtime via CI or local script.
 > Zero exceptions. If you're tempted to paste it for "just testing" — stop. Use the demo mode flag instead.
 <!-- pragma: allowlist secret -->

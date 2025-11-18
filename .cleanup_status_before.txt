@@ -1,0 +1,9 @@
+ M .env.example
+ M docs/SECRETS_MANAGEMENT.md
+?? .cleanup_status_before.txt
+?? docs/SECRETS_MANAGEMENT.md.backup
+?? docs/SECRETS_MANAGEMENT.md.prune-backup
+?? frontend/app/
+?? frontend/components/
+?? frontend/postcss.config.cjs
+?? frontend/styles/
