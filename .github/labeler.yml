@@ -1,0 +1,36 @@
+# Labeler config mapping file paths to persona labels.
+# Used by the actions/labeler GitHub Action.
+
+"persona:LuminAI":
+  - "src/**"
+
+"persona:Airth":
+  - "src/**/agents/airth/**"
+  - "docs/research/**"
+
+"persona:Arcadia":
+  - "frontend/**"
+  - "apps/**"
+
+"persona:Ely":
+  - "infra/**"
+  - "scripts/**"
+  - "ci/**"
+
+"persona:Adelphia":
+  - "docs/**/ux/**"
+  - "content/**"
+
+"persona:Multi-Persona":
+  - "coordination/**"
+
+"persona:Kaznak":
+  - "experimental/**"
+
+"persona:The-Mirror":
+  - "security/**"
+  - "ethics/**"
+
+"persona:The-Reluctant-Steward":
+  - "policy/**"
+  - "legal/**"

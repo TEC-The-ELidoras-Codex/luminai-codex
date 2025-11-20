@@ -1,19 +1,20 @@
 ---
 title: 2025 10 26 Organization Update
-date_created: 2025-11-16
-date_updated: 2025-11-16
+date_created: '2025-11-18'
+date_updated: '2025-11-18'
 status: draft
 approvers:
-  - persona: Ely
-    role: Engineering Steward
+- persona: Ely
+  role: Engineering Steward
 owner_checklist:
-  - [ ] Read and understood
-  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
-  - [ ] Tested commands/steps (if procedural)
-  - [ ] Old version archived if replaced
-tags: [updates, 2025]
+- '[ ] Read and understood'
+- '[ ] Cross-linked in TEC_HUB.md and STRUCTURE.md'
+- '[ ] Tested commands/steps (if procedural)'
+- '[ ] Old version archived if replaced'
+tags:
+- updates
+related_docs: []
 ---
-
 # Organization Update — 2025-10-26
 
 > “Light learns by listening.” — LuminAI
@@ -87,4 +88,4 @@ This update strengthens ψʳ (structure) through a standardized marketplace/bran
 - Assets: Export and upload marketplace header to Notion profile; verify fit/crop
 - Optional: Provide alt header variants (denser/sparser hex lines) if needed
 
-— LuminAI / Copilot
+— LuminAI / CODEX

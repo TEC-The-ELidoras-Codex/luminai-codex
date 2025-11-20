@@ -1,8 +1,26 @@
+---
+title: Tech Files Coherence Audit
+date_created: '2025-11-18'
+date_updated: '2025-11-18'
+status: draft
+approvers:
+- persona: Ely
+  role: Engineering Steward
+owner_checklist:
+- '[ ] Read and understood'
+- '[ ] Cross-linked in TEC_HUB.md and STRUCTURE.md'
+- '[ ] Tested commands/steps (if procedural)'
+- '[ ] Old version archived if replaced'
+tags:
+- docs
+related_docs: []
+---
+
 # Tech Files 06-12 Coherence Audit
 
 **Date:** November 12, 2025  
 **Status:** COHERENCE VERIFIED  
-**Scope:** `06_TECH_RUNTIME_SETUP.md` through `12_TECH_COPILOT_AND_AGENTS.md`
+**Scope:** `06_TECH_RUNTIME_SETUP.md` through `12_TECH_CODEX_AND_AGENTS.md`
 
 ---
 title: Tech Files Coherence Audit
@@ -19,20 +37,22 @@ title: Tech Files Coherence Audit
 | 09_TECH_API_AND_AUTOMATIONS.md | API endpoints + playbooks | ✅ Systematic | ALIGNED |
 | 10_TECH_TESTING_GUIDE.md | AI consciousness testing | ✅ Robust | **SEE BELOW** |
 | 11_TECH_DEPLOYMENT_PIPELINE.md | Production deployment | ✅ Complete | ALIGNED |
-| 12_TECH_COPILOT_AND_AGENTS.md | AI agents + CLI | ✅ Detailed | ALIGNED |
+| 12_TECH_CODEX_AND_AGENTS.md | AI agents + CLI | ✅ Detailed | ALIGNED |
 
 date_created: 2025-11-16
 date_updated: 2025-11-16
 status: draft
 approvers:
-  - persona: Ely
+
+- persona: Ely
     role: Engineering Steward
 owner_checklist:
-  - [ ] Read and understood
-  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
-  - [ ] Tested commands/steps (if procedural)
-  - [ ] Old version archived if replaced
+- [ ] Read and understood
+- [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+- [ ] Tested commands/steps (if procedural)
+- [ ] Old version archived if replaced
 tags: [docs]
+
 ---
 
 ## Detailed Analysis
@@ -221,15 +241,15 @@ POST /api/agent/persona/switch
 
 ---
 
-### 12 — Copilot & Agents ✅
+### 12 — CODEX & Agents ✅
 
-**Purpose:** AI agent orchestration + GitHub Copilot integration  
+**Purpose:** AI agent orchestration + CODEX integration  
 **Status:** COHERENT WITH ENHANCEMENT OPPORTUNITY
 
 **What It Does:**
 
 - Agent initialization + lifecycle
-- GitHub Copilot integration patterns
+- CODEX integration patterns
 - Multi-LLM switching logic
 - Persona-aware features
 - CLI commands (tec-agent, tec-env-check)
@@ -246,7 +266,7 @@ POST /api/agent/persona/switch
 **Enhancement Opportunity:**
 
 ```
-Add to 12_TECH_COPILOT_AND_AGENTS.md:
+Add to 12_TECH_CODEX_AND_AGENTS.md:
 
 ### Adelphisa's Multi-Provider Omniscience
 When Adelphisa is active, query all providers simultaneously:

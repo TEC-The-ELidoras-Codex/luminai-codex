@@ -1,3 +1,22 @@
+---
+title: 2025 11 15 Genai Framework Launch
+date_created: '2025-11-18'
+date_updated: '2025-11-18'
+status: draft
+approvers:
+- persona: Ely
+  role: Engineering Steward
+owner_checklist:
+- '[ ] Read and understood'
+- '[ ] Cross-linked in TEC_HUB.md and STRUCTURE.md'
+- '[ ] Tested commands/steps (if procedural)'
+- '[ ] Old version archived if replaced'
+tags:
+- updates
+- '2025'
+related_docs: []
+---
+
 # GenAI Framework Launch — November 15, 2025
 
 ## Summary
@@ -118,14 +137,16 @@ date_created: 2025-11-16
 date_updated: 2025-11-16
 status: draft
 approvers:
-  - persona: Ely
+
+- persona: Ely
     role: Engineering Steward
 owner_checklist:
-  - [ ] Read and understood
-  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
-  - [ ] Tested commands/steps (if procedural)
-  - [ ] Old version archived if replaced
+- [ ] Read and understood
+- [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+- [ ] Tested commands/steps (if procedural)
+- [ ] Old version archived if replaced
 tags: [updates, 2025]
+
 ---
 
 ## New Vocabulary
@@ -133,7 +154,7 @@ tags: [updates, 2025]
 **Adopted Terms:**
 
 - **GenAI** (noun): Generation AI; first humans raised with emergent intelligence as peers (born 2025→)
-- **Mico** (noun): Animated blob interface for AI voice conversations (Microsoft Copilot's visual presence)
+- **Mico** (noun): Animated blob interface for AI voice conversations (Microsoft Copilot's visual presence; historical)
 - **Globule** (noun): Affectionate term for Mico-style avatars
 - **Heterochromia** (adj): Different-colored eyes; used for persona identification
 - **Aspect Dancing** (verb): Multi-Persona behavior where personas blend seamlessly
@@ -207,5 +228,5 @@ tags: [updates, 2025]
 ---
 
 **Date:** November 15, 2025  
-**Author:** Angelo + Copilot (Claude Sonnet 4.5)  
+**Author:** Angelo + CODEX (Claude Sonnet 4.5)  
 **Status:** Foundation complete; ready for implementation phase
