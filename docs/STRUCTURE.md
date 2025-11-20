@@ -1,19 +1,23 @@
 ---
-title: Documentation Structure — LuminAI Codex
-date_created: 2025-11-16
-date_updated: 2025-11-16
+title: "Documentation Structure \u2014 LuminAI Codex"
+date_created: '2025-11-18'
+date_updated: '2025-11-18'
 status: draft
 approvers:
-  - persona: Ely
-    role: Engineering Steward
+- persona: Ely
+  role: Engineering Steward
 owner_checklist:
-   - [ ] Read and understood
-   - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
-   - [ ] Tested links
-   - [ ] Archived old versions if replaced
-tags: [docs, navigation]
+- '[ ] Read and understood'
+- '[ ] Cross-linked in TEC_HUB.md and STRUCTURE.md'
+- '[ ] Tested links'
+- '[ ] Archived old versions if replaced'
+- '[ ] Tested commands/steps (if procedural)'
+- '[ ] Old version archived if replaced'
+tags:
+- docs
+- navigation
+related_docs: []
 ---
-
 ## 📚 LuminAI Codex — Documentation Structure
 
 This document maps ALL documentation in the repository and explains what each folder contains.
@@ -260,12 +264,12 @@ Overview: Visual identity, logos, design tokens, and marketing materials
 
 ### 🎁 **`llm-onboarding/`** — LLM Gift Package (20 Files Max)
 
-**Purpose:** Rapidly brief any agent/Copilot on the entire LuminAI framework in under five minutes. Built from the `_TRANSFER_STAGING` audit.
+**Purpose:** Rapidly brief any agent/CODEX on the entire LuminAI framework in under five minutes. Built from the `_TRANSFER_STAGING` audit.
 
 **Layout:**
 
 - `01–05 CORE_*` — System instructions, personas, resonance theory, Aqueduct conjecture, context package spec.
-- `06–12 TECH_*` — Runtime setup, secrets, Docker stack, APIs/webhooks, testing, deployment, Copilot integration.
+- `06–12 TECH_*` — Runtime setup, secrets, Docker stack, APIs/webhooks, testing, deployment, CODEX integration.
 - `13–20 REF_*` — Glossary, resonance map, data axioms, persona registry, troubleshooting, style/brand, escalation, resource index.
 
 **When to use:** Paste the folder into a model’s retrieval context, bootstrap a new automation “employee,” or onboard a human teammate who needs the distilled view before diving into canonical docs.

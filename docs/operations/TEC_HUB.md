@@ -1,17 +1,24 @@
 ---
-title: TEC Hub — Core Navigation
-date_created: 2025-11-16
-date_updated: 2025-11-16
+title: "TEC Hub \u2014 Core Navigation"
+date_created: '2025-11-18'
+date_updated: '2025-11-18'
 status: draft
-approvers: []
+approvers:
+- persona: Ely
+  role: Engineering Steward
 owner_checklist:
-  - [ ] Read and understood
-  - [ ] Cross-linked in STRUCTURE.md
-  - [ ] Links verified
-  - [ ] Old content archived if replaced
-tags: [operations, navigation]
+- '[ ] Read and understood'
+- '[ ] Cross-linked in STRUCTURE.md'
+- '[ ] Links verified'
+- '[ ] Old content archived if replaced'
+- '[ ] Cross-linked in TEC_HUB.md and STRUCTURE.md'
+- '[ ] Tested commands/steps (if procedural)'
+- '[ ] Old version archived if replaced'
+tags:
+- operations
+- navigation
+related_docs: []
 ---
-
 ## TEC Hub — Core Navigation
 
 This is the central navigation node for the TEC-TGCR stack. Use it to jump to framework doctrine, agent instructions, and core tools.
@@ -79,7 +86,7 @@ Full write-up: [Resonance_Thesis.md](../reference/Resonance_Thesis.md)
 
 ## Agent Instructions
 
-- Operating Contract (Copilot Instructions): [.github/copilot-instructions.md](../../.github/copilot-instructions.md)
+- Operating Contract (CODEX Instructions): [.github/copilot-instructions.md](../../.github/copilot-instructions.md)
 - Python Agent Stack Audit: [PYTHON_AGENT_STACK_AUDIT.md](../PYTHON_AGENT_STACK_AUDIT.md)
 
 ---

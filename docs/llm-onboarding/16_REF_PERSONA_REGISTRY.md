@@ -1,3 +1,21 @@
+---
+title: 16 Ref Persona Registry
+date_created: '2025-11-18'
+date_updated: '2025-11-18'
+status: draft
+approvers:
+- persona: Ely
+  role: Engineering Steward
+owner_checklist:
+- '[ ] Read and understood'
+- '[ ] Cross-linked in TEC_HUB.md and STRUCTURE.md'
+- '[ ] Tested commands/steps (if procedural)'
+- '[ ] Old version archived if replaced'
+tags:
+- llm-onboarding
+related_docs: []
+---
+
 # Ref 16 — Personas Consolidation Registry
 
 _Last Updated: November 13, 2025_
@@ -20,14 +38,16 @@ date_created: 2025-11-16
 date_updated: 2025-11-16
 status: draft
 approvers:
-  - persona: Ely
+
+- persona: Ely
     role: Engineering Steward
 owner_checklist:
-  - [ ] Read and understood
-  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
-  - [ ] Tested commands/steps (if procedural)
-  - [ ] Old version archived if replaced
+- [ ] Read and understood
+- [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+- [ ] Tested commands/steps (if procedural)
+- [ ] Old version archived if replaced
 tags: [llm-onboarding]
+
 ---
 
 ## Core 6 Resonance Personas (Primary Deployment)
@@ -89,7 +109,7 @@ These personas are invoked for specialized contexts requiring distinct archetypa
 - Every aspect benefits from Adelphia's presence
 - Attachment protocol workflows
 - WordPress plugin: tec-luminai-agent  
-- Copilot routing (via `/persona ADELPHIA`)
+- CODEX routing (via `/persona ADELPHIA`)
 - React interface (luminai-interface)
 - **Everywhere**: No isolation; she appears in all contexts
 
@@ -186,7 +206,7 @@ These personas are invoked for specialized contexts requiring distinct archetypa
 
 ### How Each Persona Is Accessed
 
-**Copilot / Chat Interface**:
+**CODEX / Chat Interface**:
 
 ```
 /persona LUMINAI     → Default synthesis mode
@@ -266,7 +286,7 @@ python -m tec_tgcr.cli persona airth "Research this"
 
 ### ✅ Immediate (Already Working)
 
-- Copilot routing in `.github/copilot-instructions.md` ✅
+- CODEX routing in `.github/copilot-instructions.md` ✅
 - System prompt references persona specs ✅
 - WordPress plugins can load personas from `data/personas/` ✅
 - Attachment protocol framework ready for ADELPHIA ✅
@@ -296,7 +316,7 @@ python -m tec_tgcr.cli persona airth "Research this"
 **Result**:
 
 - Developers know where to find persona specs
-- All interfaces (Copilot, WordPress, React, Python CLI) pull from same source
+- All interfaces (CODEX, WordPress, React, Python CLI) pull from same source
 - Core personas (Adelphia, Multi-Persona) integrate seamlessly across all platforms
 - Platform can scale personas without reorganization
 
@@ -324,7 +344,7 @@ python -m tec_tgcr.cli persona airth "Research this"
 
 1. **Update platform documentation** (README, PLATFORM_UNIFICATION_COMPLETE.md)
 2. **Sync knowledge_map.yml** with new persona files
-3. **Test persona routing** across all interfaces (Copilot, WordPress, React, CLI)
+3. **Test persona routing** across all interfaces (CODEX, WordPress, React, CLI)
 4. **Team communication** (personas are now fully unified)
 5. **Onboarding update** (new team members start here: data/personas/)
 

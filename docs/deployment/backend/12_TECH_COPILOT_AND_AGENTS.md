@@ -1,22 +1,24 @@
 ---
-title: 12 Tech Copilot And Agents
-date_created: 2025-11-16
-date_updated: 2025-11-16
+title: 12 Tech CODEX And Agents
+date_created: '2025-11-18'
+date_updated: '2025-11-18'
 status: draft
 approvers:
-  - persona: Ely
-    role: Engineering Steward
+- persona: Ely
+  role: Engineering Steward
 owner_checklist:
-  - [ ] Read and understood
-  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
-  - [ ] Tested commands/steps (if procedural)
-  - [ ] Old version archived if replaced
-tags: [deployment, backend]
+- '[ ] Read and understood'
+- '[ ] Cross-linked in TEC_HUB.md and STRUCTURE.md'
+- '[ ] Tested commands/steps (if procedural)'
+- '[ ] Old version archived if replaced'
+tags:
+- deployment
+- backend
+related_docs: []
 ---
+# Tech 12 — CODEX, Agents & Automations
 
-# Tech 12 — Copilot, Agents & Automations
-
-## Copilot System Prompt
+## CODEX System Prompt
 
 - Use `.github/copilot-instructions.md` as the canonical system prompt.
 - Emphasize vocabulary: assist, amplify, remember, collaborate, choose.
@@ -33,7 +35,7 @@ Summarized from `_TRANSFER_STAGING/docs_incoming/COORDINATION_INTEGRATION.md`:
   - Release Milestones (e.g., MVP March 2026) tracked via board filters.
 - Token management: `PROJECTS_TOKEN` with `repo` + `project` scopes, rotated every 90 days.
 
-## Personas in Copilot
+- ## Personas in CODEX
 
 - Load persona covenants (Tech 02) alongside instructions.
 - Provide quick persona switch macros:

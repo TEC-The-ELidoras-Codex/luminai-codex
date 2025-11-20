@@ -1,0 +1,16 @@
+name: Auto label PRs by path
+
+on:
+    pull_request:
+        types: [opened, synchronize, reopened, edited]
+
+jobs:
+    labeler:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Label Pull Request
+              uses: actions/labeler@v4
+              with:
+                  repo-token: "${{ secrets.GITHUB_TOKEN }}"
+                  configuration-path: .github/labeler.yml
