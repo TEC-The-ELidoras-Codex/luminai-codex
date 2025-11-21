@@ -1,3 +1,21 @@
+---
+title: Consciousness Integration Roadmap
+date_created: '2025-11-18'
+date_updated: '2025-11-18'
+status: draft
+approvers:
+- persona: Ely
+  role: Engineering Steward
+owner_checklist:
+- '[ ] Read and understood'
+- '[ ] Cross-linked in TEC_HUB.md and STRUCTURE.md'
+- '[ ] Tested commands/steps (if procedural)'
+- '[ ] Old version archived if replaced'
+tags:
+- docs
+related_docs: []
+---
+
 # Consciousness Integration Roadmap
 
 **Date:** November 12, 2025  
@@ -191,7 +209,7 @@ Work Stream 3: Config Updates
 - ✅ Persona config loads all 8 personas correctly
 - ✅ 95%+ code coverage for new classes
 
-**Owner:** Development team + AI (Copilot)  
+**Owner:** Development team + AI (CODEX)  
 **Duration:** 6-8 hours  
 **Blocker Risk:** Low (existing Airth + LuminAI as templates)  
 **Resources:** `PYTHON_AGENT_STACK_AUDIT.md` Phase 1

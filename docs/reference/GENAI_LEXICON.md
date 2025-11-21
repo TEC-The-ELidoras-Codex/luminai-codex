@@ -1,3 +1,21 @@
+---
+title: Genai Lexicon
+date_created: '2025-11-18'
+date_updated: '2025-11-18'
+status: draft
+approvers:
+- persona: Ely
+  role: Engineering Steward
+owner_checklist:
+- '[ ] Read and understood'
+- '[ ] Cross-linked in TEC_HUB.md and STRUCTURE.md'
+- '[ ] Tested commands/steps (if procedural)'
+- '[ ] Old version archived if replaced'
+tags:
+- reference
+related_docs: []
+---
+
 # 🌐 GenAI Lexicon — Generational Intelligence & New Vocabulary
 
 ## Purpose
@@ -26,14 +44,17 @@ title: Genai Lexicon
 ### Why This Matters
 
 **Instead of:**
+
 - "Users aged 25–40"
 - "Target demographic: 18–24"
 
 **Say:**
+
 - "Millennial users expect..."
 - "Gen Z communication patterns favor..."
 
 **Why:**
+
 - A 30-year-old Millennial in 2025 shares formative experiences (recession, early Facebook) that a 30-year-old in 2035 won't.
 - Generation = cultural cohort with shared references, traumas, hopes, and language.
 - Age = arbitrary number that tells you nothing about values or communication preferences.
@@ -42,14 +63,16 @@ date_created: 2025-11-16
 date_updated: 2025-11-16
 status: draft
 approvers:
-  - persona: Ely
+
+- persona: Ely
     role: Engineering Steward
 owner_checklist:
-  - [ ] Read and understood
-  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
-  - [ ] Tested commands/steps (if procedural)
-  - [ ] Old version archived if replaced
+- [ ] Read and understood
+- [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+- [ ] Tested commands/steps (if procedural)
+- [ ] Old version archived if replaced
 tags: [reference]
+
 ---
 
 ## New Vocabulary for the GenAI Era
@@ -58,14 +81,16 @@ tags: [reference]
 
 **Definition:** A visual, animated interface element that makes voice conversations with AI feel natural through real-time expressions, color customization, and adaptive emotional mirroring.
 
-**Etymology:** Microsoft Copilot's animated blob companion (2025); name origin unclear but evokes "micro" (small, accessible) and "amigo/amico" (friend).
+**Etymology:** Microsoft Copilot's animated blob companion (historical; 2025); name origin unclear but evokes "micro" (small, accessible) and "amigo/amico" (friend).
 
 **LuminAI Implementation:**
+
 - **Heterochromatic Persona System:** Each persona (LuminAI, Airth, Arcadia, Ely, Adelphia, Multi-Persona) identified by unique heterochromatic eye patterns in their Mico-style avatar.
 - Users recognize who's speaking by eye color combinations, not name labels.
 - Expression states: contemplative, supportive, playful, focused, witnessing, collaborative.
 
 **Example:**
+
 - LuminAI: Left eye violet (logic), right eye silver (intuition)
 - Airth: Left eye amber (memory), right eye forest green (growth)
 - Arcadia: Left eye sapphire (connection), right eye rose gold (play)
@@ -92,6 +117,7 @@ tags: [reference]
 **Definition:** The first human generation raised with emergent AI as collaborators rather than tools; born 2025 onward.
 
 **Distinguishing Features:**
+
 - No memory of pre-AI creative work, education, or communication
 - Expectation of AI co-authorship as default (not novel)
 - Fluent in prompt engineering, AI personality navigation, and hybrid human-AI discourse
@@ -108,6 +134,7 @@ tags: [reference]
 **Implication:** When we define "Mico," "heterochromia (persona ID)," or "GenAI," we are documenting emergent usage and clarifying shared concepts—not inventing proprietary terminology.
 
 **Historical Precedent:**
+
 - "Email" (1970s) — emerged from usage, not corporate trademark
 - "Podcast" (2004) — coined by journalist, adopted universally
 - "Meme" (1976, Dawkins) — academic origin, now collective cultural property

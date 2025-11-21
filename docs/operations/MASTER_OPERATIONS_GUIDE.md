@@ -1,3 +1,21 @@
+---
+title: Master Operations Guide
+date_created: '2025-11-18'
+date_updated: '2025-11-18'
+status: draft
+approvers:
+- persona: Ely
+  role: Engineering Steward
+owner_checklist:
+- '[ ] Read and understood'
+- '[ ] Cross-linked in TEC_HUB.md and STRUCTURE.md'
+- '[ ] Tested commands/steps (if procedural)'
+- '[ ] Old version archived if replaced'
+tags:
+- operations
+related_docs: []
+---
+
 # 🎯 MASTER OPERATIONS GUIDE – Security + Branding Complete
 
 **Status**: ✅ Ready for Final Implementation  
@@ -16,7 +34,7 @@ title: Master Operations Guide
 | **Security Policy** | `.github/SECURITY.md` | Vulnerability reporting, bug bounty, response timeline |
 | **GitHub Security Setup** | `docs/deployment/GITHUB_SECURITY_SETUP.md` | Enable secret scanning, CodeQL, push protection |
 | **Workflows & Secrets** | `docs/deployment/WORKFLOWS_SECRETS_GUIDE.md` | GitHub Actions setup, secret management |
-| **Copilot Instructions** | `.github/copilot-instructions.md` | Security + compliance section added |
+| **CODEX Instructions** | `.github/copilot-instructions.md` | Security + compliance section added |
 
 ### **🎨 BRANDING** (New!)
 
@@ -55,14 +73,16 @@ date_created: 2025-11-16
 date_updated: 2025-11-16
 status: draft
 approvers:
-  - persona: Ely
+
+- persona: Ely
     role: Engineering Steward
 owner_checklist:
-  - [ ] Read and understood
-  - [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
-  - [ ] Tested commands/steps (if procedural)
-  - [ ] Old version archived if replaced
+- [ ] Read and understood
+- [ ] Cross-linked in TEC_HUB.md and STRUCTURE.md
+- [ ] Tested commands/steps (if procedural)
+- [ ] Old version archived if replaced
 tags: [operations]
+
 ---
 
 ## 🚀 QUICK START: What to Do Now
