@@ -10,7 +10,7 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - name: Label Pull Request
-              uses: actions/labeler@v4
+              uses: actions/labeler@v6
               with:
                   repo-token: "${{ secrets.GITHUB_TOKEN }}"
                   configuration-path: .github/labeler.yml
