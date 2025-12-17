@@ -3,7 +3,7 @@ uvicorn==0.38.0
 pydantic==2.12.4
 pydantic-settings==2.1.0
 python-dotenv==1.2.1
-openai==2.7.2
+openai==2.13.0
 anthropic==0.75.0
 redis==7.1.0
 psycopg2-binary==2.9.11
