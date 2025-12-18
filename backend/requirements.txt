@@ -8,7 +8,7 @@ anthropic==0.75.0
 redis==7.1.0
 psycopg2-binary==2.9.11
 sqlalchemy==2.0.23
-python-multipart==0.0.20
+python-multipart==0.0.21
 aiohttp==3.9.1
 requests==2.32.5
 loguru==0.7.3
